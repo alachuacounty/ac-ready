@@ -1,0 +1,14 @@
+.grid_container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  grid-template-areas: 'navigation', 'hero', 'notified', 'prepared', 'sticker',
+    'footer';
+  min-height: 100vh;
+  /*height:100vh;*/
+  margin: 0 0;
+}
+
+p {
+  margin: 0 0;
+}

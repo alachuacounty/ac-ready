@@ -1,0 +1,5 @@
+.prepared {
+  grid-area: prepared;
+  height: 500px;
+  background: orange;
+}
