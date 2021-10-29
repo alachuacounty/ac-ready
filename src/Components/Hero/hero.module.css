@@ -1,7 +1,10 @@
 .hero {
   grid-area: hero;
-  max-height: 680px;
+  max-height: 580px;
   margin-top: 0;
+  background: magenta;
+  background-image: url(../../images/Hero.png);
+  background-repeat: no-repeat;
 }
 
 .hero_img {

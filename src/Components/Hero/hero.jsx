@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div>
       <section className={styles.hero}>
-        <img className={styles.hero_img} src={hero_img} />
+        <img className={styles.hero_img} />
       </section>
     </div>
   );

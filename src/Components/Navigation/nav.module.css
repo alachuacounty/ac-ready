@@ -1,6 +1,5 @@
 .navigation {
   grid-area: navigation;
-  height: 100px;
   background: white;
   display: flex;
   justify-content: space-between;
