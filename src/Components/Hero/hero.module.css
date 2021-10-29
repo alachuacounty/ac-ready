@@ -1,6 +1,6 @@
 .hero {
   grid-area: hero;
-  max-height: 580px;
+
   margin-top: 0;
   background: magenta;
   background-image: url(../../images/Hero.png);
