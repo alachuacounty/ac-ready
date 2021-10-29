@@ -9,7 +9,7 @@ function Navigation(props) {
 
         <ul className={styles.navlinks}>
           <li className={styles.links}>
-            <a href=''>get notified</a>
+            <a href='#notified'>get notified</a>
           </li>
           <li className={styles.links}>
             <a href=''>prepare</a>

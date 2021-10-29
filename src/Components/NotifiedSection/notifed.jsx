@@ -3,7 +3,7 @@ import styles from './notified.module.css';
 function NotifiedSection() {
   return (
     <div>
-      <section className={styles.notified}>
+      <section id='#notified' className={styles.notified}>
         <h1 className={styles.notified_header}>get notified</h1>
         <p className={styles.notified_paragraph}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
