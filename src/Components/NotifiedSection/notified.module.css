@@ -4,6 +4,7 @@
   color: white;
   height: 600px;
   display: grid;
+  padding-bottom: 2%;
   grid-template-columns: 20% 1fr 20%;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: '. notified_header .', '. notified_paragraph .',
@@ -22,10 +23,13 @@
   grid-area: notified_paragraph;
   grid-column: 2/3;
   grid-row: 2/3;
+  font-size: 20px;
+  line-height: 2.4rem;
 }
 .notified_button {
   grid-area: notified_button;
   justify-self: center;
+  align-self: center;
   grid-column: 2/3;
   grid-row: 3/4;
   height: 78px;
