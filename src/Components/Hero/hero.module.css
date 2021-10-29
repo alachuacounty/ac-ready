@@ -1,6 +1,6 @@
 .hero {
   grid-area: hero;
   height: 400px;
-  background: cyan;
+
   margin-top: 0;
 }
