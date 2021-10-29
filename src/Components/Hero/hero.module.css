@@ -1,6 +1,9 @@
 .hero {
   grid-area: hero;
-  height: 400px;
-
+  max-height: 680px;
   margin-top: 0;
+}
+
+.hero_img {
+  width: 100%;
 }
