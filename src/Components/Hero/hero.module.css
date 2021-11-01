@@ -2,7 +2,6 @@
   grid-area: hero;
   margin-top: 0;
 
-  background-image: url(../../images/Hero.png);
   z-index: 999;
 }
 
