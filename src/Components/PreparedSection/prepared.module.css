@@ -2,8 +2,8 @@
   display: grid;
   background: orange;
   grid-template-columns: 10% 1fr 10%;
+  padding: 5% 0;
   grid-template-rows: 1fr 1fr;
-
   grid-template-areas: '. prepared_header .', '. image_grid .';
 }
 

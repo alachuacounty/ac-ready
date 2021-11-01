@@ -1,10 +1,9 @@
 .hero {
   grid-area: hero;
-
   margin-top: 0;
-  background: magenta;
+
   background-image: url(../../images/Hero.png);
-  background-repeat: no-repeat;
+  z-index: 999;
 }
 
 .hero_img {

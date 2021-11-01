@@ -7,7 +7,10 @@ function PreparedSection() {
     <div>
       <section className={styles.prepared}>
         <h1 className={styles.prepared_header}>Prepare</h1>
-        <div className={styles.image_grid}></div>
+        <div className={styles.image_grid}>
+          <img className={styles.left} src={imageleft} alt='' />
+          <img className={styles.right} src={imageright} alt='' />
+        </div>
       </section>
     </div>
   );
