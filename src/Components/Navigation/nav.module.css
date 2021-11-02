@@ -1,9 +1,9 @@
 .navigation {
   grid-area: navigation;
   background: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 2% 10%;
+  display: grid;
+  grid-template-areas: 'acr_logo . navlinks';
+  padding: 1% 10%;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -11,14 +11,24 @@
   max-width: 150px;
   max-height: 150px;
   align-self: center;
+  grid-area: acr_logo;
 }
 .navlinks {
-  display: flex;
+  grid-area: navlinks;
   flex-direction: row;
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 .links {
   text-transform: uppercase;
   list-style-type: none;
   padding: 0 2%;
   align-self: center;
+  font-size: 24px;
+}
+
+.links a {
+  text-decoration: none;
 }
