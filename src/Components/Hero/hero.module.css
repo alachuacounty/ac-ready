@@ -1,7 +1,7 @@
 .hero {
   grid-area: hero;
   margin-top: 0;
-
+  max-height: 700px;
   z-index: 999;
 }
 

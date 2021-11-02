@@ -11,13 +11,17 @@ function PreparedSection() {
           <div className={styles.left}>
             <img src={imageleft} alt='' />
             <div className={styles.test}>
-              <h2>testing text hereeee</h2>
+              <h2 className={styles.prepared_button}>
+                alachua county emergency management
+              </h2>
             </div>
           </div>
           <div className={styles.right}>
             <img src={imageright} alt='' />
             <div className={styles.test}>
-              <h2>testing text hereeee</h2>
+              <h2 className={styles.prepared_button}>
+                fema disaster supply kit
+              </h2>
             </div>
           </div>
         </div>
