@@ -30,9 +30,21 @@
   grid-area: left;
   margin-right: 3%;
   grid-column: 2/3;
+  position: relative;
+  text-align: center;
+}
+
+.test {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .right {
+  position: relative;
+  text-align: center;
   grid-area: right;
   margin-left: 3%;
   grid-column: 4/5;

@@ -8,8 +8,18 @@ function PreparedSection() {
       <section className={styles.prepared}>
         <h1 className={styles.prepared_header}>Prepare</h1>
         <div className={styles.image_grid}>
-          <img className={styles.left} src={imageleft} alt='' />
-          <img className={styles.right} src={imageright} alt='' />
+          <div className={styles.left}>
+            <img src={imageleft} alt='' />
+            <div className={styles.test}>
+              <h2>testing text hereeee</h2>
+            </div>
+          </div>
+          <div className={styles.right}>
+            <img src={imageright} alt='' />
+            <div className={styles.test}>
+              <h2>testing text hereeee</h2>
+            </div>
+          </div>
         </div>
       </section>
     </div>
