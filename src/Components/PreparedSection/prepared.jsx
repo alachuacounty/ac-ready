@@ -5,7 +5,7 @@ import imageright from '../../images/Group20.png';
 function PreparedSection() {
   return (
     <div>
-      <section className={styles.prepared}>
+      <section id='prepared' className={styles.prepared}>
         <h1 className={styles.prepared_header}>Prepare</h1>
         <div className={styles.image_grid}>
           <div className={styles.left}>

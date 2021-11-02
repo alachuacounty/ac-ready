@@ -4,7 +4,7 @@ import image8 from '../../images/Image8.png';
 function StickerSection() {
   return (
     <div>
-      <section className={styles.sticker}>
+      <section id='sticker' className={styles.sticker}>
         <h1 className={styles.sticker_header}>Get your acr sticker</h1>
         <img className={styles.stickerimage} src={image8} alt='' />
         <p className={styles.stickertext}>

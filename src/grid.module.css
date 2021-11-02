@@ -1,6 +1,6 @@
 .grid_container {
   display: grid;
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-rows: auto 500px auto auto auto auto;
   grid-template-columns: 100%;
   grid-template-areas: 'navigation', 'hero', 'notified', 'prepared', 'sticker',
     'footer';

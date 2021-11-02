@@ -12,10 +12,10 @@ function Navigation(props) {
             <a href='#notified'>get notified</a>
           </li>
           <li className={styles.links}>
-            <a href=''>prepare</a>
+            <a href='#prepared'>prepare</a>
           </li>
           <li className={styles.links}>
-            <a href=''>acr stickers</a>
+            <a href='#sticker'>acr stickers</a>
           </li>
         </ul>
       </section>
