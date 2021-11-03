@@ -17,8 +17,8 @@
   grid-area: navlinks;
   flex-direction: row;
   display: flex;
-  align-self: flex-end;
-  align-items: flex-end;
+  align-self: center;
+  align-items: center;
   justify-content: space-between;
 }
 .links {
