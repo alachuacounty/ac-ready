@@ -32,3 +32,30 @@
 .links a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 480px) {
+  .navigation {
+    padding: 0 2%;
+    padding-top: 8%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .acr_logo {
+    height: 120px;
+    width: 120px;
+    grid-column: 1/2;
+    justify-self: center;
+  }
+  .navlinks {
+    grid-row: 2/3;
+    justify-self: center;
+    grid-column: 1/2;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .links {
+    font-size: 12px;
+    padding: 0;
+  }
+}
