@@ -19,3 +19,19 @@
   grid-row: 2/3;
   justify-self: center;
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 4% 4%;
+  }
+  .copyright {
+    grid-column: 1/4;
+    justify-self: center;
+    text-align: center;
+  }
+  .footer_text {
+    grid-column: 1/4;
+    justify-self: center;
+    text-align: center;
+  }
+}

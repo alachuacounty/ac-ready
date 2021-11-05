@@ -9,6 +9,7 @@ function Hero() {
 
         <div className={styles.hero_text}>
           <h3>hero text going in here </h3>
+
           <br />
         </div>
       </section>

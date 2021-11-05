@@ -22,3 +22,27 @@
   padding-top: 2%;
   justify-self: center;
 }
+
+@media screen and (max-width: 480px) {
+  .hero {
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr;
+  }
+  .hero_img {
+    grid-row: 1/2;
+    grid-column: 1/2;
+    width: 100%;
+    justify-self: center;
+    margin-left: 0;
+  }
+  .hero_text {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    font-size: 18px;
+    justify-content: center;
+    align-self: flex-start;
+    background-color: #12264c;
+    color: white;
+    padding: 0;
+  }
+}

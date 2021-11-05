@@ -32,6 +32,9 @@
 .links a {
   text-decoration: none;
 }
+.links a:hover {
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 480px) {
   .navigation {
@@ -47,15 +50,20 @@
     justify-self: center;
   }
   .navlinks {
+    width: 100%;
     grid-row: 2/3;
     justify-self: center;
     grid-column: 1/2;
     padding: 0;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
 
   .links {
     font-size: 12px;
     padding: 0;
+  }
+  .links a {
+    font-size: 1.1rem;
+    text-decoration: underline;
   }
 }

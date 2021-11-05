@@ -13,7 +13,6 @@ function NotifiedSection() {
           Nostrum, sapiente iure!
           <br />
           <br />
-          <br />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
             molestiae doloremque quidem fuga vel consectetur illum error
