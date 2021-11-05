@@ -26,6 +26,9 @@ function PreparedSection() {
           </div>
         </div>
       </section>
+      <hr className={styles.firsthr} />
+      <hr className={styles.secondhr} />
+      <hr className={styles.thirdhr} />
     </div>
   );
 }

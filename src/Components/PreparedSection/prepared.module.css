@@ -55,6 +55,27 @@
   margin-left: 3%;
   grid-column: 4/5;
 }
+hr {
+  margin: 0;
+  height: 4px;
+}
+.firsthr {
+  border-color: #12264c;
+  background-color: #12264c;
+  margin: 0;
+}
+
+.secondhr {
+  border-color: #1968b1;
+  background-color: #1968b1;
+  margin: 0;
+}
+
+.thirdhr {
+  border-color: #4a97d3;
+  background-color: #4a97d3;
+  margin: 0;
+}
 
 @media screen and (max-width: 480px) {
   .prepared {
