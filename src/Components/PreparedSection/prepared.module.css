@@ -1,6 +1,6 @@
 .prepared {
   display: grid;
-  background-color: #d0edfc;
+  /*background-color: #d0edfc;*/
   grid-template-columns: 10% 1fr 10%;
   margin-top: 0;
   padding: 5% 0;

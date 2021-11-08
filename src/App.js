@@ -5,7 +5,7 @@ import PreparedSection from './Components/PreparedSection/prepared';
 import NotifiedSection from './Components/NotifiedSection/notifed';
 import StickerSection from './Components/StickerSection/sticker';
 import Footer from './Components/Footer/footer';
-
+import DemoCarousel from './Components/Carousel';
 import styles from './grid.module.css';
 class App extends React.Component {
   render() {
