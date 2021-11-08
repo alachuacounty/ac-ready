@@ -7,22 +7,30 @@ function PreparedSection() {
     <div>
       <section id='prepared' className={styles.prepared}>
         <h1 className={styles.prepared_header}>Prepare</h1>
-        <div className={styles.image_grid}>
-          <div className={styles.left}>
-            <img src={imageleft} alt='' />
-            <div className={styles.test}>
-              <h2 className={styles.prepared_button}>
-                alachua county emergency management
-              </h2>
-            </div>
+        <div className={styles.acem_section}>
+          <img className={styles.acem_image} src={imageleft} alt='' />
+          <div className={styles.acem_text}>
+            <h2 className={styles}>alachua county emergency management</h2>
+            <p>
+              Visit the Emergency Management Website for more preparedness
+              information and other resources
+            </p>
+            <a className={styles.acem_visit} href='#'>
+              VISIT WEBSITE
+            </a>
           </div>
-          <div className={styles.right}>
-            <img src={imageright} alt='' />
-            <div className={styles.test}>
-              <h2 className={styles.prepared_button}>
-                fema disaster supply kit
-              </h2>
-            </div>
+        </div>
+        <div className={styles.fema_section}>
+          <img className={styles.fema_image} src={imageleft} alt='' />
+          <div className={styles.fema_text}>
+            <h2 className={styles}>FEMA Disaster Supply Kit</h2>
+            <p>
+              Visit Fema to get information on building your disaster supply kit
+              before a hurricane happens.
+            </p>
+            <a className={styles.fema_visit} href='#'>
+              VISIT WEBSITE
+            </a>
           </div>
         </div>
       </section>
