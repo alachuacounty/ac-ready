@@ -1,12 +1,21 @@
 .prepared {
   display: grid;
   /*background-color: #d0edfc;*/
-  grid-template-columns: 10% 1fr 10%;
+  grid-template-columns: 22% 1fr 22%;
   margin-top: 0;
   padding: 5% 0;
   grid-template-rows: auto auto auto;
   grid-template-areas: '. prepared_header .', '. acem_section .',
     '. fema_section .';
+}
+
+.prepared p {
+  font-size: 1.25rem;
+  line-height: 2.6rem;
+}
+
+.prepared img {
+  max-width: 440px;
 }
 
 .prepared_header {
@@ -17,6 +26,7 @@
   align-self: center;
   text-transform: uppercase;
   font-size: 2.6rem;
+  margin-bottom: 8%;
 }
 
 .acem_section {
@@ -25,6 +35,7 @@
   grid-column: 2/3;
   display: grid;
   grid-template-columns: auto auto;
+  margin-bottom: 5%;
 }
 .acem_image {
   grid-column: 1/2;
@@ -32,7 +43,7 @@
 }
 .acem_text {
   grid-column: 2/3;
-  padding: 10%;
+  padding-left: 10%;
 
   justify-self: center;
   display: grid;
@@ -44,7 +55,7 @@
 .fema_section {
   grid-row: 3/4;
   grid-column: 2/3;
-
+  margin-top: 5%;
   display: grid;
   grid-template-columns: auto auto;
 }
@@ -56,9 +67,9 @@
 .fema_text {
   grid-column: 1/2;
   grid-row: 1/2;
-  padding: 10%;
+  padding-right: 10%;
   align-self: center;
-  justify-self: center;
+  justify-self: start;
   display: grid;
 }
 .fema_visit {

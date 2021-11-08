@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className={styles.grid_container}>
         <Navigation />
-        <DemoCarousel />
+        <Hero />
         <NotifiedSection />
         <PreparedSection />
         <StickerSection />
