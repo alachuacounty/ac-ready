@@ -8,7 +8,7 @@ function Hero() {
         <img className={styles.hero_img} src={hero} />
 
         <div className={styles.hero_text}>
-          <h3>hero text going in here </h3>
+          <h3>this is some text here</h3>
         </div>
       </section>
     </div>
