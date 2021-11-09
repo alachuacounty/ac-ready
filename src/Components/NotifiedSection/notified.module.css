@@ -28,22 +28,26 @@
 }
 .notified_button {
   grid-area: notified_button;
-  background-color: #d0edfc;
+  background-color: #4a97d3;
+  color: white;
+  font-weight: bold;
   justify-self: center;
   align-self: center;
   grid-column: 2/3;
   grid-row: 3/4;
-  height: 78px;
+  height: 56px;
   width: 150px;
   border: none;
   border-radius: 5%;
+
+  border-left: 6px double #cfedfb;
 }
 
 @media screen and (max-width: 480px) {
   .notified {
     grid-area: notified;
-    background-color: #12264c;
-    color: white;
+    background-color: white;
+    color: #12264c;
     height: auto;
     display: grid;
     padding: 8% 5%;
@@ -52,6 +56,8 @@
     grid-template-areas: '. notified_header .', '. notified_paragraph .',
       '. notified_button .';
     text-align: center;
+    box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
   }
   .notified_header {
     font-size: 2.1rem;
@@ -59,7 +65,7 @@
   }
   .notified_paragraph {
     grid-column: 1/2;
-    font-size: 1rem;
+    font-size: 20px;
   }
   .notified_button {
     grid-column: 1/2;

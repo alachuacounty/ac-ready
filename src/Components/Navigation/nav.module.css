@@ -30,10 +30,12 @@
 }
 
 .links a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: #12264c;
 }
 .links a:hover {
   text-decoration: underline;
+  color: #4a97d3;
 }
 
 @media screen and (max-width: 480px) {

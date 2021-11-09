@@ -13,6 +13,7 @@
   font-size: 2.6rem;
   grid-row: 1/2;
   grid-column: 2/3;
+  color: #12264c;
 }
 .stickerimage {
   grid-column: 2/3;
@@ -57,11 +58,14 @@
 @media screen and (max-width: 480px) {
   .sticker {
     grid-template-columns: 1fr;
-    padding: 5% 2%;
+    padding: 12% 2%;
   }
   .sticker h1 {
     text-align: center;
     font-size: 2.1rem;
+  }
+  .stickertext {
+    text-align: center;
   }
   .departments {
     margin-top: 2%;
@@ -71,7 +75,7 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 2% 1fr 2%;
     grid-template-areas: '. acfr .', '. gvilleoffice .';
-    margin: 3% 0;
+    margin: 0 0;
   }
 
   .acfr {
