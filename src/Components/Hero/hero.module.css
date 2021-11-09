@@ -132,6 +132,7 @@
 
 .hero_text {
   -ms-grid-column: 1;
+  -ms-grid-row: 1;
   -ms-grid-column-span: 1;
   grid-column: 1/2;
   -ms-grid-row-align: center;
@@ -152,7 +153,9 @@
   font-size: 36px;
   padding-left: 5%;
 }
-
+.textmsg{
+  -ms-grid-row:2;
+}
 .hero_img {
   width: 100%;
   -ms-grid-column: 2;
