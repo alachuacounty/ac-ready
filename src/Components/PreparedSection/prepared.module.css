@@ -139,6 +139,7 @@
 hr {
   margin: 1px;
   height: 8px !important;
+  padding: 0;
 }
 .firsthr {
   border-style: solid;
@@ -148,6 +149,7 @@ hr {
   border-width: thick;
   margin: 1px;
   z-index: 999;
+  padding: 0;
 }
 
 .secondhr {
