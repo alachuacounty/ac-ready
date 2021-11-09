@@ -59,10 +59,10 @@
 }
 .footer > *:nth-child(1) {
   -ms-grid-row: 1;
-  -ms-grid-column: 1;
+  -ms-grid-column: 2;
 }
 .footer > *:nth-child(2) {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
 }
 .footer > *:nth-child(3) {
