@@ -1,4 +1,4 @@
-.footer {
+/* .footer {
   grid-area: footer;
   grid-template-rows: 1fr 1fr;
   display: grid;
@@ -31,6 +31,95 @@
   }
   .footer_text {
     grid-column: 1/4;
+    justify-self: center;
+    text-align: center;
+  }
+}
+ */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+.footer {
+  grid-area: footer;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 1fr 25%;
+  grid-template-columns: 25% 1fr 25%;
+  padding: 1% 0;
+  color: white;
+
+  background-color: #12264c;
+}
+.footer > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+.footer > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+}
+.footer > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+.footer > *:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+}
+.footer > *:nth-child(5) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+}
+.footer > *:nth-child(6) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+}
+
+.copyright {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+.footer_text {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column-align: center;
+  justify-self: center;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 4% 4%;
+  }
+  .copyright {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    text-align: center;
+  }
+  .footer_text {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-column-align: center;
     justify-self: center;
     text-align: center;
   }

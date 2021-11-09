@@ -1,4 +1,4 @@
-.navigation {
+/* .navigation {
   grid-area: navigation;
   background: white;
   display: grid;
@@ -57,6 +57,126 @@
     justify-self: center;
     grid-column: 1/2;
     padding: 0;
+    justify-content: space-evenly;
+  }
+
+  .links {
+    font-size: 12px;
+    padding: 0;
+  }
+  .links a {
+    font-size: 1.1rem;
+    text-decoration: underline;
+  }
+}
+ */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+.navigation {
+  grid-area: navigation;
+  background: white;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas: 'acr_logo . navlinks';
+  padding: 1% 20%;
+  -webkit-box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+    0 5px 5px rgba(18, 38, 76, 0.15);
+  box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15), 0 5px 5px rgba(18, 38, 76, 0.15);
+}
+
+.acr_logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  max-width: 140px;
+  max-height: 140px;
+  -ms-grid-row-align: center;
+  align-self: center;
+  grid-area: acr_logo;
+}
+.navlinks {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: navlinks;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.links {
+  text-transform: uppercase;
+  list-style-type: none;
+  padding: 0 2%;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  font-size: 24px;
+}
+
+.links a {
+  text-decoration: underline;
+  color: #12264c;
+}
+.links a:hover {
+  text-decoration: underline;
+  color: #4a97d3;
+}
+
+@media screen and (max-width: 480px) {
+  .navigation {
+    padding: 0 2%;
+    padding-top: 8%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .navigation > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .navigation > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .acr_logo {
+    height: 120px;
+    width: 120px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+  .navlinks {
+    width: 100%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    padding: 0;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
 

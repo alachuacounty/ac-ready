@@ -1,4 +1,4 @@
-.notified {
+/* .notified {
   grid-area: notified;
   background-color: #12264c;
   color: white;
@@ -74,5 +74,139 @@
     margin: 4% 0;
     height: 45px;
     width: 100px;
+  }
+}
+ */
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+.notified {
+  grid-area: notified;
+  background-color: #12264c;
+  color: white;
+  height: 600px;
+  display: -ms-grid;
+  display: grid;
+  padding-bottom: 2%;
+  -ms-grid-columns: 20% 1fr 20%;
+  grid-template-columns: 20% 1fr 20%;
+  -ms-grid-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: '. notified_header .', '. notified_paragraph .',
+    '. notified_button .';
+}
+.notified_header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: notified_header;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  -ms-grid-column-align: center;
+  justify-self: center;
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  margin: 5% 0;
+}
+.notified_paragraph {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: notified_paragraph;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  font-size: 20px;
+  line-height: 2.4rem;
+}
+.notified_button {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: notified_button;
+  background-color: #4a97d3;
+  color: white;
+  font-weight: bold;
+  -ms-grid-column-align: center;
+  justify-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  height: 56px;
+  width: 150px;
+  border: none;
+  border-radius: 5%;
+
+  border-left: 6px double #cfedfb;
+}
+
+@media screen and (max-width: 480px) {
+  .notified {
+    grid-area: notified;
+    background-color: white;
+    color: #12264c;
+    height: auto;
+    display: -ms-grid;
+    display: grid;
+    padding: 8% 5%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: '. notified_header .', '. notified_paragraph .',
+      '. notified_button .';
+    text-align: center;
+    -webkit-box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+    box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+  }
+  .notified_header {
+    font-size: 2.1rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .notified_paragraph {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    font-size: 20px;
+  }
+  .notified_button {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .notified_button {
+    margin: 4% 0;
+    height: 45px;
+    width: 100px;
+  }
+  .notified_header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .notified_paragraph {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .notified_button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
   }
 }
