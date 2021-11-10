@@ -92,7 +92,7 @@
   height: 600px;
   display: -ms-grid;
   display: grid;
-  padding-bottom: 2%;
+  padding: 3% 0;
   -ms-grid-columns: 20% 1fr 20%;
   grid-template-columns: 20% 1fr 20%;
   -ms-grid-rows: 1fr 1fr 1fr;
@@ -198,6 +198,66 @@
   .notified_button {
     margin: 4% 0;
     height: 45px;
+    width: 100px;
+  }
+  .notified_header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .notified_paragraph {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .notified_button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+}
+
+/* TABLET BREAKPOINT*/
+@media screen and (min-device-width: 481px) and (max-device-width: 769px) {
+  .notified {
+    grid-area: notified;
+    background-color: white;
+    color: #12264c;
+    height: auto;
+    display: -ms-grid;
+    display: grid;
+    padding: 8% 5%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: '. notified_header .', '. notified_paragraph .',
+      '. notified_button .';
+    text-align: center;
+    -webkit-box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+    box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+  }
+  .notified_header {
+    font-size: 2.1rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+  }
+  .notified_paragraph {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    font-size: 20px;
+  }
+  .notified_button {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    height: 56px !important;
+    width: 150px !important;
+    font-size: 1.2rem;
+  }
+  .notified_button {
+    padding: 2% 5%;
     width: 100px;
   }
   .notified_header {

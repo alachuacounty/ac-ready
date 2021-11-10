@@ -220,6 +220,7 @@
   justify-self: center;
   font-size: 1.5rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .gvilleoffice {
@@ -233,9 +234,68 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-align: justify;
+  text-align: center;
 }
 
 @media screen and (max-width: 480px) {
+  .sticker {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    padding: 12% 4%;
+  }
+  .sticker h1 {
+    text-align: center;
+    font-size: 2.1rem;
+  }
+  .stickertext {
+    text-align: center;
+  }
+  .departments {
+    margin-top: 2%;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    grid-row: 4/5;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 2% 1fr 2%;
+    grid-template-columns: 2% 1fr 2%;
+    grid-template-areas: '. acfr .', '. gvilleoffice .';
+    margin: 5% 0;
+    font-size: 1.25rem;
+  }
+
+  .acfr {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 2%;
+  }
+
+  .gvilleoffice {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2/3;
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 2%;
+  }
+}
+
+/* TABLET BREAKPOINT*/
+@media screen and (min-device-width: 481px) and (max-device-width: 769px) {
   .sticker {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;

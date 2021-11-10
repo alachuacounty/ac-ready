@@ -124,3 +124,26 @@
     text-align: center;
   }
 }
+
+/* TABLET BREAKPOINT*/
+@media screen and (min-device-width: 481px) and (max-device-width: 769px) {
+  .footer {
+    padding: 4% 4%;
+  }
+  .copyright {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    text-align: center;
+  }
+  .footer_text {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1/4;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    text-align: center;
+  }
+}

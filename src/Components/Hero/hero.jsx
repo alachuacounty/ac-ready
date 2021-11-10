@@ -5,7 +5,11 @@ function Hero() {
   return (
     <div>
       <section className={styles.hero}>
-        <img className={styles.hero_img} src={hero} />
+        <img
+          className={styles.hero_img}
+          src={hero}
+          alt='Hero Image of a family of four'
+        />
 
         <div className={styles.hero_text}>
           <div className={styles.headers}>

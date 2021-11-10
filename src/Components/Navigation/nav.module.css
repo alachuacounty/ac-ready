@@ -194,3 +194,57 @@
     text-decoration: underline;
   }
 }
+
+/* TABLET BREAKPOINT*/
+@media screen and (min-device-width: 481px) and (max-device-width: 769px) {
+  .navigation {
+    padding: 0 2%;
+    padding-top: 8%;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .navigation > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+  .navigation > *:nth-child(2) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .acr_logo {
+    height: 150px;
+    width: 150px;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+  .navlinks {
+    width: 100%;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2/3;
+    -ms-grid-column-align: center;
+    justify-self: center;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1/2;
+    padding: 0;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    padding-left: 0;
+  }
+
+  .links {
+    font-size: 12px;
+    padding: 0;
+  }
+  .links a {
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
+}
