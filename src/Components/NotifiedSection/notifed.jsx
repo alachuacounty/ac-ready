@@ -20,7 +20,12 @@ function NotifiedSection() {
           </p>
         </p>
 
-        <button className={styles.notified_button}>SIGN UP</button>
+        <a
+          className={styles.notified_button}
+          href='https://member.everbridge.net/index/453003085613764#/signup'
+        >
+          SIGN UP
+        </a>
       </section>
     </div>
   );
