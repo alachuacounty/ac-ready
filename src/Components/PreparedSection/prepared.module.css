@@ -394,7 +394,7 @@ hr {
 
   -ms-grid-column-align: center;
   justify-self: center;
-  display: -ms-grid;
+ 
   display: grid;
 }
 .acem_visit {
@@ -444,7 +444,7 @@ hr {
   align-self: center;
   -ms-grid-column-align: start;
   justify-self: start;
-  display: -ms-grid;
+ 
   display: grid;
 }
 .fema_header{
