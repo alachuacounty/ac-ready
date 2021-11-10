@@ -82,6 +82,7 @@
   grid-area: navigation;
   background: white;
   display: -ms-grid;
+  -ms-grid-columns: 200px 20% 60%;
   display: grid;
   grid-template-areas: 'acr_logo . navlinks';
   padding: 1% 20%;
