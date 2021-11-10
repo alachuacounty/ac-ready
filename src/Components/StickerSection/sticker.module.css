@@ -191,7 +191,7 @@
   grid-column: 2/3;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 .departments {
@@ -204,6 +204,7 @@
   grid-column: 2/3;
   display: -ms-grid;
   display: grid;
+
   -ms-grid-columns: 5% 1fr 5% 1fr 5%;
   grid-template-columns: 5% 1fr 5% 1fr 5%;
   grid-template-areas: '. acfr . gvilleoffice .';
@@ -217,7 +218,7 @@
   grid-column: 2/3;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -229,7 +230,7 @@
   grid-column: 4/5;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: justify;
 }
