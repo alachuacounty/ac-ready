@@ -166,6 +166,7 @@
   justify-self: center;
 }
 
+
 @media screen and (max-width: 480px) {
   .hero {
     -ms-grid-rows: auto auto;

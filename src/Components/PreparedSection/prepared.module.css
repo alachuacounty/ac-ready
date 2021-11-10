@@ -363,6 +363,12 @@ hr {
 .acem_wrapper {
   background-color: #1968b1;
 }
+.acem_head{
+  -ms-grid-row:1;
+}
+.acem_para{
+  -ms-grid-row:2;
+}
 .acem_image {
   position: relative;
   -ms-grid-column: 1;
@@ -387,7 +393,6 @@ hr {
   padding-left: 10%;
 
   -ms-grid-column-align: center;
-
   justify-self: center;
   display: -ms-grid;
   display: grid;
@@ -395,6 +400,7 @@ hr {
 .acem_visit {
   -ms-grid-column-align: end;
   justify-self: end;
+  -ms-grid-row:3;
 }
 
 .fema_section {
@@ -413,6 +419,7 @@ hr {
 
 .fema_wrapper {
   background-color: #1968b1;
+  -ms-grid-column:2;
 }
 .fema_image {
   position: relative;
@@ -439,6 +446,13 @@ hr {
   justify-self: start;
   display: -ms-grid;
   display: grid;
+}
+.fema_header{
+  -ms-grid-row: 1;;
+}
+
+.fema_para{
+  -ms-grid-row:2;
 }
 .fema_visit {
   -ms-grid-column-align: end;

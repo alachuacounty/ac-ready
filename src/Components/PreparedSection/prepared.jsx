@@ -12,8 +12,8 @@ function PreparedSection() {
             <img className={styles.acem_image} src={imageleft} alt='' />
           </div>
           <div className={styles.acem_text}>
-            <h2 className={styles}>Alachua County Emergency Management</h2>
-            <p>
+            <h2 className={styles.acem_head}>Alachua County Emergency Management</h2>
+            <p className={styles.acem_para} >
               Visit the Emergency Management Website for more preparedness
               information and other resources
             </p>
@@ -29,8 +29,8 @@ function PreparedSection() {
             <img className={styles.fema_image} src={imageright} alt='' />
           </div>
           <div className={styles.fema_text}>
-            <h2 className={styles}>FEMA Disaster Supply Kit</h2>
-            <p>
+            <h2 className={styles.fema_header}>FEMA Disaster Supply Kit</h2>
+            <p className={styles.fema_para}>
               Visit Fema to get information on building your disaster supply kit
               before a hurricane happens.
             </p>
