@@ -297,8 +297,8 @@ hr {
   display: -ms-grid;
   display: grid;
   /*background-color: #d0edfc;*/
-  -ms-grid-columns: 22% 1fr 22%;
-  grid-template-columns: 22% 1fr 22%;
+  -ms-grid-columns: 10% 1fr 10%;
+  grid-template-columns: 10% 1fr 10%;
   margin-top: 0;
   padding: 5% 0;
   -ms-grid-rows: auto auto auto;

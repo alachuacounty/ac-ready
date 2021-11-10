@@ -36,7 +36,7 @@ function PreparedSection() {
           <div className={styles.fema_text}>
             <h2 className={styles.fema_header}>FEMA Disaster Supply Kit</h2>
             <p className={styles.fema_para}>
-              Visit Fema to get information on building your disaster supply kit
+              Visit FEMA to get information on building your disaster supply kit
               before a hurricane happens.
             </p>
             <a
