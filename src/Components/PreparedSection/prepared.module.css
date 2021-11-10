@@ -517,7 +517,7 @@ hr {
   grid-column: 4/5;
 }
 hr {
-  margin: 1px;
+  margin: 0;
   height: 5px !important;
   padding: 0;
 }

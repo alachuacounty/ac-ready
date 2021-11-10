@@ -146,8 +146,7 @@
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
-  height: 80px;
-  width: 160px;
+  padding: 2% 5%;
   border: none;
   border-radius: 5%;
   font-size: 1.5rem;
