@@ -365,6 +365,7 @@ hr {
 }
 .acem_head {
   -ms-grid-row: 1;
+  font-size: 2rem;
 }
 .acem_para {
   -ms-grid-row: 2;
@@ -450,6 +451,7 @@ hr {
 }
 .fema_header {
   -ms-grid-row: 1;
+  font-size: 2rem;
 }
 
 .fema_para {
