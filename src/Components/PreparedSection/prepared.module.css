@@ -518,16 +518,16 @@ hr {
 }
 hr {
   margin: 1px;
-  height: 8px !important;
+  height: 5px !important;
   padding: 0;
 }
 .firsthr {
   border-style: solid;
   border-color: #12264c !important;
   background-color: #12264c !important;
-  border: solid 10px #12264c;
+  border: solid 5px #12264c;
   border-width: thick;
-  margin: 1px;
+
   z-index: 999;
   padding: 0;
 }
@@ -536,8 +536,8 @@ hr {
   border-style: solid;
   border-color: #1968b1;
   background-color: #1968b1;
-  border: solid 10px #1968b1;
-  margin: 1px;
+  border: solid 5px #1968b1;
+
   z-index: 999;
   border-width: thick;
 }
@@ -546,9 +546,9 @@ hr {
   border-style: solid;
   border-color: #4a97d3;
   background-color: #4a97d3;
-  border: solid 10px #4a97d3;
+  border: solid 5px #4a97d3;
   border-width: thick;
-  margin: 1px;
+
   z-index: 999;
 }
 

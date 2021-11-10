@@ -146,11 +146,11 @@
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   grid-row: 3/4;
-  height: 56px;
-  width: 150px;
+  height: 80px;
+  width: 160px;
   border: none;
   border-radius: 5%;
-
+  font-size: 1.5rem;
   border-left: 6px double #cfedfb;
 }
 
@@ -191,6 +191,9 @@
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
+    height: 56px !important;
+    width: 150px !important;
+    font-size: 1.2rem;
   }
   .notified_button {
     margin: 4% 0;

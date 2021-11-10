@@ -84,8 +84,8 @@
   display: -ms-grid;
   -ms-grid-columns: 200px 20% 60%;
   display: grid;
-  grid-template-areas: 'acr_logo . navlinks';
-  padding: 1% 20%;
+  grid-template-areas: ' acr_logo . navlinks ';
+  padding: 1% 10%;
   -webkit-box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
     0 5px 5px rgba(18, 38, 76, 0.15);
   box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15), 0 5px 5px rgba(18, 38, 76, 0.15);
@@ -98,6 +98,8 @@
   max-height: 140px;
   -ms-grid-row-align: center;
   align-self: center;
+  justify-self: left;
+
   grid-area: acr_logo;
 }
 .navlinks {
@@ -119,6 +121,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  padding-left: 20%;
 }
 .links {
   text-transform: uppercase;
@@ -179,6 +182,7 @@
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
+    padding-left: 0;
   }
 
   .links {
