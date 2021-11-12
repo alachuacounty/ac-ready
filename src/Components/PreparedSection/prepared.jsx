@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './prepared.module.css';
 import imageleft from '../../images/acem.jpg';
+import imageleftblack from '../../images/imageleftblack.jpg';
 import imageright from '../../images/imageright.jpg';
 function PreparedSection() {
   return (
@@ -31,7 +32,7 @@ function PreparedSection() {
 
         <div className={styles.fema_section}>
           <div className={styles.fema_wrapper}>
-            <img className={styles.fema_image} src={imageleft} alt='' />
+            <img className={styles.fema_image} src={imageleftblack} alt='' />
           </div>
           <div className={styles.fema_text}>
             <h2 className={styles.fema_header}>FEMA Disaster Supply Kit</h2>
