@@ -92,7 +92,7 @@
   height: 600px;
   display: -ms-grid;
   display: grid;
-  padding: 3% 0;
+  padding: 5% 0;
   -ms-grid-columns: 10% 1fr 10%;
   grid-template-columns: 10% 1fr 10%;
   -ms-grid-rows: 1fr 1fr 1fr;
@@ -113,8 +113,7 @@
   -ms-grid-column-align: center;
   justify-self: center;
   text-transform: uppercase;
-  font-size: 2.6rem;
-  margin: 5% 0;
+  font-size: 3rem;
 }
 .notified_paragraph {
   -ms-grid-row: 2;
@@ -149,11 +148,15 @@
   padding: 2% 5%;
   border: none;
   border-radius: 5%;
-  font-size: 1.5rem;
+  font-size: 1.85rem;
   border-left: 6px double #cfedfb;
   display: block;
 }
 
+.notified p {
+  font-size: 1.75rem;
+  line-height: 2.8rem;
+}
 @media screen and (max-width: 480px) {
   .notified {
     grid-area: notified;
@@ -185,7 +188,10 @@
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-column: 1/2;
-    font-size: 20px;
+    font-size: 1.35rem !important;
+  }
+  .notified p {
+    font-size: 1.35rem !important;
   }
   .notified_button {
     -ms-grid-column: 1;

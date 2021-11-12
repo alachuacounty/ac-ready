@@ -163,7 +163,7 @@
   -ms-grid-column-align: center;
   justify-self: center;
   text-transform: uppercase;
-  font-size: 2.6rem;
+  font-size: 3rem;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1/2;
@@ -191,7 +191,7 @@
   grid-column: 2/3;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 .departments {
@@ -218,7 +218,7 @@
   grid-column: 2/3;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
 }
@@ -231,7 +231,7 @@
   grid-column: 4/5;
   -ms-grid-column-align: center;
   justify-self: center;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: justify;
   text-align: center;

@@ -308,7 +308,7 @@ hr {
 }
 
 .prepared p {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 2.6rem;
 }
 
@@ -321,7 +321,7 @@ hr {
 }
 
 .prepared img {
-  max-width: 360px;
+  max-width: 500px;
 }
 
 .prepared_header {
@@ -339,7 +339,7 @@ hr {
   -ms-grid-row-align: center;
   align-self: center;
   text-transform: uppercase;
-  font-size: 2.6rem;
+  font-size: 3rem;
   margin-bottom: 8%;
   color: #12264c;
 }
@@ -572,7 +572,14 @@ hr {
     padding: 5% 0;
     font-size: 2.1rem;
   }
+  .prepared p {
+    font-size: 1.35rem !important;
+  }
 
+  .acem_wrapper,
+  .fema_wrapper {
+    background-color: white;
+  }
   .acem_section {
     -ms-grid-row: 2;
     -ms-grid-column: 2;

@@ -109,19 +109,19 @@
   z-index: 999;
 }
 .hero_heading {
-  font-size: 44px;
+  font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
   color: #12264c;
 }
 .second_tagline {
   color: #1968b1;
-  font-size: 44px;
+  font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
 }
 .hero_paragraph {
-  font-size: 1.65rem;
+  font-size: 1.75rem;
   text-align: center;
   font-weight: bold;
 }

@@ -31,7 +31,7 @@ function PreparedSection() {
 
         <div className={styles.fema_section}>
           <div className={styles.fema_wrapper}>
-            <img className={styles.fema_image} src={imageright} alt='' />
+            <img className={styles.fema_image} src={imageleft} alt='' />
           </div>
           <div className={styles.fema_text}>
             <h2 className={styles.fema_header}>FEMA Disaster Supply Kit</h2>
