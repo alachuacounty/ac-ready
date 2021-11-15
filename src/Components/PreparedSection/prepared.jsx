@@ -10,7 +10,7 @@ function PreparedSection() {
         <h1 className={styles.prepared_header}>Prepare</h1>
         <div className={styles.acem_section}>
           <div className={styles.acem_wrapper}>
-            <img className={styles.acem_image} src={imageleft} alt='' />
+            <img className={styles.acem_image} src={imageleftblack} alt='' />
           </div>
           <div className={styles.acem_text}>
             <h2 className={styles.acem_head}>

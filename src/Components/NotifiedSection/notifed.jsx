@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './notified.module.css';
+import fontstyles from '../../fonts.module.css';
 function NotifiedSection() {
   return (
     <div>
