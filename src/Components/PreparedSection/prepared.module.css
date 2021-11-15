@@ -990,7 +990,7 @@ hr {
 }
 
 /* TABLET BREAKPOINT*/
-@media screen and (min-device-width: 770px) and (max-device-width: 1025px) {
+@media screen and (min-device-width: 770px) and (max-device-width: 1125px) {
   .prepared {
     -ms-grid-columns: 4% 1fr 4%;
     grid-template-columns: 4% 1fr 4%;
