@@ -184,6 +184,7 @@
     -ms-grid-column-span: 1;
     grid-column: 1/2;
     font-size: 1.35rem;
+    line-height: 2.8rem;
   }
   .notified p {
     font-size: 1.35rem;
@@ -315,7 +316,6 @@
     height: 50px !important;
     width: 150px !important;
     font-size: 2.2rem;
-    margin-top: 5%;
   }
   .notified_button {
     padding: 2% 5%;
