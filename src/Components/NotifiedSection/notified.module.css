@@ -124,7 +124,8 @@
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2/3;
-  line-height: 2.4rem;
+  line-height: 3rem;
+  text-align: center;
 }
 .notified_button {
   -ms-grid-row: 3;

@@ -1028,6 +1028,10 @@ hr {
     margin-bottom: 5%;
   }
 
+  .prepared img {
+    max-width: 380px;
+  }
+
   .acem_section > *:nth-child(1) {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
