@@ -8,13 +8,14 @@
 .sticker {
   grid-area: sticker;
   padding: 5% 0;
-  display: -ms-grid;
   display: grid;
   background-image: url('../../images/texture.jpg');
-  -ms-grid-rows: 10% 1fr auto 20%;
   grid-template-rows: 10% 1fr auto 20%;
-  -ms-grid-columns: 25% 1fr 25%;
   grid-template-columns: 25% 1fr 25%;
+
+  display: -ms-grid;
+  -ms-grid-rows: 10% 1fr auto 20%;
+  -ms-grid-columns: 25% 1fr 25%;
 }
 .sticker > *:nth-child(1) {
   -ms-grid-row: 1;
@@ -66,85 +67,86 @@
 }
 
 .sticker_header {
-  -ms-grid-column-align: center;
   justify-self: center;
   text-transform: uppercase;
-
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
   grid-row: 1/2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
   grid-column: 2/3;
   color: #12264c;
+
+  -ms-grid-column-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
 }
 .stickerimage {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
   grid-column: 2/3;
+  justify-self: center;
+  grid-row: 2/3;
+
+  -ms-grid-column-align: center;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column-align: center;
-  justify-self: center;
-}
-.stickertext {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  -ms-grid-column-align: center;
+}
+.stickertext {
+  grid-row: 3/4;
   justify-self: center;
+  grid-column: 2/3;
+
+  -ms-grid-column-align: center;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
 }
 
 .departments {
   margin-top: 2%;
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  grid-row: 4/5;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
-  display: -ms-grid;
   display: grid;
-
-  -ms-grid-columns: 5% 1fr 5% 1fr 5%;
+  grid-row: 4/5;
+  grid-column: 2/3;
   grid-template-columns: 5% 1fr 5% 1fr 5%;
   grid-template-areas: '. acfr . gvilleoffice .';
+
+  display: -ms-grid;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-columns: 5% 1fr 5% 1fr 5%;
 }
 
 .acfr {
   grid-area: left;
   margin-right: 3%;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
   grid-column: 2/3;
-  -ms-grid-column-align: center;
   justify-self: center;
-
   font-weight: bold;
   text-align: center;
+
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-column-align: center;
 }
 
 .gvilleoffice {
   grid-area: right;
   margin-left: 3%;
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 1;
   grid-column: 4/5;
-  -ms-grid-column-align: center;
   justify-self: center;
-
   font-weight: bold;
   text-align: justify;
   text-align: center;
+
+  -ms-grid-column-align: center;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
 }
 
 @media screen and (max-width: 480px) {
   .sticker {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 20% 4%;
   }
@@ -157,17 +159,10 @@
   }
   .departments {
     margin-top: 2%;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 1;
     grid-row: 4/5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    -ms-grid-columns: 2% 1fr 2%;
     grid-template-columns: 2% 1fr 2%;
     grid-template-areas: '. acfr .', '. gvilleoffice .';
     margin: 5% 0;
@@ -175,11 +170,7 @@
   }
 
   .acfr {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
     grid-row: 1/2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
     text-align: center;
     font-size: 1.25rem;
@@ -187,11 +178,7 @@
   }
 
   .gvilleoffice {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
     grid-row: 2/3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
     text-align: center;
     font-size: 1.25rem;
@@ -202,7 +189,6 @@
 /* TABLET BREAKPOINT*/
 @media screen and (min-device-width: 481px) and (max-device-width: 769px) {
   .sticker {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
     padding: 20% 4%;
   }
@@ -215,17 +201,10 @@
   }
   .departments {
     margin-top: 2%;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 1;
     grid-row: 4/5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    -ms-grid-columns: 2% 1fr 2%;
     grid-template-columns: 2% 1fr 2%;
     grid-template-areas: '. acfr .', '. gvilleoffice .';
     margin: 5% 0;
@@ -233,11 +212,7 @@
   }
 
   .acfr {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
     grid-row: 1/2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
     text-align: center;
     font-size: 1.25rem;
@@ -245,11 +220,7 @@
   }
 
   .gvilleoffice {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
     grid-row: 2/3;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
     text-align: center;
     font-size: 1.25rem;
@@ -262,12 +233,9 @@
   .sticker {
     grid-area: sticker;
     padding: 5% 0;
-    display: -ms-grid;
     display: grid;
     background-image: url('../../images/texture.jpg');
-    -ms-grid-rows: 10% 1fr auto 20%;
     grid-template-rows: 10% 1fr auto 20%;
-    -ms-grid-columns: 25% 1fr 25%;
     grid-template-columns: 25% 1fr 25%;
   }
   .sticker > *:nth-child(1) {
@@ -320,36 +288,20 @@
   }
 
   .sticker_header {
-    -ms-grid-column-align: center;
     justify-self: center;
     text-transform: uppercase;
-
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
     grid-row: 1/2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
     color: #12264c;
   }
   .stickerimage {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
     grid-row: 2/3;
-    -ms-grid-column-align: center;
     justify-self: center;
   }
   .stickertext {
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
     grid-row: 3/4;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 1/4;
-    -ms-grid-column-align: center;
     justify-self: center;
     padding: 0 5%;
     text-align: center;
@@ -357,16 +309,9 @@
 
   .departments {
     margin-top: 2%;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 1;
     grid-row: 4/5;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 1/4;
-    display: -ms-grid;
     display: grid;
-
-    -ms-grid-columns: 5% 1fr 5% 1fr 5%;
     grid-template-columns: 5% 1fr 5% 1fr 5%;
     grid-template-areas: '. acfr . gvilleoffice .';
   }
@@ -374,12 +319,8 @@
   .acfr {
     grid-area: left;
     margin-right: 3%;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     grid-column: 2/3;
-    -ms-grid-column-align: center;
     justify-self: center;
-
     font-weight: bold;
     text-align: center;
   }
@@ -387,12 +328,8 @@
   .gvilleoffice {
     grid-area: right;
     margin-left: 3%;
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 1;
     grid-column: 4/5;
-    -ms-grid-column-align: center;
     justify-self: center;
-
     font-weight: bold;
     text-align: justify;
     text-align: center;
