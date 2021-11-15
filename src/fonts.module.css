@@ -28,3 +28,13 @@ p {
     margin: 5% 0 !important;
   }
 }
+
+@media screen and (min-device-width: 770px) and (max-device-width: 1025px) {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 2rem !important;
+    margin: 5% 0 !important;
+  }
+}

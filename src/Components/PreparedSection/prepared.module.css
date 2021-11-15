@@ -308,7 +308,7 @@ hr {
 }
 
 .prepared p {
-  line-height: 2.6rem;
+  line-height: 2.8rem;
 }
 
 .prepared h2 {
@@ -320,7 +320,7 @@ hr {
 }
 
 .prepared img {
-  max-width: 500px;
+  max-width: 450px;
 }
 
 .prepared_header {
@@ -1006,7 +1006,6 @@ hr {
     -ms-grid-column-span: 1;
     grid-column: 2/3;
     padding: 5% 0;
-    font-size: 2.1rem;
   }
 
   .acem_section {

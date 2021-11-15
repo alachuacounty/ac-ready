@@ -116,6 +116,7 @@
     -ms-grid-column-align: center;
     justify-self: center;
     text-align: center;
+    align-self: end;
   }
   .footer_text {
     -ms-grid-column: 1;
