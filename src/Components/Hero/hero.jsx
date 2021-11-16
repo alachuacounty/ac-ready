@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './hero.module.css';
 import hero from '../../images/family_hero.png';
-import hero2 from '../../images/family_hero_dark.png';
+import hero2 from '../../images/fam_grey.png';
 function Hero() {
   return (
     <div>
