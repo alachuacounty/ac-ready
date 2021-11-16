@@ -262,7 +262,7 @@ hr {
   .prepared {
     grid-template-columns: 4% 1fr 4%;
     margin-top: 0;
-    padding: 5% 0;
+    padding: 8% 0;
     grid-template-rows: auto auto auto;
     grid-template-areas: '. prepared_header .', '. acem_section .',
       '. fema_section .';

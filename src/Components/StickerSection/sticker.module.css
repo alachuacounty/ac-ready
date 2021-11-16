@@ -156,6 +156,7 @@
   }
   .stickertext {
     text-align: center;
+    line-height: 2.8rem;
   }
   .departments {
     margin-top: 2%;
@@ -298,6 +299,7 @@
     grid-column: 2/3;
     grid-row: 2/3;
     justify-self: center;
+    align-self: center;
   }
   .stickertext {
     grid-row: 3/4;

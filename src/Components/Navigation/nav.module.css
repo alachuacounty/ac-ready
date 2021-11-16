@@ -93,7 +93,7 @@
   .acr_logo {
     height: 120px;
     width: 120px;
-
+    justify-self: center;
     grid-column: 1/2;
   }
   .navlinks {
