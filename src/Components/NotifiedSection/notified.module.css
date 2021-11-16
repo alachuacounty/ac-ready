@@ -74,6 +74,7 @@
   -ms-grid-column-span: 1;
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
+  -ms-grid-row-align: end;
 }
 
 @media screen and (max-width: 480px) {
