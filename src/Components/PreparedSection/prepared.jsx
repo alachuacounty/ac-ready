@@ -3,6 +3,7 @@ import styles from './prepared.module.css';
 import imageleft from '../../images/acem.jpg';
 import imageleftblack from '../../images/imageleftblack.jpg';
 import imageright from '../../images/imageright.jpg';
+import imagerightblue from '../../images/imagerightblue.jpg';
 function PreparedSection() {
   return (
     <div>
