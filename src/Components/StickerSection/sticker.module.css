@@ -190,42 +190,109 @@
 /* TABLET BREAKPOINT*/
 @media screen and (min-device-width: 481px) and (max-device-width: 769px) {
   .sticker {
-    grid-template-columns: 1fr;
-    padding: 20% 4%;
+    grid-area: sticker;
+    padding: 5% 0;
+    display: grid;
+    background-image: url('../../images/texture.jpg');
+    grid-template-rows: 10% 1fr auto 20%;
+    grid-template-columns: 25% 1fr 25%;
   }
-  .sticker h1 {
-    text-align: center;
-    font-size: 2.1rem;
+  .sticker > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(3) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(5) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .sticker > *:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+  .sticker > *:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(9) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .sticker > *:nth-child(10) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+  }
+  .sticker > *:nth-child(11) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+  .sticker > *:nth-child(12) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+  }
+
+  .sticker_header {
+    justify-self: center;
+    text-transform: uppercase;
+    grid-row: 1/2;
+    grid-column: 1/4;
+    color: #12264c;
+  }
+  .stickerimage {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: center;
+    align-self: center;
   }
   .stickertext {
+    grid-row: 3/4;
+    grid-column: 1/4;
+    justify-self: center;
+    padding: 0 5%;
     text-align: center;
   }
+
   .departments {
     margin-top: 2%;
     grid-row: 4/5;
-    grid-column: 2/3;
+    grid-column: 1/4;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 2% 1fr 2%;
-    grid-template-areas: '. acfr .', '. gvilleoffice .';
-    margin: 5% 0;
-    font-size: 1.25rem;
+    grid-template-columns: 5% 1fr 5% 1fr 5%;
+    grid-template-areas: '. acfr . gvilleoffice .';
   }
 
   .acfr {
-    grid-row: 1/2;
+    grid-area: left;
+    margin-right: 3%;
     grid-column: 2/3;
+    justify-self: center;
+    font-weight: bold;
     text-align: center;
-    font-size: 1.25rem;
-    margin-bottom: 2%;
   }
 
   .gvilleoffice {
-    grid-row: 2/3;
-    grid-column: 2/3;
+    grid-area: right;
+    margin-left: 3%;
+    grid-column: 4/5;
+    justify-self: center;
+    font-weight: bold;
+    text-align: justify;
     text-align: center;
-    font-size: 1.25rem;
-    margin-top: 2%;
   }
 }
 
