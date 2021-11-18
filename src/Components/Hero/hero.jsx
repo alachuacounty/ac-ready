@@ -21,7 +21,7 @@ function Hero() {
           </div>
           <div className={styles.textmsg}>
             <p className={styles.hero_paragraph}>
-              Text "ALACHUA" to 88772 for <br /> emergency notifications
+              Text "ALACHUA" to 888777 for <br /> emergency notifications
             </p>
           </div>
         </div>
