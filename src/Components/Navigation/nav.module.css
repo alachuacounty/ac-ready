@@ -20,8 +20,8 @@
 }
 
 .acr_logo {
-  max-width: 140px;
-  max-height: 140px;
+  max-width: 100px;
+  max-height: 100px;
   align-self: center;
   justify-self: left;
   grid-area: acr_logo;
@@ -36,7 +36,7 @@
   align-self: center;
   align-items: center;
   justify-content: space-between;
-  padding-left: 8%;
+  padding-left: 12%;
 
   /*IE styles*/
   -ms-grid-row: 1;

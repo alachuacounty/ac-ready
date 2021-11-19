@@ -61,9 +61,9 @@
   grid-row: 3/4;
   padding: 2% 5%;
   border: none;
-  border-radius: 5%;
   font-size: 1.85rem;
-  border-left: 6px double #cfedfb;
+  border-left: 20px double #cfedfb;
+  border-right: 20px double #cfedfb;
   display: block;
 
   -ms-grid-row: 3;

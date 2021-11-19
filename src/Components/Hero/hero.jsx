@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './hero.module.css';
 import hero from '../../images/family_hero.png';
-import hero2 from '../../images/fam_grey.png';
+import hero2 from '../../images/fam_grey_crop.png';
+
+import 'animate.css';
 function Hero() {
   return (
     <div>
@@ -14,8 +16,16 @@ function Hero() {
 
         <div className={styles.hero_text}>
           <div className={styles.headers}>
-            <h1 className={styles.hero_heading}>Don't Wait to Plan</h1>
-            <h1 className={(styles.hero_heading, styles.second_tagline)}>
+            <h1
+              className={' animate__animated' && 'animate__bounce'}
+              className={styles.hero_heading}
+            >
+              Don't Wait to Plan
+            </h1>
+            <h1
+              class='animate__animated animate__bounce animate__faster'
+              className={(styles.hero_heading, styles.second_tagline)}
+            >
               Be Ready now
             </h1>
           </div>
