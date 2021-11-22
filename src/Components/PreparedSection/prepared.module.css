@@ -78,9 +78,13 @@
 }
 .acem_head {
   -ms-grid-row: 1;
+  margin: 0;
+  align-self: end;
+  text-decoration: none;
 }
 .acem_para {
   -ms-grid-row: 2;
+  align-self: center;
 }
 .acem_image {
   position: relative;
@@ -108,10 +112,10 @@
   -ms-grid-column-span: 1;
 }
 .acem_visit {
-  justify-self: end;
+  justify-self: left;
 
   -ms-grid-row: 3;
-  -ms-grid-column-align: end;
+  -ms-grid-column-align: left;
 }
 
 .fema_section {
@@ -163,6 +167,7 @@
 }
 .fema_header {
   -ms-grid-row: 1;
+  text-decoration: none;
 }
 .fema_header a,
 .acem_head a {
@@ -171,10 +176,11 @@
 
 .fema_para {
   -ms-grid-row: 2;
+  margin-bottom: 3%;
 }
 .fema_visit {
-  justify-self: end;
-  -ms-grid-column-align: end;
+  justify-self: left;
+  -ms-grid-column-align: left;
 }
 .prepared_button {
   text-transform: uppercase;

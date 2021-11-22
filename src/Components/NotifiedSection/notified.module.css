@@ -108,8 +108,11 @@
   }
   .notified_paragraph {
     grid-column: 1/2;
-    font-size: 1.35rem;
+    font-size: 1.35rem !important;
     line-height: 2.8rem;
+  }
+  .notified_underline {
+    color: #12264c;
   }
   .notified p {
     font-size: 1.35rem;

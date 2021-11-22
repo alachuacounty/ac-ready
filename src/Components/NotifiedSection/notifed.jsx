@@ -13,7 +13,9 @@ function NotifiedSection() {
             className={styles.notified_link}
             href='https://member.everbridge.net/index/453003085613764#/signup'
           >
-            <u>Alert Alachua Emergency Notification System</u>
+            <u className={styles.notified_underline}>
+              Alert Alachua Emergency Notification System
+            </u>
           </a>
           . This is the best way to stay informed about local severe weather,
           unexpected road closures, building or neighborhood evacuations, and so
