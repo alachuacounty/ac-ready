@@ -36,6 +36,9 @@
   -ms-grid-row-span: 1;
   -ms-grid-column-align: center;
 }
+.notified_link {
+  color: white;
+}
 .notified_paragraph {
   grid-area: notified_paragraph;
   grid-column: 2/3;
@@ -62,7 +65,7 @@
   padding: 2% 5%;
   border: none;
   font-size: 1.85rem;
-  border-left: 20px double #cfedfb;
+
   border-right: 20px double #cfedfb;
   display: block;
 

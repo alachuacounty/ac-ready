@@ -11,11 +11,22 @@ function PreparedSection() {
         <h1 className={styles.prepared_header}>Prepare</h1>
         <div className={styles.acem_section}>
           <div className={styles.acem_wrapper}>
-            <img className={styles.acem_image} src={imageleftblack} alt='' />
+            <a href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+              <img
+                className={styles.acem_image}
+                src={imageleftblack}
+                alt='Image of the Alachua County Emergency Management Office'
+              />
+            </a>
           </div>
           <div className={styles.acem_text}>
             <h2 className={styles.acem_head}>
-              Alachua County Emergency Management
+              <a
+                className={styles.acem_head}
+                href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'
+              >
+                Alachua County Emergency Management{' '}
+              </a>
             </h2>
             <p className={styles.acem_para}>
               Visit the Emergency Management Website for more preparedness
@@ -26,17 +37,31 @@ function PreparedSection() {
               className={styles.acem_visit}
               href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'
             >
-              VISIT WEBSITE
+              VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE
             </a>
           </div>
         </div>
 
         <div className={styles.fema_section}>
-          <div className={styles.fema_wrapper}>
-            <img className={styles.fema_image} src={imageright} alt='' />
-          </div>
+          <a
+            className={styles.fema_wrapper}
+            href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'
+          >
+            <img
+              className={styles.fema_image}
+              src={imageright}
+              alt='Image of a table with disaster supply items on it'
+            />
+          </a>
           <div className={styles.fema_text}>
-            <h2 className={styles.fema_header}>FEMA Disaster Supply Kit</h2>
+            <h2 className={styles.fema_header}>
+              <a
+                className={styles.fema_header}
+                href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'
+              >
+                Disaster Supply Kit
+              </a>
+            </h2>
             <p className={styles.fema_para}>
               Visit FEMA to get information on building your disaster supply kit
               before a hurricane happens.
@@ -45,7 +70,7 @@ function PreparedSection() {
               className={styles.fema_visit}
               href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'
             >
-              VISIT WEBSITE
+              VISIT FEMA WEBSITE
             </a>
           </div>
         </div>

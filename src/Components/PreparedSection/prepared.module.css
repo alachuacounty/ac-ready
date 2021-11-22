@@ -29,7 +29,7 @@
 }
 .prepared a {
   color: #1968b1;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .prepared img {
@@ -163,6 +163,10 @@
 }
 .fema_header {
   -ms-grid-row: 1;
+}
+.fema_header a,
+.acem_head a {
+  font-size: 2rem;
 }
 
 .fema_para {
