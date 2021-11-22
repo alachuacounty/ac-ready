@@ -13,10 +13,10 @@ function StickerSection() {
         </p>
         <div className={styles.departments}>
           <p className={styles.acfr}>
-            Alachua County Fire Rescue <br /> 123 Dept Road
+            Alachua County Fire Rescue <br />
           </p>
           <p className={styles.gvilleoffice}>
-            Visit Gainesville Office <br /> 123 NW Main Street
+            Visit Gainesville Office <br />
           </p>
         </div>
       </section>
