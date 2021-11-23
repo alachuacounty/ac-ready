@@ -3,7 +3,8 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -11,6 +12,20 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import styles from '../StickerSection/sticker.module.css';
 import stylesCustom from './table.module.css';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  components: {
+    ExpandMoreIcon: {
+      styleOverrides: {
+        root: {
+          fontSize: '2.4rem',
+          color: 'white',
+        },
+      },
+    },
+  },
+});
 
 export default function Table() {
   return (
@@ -18,7 +33,7 @@ export default function Table() {
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
           className={styles.AccordionSummaryHeader}
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           aria-controls='panel1a-content'
           id='panel1a-header'
           background='#1968b1'
@@ -33,7 +48,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -49,7 +64,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -71,7 +86,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -86,7 +101,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -101,7 +116,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -119,7 +134,7 @@ export default function Table() {
 
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -134,7 +149,7 @@ export default function Table() {
       </Accordion>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon color='white' />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'
@@ -151,7 +166,7 @@ export default function Table() {
 
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
-          //   expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon color='white' />}
           className={styles.AccordionSummaryHeader}
           aria-controls='panel1a-content'
           id='panel1a-header'

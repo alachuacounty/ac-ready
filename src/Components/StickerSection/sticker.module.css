@@ -65,7 +65,9 @@
   -ms-grid-row: 4;
   -ms-grid-column: 3;
 }
-
+.MuiSvgIcon-root {
+  color: white !important;
+}
 .sticker_header {
   justify-self: center;
   text-transform: uppercase;
@@ -94,7 +96,7 @@
   grid-row: 3/4;
   justify-self: center;
   grid-column: 2/3;
-
+  margin: 5% 0;
   -ms-grid-column-align: center;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
@@ -106,38 +108,13 @@
   grid-column: 2/3;
   grid-row: 4/5;
   margin: 1% 0;
+  justify-self: center;
+  width: 80%;
 }
 
 .AccordionSummaryHeader {
   background-color: #1968b1 !important;
   color: white !important;
-}
-
-.acfr {
-  grid-area: left;
-  margin-right: 3%;
-  grid-column: 2/3;
-  justify-self: center;
-  font-weight: bold;
-  text-align: center;
-
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  -ms-grid-column-align: center;
-}
-
-.gvilleoffice {
-  grid-area: right;
-  margin-left: 3%;
-  grid-column: 4/5;
-  justify-self: center;
-  font-weight: bold;
-  text-align: justify;
-  text-align: center;
-
-  -ms-grid-column-align: center;
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 1;
 }
 
 @media screen and (max-width: 480px) {
@@ -233,34 +210,6 @@
     grid-column: 1/4;
     justify-self: center;
     padding: 0 5%;
-    text-align: center;
-  }
-
-  .departments {
-    margin-top: 2%;
-    grid-row: 4/5;
-    grid-column: 1/4;
-    display: grid;
-    grid-template-columns: 5% 1fr 5% 1fr 5%;
-    grid-template-areas: '. acfr . gvilleoffice .';
-  }
-
-  .acfr {
-    grid-area: left;
-    margin-right: 3%;
-    grid-column: 2/3;
-    justify-self: center;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .gvilleoffice {
-    grid-area: right;
-    margin-left: 3%;
-    grid-column: 4/5;
-    justify-self: center;
-    font-weight: bold;
-    text-align: justify;
     text-align: center;
   }
 }
