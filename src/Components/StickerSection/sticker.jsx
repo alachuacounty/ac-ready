@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './sticker.module.css';
 import image8 from '../../images/Image8.png';
+import Table from '../LocationTable/index';
 function StickerSection() {
   return (
     <div>
@@ -11,14 +12,8 @@ function StickerSection() {
           You can pick up your own ACR bumper sticker for free from the
           following locations:
         </p>
-        <div className={styles.departments}>
-          <p className={styles.acfr}>
-            Alachua County Fire Rescue <br />
-          </p>
-          <p className={styles.gvilleoffice}>
-            Visit Gainesville Office <br />
-          </p>
-        </div>
+
+        <Table className={styles.table} />
       </section>
     </div>
   );
