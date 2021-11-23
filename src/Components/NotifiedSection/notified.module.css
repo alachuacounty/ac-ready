@@ -179,6 +179,9 @@
     padding: 2% 5%;
     width: 100px;
   }
+  .notified_underline {
+    color: #12264c;
+  }
   .notified_button {
   }
   .notified_header {
@@ -234,6 +237,9 @@
   .notified_button {
     padding: 2% 5%;
     width: 100px;
+  }
+  .notified_underline {
+    color: #12264c;
   }
   .notified_header {
     -ms-grid-row: 1;
