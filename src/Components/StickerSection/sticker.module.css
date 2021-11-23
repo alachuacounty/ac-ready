@@ -104,12 +104,12 @@
   -ms-grid-row-span: 1;
 }
 
-.table {
+.tableContainer {
   grid-column: 2/3;
   grid-row: 4/5;
   margin: 1% 0;
   justify-self: center;
-  width: 80%;
+  width: 70%;
 }
 
 .AccordionSummaryHeader {
@@ -130,6 +130,9 @@
   .stickertext {
     text-align: center;
     line-height: 2.8rem;
+  }
+  .tableContainer {
+    width: 100%;
   }
 }
 
@@ -211,6 +214,9 @@
     justify-self: center;
     padding: 0 5%;
     text-align: center;
+  }
+  .tableContainer {
+    width: 100%;
   }
 }
 
@@ -296,5 +302,8 @@
   .table {
     grid-column: 2/3;
     grid-row: 4/5;
+  }
+  .tableContainer {
+    width: 100%;
   }
 }

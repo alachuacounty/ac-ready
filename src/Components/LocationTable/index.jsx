@@ -29,7 +29,7 @@ const theme = createTheme({
 
 export default function Table() {
   return (
-    <div className={styles.table}>
+    <div className={styles.tableContainer}>
       <Accordion className={styles.table} defaultExpanded='true'>
         <AccordionSummary
           className={styles.AccordionSummaryHeader}
@@ -42,7 +42,7 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Micanopy Town Hall</ListItemText>
+            <ListItemText> - Micanopy Town Hall</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -57,8 +57,8 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Hawthorne Town Hall</ListItemText>
-            <ListItemText> MMPS Walk-in Clinic</ListItemText>
+            <ListItemText> - Hawthorne Town Hall</ListItemText>
+            <ListItemText> - MMPS Walk-in Clinic</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -73,14 +73,14 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Alachua County Emergency Management</ListItemText>
-            <ListItemText> Alachua County Library Headquarters</ListItemText>
-            <ListItemText> Public & General</ListItemText>
-            <ListItemText> Satchel’s</ListItemText>
-            <ListItemText> SubLIME Tacos</ListItemText>
-            <ListItemText> Curia on the Drag</ListItemText>
-            <ListItemText> Satch Squared</ListItemText>
-            <ListItemText> Swamp Head</ListItemText>
+            <ListItemText> - Alachua County Emergency Management</ListItemText>
+            <ListItemText>- Alachua County Library Headquarters</ListItemText>
+            <ListItemText> - Public & General</ListItemText>
+            <ListItemText> - Satchel’s</ListItemText>
+            <ListItemText> - SubLIME Tacos</ListItemText>
+            <ListItemText> - Curia on the Drag</ListItemText>
+            <ListItemText> - Satch Squared</ListItemText>
+            <ListItemText> - Swamp Head</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -95,7 +95,7 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Archer City Hall</ListItemText>
+            <ListItemText> - Archer City Hall</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -110,7 +110,7 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText>Waldo City Hall</ListItemText>
+            <ListItemText>- Waldo City Hall</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -125,9 +125,9 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Easton Newberry Archery Center</ListItemText>
-            <ListItemText> Newberry City Hall</ListItemText>
-            <ListItemText> Villaggio’s Pizzeria</ListItemText>
+            <ListItemText> - Easton Newberry Archery Center</ListItemText>
+            <ListItemText>- Newberry City Hall</ListItemText>
+            <ListItemText>- Villaggio’s Pizzeria</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -143,7 +143,7 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> La Crosse Town Hall</ListItemText>
+            <ListItemText>- La Crosse Town Hall</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -158,8 +158,10 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> Alachua City Hall</ListItemText>
-            <ListItemText>Alachua County Library – Alachua Branch</ListItemText>
+            <ListItemText>- Alachua City Hall</ListItemText>
+            <ListItemText>
+              - Alachua County Library – Alachua Branch
+            </ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
@@ -175,8 +177,8 @@ export default function Table() {
         </AccordionSummary>
         <AccordionDetails>
           <List>
-            <ListItemText> High Springs City Hall</ListItemText>
-            <ListItemText>High Springs Brewing Company</ListItemText>
+            <ListItemText>- High Springs City Hall</ListItemText>
+            <ListItemText>- High Springs Brewing Company</ListItemText>
           </List>
         </AccordionDetails>
       </Accordion>
