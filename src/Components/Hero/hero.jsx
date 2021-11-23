@@ -16,7 +16,7 @@ function Hero() {
 
         <div className={styles.hero_text}>
           <div className={styles.headers}>
-            <h1 className={styles.hero_heading}>WHEN DISASTER STIKES</h1>
+            <h1 className={styles.hero_heading}>WHEN DISASTER STRIKES</h1>
             <h1 className={(styles.hero_heading, styles.second_tagline)}>
               STAY INFORMED
             </h1>
