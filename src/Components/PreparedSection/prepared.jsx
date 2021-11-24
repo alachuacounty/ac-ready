@@ -63,14 +63,13 @@ function PreparedSection() {
               </a>
             </h2>
             <p className={styles.fema_para}>
-              Visit FEMA to get information on building your disaster supply kit
-              before a hurricane happens.
+            Visit Ready.gov to get information on building your disaster supply kit before an emergency happens.
             </p>
             <a
               className={styles.fema_visit}
-              href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'
+              href='https://www.ready.gov/kit'
             >
-              VISIT FEMA WEBSITE
+              VISIT READY.GOV WEBSITE
             </a>
           </div>
         </div>
