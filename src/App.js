@@ -7,6 +7,7 @@ import NotifiedSection from './Components/NotifiedSection/notifed';
 import StickerSection from './Components/StickerSection/sticker';
 import Footer from './Components/Footer/footer';
 import DemoCarousel from './Components/Carousel';
+import NotifyGrid from './Components/NotifyMui/notifymui';
 import styles from './grid.module.css';
 class App extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
         <AppBar />
         <Navigation />
         <Hero />
-        <NotifiedSection />
+        <NotifyGrid />
         <PreparedSection />
         <StickerSection />
         <Footer />

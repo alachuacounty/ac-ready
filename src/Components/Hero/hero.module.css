@@ -119,14 +119,14 @@
     border: none;
   }
   .hero_heading {
-    font-size: 32px;
+    font-size: 30px !important;
     text-transform: uppercase;
     text-align: center;
     color: white;
   }
   .second_tagline {
     color: white;
-    font-size: 32px;
+    font-size: 30px !important;
     text-transform: uppercase;
     text-align: center;
     padding: 0 2%;
