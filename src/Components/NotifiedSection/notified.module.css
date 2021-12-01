@@ -108,7 +108,7 @@
   }
   .notified_paragraph {
     grid-column: 1/2;
-    font-size: 1.35rem !important;
+
     line-height: 2.8rem;
   }
   .notified_underline {
@@ -141,7 +141,7 @@
 }
 
 /* TABLET BREAKPOINT*/
-@media screen and (min-device-width: 481px) and (max-device-width: 769px) {
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
   .notified {
     grid-area: notified;
     background-color: white;
@@ -199,7 +199,64 @@
 }
 
 /* TABLET BREAKPOINT*/
-@media screen and (min-device-width: 770px) and (max-device-width: 1025px) {
+@media screen and (min-device-width: 769px) and (max-device-width: 922px) {
+  .notified {
+    grid-area: notified;
+    background-color: white;
+    color: #12264c;
+    height: auto;
+
+    display: grid;
+    padding: 8% 5%;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto auto auto;
+    grid-template-areas: '. notified_header .', '. notified_paragraph .',
+      '. notified_button .';
+    text-align: center;
+    -webkit-box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+    box-shadow: 0 5px 5px rgba(18, 38, 76, 0.15),
+      0 5px 5px rgba(18, 38, 76, 0.15);
+  }
+  .notified_header {
+    grid-column: 1/2;
+    margin-bottom: 5%;
+  }
+  .notified_paragraph {
+    grid-column: 1/2;
+    line-height: 4.3rem;
+  }
+  .notified_button {
+    grid-column: 1/2;
+    height: 50px !important;
+    width: 150px !important;
+    font-size: 2.2rem;
+  }
+  .notified_button {
+    padding: 2% 5%;
+    width: 100px;
+  }
+  .notified_underline {
+    color: #12264c;
+  }
+  .notified_header {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .notified_paragraph {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .notified_button {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+}
+
+/* TABLET BREAKPOINT*/
+@media screen and (min-device-width: 923px) and (max-device-width: 1200px) {
   .notified {
     grid-area: notified;
     background-color: white;

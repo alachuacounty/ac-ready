@@ -129,11 +129,13 @@
     font-size: 32px;
     text-transform: uppercase;
     text-align: center;
+    padding: 0 2%;
   }
   .hero_paragraph {
-    font-size: 1.25rem;
+    font-size: 1.25rem !important;
     text-align: center;
     font-weight: bold;
+    padding: 0 2%;
   }
 }
 
