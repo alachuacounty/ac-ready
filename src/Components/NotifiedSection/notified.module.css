@@ -11,7 +11,7 @@
   color: white;
   height: 600px;
   display: grid;
-  padding: 5% 0;
+
   grid-template-columns: 10% 1fr 10%;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: '. notified_header .', '. notified_paragraph .',
@@ -27,6 +27,7 @@
   grid-row: 1/2;
   justify-self: center;
   text-transform: uppercase;
+  align-self: center;
 
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -59,7 +60,7 @@
   color: white;
   font-weight: bold;
   justify-self: center;
-  align-self: end;
+  align-self: center;
   grid-column: 2/3;
   grid-row: 3/4;
   padding: 2% 5%;

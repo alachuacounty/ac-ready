@@ -110,6 +110,7 @@
   margin: 1% 0;
   justify-self: center;
   width: 70%;
+  -ms-grid-column-span: 2;
 }
 
 .AccordionSummaryHeader {
