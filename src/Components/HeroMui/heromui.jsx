@@ -12,13 +12,13 @@ const useStyles = makeStyles({
   positioning: {
     justifyContent: 'center',
   },
-  secondTagline:{
+  secondTagline: {
     color: '#1968b1',
   },
-  borderbottom:{
+  borderbottom: {
     borderBottom: '2 solid purple',
   },
-  heroContent:{
+  heroContent: {
     color: '#12264c;',
   },
 });
@@ -41,11 +41,15 @@ export default function HeroGrid() {
               p={2}
               className={classes.borderbottom}
             >
-              <Typography className={classes.heroContent} variant='h5'>
+              <Typography className={classes.heroContent} variant='h4'>
                 WHEN DISASTER STRIKES
               </Typography>
               <br></br>
-              <Typography lg={4} className={classes.content, classes.secondTagline} variant='h5'>
+              <Typography
+                lg={4}
+                className={(classes.content, classes.secondTagline)}
+                variant='h4'
+              >
                 STAY INFORMED
               </Typography>
             </Grid>
@@ -62,15 +66,15 @@ export default function HeroGrid() {
               className={classes.heroContent}
             >
               <Typography className={classes.content} variant='h7'>
-              Text "ALACHUA" to 888777 <br />
+                Text "ALACHUA" to 888777 <br />
               </Typography>
               <br></br>
               <Typography lg={4} className={classes.content} variant='h7'>
-              to receive real-time County updates
+                to receive real-time County updates
               </Typography>
               <br></br>
               <Typography lg={4} className={classes.content} variant='h7'>
-              during a large-scale incident or emergency
+                during a large-scale incident or emergency
               </Typography>
             </Grid>
           </Grid>
