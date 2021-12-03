@@ -8,6 +8,8 @@ import StickerSection from './Components/StickerSection/sticker';
 import Footer from './Components/Footer/footer';
 import DemoCarousel from './Components/Carousel';
 import NotifyGrid from './Components/NotifyMui/notifymui';
+import HeroGrid from './Components/HeroMui/heromui';
+import StickerGrid from './Components/StickerGrid/stickergrid';
 import styles from './grid.module.css';
 class App extends React.Component {
   render() {
@@ -15,10 +17,10 @@ class App extends React.Component {
       <div className={styles.grid_container}>
         <AppBar />
         <Navigation />
-        <Hero />
-        <NotifiedSection />
+        <HeroGrid />
+        <NotifyGrid />
         <PreparedSection />
-        <StickerSection />
+        <StickerGrid />
         <Footer />
         {/*  
          

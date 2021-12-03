@@ -109,7 +109,7 @@
   grid-row: 4/5;
   margin: 1% 0;
   justify-self: center;
-  width: 70%;
+  width: 100%;
   -ms-grid-column-span: 2;
 }
 

@@ -1,32 +1,11 @@
 import React from 'react';
-import styles from './appbar.module.css';
+
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
 
 import { Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
-  first: {
-    background: '#12264c',
-  },
-  middle: {
-    background: '#12264c',
-  },
-  last: {
-    background: '#12264c',
-  },
-  wrapper: {
-    background: 'purple',
-    height: 'auto',
-  },
-  logo: {
-    width: '80px',
-  },
-  text: {
-    color: 'white',
-    alignSelf: 'center',
-  },
-});
+const useStyles = makeStyles({});
 
 export default function AppBarGrid() {
   const classes = useStyles();
