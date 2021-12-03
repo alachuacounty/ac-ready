@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     height: 'auto',
   },
   logo: {
-    width: '80px',
+    width: '60px',
   },
   text: {
     color: 'white',
@@ -33,12 +33,13 @@ export default function AppBarGrid() {
   return (
     <div>
       <Grid container className={classes.wrapper}>
-        <Grid item xs={0} className={classes.first} lg={1}></Grid>
+        <Grid item xs={2} md={4} className={classes.first} lg={1}></Grid>
         <Grid
           item
           display='flex'
           container
-          xs={12}
+          xs={8}
+          md={4}
           lg={10}
           className={classes.middle}
         >
@@ -51,7 +52,7 @@ export default function AppBarGrid() {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={0} lg={1} className={classes.last}></Grid>
+        <Grid item xs={2} md={4} lg={1} className={classes.last}></Grid>
       </Grid>
     </div>
   );

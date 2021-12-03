@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 const useStyles = makeStyles({
   wrapper: {
     background: '#12264c',
-    height: '500px',
+    height: '1fr',
     borderRadius: 9,
     color: 'white',
   },
@@ -16,7 +16,9 @@ const useStyles = makeStyles({
   },
   content: {
     textAlign: 'center',
+  color:'white',
   },
+
   button: {
     borderRight: '20px double #cfedfb!important',
     height: '56px',
@@ -28,12 +30,12 @@ export default function NotifyGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container className={classes.wrapper}>
+      <Grid container p={4} className={classes.wrapper}>
         <Grid item container>
           <Grid item xs={0} lg={2} />
           <Grid item justifyContent='center' container xs={12} lg={8}>
             <Grid item>
-              <Typography p={4} className={classes.content} variant='h3'>
+              <Typography p={4} className={classes.content} variant='h4'>
                 GET NOTIFIED
               </Typography>
             </Grid>
@@ -44,6 +46,7 @@ export default function NotifyGrid() {
                 evacuations, and so much more.
               </Typography>
             </Grid>
+            <br></br>
             <Grid item>
               <Typography className={classes.content} variant='h6'>
                 You will receive time-sensitive messages wherever you specify,
@@ -51,7 +54,7 @@ export default function NotifyGrid() {
                 text messages, and more. You pick where, you pick how!
               </Typography>
             </Grid>
-            <Grid item>
+            <Grid  item>
               <Button className={classes.button} p={8} variant='contained'>
                 SIGN UP
               </Button>

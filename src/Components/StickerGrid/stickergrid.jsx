@@ -31,7 +31,6 @@ export default function StickerGrid() {
               GET YOUR ACR STICKER
             </Typography>
           </Grid>
-          <Grid item justifySelf='center' lg={12}></Grid>
           <Grid item justifySelf='center' lg={12}>
             <img src={image8} alt='' />
           </Grid>
