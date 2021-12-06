@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
   content: {
     textAlign: 'center',
-  color:'white',
+    color: 'white',
   },
 
   button: {
@@ -30,7 +30,7 @@ export default function NotifyGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container p={4} className={classes.wrapper}>
+      <Grid id='notified' container p={4} className={classes.wrapper}>
         <Grid item container>
           <Grid item xs={0} lg={2} />
           <Grid item justifyContent='center' container xs={12} lg={8}>
@@ -54,7 +54,7 @@ export default function NotifyGrid() {
                 text messages, and more. You pick where, you pick how!
               </Typography>
             </Grid>
-            <Grid  item>
+            <Grid item>
               <Button className={classes.button} p={8} variant='contained'>
                 SIGN UP
               </Button>

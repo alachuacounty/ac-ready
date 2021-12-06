@@ -18,7 +18,7 @@ export default function StickerGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container className={classes.wrapper}>
+      <Grid id='sticker' container className={classes.wrapper}>
         <Grid item xs={0} lg={2}></Grid>
         <Grid item container justify='center' display='grid' lg={8}>
           <Grid justifySelf='center' item lg={12}>
