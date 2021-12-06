@@ -7,7 +7,7 @@ import PreparedSection from './Components/PreparedSection/prepared';
 import NotifiedSection from './Components/NotifiedSection/notifed';
 import StickerSection from './Components/StickerSection/sticker';
 import Footer from './Components/Footer/footer';
-import DemoCarousel from './Components/Carousel';
+import PreparedGrid from './Components/PrepareMui/preparegrid';
 import NotifyGrid from './Components/NotifyMui/notifymui';
 import HeroGrid from './Components/HeroMui/heromui';
 import StickerGrid from './Components/StickerGrid/stickergrid';
@@ -22,7 +22,7 @@ class App extends React.Component {
         <NavBarGrid />
         <HeroGrid />
         <NotifyGrid />
-        <PreparedSection />
+        <PreparedGrid />
         <StickerGrid />
         <FooterGrid />
         {/*  

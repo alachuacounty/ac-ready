@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@mui/material';
-import { Typography } from '@mui/material';
+import { Typography, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 
@@ -55,9 +55,11 @@ export default function NotifyGrid() {
               </Typography>
             </Grid>
             <Grid item>
-              <Button className={classes.button} p={8} variant='contained'>
-                SIGN UP
-              </Button>
+              <Link href='https://member.everbridge.net/index/453003085613764#/signup'>
+                <Button className={classes.button} p={8} variant='contained'>
+                  SIGN UP
+                </Button>
+              </Link>
             </Grid>
           </Grid>
           <Grid item xs={0} lg={2} />
