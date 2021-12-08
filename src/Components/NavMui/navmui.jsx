@@ -40,13 +40,16 @@ export default function NavBarGrid() {
           item
           className={classes.logo}
           direction='column'
+    
           p={2}
           xs={12 && `textAlign='center'`}
           lg={3}
         >
           <img
+          
             className={classes.logoImg}
             src={acr_logo}
+            
             alt='Alachua County ready logo'
           />
         </Grid>

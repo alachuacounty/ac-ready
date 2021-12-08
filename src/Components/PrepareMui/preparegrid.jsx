@@ -47,7 +47,7 @@ export default function PreparedGrid() {
             </Grid>
           </Grid>
           <Grid item lg={12} className={classes.leftinner} justifyContent='center' container>
-          <Grid item className={classes.textright} p={2} xs={12} lg={6}>
+          <Grid item className={classes.textright} p={2} xs={12} lg={6} >
               <Typography variant='h5'>
                 Alachua County Emergency Management
               </Typography>
