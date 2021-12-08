@@ -28,7 +28,13 @@ export default function HeroGrid() {
   return (
     <div>
       <Grid container>
-        <Grid item container>
+        <Grid
+          item
+          container
+          sx={{
+            flexFlow: { xs: 'column-reverse', md: 'row' },
+          }}
+        >
           <Grid item container className={classes.test} xs={12} lg={6}>
             <Grid item className={classes.left} xs={0} lg={4}></Grid>
             <Grid
@@ -38,7 +44,9 @@ export default function HeroGrid() {
               lg={8}
               justify='center'
               alignContent='center'
-              sx={{ justifyContent: { xs: 'center' } }}
+              sx={{
+                justifyContent: { xs: 'center' },
+              }}
               p={2}
               className={classes.borderbottom}
             >
@@ -80,7 +88,14 @@ export default function HeroGrid() {
             </Grid>
           </Grid>
 
-          <Grid item xs={12} md={12} lg={6} xl={6}>
+          <Grid
+            item
+            xs={12}
+            md={12}
+            lg={6}
+            xl={6}
+            sx={{ flexDirection: { xs: 'row', lg: 'left' } }}
+          >
             <img className={classes.image} src={hero2} alt='' />
           </Grid>
         </Grid>

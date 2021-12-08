@@ -87,6 +87,9 @@ export default function PreparedGrid() {
             className={classes.leftinner}
             justifyContent='center'
             container
+            sx={{
+              flexFlow: { xs: 'column-reverse', md: 'row' },
+            }}
           >
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
               <Typography variant='h5'>
