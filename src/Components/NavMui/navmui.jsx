@@ -6,7 +6,6 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   wrapper: {
-    background: 'magenta',
     height: 'auto',
     boxShadow:
       '0 5px 5px rgba(18, 38, 76, 0.15), 0 5px 5px rgba(18, 38, 76, 0.15)',
@@ -18,12 +17,9 @@ const useStyles = makeStyles({
     maxHeight: '100px',
     maxWidth: '100px',
   },
-  links: {
-    background: 'pink',
-  },
-  right: {
-    background: 'cyan',
-  },
+  links: {},
+
+  right: {},
   link: {
     textTransform: 'uppercase',
     fontSize: '1.5em',
@@ -46,6 +42,7 @@ export default function NavBarGrid() {
           className={classes.logo}
           direction='column'
           display='flex'
+          alignSelf='center'
           p={2}
           xs={12 && `textAlign='center'`}
           lg={3}
@@ -64,6 +61,7 @@ export default function NavBarGrid() {
           justifyContent='space-evenly'
           alignContent='center'
           direction='row'
+          sx={{ padding: { xs: '3%' } }}
           className={classes.links}
           xs={12}
           lg={4}

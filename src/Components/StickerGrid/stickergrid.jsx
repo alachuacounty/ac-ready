@@ -4,10 +4,12 @@ import { Typography } from '@mui/material';
 import image8 from '../../images/Image8.png';
 import Table from '../LocationTable/index';
 import { makeStyles } from '@mui/styles';
+import background from '../../images/texture.jpg';
 
 const useStyles = makeStyles({
   wrapper: {
     height: 'auto',
+    backgroundImage: ` url(${background})`,
   },
   content: {
     textAlign: 'center',
