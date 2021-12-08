@@ -6,14 +6,48 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
   wrapper: {
-
     height: 'auto',
   },
- 
-  img:{
-    maxWidth:'350px',
+
+  img: {
+    maxWidth: '350px',
     width: '100%',
   },
+  /*STYLES FOR HR HERE*/
+  hr: {
+    margin: 0,
+    height: '5px !important',
+    padding: 0,
+  },
+  firsthr: {
+    borderStyle: 'solid',
+    borderColor: '#12264c !important',
+    backgroundColor: '#12264c !important',
+    border: 'solid 5px #12264c',
+    borderWidth: 'thick',
+    zIndex: 999,
+    padding: 0,
+  },
+  secondhr: {
+    borderStyle: 'solid',
+    borderColor: '#1968b1',
+    backgroundColor: '#1968b1 !important',
+    border: 'solid 5px #1968b1',
+    borderWidth: 'thick',
+    zIndex: 999,
+    padding: 0,
+  },
+  thirdhr: {
+    borderStyle: 'solid',
+    borderColor: '#4a97d3 !important',
+    backgroundColor: '#4a97d3 !important',
+    border: 'solid 5px#4a97d3',
+    borderWidth: 'thick',
+    zIndex: 999,
+    padding: 0,
+  },
+
+  /*STYLES FOR HR HERE*/
 });
 
 export default function PreparedGrid() {
@@ -21,8 +55,9 @@ export default function PreparedGrid() {
   return (
     <div>
       <Grid container className={classes.wrapper}>
-        <Grid item container p={2}justifyContent='center'>
-           <Typography variant='h4'>PREPARE</Typography></Grid>
+        <Grid item container p={2} justifyContent='center'>
+          <Typography variant='h4'>PREPARE</Typography>
+        </Grid>
         <Grid item xs={0} lg={1} className={classes.left}></Grid>
         <Grid item container lg={10} className={classes.middle}>
           <Grid item lg={12} className={classes.leftinner} container>
@@ -46,8 +81,14 @@ export default function PreparedGrid() {
               <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
             </Grid>
           </Grid>
-          <Grid item lg={12} className={classes.leftinner} justifyContent='center' container>
-          <Grid item className={classes.textright} p={2} xs={12} lg={6} >
+          <Grid
+            item
+            lg={12}
+            className={classes.leftinner}
+            justifyContent='center'
+            container
+          >
+            <Grid item className={classes.textright} p={2} xs={12} lg={6}>
               <Typography variant='h5'>
                 Alachua County Emergency Management
               </Typography>
@@ -65,6 +106,9 @@ export default function PreparedGrid() {
         </Grid>
         <Grid item xs={0} lg={1} className={classes.left}></Grid>
       </Grid>
+      <hr className={classes.firsthr} />
+      <hr className={classes.secondhr} />
+      <hr className={classes.thirdhr} />
     </div>
   );
 }
