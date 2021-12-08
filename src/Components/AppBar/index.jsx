@@ -41,6 +41,7 @@ export default function AppBarGrid() {
           xs={8}
           md={4}
           lg={10}
+          sx={{ justifyContent: { xs: 'center', lg: 'left' } }}
           className={classes.middle}
         >
           <Grid item direction='row'>

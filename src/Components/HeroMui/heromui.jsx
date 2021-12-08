@@ -28,8 +28,8 @@ export default function HeroGrid() {
   return (
     <div>
       <Grid container>
-        <Grid item container     >
-          <Grid item container className={classes.test} xs={12} lg={6}  >
+        <Grid item container>
+          <Grid item container className={classes.test} xs={12} lg={6}>
             <Grid item className={classes.left} xs={0} lg={4}></Grid>
             <Grid
               item
@@ -38,7 +38,6 @@ export default function HeroGrid() {
               lg={8}
               justify='center'
               alignContent='end'
-         
               p={2}
               className={classes.borderbottom}
             >
@@ -53,36 +52,34 @@ export default function HeroGrid() {
               >
                 STAY INFORMED
               </Typography>
-           
 
-            <Grid item className={classes.left} xs={0} lg={4}></Grid>
-            <Grid
-              item
-              container
-              xs={12}
-              lg={8}
-              p={2}
-              justify='center'
-              alignContent='start'
-              
-              className={classes.heroContent}
-            >
-              <Typography className={classes.content} variant='h7'>
-                Text "ALACHUA" to 888777 <br />
-              </Typography>
-              <br></br>
-              <Typography lg={4} className={classes.content} variant='h7'>
-                to receive real-time County updates
-              </Typography>
-              <br></br>
-              <Typography lg={4} className={classes.content} variant='h7'>
-                during a large-scale incident or emergency
-              </Typography>
-            </Grid>
+              <Grid item className={classes.left} xs={0} lg={4}></Grid>
+              <Grid
+                item
+                container
+                xs={12}
+                lg={8}
+                p={2}
+                justify='center'
+                alignContent='start'
+                className={classes.heroContent}
+              >
+                <Typography className={classes.content} variant='h7'>
+                  Text "ALACHUA" to 888777 <br />
+                </Typography>
+                <br></br>
+                <Typography lg={4} className={classes.content} variant='h7'>
+                  to receive real-time County updates
+                </Typography>
+                <br></br>
+                <Typography lg={4} className={classes.content} variant='h7'>
+                  during a large-scale incident or emergency
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
 
-          <Grid  sx={{ flexDirection: { xs: "row-reverse",lg:'column'  }}} item xs={12} md={12} lg={6} xl={6}>
+          <Grid item xs={12} md={12} lg={6} xl={6}>
             <img className={classes.image} src={hero2} alt='' />
           </Grid>
         </Grid>

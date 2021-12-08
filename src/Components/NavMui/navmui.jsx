@@ -34,22 +34,25 @@ export default function NavBarGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container xs={12} className={classes.wrapper}>
+      <Grid
+        container
+        xs={12}
+        className={classes.wrapper}
+        sx={{ justifyContent: { xs: 'center' } }}
+      >
         <Grid item className={classes.right} xs={0} lg={1}></Grid>
         <Grid
           item
           className={classes.logo}
           direction='column'
-    
+          display='flex'
           p={2}
           xs={12 && `textAlign='center'`}
           lg={3}
         >
           <img
-          
             className={classes.logoImg}
             src={acr_logo}
-            
             alt='Alachua County ready logo'
           />
         </Grid>
