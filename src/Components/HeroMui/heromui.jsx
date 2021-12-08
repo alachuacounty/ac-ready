@@ -37,7 +37,8 @@ export default function HeroGrid() {
               xs={12}
               lg={8}
               justify='center'
-              alignContent='end'
+              alignContent='center'
+              sx={{ justifyContent: { xs: 'center' } }}
               p={2}
               className={classes.borderbottom}
             >
@@ -61,7 +62,7 @@ export default function HeroGrid() {
                 lg={8}
                 p={2}
                 justify='center'
-                alignContent='start'
+                sx={{ justifyContent: { xs: 'center', lg: 'left' } }}
                 className={classes.heroContent}
               >
                 <Typography className={classes.content} variant='h7'>
