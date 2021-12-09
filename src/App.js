@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 import AppBar from './Components/AppBar';
 import Navigation from './Components/Navigation/nav';
 import NavBarGrid from './Components/NavMui/navmui';
@@ -13,25 +15,29 @@ import HeroGrid from './Components/HeroMui/heromui';
 import StickerGrid from './Components/StickerGrid/stickergrid';
 import FooterGrid from './Components/FooterMui/footermui';
 import styles from './grid.module.css';
+
+const theme = createTheme({});
 class App extends React.Component {
   render() {
     return (
-      <div className={styles.grid_container}>
-        <AppBar />
-        {/* <Navigation /> */}
-        <NavBarGrid />
-        <HeroGrid />
-        <NotifyGrid />
-        <PreparedGrid />
-        <StickerGrid />
-        <FooterGrid />
-        {/*  
+      <ThemeProvider theme={theme}>
+        <div className={styles.grid_container}>
+          <AppBar />
+          {/* <Navigation /> */}
+          <NavBarGrid />
+          <HeroGrid />
+          <NotifyGrid />
+          <PreparedGrid />
+          <StickerGrid />
+          <FooterGrid />
+          {/*  
          
                
         {/* 
        
      */}
-      </div>
+        </div>
+      </ThemeProvider>
     );
   }
 }

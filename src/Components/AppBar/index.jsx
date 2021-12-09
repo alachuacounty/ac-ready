@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './appbar.module.css';
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
+import { ThemeProvider } from '@mui/styles';
 
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
@@ -41,7 +43,7 @@ export default function AppBarGrid() {
           xs={8}
           md={4}
           lg={10}
-          sx={{ justifyContent: { xs: 'center', lg: 'left' } }}
+          // sx={{ justifyContent: { xs: 'center', lg: 'left' } }}
           className={classes.middle}
         >
           <Grid item direction='row'>
