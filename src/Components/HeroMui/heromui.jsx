@@ -36,12 +36,12 @@ export default function HeroGrid() {
           }}
         >
           <Grid item container className={classes.test} xs={12} lg={6}>
-            <Grid item className={classes.left} xs={0} lg={4}></Grid>
+            <Grid item className={classes.left} xs={0} lg={1}></Grid>
             <Grid
               item
               container
               xs={12}
-              lg={8}
+              lg={10}
               justify='center'
               alignContent='center'
               sx={{

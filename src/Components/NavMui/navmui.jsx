@@ -47,13 +47,13 @@ export default function NavBarGrid() {
           xs={12 && `textAlign='center'`}
           lg={3}
         >
-          <img
+          <img width="100%"
             className={classes.logoImg}
             src={acr_logo}
             alt='Alachua County ready logo'
           />
         </Grid>
-        <Grid item className={classes.right} xs={0} lg={3}></Grid>
+        <Grid item className={classes.right} xs={0} lg={2}></Grid>
         <Grid
           item
           container
@@ -64,7 +64,7 @@ export default function NavBarGrid() {
           sx={{ padding: { xs: '3%' } }}
           className={classes.links}
           xs={12}
-          lg={4}
+          lg={5}
         >
           <Link className={classes.link} href='#notified'>
             get notified

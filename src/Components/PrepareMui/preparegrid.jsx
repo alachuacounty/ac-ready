@@ -68,7 +68,7 @@ export default function PreparedGrid() {
               className={classes.imgleft}
               justifyContent='center'
             >
-              <img className={classes.img} src={imageleftblack} />
+              <img justifyContent='center' className={classes.img} src={imageleftblack} />
             </Grid>
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
               <Typography variant='h5'>
@@ -99,6 +99,7 @@ export default function PreparedGrid() {
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
+             
               <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
             </Grid>
             <Grid item className={classes.imgleft} xs={12} lg={6}>
