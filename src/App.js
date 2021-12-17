@@ -16,7 +16,25 @@ import StickerGrid from './Components/StickerGrid/stickergrid';
 import FooterGrid from './Components/FooterMui/footermui';
 import styles from './grid.module.css';
 
-const theme = createTheme({});
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#fff',
+      light: '#CFE3E3',
+    },
+    secondary: {
+      main: '#fff3d3',
+    },
+  },
+  typography: {
+    body1: {
+      color: 'rgba(0, 0, 0, 0.66)',
+    },
+    caption: {
+      color: 'rgba(0, 0, 0, 0.66)',
+    },
+  },
+});
 class App extends React.Component {
   render() {
     return (

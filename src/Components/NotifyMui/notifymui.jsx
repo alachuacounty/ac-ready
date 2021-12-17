@@ -4,19 +4,22 @@ import { Typography, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   wrapper: {
     background: '#12264c',
     height: '1fr',
     borderRadius: 9,
     color: 'white',
+    [theme.breakpoints.down('md')]: {
+      backgroundColor: 'white',
+    },
   },
   grid: {
     display: 'grid',
   },
   content: {
     textAlign: 'center',
-    color: 'white',
+    color: theme.palette.primary.main,
   },
 
   button: {
@@ -24,7 +27,7 @@ const useStyles = makeStyles({
     height: '56px',
     backgroundColor: '#4a97d3!important',
   },
-});
+}));
 
 export default function NotifyGrid() {
   const classes = useStyles();

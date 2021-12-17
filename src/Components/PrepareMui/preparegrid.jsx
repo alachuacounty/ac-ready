@@ -68,13 +68,17 @@ export default function PreparedGrid() {
               className={classes.imgleft}
               justifyContent='center'
             >
-              <img justifyContent='center' className={classes.img} src={imageleftblack} />
+              <img
+                justifyContent='center'
+                className={classes.img}
+                src={imageleftblack}
+              />
             </Grid>
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
-              <Typography variant='h5'>
+              <Typography variant='h5' paragraph gutterBottom>
                 Alachua County Emergency Management
               </Typography>
-              <Typography variant='p'>
+              <Typography variant='p' paragraph gutterBottom>
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
@@ -92,14 +96,14 @@ export default function PreparedGrid() {
             }}
           >
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
-              <Typography variant='h5'>
+              <Typography variant='h5' paragraph>
                 Alachua County Emergency Management
               </Typography>
-              <Typography variant='p'>
+              <Typography variant='p' paragraph>
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
-             
+
               <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
             </Grid>
             <Grid item className={classes.imgleft} xs={12} lg={6}>

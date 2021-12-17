@@ -5,7 +5,7 @@ import { makeStyles } from '@mui/styles';
 import Button from '@mui/material/Button';
 import hero2 from '../../images/fam_grey_crop.png';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   image: {
     width: '100%',
   },
@@ -14,14 +14,26 @@ const useStyles = makeStyles({
   },
   secondTagline: {
     color: '#1968b1',
+    [theme.breakpoints.down('md')]: {
+      color: 'white',
+    },
   },
   borderbottom: {
     borderBottom: '2 solid purple',
   },
   heroContent: {
     color: '#12264c;',
+    [theme.breakpoints.down('md')]: {
+      color: 'white',
+    },
   },
-});
+  heroWrapper: {
+    [theme.breakpoints.down('md')]: {
+      background: '#12264c',
+      color: 'white',
+    },
+  },
+}));
 
 export default function HeroGrid() {
   const classes = useStyles();
@@ -48,20 +60,21 @@ export default function HeroGrid() {
                 justifyContent: { xs: 'center' },
               }}
               p={2}
-              className={classes.borderbottom}
+              className={classes.borderbottom && classes.heroWrapper}
             >
-              <Typography className={classes.heroContent} variant='h4'>
-                WHEN DISASTER STRIKES
-              </Typography>
-              <br></br>
-              <Typography
-                lg={4}
-                className={(classes.content, classes.secondTagline)}
-                variant='h4'
-              >
-                STAY INFORMED
-              </Typography>
+              <Grid item>
+                <Typography className={classes.heroContent} variant='h4'>
+                  WHEN DISASTER STRIKES
+                </Typography>
 
+                <Typography
+                  lg={4}
+                  className={(classes.content, classes.secondTagline)}
+                  variant='h4'
+                >
+                  STAY INFORMED
+                </Typography>
+              </Grid>
               <Grid item className={classes.left} xs={0} lg={4}></Grid>
               <Grid
                 item
