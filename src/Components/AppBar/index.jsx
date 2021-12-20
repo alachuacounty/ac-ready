@@ -7,12 +7,15 @@ import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   first: {
     background: '#12264c',
   },
   middle: {
     background: '#12264c',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+    },
   },
   last: {
     background: '#12264c',
@@ -28,7 +31,7 @@ const useStyles = makeStyles({
     color: 'white',
     alignSelf: 'center',
   },
-});
+}));
 
 export default function AppBarGrid() {
   const classes = useStyles();

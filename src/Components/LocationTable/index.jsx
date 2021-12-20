@@ -25,6 +25,9 @@ const theme = createTheme({
       },
     },
   },
+  table: {
+    color: 'white',
+  },
 });
 
 export default function Table() {

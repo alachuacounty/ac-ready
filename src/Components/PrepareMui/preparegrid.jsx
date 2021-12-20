@@ -4,14 +4,20 @@ import acr_logo from '../../images/ACR_logo.png';
 import { Grid, Typography, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   wrapper: {
     height: 'auto',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+    },
   },
 
   img: {
     maxWidth: '350px',
     width: '100%',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center',
+    },
   },
   /*STYLES FOR HR HERE*/
   hr: {
@@ -48,7 +54,7 @@ const useStyles = makeStyles({
   },
 
   /*STYLES FOR HR HERE*/
-});
+}));
 
 export default function PreparedGrid() {
   const classes = useStyles();
