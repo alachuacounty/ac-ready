@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     textAlign: 'center',
-    color: theme.palette.primary.main,
+    [theme.breakpoints.down('md')]: {
+      color: '#12264c',
+    },
   },
 
   button: {

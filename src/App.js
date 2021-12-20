@@ -19,7 +19,7 @@ import styles from './grid.module.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#fff',
+      main: '#12264c',
       light: '#CFE3E3',
     },
     secondary: {
