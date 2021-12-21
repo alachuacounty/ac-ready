@@ -71,6 +71,7 @@ export default function PreparedGrid() {
               item
               xs={12}
               lg={6}
+              display='flex'
               className={classes.imgleft}
               justifyContent='center'
             >
@@ -96,6 +97,7 @@ export default function PreparedGrid() {
             lg={12}
             className={classes.leftinner}
             justifyContent='center'
+            display='flex'
             container
             sx={{
               flexFlow: { xs: 'column-reverse', md: 'row' },
@@ -113,7 +115,6 @@ export default function PreparedGrid() {
               <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
             </Grid>
             <Grid item className={classes.imgleft} xs={12} lg={6}>
-              {' '}
               <img className={classes.img} src={imageleftblack} />
             </Grid>
           </Grid>

@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   secondTagline: {
     color: '#1968b1',
+    display: 'block',
     [theme.breakpoints.down('md')]: {
       color: 'white',
     },
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
     color: '#12264c;',
+    display: 'block',
     [theme.breakpoints.down('md')]: {
       color: 'white',
     },
@@ -39,78 +41,83 @@ export default function HeroGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container>
+      <Grid
+        item
+        container
+        sx={{
+          flexFlow: { xs: 'column-reverse', md: 'row' },
+        }}
+      >
         <Grid
           item
           container
-          sx={{
-            flexFlow: { xs: 'column-reverse', md: 'row' },
-          }}
+          alignContent='center'
+          justifyContent='center'
+          className={classes.test}
+          xs={12}
+          lg={6}
         >
-          <Grid item container className={classes.test} xs={12} lg={6}>
-            <Grid item className={classes.left} xs={0} lg={1}></Grid>
-            <Grid
-              item
-              container
-              xs={12}
-              lg={10}
-              justify='center'
-              alignContent='center'
-              sx={{
-                justifyContent: { xs: 'center' },
-              }}
-              p={2}
-              className={classes.borderbottom && classes.heroWrapper}
+          <p>
+            <Typography
+              className={classes.heroContent}
+              variant='h4'
+              variantMapping='h4'
+              textAlign='center'
             >
-              <Grid item>
-                <Typography className={classes.heroContent} variant='h4'>
-                  WHEN DISASTER STRIKES
-                </Typography>
+              WHEN DISASTER STRIKES
+            </Typography>
 
-                <Typography
-                  lg={4}
-                  className={(classes.content, classes.secondTagline)}
-                  variant='h4'
-                >
-                  STAY INFORMED
-                </Typography>
-              </Grid>
-              <Grid item className={classes.left} xs={0} lg={4}></Grid>
-              <Grid
-                item
-                container
-                xs={12}
-                lg={8}
-                p={2}
-                justify='center'
-                sx={{ justifyContent: { xs: 'center', lg: 'left' } }}
-                className={classes.heroContent}
-              >
-                <Typography className={classes.content} variant='h7'>
-                  Text "ALACHUA" to 888777 <br />
-                </Typography>
-                <br></br>
-                <Typography lg={4} className={classes.content} variant='h7'>
-                  to receive real-time County updates
-                </Typography>
-                <br></br>
-                <Typography lg={4} className={classes.content} variant='h7'>
-                  during a large-scale incident or emergency
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
+            <Typography
+              lg={4}
+              className={(classes.content, classes.secondTagline)}
+              variant='h4'
+              textAlign='center'
+              gutterBottom
+            >
+              STAY INFORMED
+            </Typography>
 
-          <Grid
-            item
-            xs={12}
-            md={12}
-            lg={6}
-            xl={6}
-            sx={{ flexDirection: { xs: 'row', lg: 'left' } }}
-          >
-            <img className={classes.image} src={hero2} alt='' />
-          </Grid>
+            <Typography
+              className={classes.content}
+              textAlign='center'
+              variant='p'
+              gutterBottom='false'
+              paragraph='true'
+            >
+              Text "ALACHUA" to 888777
+            </Typography>
+
+            <Typography
+              className={classes.content}
+              textAlign='center'
+              variant='p'
+              gutterBottom='false'
+              paragraph='true'
+            >
+              to receive real-time County updates
+            </Typography>
+
+            <Typography
+              className={classes.content}
+              textAlign='center'
+              variant='p'
+              gutterBottom='false'
+              paragraph='true'
+            >
+              during a large-scale incident or emergency
+            </Typography>
+          </p>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          md={12}
+          lg={6}
+          xl={6}
+          sx={{ flexDirection: { xs: 'row', lg: 'left' } }}
+        >
+          <img className={classes.image} src={hero2} alt='' />
         </Grid>
       </Grid>
     </div>
