@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     [theme.breakpoints.down('md')]: {
       color: 'white',
+      background: '#12264c',
+      fontSize: '2.2rem',
     },
   },
   borderbottom: {
@@ -27,9 +29,16 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     [theme.breakpoints.down('md')]: {
       color: 'white',
+      fontSize: '2.2rem',
     },
   },
   heroWrapper: {
+    [theme.breakpoints.down('md')]: {
+      background: '#12264c',
+      color: 'white',
+    },
+  },
+  test: {
     [theme.breakpoints.down('md')]: {
       background: '#12264c',
       color: 'white',
@@ -60,8 +69,8 @@ export default function HeroGrid() {
           <p>
             <Typography
               className={classes.heroContent}
-              variant='h4'
-              variantMapping='h4'
+              variant='h3'
+              variantMapping='h3'
               textAlign='center'
             >
               WHEN DISASTER STRIKES
@@ -70,7 +79,7 @@ export default function HeroGrid() {
             <Typography
               lg={4}
               className={(classes.content, classes.secondTagline)}
-              variant='h4'
+              variant='h3'
               textAlign='center'
               gutterBottom
             >
@@ -80,7 +89,7 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='p'
+              variant='h7'
               gutterBottom='false'
               paragraph='true'
             >
@@ -90,7 +99,7 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='p'
+              variant='h7'
               gutterBottom='false'
               paragraph='true'
             >
@@ -100,7 +109,7 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='p'
+              variant='h7'
               gutterBottom='false'
               paragraph='true'
             >

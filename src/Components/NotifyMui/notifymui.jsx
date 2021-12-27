@@ -35,7 +35,7 @@ export default function NotifyGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid id='notified' container p={2} className={classes.wrapper}>
+      <Grid id='notified' container className={classes.wrapper}>
         <Grid item container>
           <Grid item xs={0} lg={2} />
           <Grid item justifyContent='center' container xs={12} lg={8}>

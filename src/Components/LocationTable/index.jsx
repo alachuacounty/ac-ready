@@ -41,7 +41,7 @@ export default function Table() {
           id='panel1a-header'
           background='#1968b1'
         >
-          <Typography>Micanopy</Typography>
+          <Typography color='white'>Micanopy</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -56,7 +56,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Hawthorne</Typography>
+          <Typography color='white'>Hawthorne</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -72,7 +72,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Gainesville</Typography>
+          <Typography color='white'>Gainesville</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -94,7 +94,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Archer</Typography>
+          <Typography color='white'>Archer</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -109,7 +109,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Waldo</Typography>
+          <Typography color='white'>Waldo</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -124,7 +124,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Newberry</Typography>
+          <Typography color='white'>Newberry</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -142,7 +142,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>La Crosse</Typography>
+          <Typography color='white'>La Crosse</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -157,7 +157,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>Alachua</Typography>
+          <Typography color='white'>Alachua</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>
@@ -176,7 +176,7 @@ export default function Table() {
           aria-controls='panel1a-content'
           id='panel1a-header'
         >
-          <Typography>High Springs</Typography>
+          <Typography color='white'>High Springs</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <List>

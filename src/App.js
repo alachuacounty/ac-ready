@@ -26,6 +26,9 @@ const theme = createTheme({
       main: '#fff3d3',
     },
   },
+  sectionpadding: {
+    padding: '4% 0',
+  },
   typography: {
     body1: {
       color: 'rgba(0, 0, 0, 0.66)',
