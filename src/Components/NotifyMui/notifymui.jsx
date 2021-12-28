@@ -36,11 +36,10 @@ export default function NotifyGrid() {
   return (
     <div>
       <Grid id='notified' container className={classes.wrapper}>
-        <Grid item container>
-          <Grid item xs={0} lg={2} />
+        <Grid item justifyContent='center' p={5} container>
           <Grid item justifyContent='center' container xs={12} lg={8}>
             <Grid item>
-              <Typography p={4} className={classes.content} variant='h4'>
+              <Typography p={3} className={classes.content} variant='h4'>
                 GET NOTIFIED
               </Typography>
             </Grid>
@@ -59,15 +58,15 @@ export default function NotifyGrid() {
                 text messages, and more. You pick where, you pick how!
               </Typography>
             </Grid>
-            <Grid item>
+
+            <Grid marginTop='3%!important' item>
               <Link href='https://member.everbridge.net/index/453003085613764#/signup'>
-                <Button className={classes.button} p={8} variant='contained'>
+                <Button className={classes.button} variant='contained'>
                   SIGN UP
                 </Button>
               </Link>
             </Grid>
           </Grid>
-          <Grid item xs={0} lg={2} />
         </Grid>
       </Grid>
     </div>

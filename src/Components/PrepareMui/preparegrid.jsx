@@ -1,5 +1,6 @@
 import React from 'react';
 import imageleftblack from '../../images/imageleftblack.jpg';
+import imageright from '../../images/imageright.jpg';
 import acr_logo from '../../images/ACR_logo.png';
 import { Grid, Typography, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
@@ -64,8 +65,8 @@ export default function PreparedGrid() {
         <Grid item container p={2} justifyContent='center'>
           <Typography variant='h4'>PREPARE</Typography>
         </Grid>
-        <Grid item xs={0} lg={1} className={classes.left}></Grid>
-        <Grid item container lg={10} className={classes.middle}>
+        <Grid item xs={0} lg={2} className={classes.left}></Grid>
+        <Grid item container lg={8} className={classes.middle}>
           <Grid item lg={12} className={classes.leftinner} container>
             <Grid
               item
@@ -114,12 +115,19 @@ export default function PreparedGrid() {
 
               <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
             </Grid>
-            <Grid item className={classes.imgleft} xs={12} lg={6}>
-              <img className={classes.img} src={imageleftblack} />
+            <Grid
+              item
+              justifyContent='center'
+              display='flex'
+              className={classes.imgleft}
+              xs={12}
+              lg={6}
+            >
+              <img className={classes.img} src={imageright} />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={0} lg={1} className={classes.left}></Grid>
+        <Grid item xs={0} lg={2} className={classes.left}></Grid>
       </Grid>
       <hr className={classes.firsthr} />
       <hr className={classes.secondhr} />
