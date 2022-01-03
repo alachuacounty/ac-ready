@@ -1,32 +1,48 @@
-import { Paper } from '@mui/material';
-import { Typography } from '@mui/material';
-export default function Tile(props) {
+import React from 'react';
+import { Grid } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  headerColor: {
+    background: '#12264c',
+    color: 'white',
+  },
+});
+
+export default function LocationCard() {
   const classes = useStyles();
-
-  const openSurvey = () => {
-    //alert(props.surveyInfo.link);
-    props.setSurveyLink(props.surveyInfo.link);
-    props.setTileMode(false);
-  };
-
-  const { background } = useBackgroundStyles(props)();
   return (
-    <Paper
-      square={true}
-      elevation={24}
-      className={background}
-      onClick={openSurvey}
-    >
-      <Typography
-        variant='h5'
-        component='h1'
-        color='secondary'
-        className={classes.title}
-      >
-        {' '}
-        {props.surveyInfo.title}{' '}
-      </Typography>
-      {/* <Divider /> */}
-    </Paper>
+    <div>
+      <Grid item justify='center' width='100%' lg={4}>
+        <Card>
+          <CardHeader className={classes.headerColor} title='Micanopy' />
+          <CardContent>
+            <Typography>- Micanopy Town Hall</Typography>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className={classes.headerColor} title='Micanopy' />
+          <CardContent>
+            <Typography>- Micanopy Town Hall</Typography>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className={classes.headerColor} title='Micanopy' />
+          <CardContent>
+            <Typography>- Micanopy Town Hall</Typography>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader className={classes.headerColor} title='Micanopy' />
+          <CardContent>
+            <Typography>- Micanopy Town Hall</Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    </div>
   );
 }

@@ -61,7 +61,7 @@ export default function PreparedGrid() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container className={classes.wrapper}>
+      <Grid id='prepared' container className={classes.wrapper}>
         <Grid item container p={2} justifyContent='center'>
           <Typography variant='h4'>PREPARE</Typography>
         </Grid>
@@ -84,13 +84,17 @@ export default function PreparedGrid() {
             </Grid>
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
               <Typography variant='h5' paragraph gutterBottom>
-                Alachua County Emergency Management
+                <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+                  Alachua County Emergency Management
+                </Link>
               </Typography>
               <Typography variant='p' paragraph gutterBottom>
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
-              <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
+              <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+                VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE
+              </Link>
             </Grid>
           </Grid>
           <Grid
@@ -106,14 +110,18 @@ export default function PreparedGrid() {
           >
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
               <Typography variant='h5' paragraph>
-                Alachua County Emergency Management
+                <Link href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'>
+                  Disaster Supply Kit
+                </Link>
               </Typography>
               <Typography variant='p' paragraph>
-                Visit the Emergency Management Website for more preparedness
-                information and other resources
+                Visit Ready.gov to get information on building your disaster
+                supply kit before an emergency happens.
               </Typography>
 
-              <Link> VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE</Link>
+              <Link href='https://www.ready.gov/kit'>
+                VISIT READY.GOV WEBSITE
+              </Link>
             </Grid>
             <Grid
               item

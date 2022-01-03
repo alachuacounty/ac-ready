@@ -3,6 +3,7 @@ import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import image8 from '../../images/Image8.png';
 import Table from '../LocationTable/index';
+import Card from '../Card';
 import { makeStyles } from '@mui/styles';
 import background from '../../images/texture.jpg';
 
@@ -47,7 +48,7 @@ export default function StickerGrid() {
             </Typography>
           </Grid>
           <Grid item justify='center' width='100%' p={2} lg={12}>
-            <Table />
+            <Card />
           </Grid>
         </Grid>
         <Grid item xs={0} lg={2}></Grid>
