@@ -47,7 +47,7 @@ export default function StickerGrid() {
               following locations:
             </Typography>
           </Grid>
-          <Grid item justify='center' width='100%' p={2} lg={12}>
+          <Grid containeritem width='100%' p={2} lg={12}>
             <Card />
           </Grid>
         </Grid>
