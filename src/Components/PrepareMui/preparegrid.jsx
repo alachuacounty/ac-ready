@@ -12,12 +12,27 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'center',
     },
   },
-
+  middle: {
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '1000px!important',
+    },
+  },
+  imgleft: {
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'center!important',
+      margin: 'auto!important',
+    },
+  },
   img: {
     maxWidth: '350px',
     width: '100%',
     [theme.breakpoints.down('md')]: {
-      justifyContent: 'center',
+      justifyContent: 'center!important',
+    },
+    textright: {
+      [theme.breakpoints.down('md')]: {
+        textAlign: 'center!important',
+      },
     },
   },
   /*STYLES FOR HR HERE*/
@@ -66,7 +81,13 @@ export default function PreparedGrid() {
           <Typography variant='h4'>PREPARE</Typography>
         </Grid>
         <Grid item xs={0} lg={2} className={classes.left}></Grid>
-        <Grid item container lg={8} className={classes.middle}>
+        <Grid
+          item
+          container
+          lg={8}
+          margin='auto!important'
+          className={classes.middle}
+        >
           <Grid item lg={12} className={classes.leftinner} container>
             <Grid
               item
@@ -74,7 +95,7 @@ export default function PreparedGrid() {
               lg={6}
               display='flex'
               className={classes.imgleft}
-              justifyContent='center'
+              justifyContent='left'
             >
               <img
                 justifyContent='center'
@@ -101,7 +122,7 @@ export default function PreparedGrid() {
             item
             lg={12}
             className={classes.leftinner}
-            justifyContent='center'
+            justifyContent='right'
             display='flex'
             container
             sx={{
@@ -125,7 +146,7 @@ export default function PreparedGrid() {
             </Grid>
             <Grid
               item
-              justifyContent='center'
+              justifyContent='right'
               display='flex'
               className={classes.imgleft}
               xs={12}

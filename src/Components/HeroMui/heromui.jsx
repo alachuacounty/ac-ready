@@ -8,6 +8,7 @@ import hero2 from '../../images/fam_grey_crop.png';
 const useStyles = makeStyles((theme) => ({
   image: {
     width: '100%',
+    height: '100%',
   },
   positioning: {
     justifyContent: 'center',
@@ -18,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       color: 'white',
       background: '#12264c',
-      fontSize: '2.2rem',
     },
   },
   borderbottom: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'block',
     [theme.breakpoints.down('md')]: {
       color: 'white',
-      fontSize: '2.2rem',
+      fontSize: '1.8rem',
     },
   },
   heroWrapper: {

@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     background: '#12264c',
     height: '1fr',
-    borderRadius: 9,
     color: 'white',
     [theme.breakpoints.down('md')]: {
       backgroundColor: 'white',
