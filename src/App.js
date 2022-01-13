@@ -30,14 +30,10 @@ const theme = createTheme({
     padding: '4% 0',
   },
   typography: {
-    body1: {
-      color: 'rgba(0, 0, 0, 0.66)',
-    },
-    caption: {
-      color: 'rgba(0, 0, 0, 0.66)',
-    },
+    fontFamily: ['PT Sans'].join(','),
   },
 });
+
 class App extends React.Component {
   render() {
     return (
@@ -48,7 +44,7 @@ class App extends React.Component {
           <NavBarGrid />
           <HeroGrid />
           <NotifyGrid />
-          <PreparedGrid />
+          {/* <PreparedGrid /> */}
           <StickerGrid />
           <FooterGrid />
           {/*  

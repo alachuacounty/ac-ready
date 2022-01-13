@@ -10,6 +10,7 @@ import background from '../../images/texture.jpg';
 const useStyles = makeStyles({
   wrapper: {
     height: 'auto',
+    padding: '4% 0',
     backgroundImage: ` url(${background})`,
   },
   content: {
@@ -30,6 +31,7 @@ export default function StickerGrid() {
               p={4}
               className={classes.content}
               variant='h4'
+              fontWeight='700!important'
             >
               GET YOUR ACR STICKER
             </Typography>
@@ -41,7 +43,7 @@ export default function StickerGrid() {
             <Typography
               textAlign='center'
               className={classes.content}
-              variant='p'
+              variant='h5'
             >
               You can pick up your own ACR bumper sticker for free from the
               following locations:

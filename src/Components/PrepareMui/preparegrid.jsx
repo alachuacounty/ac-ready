@@ -8,13 +8,14 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
   wrapper: {
     height: 'auto',
+    padding: '4% 0',
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
     },
   },
   middle: {
     [theme.breakpoints.up('md')]: {
-      maxWidth: '1000px!important',
+      maxWidth: '1100px!important',
     },
   },
   imgleft: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   img: {
-    maxWidth: '350px',
+    maxWidth: '400px',
     width: '100%',
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center!important',
@@ -78,7 +79,9 @@ export default function PreparedGrid() {
     <div>
       <Grid id='prepared' container className={classes.wrapper}>
         <Grid item container p={2} justifyContent='center'>
-          <Typography variant='h4'>PREPARE</Typography>
+          <Typography fontWeight='700!important' variant='h4'>
+            PREPARE
+          </Typography>
         </Grid>
         <Grid item xs={0} lg={2} className={classes.left}></Grid>
         <Grid

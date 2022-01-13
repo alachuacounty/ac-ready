@@ -4,7 +4,7 @@ import acr_logo from '../../images/ACR_logo.png';
 import { Grid, Typography, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   wrapper: {
     height: 'auto',
     boxShadow:
@@ -23,8 +23,11 @@ const useStyles = makeStyles({
   link: {
     textTransform: 'uppercase',
     fontSize: '1.5em',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '1.3em!important',
+    },
   },
-});
+}));
 
 export default function NavBarGrid() {
   const classes = useStyles();
@@ -47,7 +50,8 @@ export default function NavBarGrid() {
           xs={12 && `textAlign='center'`}
           lg={3}
         >
-          <img width="100%"
+          <img
+            width='100%'
             className={classes.logoImg}
             src={acr_logo}
             alt='Alachua County ready logo'

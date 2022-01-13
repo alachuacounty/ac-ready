@@ -11,6 +11,17 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     [theme.breakpoints.down('md')]: {
       backgroundColor: 'white',
+      boxShadow: '0 5px 5px rgb(18 38 76 / 15%), 0 5px 5px rgb(18 38 76 / 15%)',
+      padding: '4% 2%',
+    },
+  },
+
+  sectionpadding: {
+    [theme.breakpoints.up('md')]: {
+      padding: '2%',
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: '1%',
     },
   },
   grid: {
@@ -25,8 +36,10 @@ const useStyles = makeStyles((theme) => ({
 
   button: {
     borderRight: '20px double #cfedfb!important',
-    height: '56px',
+    height: '66px',
+    width: '150px',
     backgroundColor: '#4a97d3!important',
+    fontSize: '40px,',
   },
 }));
 
@@ -35,10 +48,20 @@ export default function NotifyGrid() {
   return (
     <div>
       <Grid id='notified' container className={classes.wrapper}>
-        <Grid item justifyContent='center' p={5} container>
+        <Grid
+          item
+          justifyContent='center'
+          className={classes.sectionpadding}
+          container
+        >
           <Grid item justifyContent='center' container xs={12} lg={8}>
             <Grid item>
-              <Typography p={3} className={classes.content} variant='h4'>
+              <Typography
+                fontWeight='700!important'
+                p={3}
+                className={classes.content}
+                variant='h4'
+              >
                 GET NOTIFIED
               </Typography>
             </Grid>

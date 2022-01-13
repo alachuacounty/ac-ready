@@ -16,9 +16,19 @@ const useStyles = makeStyles((theme) => ({
   secondTagline: {
     color: '#1968b1',
     display: 'block',
+    fontWeight: '700!important',
+    borderBottom: '4px solid #1968b1',
     [theme.breakpoints.down('md')]: {
       color: 'white',
       background: '#12264c',
+      fontSize: '2.3rem!important',
+      marginBottom: '3%!important',
+      borderBottom: 'none',
+    },
+    [theme.breakpoints.down('sm')]: {
+      color: 'white',
+      background: '#12264c',
+      fontSize: '1.8rem!important',
     },
   },
   borderbottom: {
@@ -27,9 +37,14 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     color: '#12264c;',
     display: 'block',
+    fontWeight: '700!important',
     [theme.breakpoints.down('md')]: {
       color: 'white',
-      fontSize: '1.8rem',
+      fontSize: '2.3rem!important',
+    },
+    [theme.breakpoints.down('sm')]: {
+      color: 'white',
+      fontSize: '1.8rem!important',
     },
   },
   heroWrapper: {
@@ -42,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       background: '#12264c',
       color: 'white',
+      padding: '4% 1%',
     },
   },
 }));
@@ -89,9 +105,10 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='h7'
+              variant='h6'
               gutterBottom='false'
               paragraph='true'
+              fontWeight='700'
             >
               Text "ALACHUA" to 888777
             </Typography>
@@ -99,9 +116,10 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='h7'
+              variant='h6'
               gutterBottom='false'
               paragraph='true'
+              fontWeight='700'
             >
               to receive real-time County updates
             </Typography>
@@ -109,9 +127,10 @@ export default function HeroGrid() {
             <Typography
               className={classes.content}
               textAlign='center'
-              variant='h7'
+              variant='h6'
               gutterBottom='false'
               paragraph='true'
+              fontWeight='700'
             >
               during a large-scale incident or emergency
             </Typography>
