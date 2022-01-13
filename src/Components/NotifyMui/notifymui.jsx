@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     height: '66px',
     width: '150px',
     backgroundColor: '#4a97d3!important',
-    fontSize: '40px,',
+    fontSize: '24px!important',
   },
 }));
 
