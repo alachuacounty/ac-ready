@@ -32,6 +32,11 @@ const theme = createTheme({
   typography: {
     fontFamily: ['PT Sans'].join(','),
   },
+  MuiTypography: {
+    h4: {
+      fontSize: '50px!important',
+    },
+  },
 });
 
 class App extends React.Component {
@@ -44,7 +49,7 @@ class App extends React.Component {
           <NavBarGrid />
           <HeroGrid />
           <NotifyGrid />
-          {/* <PreparedGrid /> */}
+          <PreparedGrid />
           <StickerGrid />
           <FooterGrid />
           {/*  

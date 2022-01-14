@@ -14,14 +14,17 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   middle: {
-    [theme.breakpoints.up('md')]: {
-      maxWidth: '1100px!important',
-    },
+    [theme.breakpoints.up('md')]: {},
   },
   imgleft: {
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center!important',
       margin: 'auto!important',
+    },
+  },
+  text: {
+    [theme.breakpoints.down('md')]: {
+      textAlign: 'center!important',
     },
   },
   img: {
@@ -106,8 +109,15 @@ export default function PreparedGrid() {
                 src={imageleftblack}
               />
             </Grid>
-            <Grid item className={classes.textright} p={2} xs={12} lg={6}>
-              <Typography variant='h5' paragraph gutterBottom>
+            <Grid
+              item
+              className={classes.textright && classes.text}
+              lineHeight='2.5rem!important'
+              p={2}
+              xs={12}
+              lg={6}
+            >
+              <Typography variant='h4' gutterBottom>
                 <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
                   Alachua County Emergency Management
                 </Link>
@@ -133,7 +143,7 @@ export default function PreparedGrid() {
             }}
           >
             <Grid item className={classes.textright} p={2} xs={12} lg={6}>
-              <Typography variant='h5' paragraph>
+              <Typography variant='h4' paragraph>
                 <Link href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'>
                   Disaster Supply Kit
                 </Link>
