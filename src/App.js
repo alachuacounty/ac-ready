@@ -49,7 +49,7 @@ class App extends React.Component {
           <NavBarGrid />
           <HeroGrid />
           <NotifyGrid />
-          <PreparedSection />
+          <PreparedGrid />
           <StickerGrid />
           <Footer />
           {/*  

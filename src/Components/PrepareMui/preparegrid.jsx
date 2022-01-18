@@ -112,6 +112,7 @@ export default function PreparedGrid() {
                 justifyContent='center'
                 className={classes.img}
                 src={imageleftblack}
+                alt='Image of Alachua County Emergency Management'
               />
             </Grid>
             <Grid
@@ -177,7 +178,11 @@ export default function PreparedGrid() {
               xs={12}
               lg={6}
             >
-              <img className={classes.img} src={imageright} />
+              <img
+                className={classes.img}
+                src={imageright}
+                alt='Image of hurricane emergency supplies on a table'
+              />
             </Grid>
           </Grid>
         </Grid>
