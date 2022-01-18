@@ -57,7 +57,7 @@ export default function NotifyGrid() {
           className={classes.sectionpadding}
           container
         >
-          <Grid item justifyContent='center' container xs={12} lg={8}>
+          <Grid item justifyContent='center' container xs={12} lg={8} xl={8}>
             <Grid item>
               <Typography
                 fontWeight='700!important'
