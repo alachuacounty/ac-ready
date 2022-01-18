@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
       padding: '4% 2%',
     },
   },
+  link: {
+    color: 'white!important',
+  },
 
   sectionpadding: {
     [theme.breakpoints.up('md')]: {
@@ -67,12 +70,26 @@ export default function NotifyGrid() {
             </Grid>
             <Grid item>
               <Typography className={classes.content} variant='h6'>
+                To receive automated weather alerts or time-sensitive
+                information for your area, sign up for the{' '}
+                <Link
+                  className={classes.link}
+                  href='https://member.everbridge.net/index/453003085613764#/signup '
+                >
+                  <u>Alert Alachua Emergency Notification System</u>
+                </Link>{' '}
+                .
+              </Typography>
+            </Grid>
+
+            <Grid item>
+              <Typography className={classes.content} variant='h6'>
                 This is the best way to stay informed about local severe
                 weather, unexpected road closures, building or neighborhood
                 evacuations, and so much more.
               </Typography>
             </Grid>
-            <br></br>
+
             <Grid item>
               <Typography className={classes.content} variant='h6'>
                 You will receive time-sensitive messages wherever you specify,
