@@ -108,12 +108,14 @@ export default function PreparedGrid() {
               className={classes.imgleft}
               justifyContent='left'
             >
-              <img
-                justifyContent='center'
-                className={classes.img}
-                src={imageleftblack}
-                alt='Image of Alachua County Emergency Management'
-              />
+              <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+                <img
+                  justifyContent='center'
+                  className={classes.img}
+                  src={imageleftblack}
+                  alt='Image of Alachua County Emergency Management'
+                />
+              </Link>
             </Grid>
             <Grid
               item
@@ -178,11 +180,13 @@ export default function PreparedGrid() {
               xs={12}
               lg={6}
             >
-              <img
-                className={classes.img}
-                src={imageright}
-                alt='Image of hurricane emergency supplies on a table'
-              />
+              <Link href='https://www.ready.gov/kit'>
+                <img
+                  className={classes.img}
+                  src={imageright}
+                  alt='Image of hurricane emergency supplies on a table'
+                />
+              </Link>
             </Grid>
           </Grid>
         </Grid>
