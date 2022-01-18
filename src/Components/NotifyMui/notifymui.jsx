@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     color: 'white!important',
+    [theme.breakpoints.down('md')]: {
+      color: '#12264c!important',
+    },
   },
 
   sectionpadding: {
