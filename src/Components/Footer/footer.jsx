@@ -7,6 +7,7 @@ function Footer() {
         <p className={styles.copyright}> &copy; Alachua County</p>
         <p className={styles.footer_text}>
           <a
+            target='_blank'
             className={styles.footer_link}
             href='https://alachuacounty.us/Depts/EO/Pages/Website-Accessibility.aspx'
           >
