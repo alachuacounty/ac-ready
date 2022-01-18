@@ -67,6 +67,15 @@
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
 }
+.footer_link {
+  color: white !important;
+}
+.footer_link:hover {
+  color: gray;
+}
+.footer_text:visited {
+  color: white;
+}
 
 @media screen and (max-width: 480px) {
   .footer {
@@ -99,5 +108,12 @@
     grid-column: 1/4;
     justify-self: center;
     text-align: center;
+    color: white;
+  }
+  .footer_link {
+    color: white !important;
+  }
+  .footer_text:visited {
+    color: white;
   }
 }

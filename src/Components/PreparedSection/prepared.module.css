@@ -74,7 +74,7 @@
   -ms-grid-row-span: 1;
 }
 .acem_wrapper {
-  background-color: #1968b1;
+  /* background-color: #1968b1;*/
 }
 .acem_head {
   -ms-grid-row: 1;
@@ -134,7 +134,7 @@
 }
 
 .fema_wrapper {
-  background-color: #1968b1;
+  /*background-color: #1968b1;*/
   -ms-grid-column: 2;
 }
 .fema_image {

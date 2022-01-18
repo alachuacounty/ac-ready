@@ -6,7 +6,12 @@ function Footer() {
       <section className={styles.footer}>
         <p className={styles.copyright}> &copy; Alachua County</p>
         <p className={styles.footer_text}>
-          View Alachua County's Website Accessibility Policy and Procedures
+          <a
+            className={styles.footer_link}
+            href='https://alachuacounty.us/Depts/EO/Pages/Website-Accessibility.aspx'
+          >
+            View Alachua County's Website Accessibility Policy and Procedures
+          </a>
         </p>
       </section>
     </div>

@@ -49,9 +49,9 @@ class App extends React.Component {
           <NavBarGrid />
           <HeroGrid />
           <NotifyGrid />
-          <PreparedGrid />
+          <PreparedSection />
           <StickerGrid />
-          <FooterGrid />
+          <Footer />
           {/*  
          
                

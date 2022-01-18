@@ -11,6 +11,17 @@ const useStyles = makeStyles((theme) => ({
     padding: '4% 0',
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
+      textAlign: 'center!important',
+    },
+  },
+  acemSection: {
+    [theme.breakpoints.down('md')]: {
+      padding: '1% 0',
+    },
+  },
+  readyGovSection: {
+    [theme.breakpoints.down('md')]: {
+      padding: '1% 0',
     },
   },
   middle: {
@@ -22,21 +33,15 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto!important',
     },
   },
-  text: {
-    [theme.breakpoints.down('md')]: {
-      textAlign: 'center!important',
-    },
-  },
+
   img: {
     maxWidth: '400px',
     width: '100%',
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center!important',
     },
-    textright: {
-      [theme.breakpoints.down('md')]: {
-        textAlign: 'center!important',
-      },
+    text: {
+      fontSize: '20px',
     },
   },
   /*STYLES FOR HR HERE*/
@@ -94,7 +99,7 @@ export default function PreparedGrid() {
           margin='auto!important'
           className={classes.middle}
         >
-          <Grid item lg={12} className={classes.leftinner} container>
+          <Grid item lg={12} className={classes.acemSection} container>
             <Grid
               item
               xs={12}
@@ -111,8 +116,8 @@ export default function PreparedGrid() {
             </Grid>
             <Grid
               item
-              className={classes.textright && classes.text}
-              lineHeight='2.5rem!important'
+              className={classes.text}
+              lineHeight='2.3rem!important'
               p={2}
               xs={12}
               lg={6}
@@ -134,7 +139,7 @@ export default function PreparedGrid() {
           <Grid
             item
             lg={12}
-            className={classes.leftinner}
+            className={classes.readyGovSection}
             justifyContent='right'
             display='flex'
             container
@@ -142,7 +147,14 @@ export default function PreparedGrid() {
               flexFlow: { xs: 'column-reverse', md: 'row' },
             }}
           >
-            <Grid item className={classes.textright} p={2} xs={12} lg={6}>
+            <Grid
+              item
+              className={classes.text}
+              lineHeight='2.5rem!important'
+              p={2}
+              xs={12}
+              lg={6}
+            >
               <Typography variant='h4' paragraph>
                 <Link href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'>
                   Disaster Supply Kit
