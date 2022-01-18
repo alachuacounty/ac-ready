@@ -48,8 +48,7 @@ export default function LocationCard() {
         <Card>
           <CardHeader className={classes.headerColor} title='Hawthorne' />
           <CardContent>
-            <Typography>- Hawthorne Town Hall</Typography>
-            <Typography>- MMPS Walk-in Clinic</Typography>
+            <Typography>- Hawthorne City Hall</Typography>
           </CardContent>
         </Card>
       </Grid>
@@ -128,7 +127,6 @@ export default function LocationCard() {
           <CardHeader className={classes.headerColor} title='High Springs' />
           <CardContent>
             <Typography>- High Springs City Hall</Typography>
-            <Typography>- High Springs Brewing Company</Typography>
           </CardContent>
         </Card>
       </Grid>
@@ -145,7 +143,6 @@ export default function LocationCard() {
           <CardContent>
             <Typography>- Easton Newberry Archery Center</Typography>
             <Typography>- Newberry City Hall</Typography>
-            <Typography>- Villaggio’s Pizzeria</Typography>
           </CardContent>
         </Card>
       </Grid>
@@ -162,12 +159,6 @@ export default function LocationCard() {
           <CardContent>
             <Typography>- Alachua County Emergency Management</Typography>
             <Typography>- Alachua County Library Headquarters</Typography>
-            <Typography>- Public & General</Typography>
-            <Typography>- Satchel’s</Typography>
-            <Typography>- SubLIME Tacos</Typography>
-            <Typography>- Curia on the Drag</Typography>
-            <Typography>- Satch Squared</Typography>
-            <Typography>- Swamp Head</Typography>
           </CardContent>
         </Card>
       </Grid>
