@@ -31,9 +31,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center!important',
       margin: 'auto!important',
+      justifyContent: 'center!important',
     },
   },
-
+  link: {
+    color: '#12264c!important',
+    textDecorationColor: '#12264c!important',
+  },
   img: {
     maxWidth: '400px',
     width: '100%',
@@ -110,7 +114,6 @@ export default function PreparedGrid() {
             >
               <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
                 <img
-                  justifyContent='center'
                   className={classes.img}
                   src={imageleftblack}
                   alt='Image of Alachua County Emergency Management'
@@ -126,7 +129,10 @@ export default function PreparedGrid() {
               lg={6}
             >
               <Typography variant='h4' gutterBottom>
-                <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+                <Link
+                  className={classes.link}
+                  href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'
+                >
                   Alachua County Emergency Management
                 </Link>
               </Typography>
@@ -134,7 +140,10 @@ export default function PreparedGrid() {
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
-              <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
+              <Link
+                className={classes.link}
+                href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'
+              >
                 VISIT ALACHUA COUNTY EMERGENCY MANAGEMENT WEBSITE
               </Link>
             </Grid>
@@ -159,7 +168,10 @@ export default function PreparedGrid() {
               lg={6}
             >
               <Typography variant='h4' paragraph>
-                <Link href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'>
+                <Link
+                  className={classes.link}
+                  href='https://www.fema.gov/press-release/20210318/how-build-kit-emergencies'
+                >
                   Disaster Supply Kit
                 </Link>
               </Typography>
@@ -168,7 +180,7 @@ export default function PreparedGrid() {
                 supply kit before an emergency happens.
               </Typography>
 
-              <Link href='https://www.ready.gov/kit'>
+              <Link className={classes.link} href='https://www.ready.gov/kit'>
                 VISIT READY.GOV WEBSITE
               </Link>
             </Grid>

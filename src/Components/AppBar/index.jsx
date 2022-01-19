@@ -8,20 +8,14 @@ import { Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
-  first: {
-    background: '#12264c',
-  },
   middle: {
-    background: '#12264c',
+    background: theme.palette.darkblue.main,
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
     },
   },
-  last: {
-    background: '#12264c',
-  },
   wrapper: {
-    background: 'purple',
+    background: theme.palette.darkblue.main,
     height: 'auto',
   },
   logo: {

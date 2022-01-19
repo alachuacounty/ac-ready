@@ -18,12 +18,18 @@ import styles from './grid.module.css';
 
 const theme = createTheme({
   palette: {
-    primary: {
+    darkblue: {
       main: '#12264c',
       light: '#CFE3E3',
     },
-    secondary: {
-      main: '#fff3d3',
+    middleblue: {
+      main: '#1968b1',
+    },
+    lightblue: {
+      main: '#1976d2',
+    },
+    white: {
+      main: '#FFFFFF!important',
     },
   },
   sectionpadding: {
@@ -49,15 +55,9 @@ class App extends React.Component {
           <NavBarGrid />
           <HeroGrid />
           <NotifyGrid />
-          <PreparedGrid />
+          {/* <PreparedGrid /> */}
           <StickerGrid />
-          <Footer />
-          {/*  
-         
-               
-        {/* 
-       
-     */}
+          <FooterGrid />
         </div>
       </ThemeProvider>
     );

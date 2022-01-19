@@ -13,8 +13,28 @@ const useStyles = makeStyles((theme) => ({
   positioning: {
     justifyContent: 'center',
   },
+  contentwrapper: {
+    [theme.breakpoints.down('md')]: {
+      background: theme.palette.darkblue.main,
+      color: 'white',
+      padding: '4% 1%',
+    },
+  },
+  heroContent: {
+    color: theme.palette.darkblue.main,
+    display: 'block',
+    fontWeight: '700!important',
+    [theme.breakpoints.down('md')]: {
+      color: 'white',
+      fontSize: '2.3rem!important',
+    },
+    [theme.breakpoints.down('sm')]: {
+      color: 'white',
+      fontSize: '1.8rem!important',
+    },
+  },
   secondTagline: {
-    color: '#1968b1',
+    color: theme.palette.middleblue.main,
     display: 'block',
     fontWeight: '700!important',
     borderBottom: '4px solid #1968b1',
@@ -34,32 +54,6 @@ const useStyles = makeStyles((theme) => ({
   borderbottom: {
     borderBottom: '2 solid purple',
   },
-  heroContent: {
-    color: '#12264c;',
-    display: 'block',
-    fontWeight: '700!important',
-    [theme.breakpoints.down('md')]: {
-      color: 'white',
-      fontSize: '2.3rem!important',
-    },
-    [theme.breakpoints.down('sm')]: {
-      color: 'white',
-      fontSize: '1.8rem!important',
-    },
-  },
-  heroWrapper: {
-    [theme.breakpoints.down('md')]: {
-      background: '#12264c',
-      color: 'white',
-    },
-  },
-  test: {
-    [theme.breakpoints.down('md')]: {
-      background: '#12264c',
-      color: 'white',
-      padding: '4% 1%',
-    },
-  },
 }));
 
 export default function HeroGrid() {
@@ -78,7 +72,7 @@ export default function HeroGrid() {
           container
           alignContent='center'
           justifyContent='center'
-          className={classes.test}
+          className={classes.contentwrapper}
           xs={12}
           lg={6}
         >
@@ -145,7 +139,11 @@ export default function HeroGrid() {
           xl={6}
           sx={{ flexDirection: { xs: 'row', lg: 'left' } }}
         >
-          <img className={classes.image} src={hero2} alt='' />
+          <img
+            className={classes.image}
+            src={hero2}
+            alt='Image of a family together'
+          />
         </Grid>
       </Grid>
     </div>

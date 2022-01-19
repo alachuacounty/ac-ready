@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    background: '#12264c',
+    background: theme.palette.darkblue.main,
     height: '1fr',
     color: 'white',
     [theme.breakpoints.down('md')]: {

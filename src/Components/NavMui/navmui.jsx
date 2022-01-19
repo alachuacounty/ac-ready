@@ -17,12 +17,11 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100px',
     maxWidth: '100px',
   },
-  links: {},
-
-  right: {},
   link: {
+    color: '#12264c!important',
     textTransform: 'uppercase',
     fontSize: '1.5em',
+    textDecorationColor: '#12264c!important',
     [theme.breakpoints.down('md')]: {
       fontSize: '1.3em!important',
     },
