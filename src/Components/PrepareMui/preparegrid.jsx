@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
   acemSection: {
     [theme.breakpoints.down('md')]: {
       padding: '1% 0',
+      justifyContent: 'center',
     },
   },
   readyGovSection: {
@@ -25,12 +26,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   middle: {
-    [theme.breakpoints.up('md')]: {},
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'center!important',
+    },
   },
   imgleft: {
-    [theme.breakpoints.down('md')]: {
-      justifyContent: 'center!important',
-      margin: 'auto!important',
+    [theme.breakpoints.down('lg')]: {
       justifyContent: 'center!important',
     },
   },
@@ -41,8 +42,9 @@ const useStyles = makeStyles((theme) => ({
   img: {
     maxWidth: '400px',
     width: '100%',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('lg')]: {
       justifyContent: 'center!important',
+      display: 'flex',
     },
     text: {
       fontSize: '20px',
@@ -96,6 +98,7 @@ export default function PreparedGrid() {
           </Typography>
         </Grid>
         <Grid item xs={0} lg={2} className={classes.left}></Grid>
+
         <Grid
           item
           container
@@ -110,7 +113,6 @@ export default function PreparedGrid() {
               lg={6}
               display='flex'
               className={classes.imgleft}
-              justifyContent='left'
             >
               <Link href='https://alachuacounty.us/Depts/EM/Pages/EM.aspx'>
                 <img
@@ -202,7 +204,8 @@ export default function PreparedGrid() {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={0} lg={2} className={classes.left}></Grid>
+
+        <Grid item xs={0} lg={2} className={classes.right}></Grid>
       </Grid>
       <hr className={classes.firsthr} />
       <hr className={classes.secondhr} />
