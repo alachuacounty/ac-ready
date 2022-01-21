@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   wrapper: {
     height: 'auto',
     padding: '4% 0',
+
     [theme.breakpoints.down('md')]: {
       justifyContent: 'center',
       textAlign: 'center!important',
@@ -26,8 +27,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   middle: {
-    [theme.breakpoints.up('md')]: {
+    maxWidth: '1180px!important',
+    [theme.breakpoints.down('md')]: {
       justifyContent: 'center!important',
+      textAlign: 'center!important',
     },
   },
   imgleft: {
@@ -48,6 +51,10 @@ const useStyles = makeStyles((theme) => ({
     },
     text: {
       fontSize: '20px',
+      [theme.breakpoints.down('lg')]: {
+        justifyContent: 'center!important',
+        textAlign: 'center',
+      },
     },
   },
   /*STYLES FOR HR HERE*/
@@ -129,6 +136,13 @@ export default function PreparedGrid() {
               p={2}
               xs={12}
               lg={6}
+              sx={{
+                textAlign: {
+                  xs: 'center',
+                  md: 'center',
+                  lg: 'left',
+                },
+              }}
             >
               <Typography variant='h4' gutterBottom>
                 <Link
@@ -158,7 +172,16 @@ export default function PreparedGrid() {
             display='flex'
             container
             sx={{
-              flexFlow: { xs: 'column-reverse', md: 'row' },
+              flexFlow: {
+                xs: 'column-reverse',
+                md: 'column-reverse',
+                lg: 'row',
+              },
+              textAlign: {
+                xs: 'center',
+                md: 'center',
+                lg: 'left',
+              },
             }}
           >
             <Grid
