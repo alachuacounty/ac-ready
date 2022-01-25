@@ -47,6 +47,25 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#4a97d3!important',
     fontSize: '24px!important',
   },
+  button66: {
+    backgroundColor: '#4a97d3!important',
+    color: 'white!important',
+    borderRadius: '4px',
+    border: 0,
+    boxShadow:
+      'rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0',
+    boxSizing: 'borderBox',
+    fontWeight: '700',
+    minHeight: '56px!important',
+    minWidth: '160px!important',
+    padding: '10px 20px',
+    transition: 'all .2s cubic-bezier(.22, .61, .36, 1)',
+    borderRight: '20px double #cfedfb!important',
+    fontSize: '20px!important',
+  },
+  /*  button66 :hover  {
+    transform: 'translateY(-2px)',
+  }, */
 }));
 
 export default function NotifyGrid() {
@@ -72,7 +91,11 @@ export default function NotifyGrid() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography className={classes.content} variant='h6'>
+              <Typography
+                paragraph='true'
+                className={classes.content}
+                variant='h6'
+              >
                 To receive automated weather alerts or time-sensitive
                 information for your area, sign up for the{' '}
                 <Link
@@ -86,7 +109,11 @@ export default function NotifyGrid() {
             </Grid>
 
             <Grid item>
-              <Typography className={classes.content} variant='h6'>
+              <Typography
+                paragraph='true'
+                className={classes.content}
+                variant='h6'
+              >
                 This is the best way to stay informed about local severe
                 weather, unexpected road closures, building or neighborhood
                 evacuations, and so much more.
@@ -94,7 +121,11 @@ export default function NotifyGrid() {
             </Grid>
 
             <Grid item>
-              <Typography className={classes.content} variant='h6'>
+              <Typography
+                paragraph='true'
+                className={classes.content}
+                variant='h6'
+              >
                 You will receive time-sensitive messages wherever you specify,
                 such as your home, mobile, or business phones, email address,
                 text messages, and more. You pick where, you pick how!
@@ -103,7 +134,10 @@ export default function NotifyGrid() {
 
             <Grid marginTop='3%!important' item>
               <Link href='https://member.everbridge.net/index/453003085613764#/signup'>
-                <Button className={classes.button} variant='contained'>
+                {/*  <Button className={classes.button} variant='contained'>
+                  SIGN UP
+                </Button> */}
+                <Button role='button' className={classes.button66}>
                   SIGN UP
                 </Button>
               </Link>

@@ -82,6 +82,7 @@ export default function HeroGrid() {
               variant='h3'
               variantMapping='h3'
               textAlign='center'
+              tabIndex='0'
             >
               WHEN DISASTER STRIKES
             </Typography>
@@ -92,6 +93,7 @@ export default function HeroGrid() {
               variant='h3'
               textAlign='center'
               gutterBottom
+              tabIndex='0'
             >
               STAY INFORMED
             </Typography>
@@ -103,6 +105,7 @@ export default function HeroGrid() {
               gutterBottom='false'
               paragraph='true'
               fontWeight='700'
+              tabIndex='0'
             >
               Text "ALACHUA" to 888777
             </Typography>
@@ -114,6 +117,7 @@ export default function HeroGrid() {
               gutterBottom='false'
               paragraph='true'
               fontWeight='700'
+              tabIndex='0'
             >
               to receive real-time County updates
             </Typography>
@@ -125,6 +129,7 @@ export default function HeroGrid() {
               gutterBottom='false'
               paragraph='true'
               fontWeight='700'
+              tabIndex='0'
             >
               during a large-scale incident or emergency
             </Typography>
@@ -140,6 +145,7 @@ export default function HeroGrid() {
           sx={{ flexDirection: { xs: 'row', lg: 'left' } }}
         >
           <img
+            tabIndex='0'
             className={classes.image}
             src={hero2}
             alt='Image of a family together'

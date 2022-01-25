@@ -42,6 +42,7 @@ export default function StickerGrid() {
           <Grid item justifySelf='center' p={2} lg={12}>
             <Typography
               textAlign='center'
+              paragraph='true'
               className={classes.content}
               variant='h5'
             >

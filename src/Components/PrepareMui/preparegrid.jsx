@@ -152,7 +152,7 @@ export default function PreparedGrid() {
                   Alachua County Emergency Management
                 </Link>
               </Typography>
-              <Typography variant='p' paragraph gutterBottom>
+              <Typography variant='p' paragraph='true' gutterBottom>
                 Visit the Emergency Management Website for more preparedness
                 information and other resources
               </Typography>
@@ -200,7 +200,7 @@ export default function PreparedGrid() {
                   Disaster Supply Kit
                 </Link>
               </Typography>
-              <Typography variant='p' paragraph>
+              <Typography variant='p' paragraph='true'>
                 Visit Ready.gov to get information on building your disaster
                 supply kit before an emergency happens.
               </Typography>
