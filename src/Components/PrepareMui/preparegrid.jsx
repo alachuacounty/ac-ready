@@ -117,7 +117,7 @@ export default function PreparedGrid() {
             <Grid
               item
               xs={12}
-              lg={6}
+              lg={5}
               display='flex'
               className={classes.imgleft}
             >
@@ -135,7 +135,7 @@ export default function PreparedGrid() {
               lineHeight='2.3rem!important'
               p={2}
               xs={12}
-              lg={6}
+              lg={7}
               sx={{
                 textAlign: {
                   xs: 'center',
@@ -190,7 +190,7 @@ export default function PreparedGrid() {
               lineHeight='2.5rem!important'
               p={2}
               xs={12}
-              lg={6}
+              lg={7}
             >
               <Typography variant='h4' paragraph>
                 <Link
@@ -215,7 +215,7 @@ export default function PreparedGrid() {
               display='flex'
               className={classes.imgleft}
               xs={12}
-              lg={6}
+              lg={5}
             >
               <Link href='https://www.ready.gov/kit'>
                 <img
