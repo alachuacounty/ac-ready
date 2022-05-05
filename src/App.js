@@ -1,14 +1,17 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import AppBar from './Components/AppBar';
-import NavBarGrid from './Components/NavMui/navmui';
-import PreparedGrid from './Components/PrepareMui/preparegrid';
-import NotifyGrid from './Components/NotifyMui/notifymui';
-import HeroGrid from './Components/HeroMui/heromui';
-import StickerGrid from './Components/StickerGrid/stickergrid';
-import FooterGrid from './Components/FooterMui/footermui';
-import EmergencyBlurb from './util/Emergency';
+
 import styles from './grid.module.css';
+
+import MainPage from './pages/Main/main.js';
+import ShelterPage from './pages/shelter/shelter.jsx';
+
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -43,17 +46,12 @@ class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <div className={styles.grid_container}>
-          <AppBar />
-          {/* <Navigation /> */}
-          <NavBarGrid />
-          <HeroGrid />
-          <NotifyGrid />
-          <PreparedGrid />
-          <StickerGrid />
-          <FooterGrid />
-          <EmergencyBlurb />
-        </div>
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<MainPage />} />
+            <Route exact path="/Shelter" element={<ShelterPage />} />
+          </Routes>
+        </Router>
       </ThemeProvider>
     );
   }

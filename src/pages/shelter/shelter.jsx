@@ -6,5 +6,7 @@ const useStyles = makeStyles((theme) => ({}));
 
 export default function ShelterPage() {
   const classes = useStyles();
-  return <EmergencyBlurb />;
+  return (
+    <EmergencyBlurb />
+  );
 }
