@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import image8 from '../../images/Image8.png';
-import Table from '../LocationTable/index';
+
 import Card from '../Card';
 import { makeStyles } from '@mui/styles';
 import background from '../../images/texture.jpg';
