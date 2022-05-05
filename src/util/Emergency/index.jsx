@@ -5,13 +5,9 @@ import { Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
-  headerColor: {
-    background: '#12264c',
-    color: 'white',
-  },
   backgroundColor: {
-    background: '#4a97d3!important',
-    color: '#FFF!important',
+    background: '#D0EDFC!important',
+    color: '#12274B!important',
   },
   smallPaddingOff: {
     [theme.breakpoints.down('lg')]: {
@@ -34,7 +30,7 @@ export default function EmergencyBlurb() {
         },
       }}
     >
-      <Paper className={classes.backgroundColor}>
+      <Paper elevation={8} className={classes.backgroundColor}>
         <Typography textAlign='center' p={1} variant='h5'>
           Sign Up for Emergency Alerts
         </Typography>
