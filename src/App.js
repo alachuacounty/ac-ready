@@ -4,14 +4,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import styles from './grid.module.css';
 
 import MainPage from './pages/Main/main.js';
-import ShelterPage from './pages/shelter/shelter.jsx';
+import ShelterPage from './pages/Shelter/shelter.js';
 
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
@@ -48,8 +43,8 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Router>
           <Routes>
-            <Route exact path="/" element={<MainPage />} />
-            <Route exact path="/Shelter" element={<ShelterPage />} />
+            <Route exact path='/' element={<MainPage />} />
+            <Route exact path='/Shelter' element={<ShelterPage />} />
           </Routes>
         </Router>
       </ThemeProvider>
