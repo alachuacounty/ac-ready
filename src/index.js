@@ -5,12 +5,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import TitleContext from './contexts/TitleContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <TitleContext>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </TitleContext>
   </React.StrictMode>,
   document.getElementById('root')
 );
