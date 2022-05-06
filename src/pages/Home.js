@@ -6,7 +6,6 @@ import Navigation from '../components/Branding/Navigation';
 import Hero from '../components/Home/Hero';
 import Notify from '../components/Home/Notify';
 import Prepare from '../components/Home/Prepare';
-import Sticker from '../components/Home/Sticker';
 
 export default function Home() {
   const { pageTitle, updatePageTitle } = useContext(titleContext);
@@ -21,7 +20,6 @@ export default function Home() {
       <Hero />
       <Notify />
       <Prepare />
-      <Sticker />
     </Appbar>
   );
 }
