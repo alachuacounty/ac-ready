@@ -1,6 +1,7 @@
-import { Grid } from '@material-ui/core';
+import { Grid } from '@mui/material';
 import React from 'react';
-import EmergencyBlurb from '../components/EmergencyBlurb';
+
+import EmergencyBlurb from '../../EmergencyBlurb';
 
 export default function IncidentsLayout({ children, title = 'Page Title' }) {
   return (
