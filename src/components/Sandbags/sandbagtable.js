@@ -146,13 +146,13 @@ const useToolbarStyles = makeStyles((theme) => ({
   highlight:
     theme.palette.type === 'light'
       ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
+        color: theme.palette.secondary.main,
+        backgroundColor: lighten(theme.palette.secondary.light, 0.85),
+      }
       : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
+        color: theme.palette.text.primary,
+        backgroundColor: theme.palette.secondary.dark,
+      },
   title: {
     flex: '1 1 100%',
   },
@@ -237,7 +237,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable() {
+export default function SandbagsTable() {
   const classes = useStyles();
   const [order, setOrder] = React.useState('desc');
   const [orderBy, setOrderBy] = React.useState('SandbagLocation');
@@ -346,12 +346,12 @@ export default function EnhancedTable() {
                   return (
                     <TableRow
                       hover
-                      //   onClick={(event) => handleClick(event, row.name)}
-                      //   role="checkbox"
-                      //   aria-checked={isItemSelected}
-                      //   tabIndex={-1}
-                      //   key={row.name}
-                      //   selected={isItemSelected}
+                    //   onClick={(event) => handleClick(event, row.name)}
+                    //   role="checkbox"
+                    //   aria-checked={isItemSelected}
+                    //   tabIndex={-1}
+                    //   key={row.name}
+                    //   selected={isItemSelected}
                     >
                       {/*<TableCell>
                       <TableCell padding="checkbox"><
