@@ -50,13 +50,13 @@ export default function Navigation() {
           },
         }}
       >
-        <Link to='notified' sx={linkStyles}>
+        <Link href='#notified' sx={linkStyles}>
           Get Notified
         </Link>
-        <Link to='prepared' sx={linkStyles}>
+        <Link href='#prepared' sx={linkStyles}>
           prepare
         </Link>
-        <Link to='sticker' sx={linkStyles}>
+        <Link href='#sticker' sx={linkStyles}>
           acr stickers
         </Link>
       </Grid>
