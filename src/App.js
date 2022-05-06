@@ -1,53 +1,22 @@
-import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 
+import theme from '../src/styles/siteTheme';
 import MainPage from './pages/Main/main.js';
 import ShelterPage from './pages/Shelter/shelter.js';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const theme = createTheme({
-  palette: {
-    darkblue: {
-      main: '#12264c',
-      light: '#CFE3E3',
-    },
-    middleblue: {
-      main: '#1968b1',
-    },
-    lightblue: {
-      main: '#1976d2',
-    },
-    white: {
-      main: '#FFFFFF!important',
-    },
-  },
-  sectionpadding: {
-    padding: '4% 0',
-  },
-  typography: {
-    fontFamily: ['PT Sans'].join(','),
-  },
-  MuiTypography: {
-    h4: {
-      fontSize: '50px!important',
-    },
-  },
-});
+import React from 'react';
 
-class App extends React.Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<MainPage />} />
-            <Route exact path='/Shelter' element={<ShelterPage />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    );
-  }
+export default function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/Shelter' element={<ShelterPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
 }
-
-export default App;

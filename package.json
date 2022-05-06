@@ -42,19 +42,6 @@
       "react-app/jest"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      [
-        "styled-jsx/babel",
-        {
-          "optimizeForSpeed": true
-        }
-      ]
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -68,9 +55,5 @@
       "last 1 safari version",
       "ie 11"
     ]
-  },
-  "devDependencies": {
-    "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.2.1"
   }
 }

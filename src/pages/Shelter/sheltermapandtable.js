@@ -1,6 +1,6 @@
 import React from 'react';
-import Map from '../../Components/Map/index';
-import EnhancedTable from '../../Components/Table';
+import Map from '../../components/Map/index';
+import EnhancedTable from '../../components/Table';
 import filterFactory, { selectFilter } from 'react-bootstrap-table2-filter';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
