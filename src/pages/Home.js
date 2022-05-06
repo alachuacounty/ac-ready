@@ -5,6 +5,7 @@ import Appbar from '../components/Branding/Appbar';
 import Navigation from '../components/Branding/Navigation';
 import Hero from '../components/Home/Hero';
 import Notify from '../components/Home/Notify';
+import Prepare from '../components/Home/Prepare';
 
 export default function Home() {
   const { pageTitle, updatePageTitle } = useContext(titleContext);
@@ -18,6 +19,7 @@ export default function Home() {
       <Navigation />
       <Hero />
       <Notify />
+      <Prepare />
     </Appbar>
   );
 }
