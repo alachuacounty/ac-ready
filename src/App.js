@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import ShelterPage from './pages/Shelter/shelter.js';
 import Prepare from './pages/Prepare';
 import Shelter from './pages/Shelter';
+import FAQPage from './pages/Faq';
+import SandbagPage from './pages/Sandbag';
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
         <Route path='newPage' element={<Home />} />
         <Route path='prepare' element={<Prepare />} />
         <Route path='shelter' element={<Shelter />} />
+        <Route path='faq' element={<FAQPage />} />
+        <Route path='sandbags' element={<SandbagPage />} />
       </Routes>
     </ThemeProvider>
   );
