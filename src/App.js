@@ -11,6 +11,7 @@ import Shelter from './pages/Shelter';
 import FAQPage from './pages/Faq';
 import SandbagPage from './pages/Sandbag';
 import ImportantLinksPage from './pages/ImportantLinks';
+import AdvisoryTable from './components/EmergencyOrder/emergency';
 
 export default function App() {
   return (
@@ -19,9 +20,11 @@ export default function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='newPage' element={<Home />} />
         <Route path='prepare' element={<Prepare />} />
-        <Route path='shelter' element={<Shelter />} />
+        <Route path='shelters' element={<Shelter />} />
+        <Route path='sandbags' element={<SandbagPage />} />
         <Route path='faq' element={<FAQPage />} />
         <Route path='importantlinks' element={<ImportantLinksPage />} />
+        <Route path='emergencyorders' element={<AdvisoryTable />} />
       </Routes>
     </ThemeProvider>
   );

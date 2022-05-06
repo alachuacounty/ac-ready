@@ -3,6 +3,9 @@ import React, { useContext, useEffect } from 'react';
 import { titleContext } from '../contexts/TitleContext';
 import Appbar from '../components/Branding/Appbar';
 import Navigation from '../components/Branding/Navigation';
+import Hero from '../components/Home/Hero';
+import Notify from '../components/Home/Notify';
+import Prepare from '../components/Home/Prepare';
 
 export default function Home() {
   const { pageTitle, updatePageTitle } = useContext(titleContext);
@@ -14,7 +17,9 @@ export default function Home() {
   return (
     <Appbar>
       <Navigation />
-      <div>{pageTitle}</div>
+      <Hero />
+      <Notify />
+      <Prepare />
     </Appbar>
   );
 }
