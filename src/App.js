@@ -10,6 +10,7 @@ import Prepare from './pages/Prepare';
 import Shelter from './pages/Shelter';
 import FAQPage from './pages/Faq';
 import SandbagPage from './pages/Sandbag';
+import ImportantLinksPage from './pages/ImportantLinks';
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
         <Route path='prepare' element={<Prepare />} />
         <Route path='shelter' element={<Shelter />} />
         <Route path='faq' element={<FAQPage />} />
-        <Route path='sandbags' element={<SandbagPage />} />
+        <Route path='importantlinks' element={<ImportantLinksPage />} />
       </Routes>
     </ThemeProvider>
   );
