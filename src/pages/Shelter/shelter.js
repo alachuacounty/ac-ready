@@ -1,6 +1,6 @@
 import * as React from 'react';
 import EmergencyBlurb from '../../util/Emergency';
-import ShelterMapandTable from './sheltermapandtable.js';
+import ShelterMapandTable from '../../components/Shelter/sheltermapandtable.js';
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({}));

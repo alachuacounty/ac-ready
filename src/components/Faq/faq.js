@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
 
-import SimpleTabs from '../../components/Tabs';
+import SimpleTabs from '../Tabs';
 
 var classes = makeStyles((theme) => ({
   root: {
