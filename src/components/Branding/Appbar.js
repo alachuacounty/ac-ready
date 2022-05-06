@@ -14,14 +14,19 @@ export default function Appbar({ children }) {
           <Toolbar disableGutters>
             <Grid container sx={{ display: 'flex' }}>
               <Grid item xs={2} md={4} lg={1}></Grid>
-              <Grid item xs={2} md={4} lg={1} sx={{ textAlign: 'end' }}>
-                <img width='60px' src={aclogo} alt='Alachua County Logo' />
+              <Grid item xs={8}>
+                <Grid container>
+                  <Grid item xs={3} md={4} lg={1} sx={{ textAlign: 'end' }}>
+                    <img width='60px' src={aclogo} alt='Alachua County Logo' />
+                  </Grid>
+                  <Grid item xs={9} md={8} lg={11} sx={{ alignSelf: 'center' }}>
+                    <Typography p={1} variant='h5'>
+                      Alachua County
+                    </Typography>
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={8} sx={{ alignSelf: 'center' }}>
-                <Typography p={1} variant='h5'>
-                  Alachua County
-                </Typography>
-              </Grid>
+              <Grid item xs={2} md={4} lg={1}></Grid>
             </Grid>
           </Toolbar>
         </AppBar>
