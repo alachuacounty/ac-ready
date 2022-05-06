@@ -7,6 +7,7 @@ import MainPage from './pages/Main/main.js';
 import Home from './pages/Home';
 import ShelterPage from './pages/Shelter/shelter.js';
 import Prepare from './pages/Prepare';
+import Shelter from './pages/Shelter';
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         <Route path='/' element={<MainPage />} />
         <Route path='newPage' element={<Home />} />
         <Route path='prepare' element={<Prepare />} />
-        <Route path='shelter' element={<ShelterPage />} />
+        <Route path='shelter' element={<Shelter />} />
       </Routes>
     </ThemeProvider>
   );

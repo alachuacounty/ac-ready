@@ -1,11 +1,4 @@
-import {
-  AppBar,
-  Box,
-  Container,
-  Grid,
-  Toolbar,
-  Typography,
-} from '@mui/material';
+import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
@@ -33,9 +26,11 @@ export default function Appbar({ children }) {
           </Toolbar>
         </AppBar>
       </Box>
-      <Container maxWidth='md' sx={{ p: 3 }}>
-        <Box sx={{ my: 2 }}>{children}</Box>
-      </Container>
+      <Grid container sx={{ my: 2 }}>
+        <Grid item xs={12}>
+          {children}
+        </Grid>
+      </Grid>
     </>
   );
 }
