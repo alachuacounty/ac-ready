@@ -2,6 +2,7 @@ import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
+import Footer from './Footer';
 
 export default function Appbar({ children }) {
   return (
@@ -47,6 +48,7 @@ export default function Appbar({ children }) {
           {children}
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 }
