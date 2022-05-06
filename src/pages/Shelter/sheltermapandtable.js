@@ -310,10 +310,10 @@ class ShelterMapandTable extends React.Component {
               </Grid>
               <Grid item xl={12} md={12} sm={12} xs={12}>
                 <Paper className={classes.root}>
-                  <EnhancedTable
+                  {/* <EnhancedTable
                     rowData={this.state.requiredShelterData}
                     dataColumns={this.state.columns}
-                  />
+                  /> */}
                 </Paper>
               </Grid>
             </Grid>

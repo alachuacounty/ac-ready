@@ -1,8 +1,6 @@
 import React from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import styles from './grid.module.css';
-
 import MainPage from './pages/Main/main.js';
 import ShelterPage from './pages/Shelter/shelter.js';
 
