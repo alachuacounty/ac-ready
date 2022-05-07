@@ -1,7 +1,7 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes } from 'react-router-dom';
 
-import theme from '../src/styles/siteTheme';
+import theme from '../src/components/siteTheme';
 
 import Home from './pages/Home';
 import ShelterPage from './pages/Shelter/shelter.js';
