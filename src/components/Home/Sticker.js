@@ -54,7 +54,7 @@ export default function Sticker() {
             locations.length !== 0 &&
             locations.map((location, index) => (
               <LocationCard
-                key={index}
+                index={index}
                 title={location.title}
                 content={location.buildings}
               />
