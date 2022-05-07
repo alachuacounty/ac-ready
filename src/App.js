@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 
 import theme from '../src/styles/siteTheme';
 
-import MainPage from './pages/Main/main.js';
 import Home from './pages/Home';
 import ShelterPage from './pages/Shelter/shelter.js';
 import Prepare from './pages/Prepare';
@@ -17,14 +16,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
-        <Route path='/' element={<MainPage />} />
-        <Route path='newPage' element={<Home />} />
-        <Route path='prepare' element={<Prepare />} />
-        <Route path='shelters' element={<Shelter />} />
-        <Route path='sandbags' element={<SandbagPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='emergencyorders' element={<AdvisoryTable />} />
         <Route path='faq' element={<FAQPage />} />
         <Route path='importantlinks' element={<ImportantLinksPage />} />
-        <Route path='emergencyorders' element={<AdvisoryTable />} />
+        <Route path='prepare' element={<Prepare />} />
+        <Route path='sandbags' element={<SandbagPage />} />
+        <Route path='shelters' element={<Shelter />} />
       </Routes>
     </ThemeProvider>
   );
