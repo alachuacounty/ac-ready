@@ -9,19 +9,19 @@ import Prepare from '../components/Home/Prepare';
 import Sticker from '../components/Home/Sticker';
 
 export default function Home() {
-  const { pageTitle, updatePageTitle } = useContext(titleContext);
+  const { updatePageTitle } = useContext(titleContext);
 
   useEffect(() => {
-    updatePageTitle('Home');
+    updatePageTitle('Alachua County Ready | Home');
   }, []);
 
   return (
-    <Appbar>
+    <>
       <Navigation />
       <Hero />
       <Notify />
       <Prepare />
       <Sticker />
-    </Appbar>
+    </>
   );
 }

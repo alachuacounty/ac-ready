@@ -11,19 +11,22 @@ import FAQPage from './pages/Faq';
 import SandbagPage from './pages/Sandbag';
 import ImportantLinksPage from './pages/ImportantLinks';
 import AdvisoryTable from './components/EmergencyOrder/emergency';
+import Appbar from './components/Branding/Appbar';
 
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='emergencyorders' element={<AdvisoryTable />} />
-        <Route path='faq' element={<FAQPage />} />
-        <Route path='importantlinks' element={<ImportantLinksPage />} />
-        <Route path='prepare' element={<Prepare />} />
-        <Route path='sandbags' element={<SandbagPage />} />
-        <Route path='shelters' element={<Shelter />} />
-      </Routes>
+      <Appbar>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='emergencyorders' element={<AdvisoryTable />} />
+          <Route path='faq' element={<FAQPage />} />
+          <Route path='importantlinks' element={<ImportantLinksPage />} />
+          <Route path='prepare' element={<Prepare />} />
+          <Route path='sandbags' element={<SandbagPage />} />
+          <Route path='shelters' element={<Shelter />} />
+        </Routes>
+      </Appbar>
     </ThemeProvider>
   );
 }

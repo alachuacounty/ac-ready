@@ -8,6 +8,7 @@ const linkStyles = {
   textTransform: 'uppercase',
   textDecorationColor: '#12264c!important',
   fontSize: { xs: '1.3em', md: '1.5em' },
+  fontWeight: 'bold',
 };
 
 export default function Navigation() {
@@ -50,13 +51,13 @@ export default function Navigation() {
           },
         }}
       >
-        <Link href='#notified' sx={linkStyles}>
+        <Link href='#notified' underline='none' sx={linkStyles}>
           Get Notified
         </Link>
-        <Link href='#prepared' sx={linkStyles}>
+        <Link href='#prepared' underline='none' sx={linkStyles}>
           prepare
         </Link>
-        <Link href='#sticker' sx={linkStyles}>
+        <Link href='#sticker' underline='none' sx={linkStyles}>
           acr stickers
         </Link>
       </Grid>
