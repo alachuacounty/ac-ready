@@ -1,6 +1,7 @@
 import { Grid, Link } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { incidentsContext } from '../../contexts/IncidentsContext';
 import acrlogo from '../../images/ACR_logo.png';
 
 const linkStyles = {
@@ -12,6 +13,8 @@ const linkStyles = {
 };
 
 export default function Navigation() {
+  const incidents = useContext(incidentsContext);
+
   return (
     <Grid
       container

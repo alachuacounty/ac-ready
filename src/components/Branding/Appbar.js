@@ -1,10 +1,14 @@
 import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
+import { titleContext } from '../../contexts/TitleContext';
 
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
 import Footer from './Footer';
+import Navigation from './Navigation';
 
 export default function Appbar({ children }) {
+  const { pageTitle } = useContext(titleContext);
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -45,6 +49,7 @@ export default function Appbar({ children }) {
       </Box>
       <Grid container sx={{ my: 2 }}>
         <Grid item xs={12}>
+          {pageTitle === 'Page Not Found' ? null : <Navigation />}
           {children}
         </Grid>
       </Grid>

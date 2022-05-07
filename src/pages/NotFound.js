@@ -11,7 +11,10 @@ export default function NotFound() {
   }, []);
 
   return (
-    <Grid container sx={{ height: '86vh' }} spacing={3}>
+    <Grid
+      container
+      sx={{ p: 2, height: { xs: '84vh', md: '90vh', lg: '88vh' } }}
+    >
       <Grid item xs={12} sx={{ pt: 3 }}>
         <Typography variant='h3' sx={{ pb: 3 }}>
           Page Not Found

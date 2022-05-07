@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 
-export const incidentContext = createContext([]);
+export const incidentsContext = createContext([]);
 
 export default function IncidentsContext({ children }) {
   const [incidents, setIncidents] = useState([]);
@@ -9,7 +9,7 @@ export default function IncidentsContext({ children }) {
     setIncidents(incidentsArray);
   };
 
-  // Implement fetch incidents
+  // Yet to Implement fetch incidents from monday board
   useEffect(() => {
     updateIncidents([
       {
@@ -27,8 +27,8 @@ export default function IncidentsContext({ children }) {
   }, []);
 
   return (
-    <incidentContext.Provider value={incidents}>
+    <incidentsContext.Provider value={incidents}>
       {children}
-    </incidentContext.Provider>
+    </incidentsContext.Provider>
   );
 }

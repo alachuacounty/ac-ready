@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 
 import { titleContext } from '../contexts/TitleContext';
-import Navigation from '../components/Branding/Navigation';
 import Hero from '../components/Home/Hero';
 import Notify from '../components/Home/Notify';
 import Prepare from '../components/Home/Prepare';
@@ -16,7 +15,6 @@ export default function Home() {
 
   return (
     <>
-      <Navigation />
       <Hero />
       <Notify />
       <Prepare />

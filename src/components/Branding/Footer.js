@@ -19,7 +19,7 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <Grid container xs={12} p={2} className={classes.wrapper}>
+    <Grid container p={2} className={classes.wrapper}>
       <Grid item xs={0} lg={4}></Grid>
       <Grid
         item
@@ -30,7 +30,6 @@ export default function Footer() {
         justifyContent='center'
         alignContent='center'
         textAlign='center'
-        direction='column'
       >
         <Grid item>
           <Typography fontSize='14px' variant='p'>
