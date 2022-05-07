@@ -15,19 +15,29 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function LocationCard({
-  key = 1,
+  index,
   title = 'Title',
   content = ['Title'],
 }) {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.smallPaddingOff} item xs={12} sm={6} md={6} lg={4}>
-      <Card key={key}>
+    <Grid
+      key={index}
+      className={classes.smallPaddingOff}
+      item
+      xs={12}
+      sm={6}
+      md={6}
+      lg={4}
+    >
+      <Card key={index}>
         <CardHeader className={classes.headerColor} title={title} />
         <CardContent>
           {content.length !== 0 &&
-            content.map((text) => <Typography>- {text}</Typography>)}
+            content.map((text, count) => (
+              <Typography key={count}>- {text}</Typography>
+            ))}
         </CardContent>
       </Card>
     </Grid>

@@ -52,8 +52,9 @@ export default function Sticker() {
         <Grid container item lg={12} justify='center' width='100%' spacing={4}>
           {locations &&
             locations.length !== 0 &&
-            locations.map((location) => (
+            locations.map((location, index) => (
               <LocationCard
+                key={index}
                 title={location.title}
                 content={location.buildings}
               />
