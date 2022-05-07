@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 
 import { titleContext } from '../contexts/TitleContext';
-import Appbar from '../components/Branding/Appbar';
 import Navigation from '../components/Branding/Navigation';
 import Hero from '../components/Home/Hero';
 import Notify from '../components/Home/Notify';

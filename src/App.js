@@ -12,6 +12,7 @@ import SandbagPage from './pages/Sandbag';
 import ImportantLinksPage from './pages/ImportantLinks';
 import AdvisoryTable from './components/EmergencyOrder/emergency';
 import Appbar from './components/Branding/Appbar';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path='prepare' element={<Prepare />} />
           <Route path='sandbags' element={<SandbagPage />} />
           <Route path='shelters' element={<Shelter />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Appbar>
     </ThemeProvider>
