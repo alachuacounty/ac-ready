@@ -7,10 +7,11 @@ import Prepare from '../components/Home/Prepare';
 import Sticker from '../components/Home/Sticker';
 
 export default function Home() {
-  const { updatePageTitle } = useContext(titleContext);
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
 
   useEffect(() => {
     updatePageTitle('Alachua County Ready | Home');
+    updatePageHeading('Home');
   }, []);
 
   return (

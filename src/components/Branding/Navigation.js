@@ -24,10 +24,6 @@ export default function Navigation() {
     navigate(`incidents/${incident.urlName}`);
   };
 
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
-
   return (
     <Grid
       container

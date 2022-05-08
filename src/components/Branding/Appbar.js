@@ -1,13 +1,17 @@
 import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
+
+import { incidentsContext } from '../../contexts/IncidentsContext';
 import { titleContext } from '../../contexts/TitleContext';
 
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
 import Footer from './Footer';
+import IncidentNavigation from './IncidentNavigation';
 import Navigation from './Navigation';
 
 export default function Appbar({ children }) {
-  const { pageTitle } = useContext(titleContext);
+  const { pageTitle, pageHeading } = useContext(titleContext);
+  const incidents = useContext(incidentsContext);
 
   return (
     <>
@@ -49,7 +53,14 @@ export default function Appbar({ children }) {
       </Box>
       <Grid container sx={{ my: 2 }}>
         <Grid item xs={12}>
-          {pageTitle === 'Page Not Found' ? null : <Navigation />}
+          {pageTitle === 'Page Not Found' ? null : (
+            <>
+              <Navigation />
+              {pageHeading !== 'Home' && incidents && incidents.length > 0 && (
+                <IncidentNavigation />
+              )}
+            </>
+          )}
           {children}
         </Grid>
       </Grid>
