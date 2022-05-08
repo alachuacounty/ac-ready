@@ -1,7 +1,9 @@
-import { Grid, Link } from '@mui/material';
-import React, { useContext } from 'react';
+import { Button, Grid, Link, Typography } from '@mui/material';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { incidentsContext } from '../../contexts/IncidentsContext';
+import { titleContext } from '../../contexts/TitleContext';
 import acrlogo from '../../images/ACR_logo.png';
 
 const linkStyles = {
@@ -14,6 +16,12 @@ const linkStyles = {
 
 export default function Navigation() {
   const incidents = useContext(incidentsContext);
+  const { pageHeading } = useContext(titleContext);
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
 
   return (
     <Grid
@@ -29,7 +37,7 @@ export default function Navigation() {
       <Grid
         item
         xs={12}
-        lg={3}
+        lg={incidents.length === 0 ? 3 : 1}
         sx={{ textAlign: { xs: 'center', lg: 'start' }, p: 2 }}
       >
         <img
@@ -39,30 +47,57 @@ export default function Navigation() {
           alt='Alachua County ready logo'
         />
       </Grid>
-      <Grid item xs={0} lg={2}></Grid>
+      {incidents.length === 0 && <Grid item xs={0} lg={2}></Grid>}
       <Grid
         item
         xs={12}
-        lg={5}
+        lg={incidents.length === 0 ? 5 : 9}
         sx={{
           p: {
             xs: '3%',
             display: 'flex',
             alignContent: 'center',
+            alignItems: 'center',
             justifyContent: 'space-evenly',
             direction: 'row',
           },
         }}
       >
-        <Link href='#notified' underline='none' sx={linkStyles}>
-          Get Notified
-        </Link>
-        <Link href='#prepared' underline='none' sx={linkStyles}>
-          prepare
-        </Link>
-        <Link href='#sticker' underline='none' sx={linkStyles}>
-          acr stickers
-        </Link>
+        {location && location.pathname.includes('incident') ? (
+          <Typography
+            variant='h3'
+            style={{ fontWeight: 'bold', textTransform: 'uppercase' }}
+          >
+            {pageHeading}
+          </Typography>
+        ) : (
+          <>
+            <Link href='#notified' underline='none' sx={linkStyles}>
+              Get Notified
+            </Link>
+            <Link href='#prepared' underline='none' sx={linkStyles}>
+              prepare
+            </Link>
+            <Link href='#sticker' underline='none' sx={linkStyles}>
+              acr stickers
+            </Link>
+
+            {incidents.length === 0
+              ? null
+              : incidents.map((incident) => (
+                  <Button
+                    size='large'
+                    variant='contained'
+                    sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
+                    onClick={() => {
+                      alert(` ${JSON.stringify(incident.pages)}`);
+                    }}
+                  >
+                    {incident.name}
+                  </Button>
+                ))}
+          </>
+        )}
       </Grid>
       <Grid item xs={0} lg={1}></Grid>
     </Grid>

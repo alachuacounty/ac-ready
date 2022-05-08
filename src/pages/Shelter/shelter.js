@@ -1,5 +1,5 @@
 import * as React from 'react';
-import EmergencyBlurb from '../../util/Emergency';
+import EmergencyBlurb from '../../components/EmergencyBlurb';
 import ShelterMapandTable from '../../components/Shelter/sheltermapandtable.js';
 import { makeStyles } from '@mui/styles';
 
