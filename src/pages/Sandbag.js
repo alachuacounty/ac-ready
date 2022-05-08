@@ -1,7 +1,7 @@
 import React from 'react';
 
 import SandbagsMap from '../components/Sandbags/sandbagmap';
-import IncidentsLayout from '../components/Branding/Layouts/IncidentsLayout';
+import IncidentsLayout from '../components/Branding/IncidentsLayout';
 
 export default function Shelter() {
   return (

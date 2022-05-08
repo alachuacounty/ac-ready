@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import React from 'react';
 
-import EmergencyBlurb from '../../EmergencyBlurb';
+import EmergencyBlurb from '../EmergencyBlurb';
 
 export default function IncidentsLayout({ children, title = 'Page Title' }) {
   return (

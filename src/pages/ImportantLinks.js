@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-import IncidentsLayout from '../components/Branding/Layouts/IncidentsLayout';
+import IncidentsLayout from '../components/Branding/IncidentsLayout';
 import ImportantLinksComponent from '../components/ImportantLinks/importantlinks';
 
 export default function ImportantLinksPage() {
