@@ -1,6 +1,6 @@
 import { Button, Grid, Link, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { incidentsContext } from '../../contexts/IncidentsContext';
 import { titleContext } from '../../contexts/TitleContext';
@@ -18,6 +18,11 @@ export default function Navigation() {
   const incidents = useContext(incidentsContext);
   const { pageHeading } = useContext(titleContext);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const navigateToIncident = (incident) => {
+    navigate(`incidents/${incident.urlName}`);
+  };
 
   useEffect(() => {
     console.log(location);
@@ -90,7 +95,7 @@ export default function Navigation() {
                     variant='contained'
                     sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
                     onClick={() => {
-                      alert(` ${JSON.stringify(incident.pages)}`);
+                      navigateToIncident(incident);
                     }}
                   >
                     {incident.name}
