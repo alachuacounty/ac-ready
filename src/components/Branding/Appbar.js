@@ -1,5 +1,6 @@
 import { AppBar, Box, Grid, Toolbar, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { incidentsContext } from '../../contexts/IncidentsContext';
 import { titleContext } from '../../contexts/TitleContext';
@@ -7,14 +8,14 @@ import { titleContext } from '../../contexts/TitleContext';
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
 import Footer from './Footer';
 import ActiveIncidentsNavigation from './ActiveIncidentsNavigation';
-import Navigation from './Navigation';
+import Header from './Header';
 import BreadCrumbs from './BreadCrumbs';
 import IncidentNavigation from './IncidentNavigation';
-
 
 export default function Appbar({ children }) {
   const { pageTitle, pageHeading } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
+  const location = useLocation();
 
   return (
     <>
@@ -56,15 +57,22 @@ export default function Appbar({ children }) {
       </Box>
       <Grid container sx={{ my: 2 }}>
         <Grid item xs={12}>
-          {pageTitle !== 'Alachua County Ready | Home' ? <BreadCrumbs /> : null}
-          {pageTitle === 'Page Not Found' ? null : <Navigation />}
-          {pageTitle !== 'Alachua County Ready | Home' ? <IncidentNavigation /> : null}
           {pageTitle === 'Page Not Found' ? null : (
             <>
-              <Navigation />
-              {pageHeading !== 'Home' && incidents && incidents.length > 0 && (
-                <ActiveIncidentsNavigation />
-              )}
+              {pageTitle !== 'Alachua County Ready | Home' ? (
+                <BreadCrumbs />
+              ) : null}
+              <Header />
+              {pageTitle !== 'Alachua County Ready | Home' ? (
+                location && location.pathname === '/incidents' ? (
+                  <ActiveIncidentsNavigation />
+                ) : (
+                  <IncidentNavigation />
+                )
+              ) : null}
+              {/*   {pageHeading !== 'Home' && incidents && incidents.length > 0 && (
+               
+              )} */}
             </>
           )}
           {children}

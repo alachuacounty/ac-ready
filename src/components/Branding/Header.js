@@ -1,5 +1,5 @@
 import { Button, Grid, Link, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { incidentsContext } from '../../contexts/IncidentsContext';
@@ -14,7 +14,7 @@ const linkStyles = {
   fontWeight: 'bold',
 };
 
-export default function Navigation() {
+export default function Header() {
   const incidents = useContext(incidentsContext);
   const { pageHeading } = useContext(titleContext);
   const location = useLocation();
