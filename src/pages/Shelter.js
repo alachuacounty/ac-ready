@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 
-import IncidentsLayout from '../components/Branding/Layouts/IncidentsLayout';
+import IncidentsLayout from '../components/Branding/IncidentsLayout';
 import ShelterMapandTable from '../components/Shelter/sheltermapandtable';
 
 export default function Shelter() {

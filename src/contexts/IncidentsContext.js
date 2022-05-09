@@ -14,6 +14,8 @@ export default function IncidentsContext({ children }) {
     updateIncidents([
       {
         name: 'Hurricane Elsa',
+        urlName: 'hurricaneElsa',
+        eventType: 'Hurricane',
         pages: [
           { id: 680683111, name: 'Frequently Asked Questions', position: 6 },
           { id: 599761016, name: 'Sandbags Locations', position: 2 },

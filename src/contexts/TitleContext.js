@@ -4,10 +4,16 @@ export const titleContext = createContext({});
 
 export default function TitleContext({ children }) {
   const [pageTitle, setPageTitle] = useState('ACR');
+  const [pageHeading, setPageHeading] = useState('Incidents');
 
   const updatePageTitle = (title) => {
     if (title) setPageTitle(title);
     else setPageTitle('ACR');
+  };
+
+  const updatePageHeading = (heading) => {
+    if (heading) setPageHeading(heading);
+    else setPageHeading('Incidents');
   };
 
   useEffect(() => {
@@ -16,7 +22,12 @@ export default function TitleContext({ children }) {
 
   return (
     <titleContext.Provider
-      value={{ pageTitle: pageTitle, updatePageTitle: updatePageTitle }}
+      value={{
+        pageTitle: pageTitle,
+        updatePageTitle: updatePageTitle,
+        pageHeading: pageHeading,
+        updatePageHeading: updatePageHeading,
+      }}
     >
       {children}
     </titleContext.Provider>
