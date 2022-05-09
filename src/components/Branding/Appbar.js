@@ -6,12 +6,11 @@ import { titleContext } from '../../contexts/TitleContext';
 
 import aclogo from '../../images/Seal_of_Alachua_County_Florida.png';
 import Footer from './Footer';
-import IncidentNavigation from './IncidentNavigation';
+import ActiveIncidentsNavigation from './ActiveIncidentsNavigation';
 import Navigation from './Navigation';
 import BreadCrumbs from './BreadCrumbs';
-import IncidenceHomeNavigation from './IncidentHomeNavigation';
+import IncidentNavigation from './IncidentNavigation';
 
-import { incidentsContext } from '../../contexts/IncidentsContext';
 
 export default function Appbar({ children }) {
   const { pageTitle, pageHeading } = useContext(titleContext);
@@ -59,12 +58,12 @@ export default function Appbar({ children }) {
         <Grid item xs={12}>
           {pageTitle !== 'Alachua County Ready | Home' ? <BreadCrumbs /> : null}
           {pageTitle === 'Page Not Found' ? null : <Navigation />}
-          {pageTitle !== 'Alachua County Ready | Home' ? <IncidenceHomeNavigation /> : null}
+          {pageTitle !== 'Alachua County Ready | Home' ? <IncidentNavigation /> : null}
           {pageTitle === 'Page Not Found' ? null : (
             <>
               <Navigation />
               {pageHeading !== 'Home' && incidents && incidents.length > 0 && (
-                <IncidentNavigation />
+                <ActiveIncidentsNavigation />
               )}
             </>
           )}
