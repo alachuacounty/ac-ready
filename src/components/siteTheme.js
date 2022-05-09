@@ -15,6 +15,9 @@ const theme = createTheme({
     white: {
       main: '#FFFFFF!important',
     },
+    grey: {
+      main: '#707070',
+    }
   },
   sectionpadding: {
     padding: '4% 0',
@@ -28,5 +31,6 @@ const theme = createTheme({
     },
   },
 });
+
 
 export default theme;

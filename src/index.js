@@ -8,14 +8,17 @@ import { BrowserRouter } from 'react-router-dom';
 
 import TitleContext from './contexts/TitleContext';
 import IncidentsContext from './contexts/IncidentsContext';
+import BreadCrumbsContext from './contexts/BreadCrumbsContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <IncidentsContext>
       <TitleContext>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <BreadCrumbsContext>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </BreadCrumbsContext>
       </TitleContext>
     </IncidentsContext>
   </React.StrictMode>,
