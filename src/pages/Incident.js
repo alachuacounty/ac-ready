@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import NHCMaps from '../components/IncidentHome/NHCMaps';
 import { titleContext } from '../contexts/TitleContext';
 
 export default function Incident({ name = 'Incident Name', pages }) {
@@ -9,5 +10,9 @@ export default function Incident({ name = 'Incident Name', pages }) {
     updatePageHeading(name);
   }, []);
 
-  return <div>{name}</div>;
+  return (
+    <div>
+      <NHCMaps />
+    </div>
+  );
 }
