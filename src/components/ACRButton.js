@@ -1,7 +1,13 @@
 import React from 'react';
-import Button from '@mui/material/Button';
+import {
+  Button,
+  Link
+}
+  from '@mui/material';
 
-export default function ACRButton() {
+
+
+export default function ACRButton({ text, link, invert }) {
   return (
     <div>
       <Button
@@ -14,7 +20,10 @@ export default function ACRButton() {
         }}
         variant='contained'
       >
-        READ MORE
+        <Link href={link} color='inherit' title={text}>
+          {text}
+        </Link>
+
       </Button>
 
       {/*  <Button
