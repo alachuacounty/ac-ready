@@ -5,6 +5,7 @@ import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import DateCircle from '../components/PressReleases/DateCircle';
 import ACRButton from '../components/ACRButton';
+import ReportDamage from '../components/IncidentHome/ReportDamage';
 
 export default function IncidentHome() {
   const { pageTitle, updatePageTitle } = useContext(titleContext);
@@ -19,6 +20,7 @@ export default function IncidentHome() {
       <div>
         {pageTitle}
         <DateCircle />
+        <ReportDamage />
         <NHCMaps />
         <ACRButton />
       </div>

@@ -10,6 +10,21 @@ export default function ACRButton() {
           borderColor: ' #1968B2!important',
           borderRadius: '10',
           textDecoration: 'underline',
+          fontWeight: 'bold',
+        }}
+        variant='contained'
+      >
+        READ MORE
+      </Button>
+
+      <Button
+        sx={{
+          color: '#12274B!important',
+          bgcolor: '#D0EDFC!important',
+          borderColor: ' #4A97D2!important',
+          borderRadius: '10',
+          textDecoration: 'underline',
+          fontWeight: 'bold',
         }}
         variant='contained'
       >
