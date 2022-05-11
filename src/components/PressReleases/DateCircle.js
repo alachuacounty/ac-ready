@@ -10,8 +10,8 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     avatar: {
-        height: '77px',
-        width: '77px',
+        height: '70px',
+        width: '70px',
         background: '#D0EDFC',
     },
     text: {
@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
         color: '#12274B',
         textTransform: 'Uppercase',
     },
-    menuLink: {
+    day: {
+        fontWeight: 'bold',
+        fontSize: '16px !important',
 
     },
 
@@ -33,14 +35,14 @@ export default function DateCircle({ day, date, year }) {
             <Avatar className={classes.avatar}>
 
                 <Grid container spacing={0}>
-                    <Grid item xs={12}>
-                        <span className={classes.text}>Fri</span>
+                    <Grid item container xs={12} justifyContent='center' className={classes.day}>
+                        <span className={classes.text}>{day}</span>
                     </Grid>
-                    <Grid item xs={12}>
-                        <span className={classes.text}> Jul 21 </span>
+                    <Grid item container xs={12} justifyContent='center'>
+                        <span className={classes.text}> {date} </span>
                     </Grid>
-                    <Grid item xs={12}>
-                        <span className={classes.text}> 2022</span>
+                    <Grid item container xs={12} justifyContent='center'>
+                        <span className={classes.text}> {year}</span>
                     </Grid>
                 </Grid>
 
