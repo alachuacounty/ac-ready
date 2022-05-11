@@ -2,24 +2,28 @@ import * as React from "react";
 import {
     Avatar,
     Stack,
-    Grid
+    Grid,
+    Typography
 }
     from "@mui/material";
 
 import { makeStyles } from '@mui/styles';
 
+import clsx from 'clsx';
+
 const useStyles = makeStyles((theme) => ({
     avatar: {
-        height: '70px',
-        width: '70px',
+        height: '62px',
+        width: '62px',
         background: '#D0EDFC',
     },
     text: {
         fontSize: '14px',
         color: '#12274B',
         textTransform: 'Uppercase',
+        lineHeight: '1',
     },
-    day: {
+    highlight: {
         fontWeight: 'bold',
         fontSize: '16px !important',
 
@@ -35,14 +39,14 @@ export default function DateCircle({ day, date, year }) {
             <Avatar className={classes.avatar}>
 
                 <Grid container spacing={0}>
-                    <Grid item container xs={12} justifyContent='center' className={classes.day}>
-                        <span className={classes.text}>{day}</span>
+                    <Grid item container xs={12} justifyContent='center'>
+                        <Typography component="span" className={clsx(classes.text, classes.highlight)}>{day}</Typography>
                     </Grid>
                     <Grid item container xs={12} justifyContent='center'>
-                        <span className={classes.text}> {date} </span>
+                        <Typography component="span" className={classes.text}> {date} </Typography>
                     </Grid>
                     <Grid item container xs={12} justifyContent='center'>
-                        <span className={classes.text}> {year}</span>
+                        <Typography component="span" className={classes.text}> {year}</Typography>
                     </Grid>
                 </Grid>
 
