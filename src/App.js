@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes } from 'react-router-dom';
 
-import theme from '../src/components/siteTheme';
+import theme from './components/siteTheme';
 import { incidentsContext } from './contexts/IncidentsContext';
 
 import Appbar from './components/Branding/Appbar';
