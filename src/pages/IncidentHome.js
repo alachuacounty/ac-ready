@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
+import ACRButton from '../components/ACRButton';
 
 export default function IncidentHome() {
   const { pageTitle, updatePageTitle } = useContext(titleContext);
@@ -17,6 +18,7 @@ export default function IncidentHome() {
       <div>
         {pageTitle}
         <NHCMaps />
+        <ACRButton />
       </div>
     </>
   );
