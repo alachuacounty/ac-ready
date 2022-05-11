@@ -17,7 +17,7 @@ export default function ACRButton() {
         READ MORE
       </Button>
 
-      <Button
+      {/*  <Button
         sx={{
           color: '#12274B!important',
           bgcolor: '#D0EDFC!important',
@@ -29,7 +29,7 @@ export default function ACRButton() {
         variant='contained'
       >
         READ MORE
-      </Button>
+      </Button> */}
     </div>
   );
 }
