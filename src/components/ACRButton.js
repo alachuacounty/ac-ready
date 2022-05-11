@@ -7,7 +7,7 @@ import {
 
 
 
-export default function ACRButton({ text, link, invert }) {
+export default function ACRButton({ text, link, invert, size }) {
   return (
     <div>
       <Button
@@ -19,6 +19,7 @@ export default function ACRButton({ text, link, invert }) {
           fontWeight: 'bold',
         }}
         variant='contained'
+        size={size}
       >
         <Link href={link} color='inherit' title={text}>
           {text}

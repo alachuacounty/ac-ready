@@ -6,6 +6,7 @@ import {
     from "@mui/material";
 import clsx from 'clsx';
 import DateCircle from "./DateCircle";
+import ACRButton from "../ACRButton";
 
 import { makeStyles } from '@mui/styles';
 
@@ -41,12 +42,13 @@ export default function PressItem({ day, date, year }) {
     const classes = useStyles();
     return (
 
-        <Grid container spacing={2} xs={12} sm={6}>
-            <Grid container spacing={3} xs={2}>
+        <Grid container spacing={2} xs={12} md={6}>
+
+            <Grid item container spacing={0} xs={2}>
                 <DateCircle day='Fri' date='Jul 21' year='2022' />
             </Grid>
 
-            <Grid container spacing={1} xs={10}>
+            <Grid item container spacing={0} xs={10}>
                 <Grid item container xs={12}>
                     <Typography component="span" className={clsx(classes.text, classes.timeByline)}> 9:00 AM </Typography>
                 </Grid>
@@ -59,7 +61,7 @@ export default function PressItem({ day, date, year }) {
                     </Typography>
                 </Grid>
                 <Grid item container xs={12}>
-                    <span className={classes.text}> Button goes here</span>
+                    <ACRButton text="Read More" link="/" inverted={false} size="small" />
                 </Grid>
             </Grid>
 
