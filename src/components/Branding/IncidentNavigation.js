@@ -60,7 +60,7 @@ export default function IncidentNavigation() {
         <AppBar position='absolute' className={classes.appBar}>
             <Toolbar variant='dense'>
 
-                <DrawerNavigation navItems={navItems}></DrawerNavigation>
+                <DrawerNavigation navItems={navItems} ></DrawerNavigation>
 
 
                 <List className={classes.gridList}>

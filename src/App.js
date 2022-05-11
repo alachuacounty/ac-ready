@@ -17,6 +17,7 @@ import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
 import ShelterPage from './pages/Shelter/shelter.js';
 import Incident from './pages/Incident';
+import IncidentHome from './pages/IncidentHome';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -32,6 +33,7 @@ export default function App() {
           <Route path='prepare' element={<Prepare />} />
           <Route path='sandbags' element={<SandbagPage />} />
           <Route path='shelters' element={<Shelter />} />
+          <Route path='elsa' element={<IncidentHome />} />
           {incidents.length > 0 && (
             <>
               <Route path='incidents' element={<Incidents />} />
