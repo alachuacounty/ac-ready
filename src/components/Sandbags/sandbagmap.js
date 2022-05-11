@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Map from '../../components/Map/index';
+import Map from '../Map/index';
 //import EnhancedTable from "../../components/Sandbags/table";
-import EnhancedTable from '../../components/Table/index';
+import EnhancedTable from '../Table/index';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 

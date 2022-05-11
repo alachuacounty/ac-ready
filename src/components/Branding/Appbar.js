@@ -64,7 +64,9 @@ export default function Appbar({ children }) {
               ) : null}
               <Header />
               {pageTitle !== 'Alachua County Ready | Home' ? (
-                location && location.pathname === '/incidents' ? (
+                location &&
+                (location.pathname === '/incidents' ||
+                  location.pathname === '/incidents/') ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation />
