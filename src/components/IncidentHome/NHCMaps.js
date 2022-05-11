@@ -12,14 +12,22 @@ const useStyles = makeStyles((theme) => ({}));
 export default function NHCMaps() {
   return (
     <div>
-      <Grid container xs={12}>
+      <Grid container xs={12} spacing={3}>
         <Grid item textAlign='left' xs={12} p={4}>
           <Typography variant='h5' textAlign='left'>
             National Hurricane Center Maps
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6}>
-          <Card sx={{ maxWidth: 350, height: '100%' }} elevation={5}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          display='flex'
+          justifyContent='center'
+        >
+          <Card sx={{ maxWidth: 450, height: '100%' }} elevation={5}>
             <CardActionArea>
               <CardMedia
                 component='img'
@@ -53,8 +61,16 @@ export default function NHCMaps() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={12} sm={12} md={6} lg={6}>
-          <Card sx={{ maxWidth: 350, height: '100%' }}>
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          lg={6}
+          display='flex'
+          justifyContent='center'
+        >
+          <Card sx={{ maxWidth: 450, height: '100%' }}>
             <CardActionArea>
               <CardMedia
                 component='img'
