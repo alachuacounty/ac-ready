@@ -18,7 +18,7 @@ export default function IncidentHome() {
     <>
       <div>
         {pageTitle}
-        <DateCircle />
+        <DateCircle day='Fri' date='Jul 21' year='2022' />
         <NHCMaps />
         <ACRButton />
       </div>
