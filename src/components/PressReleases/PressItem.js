@@ -59,7 +59,7 @@ export default function PressItem({ data, expanded }) {
                             expanded ?
                                 data.title
                                 :
-                                (<Link href={data.link}> {data.title} </Link>)
+                                (<Link href={data.link} title={data.title}> {data.title} </Link>)
                         }
 
                     </Typography>

@@ -1,4 +1,7 @@
-import { Grid } from '@mui/material';
+import {
+  Grid,
+  Typography
+} from '@mui/material';
 import React from 'react';
 
 import EmergencyBlurb from '../EmergencyBlurb';
