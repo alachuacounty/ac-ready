@@ -1,33 +1,53 @@
 import React from 'react';
-import { Button, Link } from '@mui/material';
+import {
+  Button,
+  Link,
+  Typography
+} from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import clsx from 'clsx';
 
 const useStyles = makeStyles((theme) => ({
-  darkBG: {
-    backgroundColor: '#1B5B98!important',
-    borderColor: ' #1968B2!important',
+
+  button: {
     borderRadius: '10',
     textDecoration: 'underline',
     fontWeight: 'bold',
   },
-  lightBG: {
-    color: '#12274B!important',
-    backgroundColor: '#D0EDFC!important',
-    borderColor: ' #4A97D2!important',
-    borderRadius: '10',
-    textDecoration: 'underline',
+  text: {
     fontWeight: 'bold',
+  },
+  textSmall: {
+    fontSize: '0.8125rem',
+  },
+  jumbo: {
+    padding: '15px 30px',
+    width: '100%',
+  },
+  darkBG: {
+    backgroundColor: theme.palette.darkblue.light,
+    borderColor: theme.palette.middleblue.main,
+    color: theme.palette.white.main,
+
+  },
+  lightBG: {
+    color: theme.palette.darkblue.main,
+    backgroundColor: theme.palette.lightblue.light,
+    borderColor: theme.palette.middleblue.light,
   },
 }));
 
 export default function ACRButton({ text, link, invert, size }) {
 
   const classes = useStyles();
+  const appliedClasses = clsx(classes.button, invert ? classes.lightBG : classes.darkBG, size === 'jumbo' ? classes.jumbo : '');
   return (
     <div>
-      <Button className={invert ? classes.lightBG : classes.darkBG} variant='contained' size={size}>
+      <Button className={appliedClasses} variant='contained' size={size} >
         <Link href={link} color='inherit' title={text}>
-          {text}
+          <Typography className={clsx(classes.text, size === 'small' ? classes.textSmall : '')}>
+            {text}
+          </Typography>
         </Link>
       </Button>
     </div>

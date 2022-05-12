@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: '1',
     flexBasis: 'auto',
     textAlign: 'left',
-    background: '#1968B2',
+    background: theme.palette.middleblue.main,
   },
   toolbar: theme.mixins.toolbar,
   gridList: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mobileList: {
-    background: '#FFFFFF',
+    background: theme.palette.white.main,
   },
   mobileItem: {
     color: theme.palette.primary.main,
