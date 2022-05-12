@@ -15,13 +15,11 @@ export default function IncidentHome() {
     updatePageTitle('Hurricane Elsa | Home');
   }, []);
 
-
   return (
     <>
       <LatestUpdates />
       <ReportDamage />
       <NHCMaps />
-      <ACRButton text='Read More' link='/' inverted={false} />
     </>
   );
 }
