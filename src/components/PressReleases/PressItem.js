@@ -38,11 +38,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function PressItem({ data }) {
+export default function PressItem({ data, expanded }) {
     const classes = useStyles();
     return (
 
-        <Grid container spacing={2} xs={12} md={6}>
+        <Grid container spacing={2} xs={12}>
 
             <Grid item container spacing={0} xs={2} justifyContent='flex-end'>
                 <DateCircle day={data.day} date={data.date} year={data.year} />
@@ -55,14 +55,20 @@ export default function PressItem({ data }) {
                 <Grid item container xs={12} >
                     <Typography component="h3" variant="h5" className={classes.title} > {data.title} </Typography>
                 </Grid>
-                <Grid item container xs={12} >
-                    <Typography paragraph className={clsx(classes.text, classes.clipped)}>
-                        {data.desc}
-                    </Typography>
-                </Grid>
-                <Grid item container xs={12}>
-                    <ACRButton text="Read More" link={data.link} inverted={false} size="small" />
-                </Grid>
+                {expanded && (
+                    <>
+                        <Grid item container xs={12} >
+                            <Typography paragraph className={clsx(classes.text, classes.clipped)}>
+                                {data.desc}
+                            </Typography>
+                        </Grid>
+                        <Grid item container xs={12}>
+                            <ACRButton text="Read More" link={data.link} inverted={false} size="small" />
+                        </Grid>
+                    </>
+                )
+
+                }
             </Grid>
 
         </Grid >

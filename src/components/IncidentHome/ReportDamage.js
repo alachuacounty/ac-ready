@@ -9,6 +9,7 @@ export default function ReportDamage() {
         container
         xs={12}
         alignSelf=''
+        justifyContent='center'
         sx={{
           height: 200,
           display: 'flex',
@@ -17,9 +18,9 @@ export default function ReportDamage() {
           bgcolor: '#D0EDFC!important',
         }}
       >
-        <Grid item>
+        <Grid item justifySelf='center'>
           <Typography variant='h4'>See Damage? Report it! </Typography>
-          <ACRButton />
+          <ACRButton text='Report' link='/' size="large" inverted={false} />
         </Grid>
       </Grid>
     </div>
