@@ -1,7 +1,8 @@
 import * as React from "react";
 import {
     Grid,
-    Typography
+    Typography,
+    Link,
 }
     from "@mui/material";
 import clsx from 'clsx';
@@ -53,7 +54,15 @@ export default function PressItem({ data, expanded }) {
                     <Typography component="span" className={clsx(classes.text, classes.timeByline)}> {data.time} </Typography>
                 </Grid>
                 <Grid item container xs={12} >
-                    <Typography component="h3" variant="h5" className={classes.title} > {data.title} </Typography>
+                    <Typography component="h3" variant="h5" className={classes.title} >
+                        {
+                            expanded ?
+                                data.title
+                                :
+                                (<Link href={data.link}> {data.title} </Link>)
+                        }
+
+                    </Typography>
                 </Grid>
                 {expanded && (
                     <>
