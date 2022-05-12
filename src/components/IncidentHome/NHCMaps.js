@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
 import CardContent from '@mui/material/CardContent';
@@ -7,14 +8,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  title: {
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+  },
+}));
 
 export default function NHCMaps() {
+  const classes = useStyles();
   return (
     <div>
       <Grid container xs={12} spacing={3} justifyContent='center'>
         <Grid item xs={12} p={4}>
-          <Typography variant='h5' textAlign='left'>
+          <Typography variant='h5' textAlign='left' className={classes.title}>
             National Hurricane Center Maps
           </Typography>
         </Grid>
@@ -23,8 +30,8 @@ export default function NHCMaps() {
             item
             xs={12}
             sm={12}
-            md={6}
-            lg={6}
+            md={5}
+            lg={5}
             display='flex'
             justifyContent='center'
           >
@@ -66,8 +73,8 @@ export default function NHCMaps() {
             item
             xs={12}
             sm={12}
-            md={6}
-            lg={6}
+            md={5}
+            lg={5}
             display='flex'
             justifyContent='center'
           >
