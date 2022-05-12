@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Link } from '@mui/material';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
   darkBG: {
-    bgcolor: '#1B5B98!important',
+    backgroundColor: '#1B5B98!important',
     borderColor: ' #1968B2!important',
     borderRadius: '10',
     textDecoration: 'underline',
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
   lightBG: {
     color: '#12274B!important',
-    bgcolor: '#D0EDFC!important',
+    backgroundColor: '#D0EDFC!important',
     borderColor: ' #4A97D2!important',
     borderRadius: '10',
     textDecoration: 'underline',
@@ -21,9 +21,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ACRButton({ text, link, invert, size }) {
+
+  const classes = useStyles();
   return (
     <div>
-      <Button sx={{}} variant='contained' size={size}>
+      <Button className={invert ? classes.lightBG : classes.darkBG} variant='contained' size={size}>
         <Link href={link} color='inherit' title={text}>
           {text}
         </Link>

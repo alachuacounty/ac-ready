@@ -63,7 +63,7 @@ export default function PressItem({ data, expanded }) {
                             </Typography>
                         </Grid>
                         <Grid item container xs={12}>
-                            <ACRButton text="Read More" link={data.link} inverted={false} size="small" />
+                            <ACRButton text="Read More" link={data.link} size="small" />
                         </Grid>
                     </>
                 )
