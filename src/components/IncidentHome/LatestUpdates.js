@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import {
   Grid,
   Typography
@@ -33,20 +33,31 @@ const mockpressdata = {
 export default function LatestUpdates() {
 
   const classes = useStyles();
+
+  const [isMobile, setMobile] = useState(window.innerWidth < 601);
+
+  const updateMedia = () => {
+    setMobile(window.innerWidth < 601);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
   return (
 
     <Grid container xs={12} spacing={3} justifyContent='center'>
       <Grid item xs={12} >
-        <Typography variant='h5' textAlign='left' className={classes.title} p={4}>
+        <Typography variant='h5' textAlign='left' className={classes.title} >
           Latest Updates
         </Typography>
       </Grid>
 
-      <Grid container xs={12} justifyContent='center'>
-        <Grid container xs={12} sm={6} p={4} justifyContent='flex-end'>
-          <PressItem data={mockpressdata} expanded={true} />
+      <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
+        <Grid container xs={12} sm={6} justifyContent='flex-end'>
+          <PressItem data={mockpressdata} expanded={!isMobile} />
         </Grid>
-        <Grid container xs={12} sm={6} p={4} justifyContent='left'>
+        <Grid container xs={12} sm={6} justifyContent='left'>
           <PressItem data={mockpressdata} />
           <PressItem data={mockpressdata} />
           <PressItem data={mockpressdata} />
