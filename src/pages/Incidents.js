@@ -7,8 +7,8 @@ import { titleContext } from '../contexts/TitleContext';
 import hurricaneImage from '../images/hurricane.svg';
 
 const cardStyles = {
-  background: '#D0EDFC',
-  mx: '8% !important',
+  background: (theme) => theme.palette.lightblue.light,
+  mx: { xs: '2%', sm: '8% !important' },
   mb: '2% !important',
   display: 'flex',
   alignItems: 'center',
