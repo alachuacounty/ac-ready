@@ -1,18 +1,34 @@
-import * as React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import * as React from "react";
+import {
+  Grid,
+  Typography
+}
+  from "@mui/material";
+import clsx from 'clsx';
+
+
+
+import { makeStyles } from '@mui/styles';
+import PressItem from "../PressReleases/PressItem";
 
 const useStyles = makeStyles((theme) => ({}));
 
-export default function NHCMaps() {
+const mockpressdata = {
+  day: 'Fri',
+  date: 'Jul 21',
+  year: '2022',
+  time: '9:00 AM',
+  title: 'Title',
+  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+  link: '/',
+}
+
+
+export default function LatestUpdates() {
   return (
     <div>
       <Grid container xs={12}></Grid>
+      <PressItem data={mockpressdata} />
     </div>
   );
 }
