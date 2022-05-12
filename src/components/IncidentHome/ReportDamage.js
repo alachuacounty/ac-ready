@@ -19,8 +19,10 @@ export default function ReportDamage() {
         }}
       >
         <Grid item justifySelf='center'>
-          <Typography variant='h4'>See Damage? Report it! </Typography>
-          <ACRButton text='Report' link='/' size="jumbo" />
+          <Typography variant='h4' pb={4}>
+            See Damage? Report it!{' '}
+          </Typography>
+          <ACRButton text='Report' link='/' size='jumbo' />
         </Grid>
       </Grid>
     </div>
