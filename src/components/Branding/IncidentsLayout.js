@@ -5,19 +5,40 @@ import {
 import React from 'react';
 
 import EmergencyBlurb from '../EmergencyBlurb';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+
+  title: {
+    textTransform: 'uppercase',
+    fontWeight: 'bold',
+  },
+  hidden: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    }
+  }
+}));
 
 export default function IncidentsLayout({ children, title = 'Page Title' }) {
+  const classes = useStyles();
   return (
-    <Grid container spacing={3}>
+    <Grid container xs={12} spacing={3} justifyContent='center'>
       <Grid item xs={12}>
-        {title}
+        <Typography variant='h4' textAlign='center' className={classes.title} >
+          {title}
+        </Typography>
       </Grid>
-      <Grid item xs={9}>
-        {children}
+      <Grid container item xs={10} md={10} justifyContent='center'>
+
+        <Grid item xs={12} md={8}>
+          {children}
+        </Grid>
+
+        <Grid container item xs={0} md={4} justifyContent='flex-end' className={classes.hidden}>
+          <EmergencyBlurb />
+        </Grid>
       </Grid>
-      <Grid item xs={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-        <EmergencyBlurb />
-      </Grid>
-    </Grid>
+    </Grid >
   );
 }

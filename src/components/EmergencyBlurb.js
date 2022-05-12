@@ -9,7 +9,7 @@ export default function EmergencyBlurb() {
         flexWrap: 'wrap',
         '& > :not(style)': {
           m: 1,
-          width: 220,
+          width: 200,
           height: 220,
         },
       }}
@@ -24,8 +24,8 @@ export default function EmergencyBlurb() {
         <Typography textAlign='center' p={1} variant='h5'>
           Sign Up for Emergency Alerts
         </Typography>
-        <Typography textAlign='center' p={1} varient='p'>
-          Text "Alachua to XXXXXXX to receive real-time County updates during a
+        <Typography textAlign='center' p={1}>
+          Text "Alachua" to XXXXXX to receive real-time County updates during a
           large-scale incident or emergency
         </Typography>
       </Paper>

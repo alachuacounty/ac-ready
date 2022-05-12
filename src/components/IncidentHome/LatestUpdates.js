@@ -4,9 +4,6 @@ import {
   Typography
 }
   from "@mui/material";
-import clsx from 'clsx';
-
-
 
 import { makeStyles } from '@mui/styles';
 import PressItem from "../PressReleases/PressItem";
