@@ -44,6 +44,7 @@ export default function LatestUpdates() {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   });
+
   return (
 
     <Grid container xs={12} spacing={3} justifyContent='center'>
@@ -54,10 +55,10 @@ export default function LatestUpdates() {
       </Grid>
 
       <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
-        <Grid container xs={12} sm={6} justifyContent='flex-end'>
+        <Grid container xs={12} md={6} justifyContent='flex-end'>
           <PressItem data={mockpressdata} expanded={!isMobile} />
         </Grid>
-        <Grid container xs={12} sm={6} justifyContent='left'>
+        <Grid container xs={12} md={6} justifyContent='flex-end'>
           <PressItem data={mockpressdata} />
           <PressItem data={mockpressdata} />
           <PressItem data={mockpressdata} />
