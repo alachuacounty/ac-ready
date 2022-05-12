@@ -17,13 +17,10 @@ export default function IncidentHome() {
 
   return (
     <>
-      <div>
-        {pageTitle}
-        <ReportDamage />
-        <PressItem />
-        <NHCMaps />
-        <ACRButton text="Read More" link="/" inverted={false} />
-      </div>
+      <ReportDamage />
+      <PressItem />
+      <NHCMaps />
+      <ACRButton text='Read More' link='/' inverted={false} />
     </>
   );
 }
