@@ -38,31 +38,37 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function PressItem({ day, date, year }) {
+export default function PressItem({ data, expanded }) {
     const classes = useStyles();
     return (
 
-        <Grid container spacing={2} xs={12} md={6}>
+        <Grid container spacing={2} xs={12}>
 
-            <Grid item container spacing={0} xs={2}>
-                <DateCircle day='Fri' date='Jul 21' year='2022' />
+            <Grid item container spacing={0} xs={2} justifyContent='flex-end'>
+                <DateCircle day={data.day} date={data.date} year={data.year} />
             </Grid>
 
             <Grid item container spacing={0} xs={10}>
                 <Grid item container xs={12}>
-                    <Typography component="span" className={clsx(classes.text, classes.timeByline)}> 9:00 AM </Typography>
+                    <Typography component="span" className={clsx(classes.text, classes.timeByline)}> {data.time} </Typography>
                 </Grid>
                 <Grid item container xs={12} >
-                    <Typography component="h3" variant="h5" className={classes.title} > Title </Typography>
+                    <Typography component="h3" variant="h5" className={classes.title} > {data.title} </Typography>
                 </Grid>
-                <Grid item container xs={12} >
-                    <Typography paragraph className={clsx(classes.text, classes.clipped)}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                    </Typography>
-                </Grid>
-                <Grid item container xs={12}>
-                    <ACRButton text="Read More" link="/" inverted={false} size="small" />
-                </Grid>
+                {expanded && (
+                    <>
+                        <Grid item container xs={12} >
+                            <Typography paragraph className={clsx(classes.text, classes.clipped)}>
+                                {data.desc}
+                            </Typography>
+                        </Grid>
+                        <Grid item container xs={12}>
+                            <ACRButton text="Read More" link={data.link} size="small" />
+                        </Grid>
+                    </>
+                )
+
+                }
             </Grid>
 
         </Grid >

@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
-import PressItem from '../components/PressReleases/PressItem';
+import LatestUpdates from '../components/IncidentHome/LatestUpdates';
 import ACRButton from '../components/ACRButton';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
 
@@ -17,10 +17,9 @@ export default function IncidentHome() {
 
   return (
     <>
+      <LatestUpdates />
       <ReportDamage />
-      <PressItem />
       <NHCMaps />
-      <ACRButton text='Read More' link='/' inverted={false} />
     </>
   );
 }
