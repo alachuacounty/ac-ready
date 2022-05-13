@@ -14,7 +14,7 @@ import IncidentNavigation from './IncidentNavigation';
 import DrawerNavigation from './DrawerNavigation';
 
 
-const navItems = [
+var navItems = [
   { title: 'Hurricane Home', link: '/' },
   {
     title: 'Prepare',
@@ -41,6 +41,10 @@ export default function Appbar({ children }) {
   const { pageTitle, pageHeading } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
   const location = useLocation();
+
+  if (pageTitle !== 'Alachua County Ready | Home' && location &&
+    (location.pathname === '/incidents' ||
+      location.pathname === '/incidents/')) { navItems = incidents.map((incident) => ({ title: incident.name, link: incident.urlName })) }
 
   return (
     <>
