@@ -15,10 +15,10 @@ import SandbagPage from './pages/Sandbag';
 import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
-import ShelterPage from './pages/Shelter/shelter.js';
 import Incident from './pages/Incident';
 import IncidentHome from './pages/IncidentHome';
 import Advisories from './pages/Advisories';
+import EmergencyOrder from './pages/EmergencyOrder';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -28,7 +28,10 @@ export default function App() {
       <Appbar>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='emergencyorders' element={<AdvisoryTable />} />
+          <Route
+            path='/incidents/elsa/emergencyorders'
+            element={<EmergencyOrder />}
+          />
           <Route path='faq' element={<FAQPage />} />
           <Route
             path='/incidents/elsa/importantlinks'

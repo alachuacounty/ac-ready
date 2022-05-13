@@ -24,7 +24,7 @@ const navItems = [
     ],
   },
   { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
-  { title: 'Emergency Orders', link: '/emergencyorders' },
+  { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
 ];
 
 export default function IncidentNavigation() {
