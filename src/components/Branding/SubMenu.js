@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
     },
     padding: {
-        paddingTop: '8px',
+        // paddingTop: '8px',
     },
     menuButton: {
         color: "#FFFFFF",
@@ -46,6 +46,7 @@ export default function SubMenu(props) {
     };
     const handleClose = () => {
         setAnchorEl(null);
+        setOpen(false);
     };
 
     return (
@@ -68,7 +69,7 @@ export default function SubMenu(props) {
                 MenuListProps={{
                     'aria-labelledby': "menu-button-" + props.item.title,
                     disablePadding: true,
-                    sx: { paddingTop: '8px' },
+                    //sx: { paddingTop: '0px' },
                 }}
             >
 
