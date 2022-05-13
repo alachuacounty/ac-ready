@@ -14,7 +14,7 @@ export default function IncidentsContext({ children }) {
     updateIncidents([
       {
         name: 'Hurricane Elsa',
-        urlName: 'hurricaneElsa',
+        urlName: 'elsa',
         eventType: 'Hurricane',
         pages: [
           { id: 680683111, name: 'Frequently Asked Questions', position: 6 },
@@ -24,7 +24,6 @@ export default function IncidentsContext({ children }) {
           { id: 599761016, name: 'Recent Advisories', position: 3 },
           { id: 599761016, name: 'Emergency Orders', position: 4 },
         ],
-
       },
     ]);
   }, []);
