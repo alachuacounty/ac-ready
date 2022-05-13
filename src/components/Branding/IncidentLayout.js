@@ -21,12 +21,17 @@ export default function IncidentLayout({ children, title = 'Page Title' }) {
   return (
     <Grid container xs={12} spacing={3} justifyContent='center'>
       <Grid item xs={12}>
-        <Typography variant='h4' textAlign='center' className={classes.title}>
+        <Typography
+          variant='h4'
+          textAlign='center'
+          sx={{ my: 4 }}
+          className={classes.title}
+        >
           {title}
         </Typography>
       </Grid>
       <Grid container item xs={10} md={10} justifyContent='center'>
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={9}>
           {children}
         </Grid>
 
@@ -34,7 +39,7 @@ export default function IncidentLayout({ children, title = 'Page Title' }) {
           container
           item
           xs={0}
-          md={4}
+          md={3}
           justifyContent='flex-end'
           className={classes.hidden}
         >
