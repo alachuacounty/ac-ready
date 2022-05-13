@@ -7,11 +7,10 @@ import { incidentsContext } from './contexts/IncidentsContext';
 
 import Appbar from './components/Branding/Appbar';
 import Home from './pages/Home';
-import AdvisoryTable from './components/EmergencyOrder/emergency';
-import FAQPage from './pages/Faq';
+// import FAQPage from './pages/Faq';
 import ImportantLinksPage from './pages/ImportantLinks';
 import Prepare from './pages/Prepare';
-import SandbagPage from './pages/Sandbag';
+// import SandbagPage from './pages/Sandbag';
 import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
@@ -32,13 +31,13 @@ export default function App() {
             path='/incidents/elsa/emergencyorders'
             element={<EmergencyOrder />}
           />
-          <Route path='faq' element={<FAQPage />} />
+          {/* <Route path='faq' element={<FAQPage />} /> */}
           <Route
             path='/incidents/elsa/importantlinks'
             element={<ImportantLinksPage />}
           />
           <Route path='prepare' element={<Prepare />} />
-          <Route path='sandbags' element={<SandbagPage />} />
+          {/* <Route path='sandbags' element={<SandbagPage />} /> */}
           <Route path='/incidents/elsa/shelters' element={<Shelter />} />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />

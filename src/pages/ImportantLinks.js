@@ -11,8 +11,8 @@ import axios from 'axios';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
-import { ExpandMore } from '@material-ui/icons';
 import { titleContext } from '../contexts/TitleContext';
+import { ExpandMore } from '@mui/icons-material';
 
 export default function ImportantLinksPage() {
   const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
