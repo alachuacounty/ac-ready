@@ -10,7 +10,7 @@ import Home from './pages/Home';
 // import FAQPage from './pages/Faq';
 import ImportantLinksPage from './pages/ImportantLinks';
 import Prepare from './pages/Prepare';
-// import SandbagPage from './pages/Sandbag';
+import SandbagPage from './pages/Sandbag';
 import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
@@ -37,7 +37,7 @@ export default function App() {
             element={<ImportantLinksPage />}
           />
           <Route path='prepare' element={<Prepare />} />
-          {/* <Route path='sandbags' element={<SandbagPage />} /> */}
+          <Route path='/incidents/elsa/sandbags' element={<SandbagPage />} />
           <Route path='/incidents/elsa/shelters' element={<Shelter />} />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />

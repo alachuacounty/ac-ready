@@ -75,7 +75,7 @@ export default function Shelter() {
           <>
             <Grid item xs={12}>
               <Map
-                shelters={shelterData}
+                data={shelterData}
                 center={center}
                 selectedMarker={selectedMarker}
               />

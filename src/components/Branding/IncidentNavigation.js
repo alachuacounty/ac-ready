@@ -11,7 +11,7 @@ const navItems = [
     link: '/prepare',
     submenu: [
       { title: 'Shelters', link: '/incidents/elsa/shelters' },
-      { title: 'Sandbag Locations', link: '/sandbags' },
+      { title: 'Sandbag Locations', link: '/incidents/elsa/sandbags' },
       { title: 'FAQs', link: '/faqs' },
     ],
   },
