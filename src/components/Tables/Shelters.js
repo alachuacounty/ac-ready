@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Paper,
   Table,
   TableBody,
@@ -29,7 +30,7 @@ function getComparator(order, orderBy) {
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
 
-export default function Shelters({ headCells, rows }) {
+export default function Shelters({ headCells, rows, updateMapCenter }) {
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('label');
 
@@ -80,9 +81,21 @@ export default function Shelters({ headCells, rows }) {
                   .sort(getComparator(order, orderBy))
                   .map((row, index) => (
                     <TableRow hover key={index}>
-                      <TableCell component='th' id={row.label} scope='row'>
-                        {row.label}
+                      <TableCell component='th' id={row.dataid} scope='row'>
+                        <Button
+                          variant='outlined'
+                          onClick={() =>
+                            updateMapCenter(
+                              row.latitude,
+                              row.longitude,
+                              row.dataid
+                            )
+                          }
+                        >
+                          Show on Map
+                        </Button>
                       </TableCell>
+                      <TableCell align='center'>{row.label}</TableCell>
                       <TableCell align='center'>{row.capacity}</TableCell>
                       <TableCell align='center'>{row.availability}</TableCell>
                       <TableCell align='center'>{row.pet_friendly}</TableCell>
