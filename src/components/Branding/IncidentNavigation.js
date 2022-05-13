@@ -10,7 +10,7 @@ const navItems = [
     title: 'Prepare',
     link: '/prepare',
     submenu: [
-      { title: 'Shelters', link: '/shelters' },
+      { title: 'Shelters', link: '/incidents/elsa/shelters' },
       { title: 'Sandbag Locations', link: '/sandbags' },
       { title: 'FAQs', link: '/faqs' },
     ],

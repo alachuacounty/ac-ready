@@ -33,7 +33,7 @@ export default function App() {
           <Route path='importantlinks' element={<ImportantLinksPage />} />
           <Route path='prepare' element={<Prepare />} />
           <Route path='sandbags' element={<SandbagPage />} />
-          <Route path='shelters' element={<Shelter />} />
+          <Route path='/incidents/elsa/shelters' element={<Shelter />} />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />
           {incidents.length > 0 && (
