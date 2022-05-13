@@ -78,7 +78,7 @@ export default function NHCMaps() {
             display='flex'
             justifyContent='center'
           >
-            <Card sx={{ maxWidth: 450, height: '100%' }}>
+            <Card elevation={5} sx={{ maxWidth: 450, height: '100%' }}>
               <CardActionArea>
                 <CardMedia
                   component='img'
