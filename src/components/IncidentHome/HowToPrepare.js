@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-import Grid from '@mui/material/Grid';
+import { Button, Link, Typography, Grid } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+
+import ACRButton from '../ACRButton';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -14,15 +16,17 @@ export default function HowToPrepare() {
   const classes = useStyles();
   return (
     <div>
-      <Grid
-        container
-        xs={12}
-        height={200}
-        justifyContent='center'
-        alignContent='center'
-        fontSize='38px'
-      >
-        Stay Tuned: Coming Soon
+      <Grid container xs={12} justifyContent='center'>
+        <Grid container item xs={6} justifyContent='flex-start'>
+          <Typography variant='h5' textAlign='left' className={classes.title}>
+            How to Prepare
+          </Typography>
+        </Grid>
+        <Grid item xs={3} bgColor='cyan'>
+          <ACRButton text='TESTING' size='jumbo' invert='true' />
+          <ACRButton text='TESTING' size='jumbo' invert='true' />
+          <ACRButton text='TESTING' size='jumbo' invert='true' />
+        </Grid>
       </Grid>
     </div>
   );
