@@ -17,6 +17,7 @@ export default function IncidentHome() {
   useEffect(() => {
     updatePageTitle('Hurricane Elsa | Home');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa' });
   }, []);
 
   return (
