@@ -48,6 +48,24 @@ export default function Appbar({ children }) {
     navItems = incidents.map((incident) => ({ title: incident.name, link: incident.urlName }))
   }
 
+  if (pageTitle === 'Alachua County Ready | Home') {
+
+    navItems = [
+      { title: 'Get Notified', link: '/' },
+      { title: 'Prepare', link: '/', },
+      { title: 'ACR Stickers', link: '/', },
+      {
+        title: 'Incidents', link: '/incidents',
+        submenu: [
+          { title: 'Hurricane Elsa', link: '/incidents/elsa' },
+        ],
+      },
+    ];
+
+  }
+
+  const drawerTopAnchor = (pageTitle === 'Alachua County Ready | Home') ? true : false;
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -58,7 +76,7 @@ export default function Appbar({ children }) {
           <Toolbar disableGutters>
             <Grid container sx={{ display: 'flex' }}>
               <Grid item xs={2} md={4} lg={1} sx={{ display: 'flex', alignItems: 'center' }}>
-                <DrawerNavigation navItems={navItems}></DrawerNavigation>
+                <DrawerNavigation navItems={navItems} top={drawerTopAnchor} ></DrawerNavigation>
               </Grid>
               <Grid
                 item
