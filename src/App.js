@@ -30,7 +30,10 @@ export default function App() {
           <Route path='/' element={<Home />} />
           <Route path='emergencyorders' element={<AdvisoryTable />} />
           <Route path='faq' element={<FAQPage />} />
-          <Route path='importantlinks' element={<ImportantLinksPage />} />
+          <Route
+            path='/incidents/elsa/importantlinks'
+            element={<ImportantLinksPage />}
+          />
           <Route path='prepare' element={<Prepare />} />
           <Route path='sandbags' element={<SandbagPage />} />
           <Route path='/incidents/elsa/shelters' element={<Shelter />} />

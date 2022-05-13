@@ -1,21 +1,95 @@
-import React, { useContext, useEffect } from 'react';
-import { Typography } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Grid,
+  Link,
+  Typography,
+} from '@mui/material';
+import axios from 'axios';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
-import ImportantLinksComponent from '../components/ImportantLinks/importantlinks';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import { ExpandMore } from '@material-ui/icons';
+import { titleContext } from '../contexts/TitleContext';
 
 export default function ImportantLinksPage() {
   const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const [importantLinks, setImportantLinks] = useState([]);
+
+  const getImportantLinks = async () => {
+    try {
+      const result = await axios(
+        `https://api.alachuacounty.us/hurricane-next-api/apidev/getImportantLinks`
+      );
+      console.log(result.data);
+      if (result.data && result.data.length) {
+        const categorizedLinks = {};
+
+        result.data.forEach((link) => {
+          if (!categorizedLinks[link.LinkCategory]) {
+            categorizedLinks[link.LinkCategory] = [link];
+          } else {
+            const tempArrayforExistingLinks =
+              categorizedLinks[link.LinkCategory];
+            tempArrayforExistingLinks.push(link);
+            categorizedLinks[link.LinkCategory] = tempArrayforExistingLinks;
+          }
+        });
+        setImportantLinks(categorizedLinks);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
+    getImportantLinks();
     pushBreadCrumbs({ crumb: 'Important Links', link: '/importantlinks' });
+    updatePageTitle('Elsa | Important Links');
+    updatePageHeading('Hurricane Elsa');
   }, []);
 
   return (
-    <IncidentLayout title='Find a Shelter'>
-      <Typography>Shelter Content</Typography>
-      <ImportantLinksComponent />
+    <IncidentLayout title='Important Links'>
+      <Grid container spacing={3}>
+        {Object.keys(importantLinks).map((category, index) => (
+          <>
+            <Grid item xs={12} key={index}>
+              <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+                {category}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              {importantLinks[category].map((link, ind) => (
+                <Accordion key={ind}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMore />}
+                    aria-controls='panel1a-content'
+                    id='panel1a-header'
+                  >
+                    <Typography sx={{ my: 2 }}>
+                      <Link
+                        href={link.LinkAddress}
+                        target='_blank'
+                        rel='noopener'
+                        underline='none'
+                      >
+                        {link.LinkText}
+                      </Link>
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>{link.LinkDescription}</Typography>
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+            </Grid>
+          </>
+        ))}
+      </Grid>
     </IncidentLayout>
   );
 }

@@ -23,7 +23,7 @@ const navItems = [
       { title: 'Road Closures', link: '/roadclosures' },
     ],
   },
-  { title: 'Important Links', link: '/importantlinks' },
+  { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
   { title: 'Emergency Orders', link: '/emergencyorders' },
 ];
 
