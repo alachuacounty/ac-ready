@@ -9,11 +9,13 @@ import ACRButton from '../components/ACRButton';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
 
 export default function IncidentHome() {
-  const { pageTitle, updatePageTitle } = useContext(titleContext);
+  const { pageTitle, updatePageTitle, updatePageHeading } =
+    useContext(titleContext);
   const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   useEffect(() => {
     updatePageTitle('Hurricane Elsa | Home');
+    updatePageHeading('Hurricane Elsa');
   }, []);
 
   return (

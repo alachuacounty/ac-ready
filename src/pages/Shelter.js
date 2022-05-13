@@ -1,11 +1,11 @@
 import { Grid, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
-import ShelterMapandTable from '../components/Shelter/sheltermapandtable';
 import SheltersTable from '../components/Tables/Shelters';
 import Map from '../components/Map';
+import { titleContext } from '../contexts/TitleContext';
 
 const headCells = [
   {
@@ -35,6 +35,7 @@ const headCells = [
 ];
 
 export default function Shelter() {
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const [center, setCenter] = useState({ lat: 29.651634, lng: -82.324829 });
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [shelterData, setShelterData] = useState([]);
@@ -63,6 +64,8 @@ export default function Shelter() {
 
   useEffect(() => {
     getShelterData();
+    updatePageTitle('Elsa | Shelters');
+    updatePageHeading('Hurricane Elsa');
   }, []);
 
   return (
