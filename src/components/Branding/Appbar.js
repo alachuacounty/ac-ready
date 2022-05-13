@@ -11,6 +11,31 @@ import ActiveIncidentsNavigation from './ActiveIncidentsNavigation';
 import Header from './Header';
 import BreadCrumbs from './BreadCrumbs';
 import IncidentNavigation from './IncidentNavigation';
+import DrawerNavigation from './DrawerNavigation';
+
+
+const navItems = [
+  { title: 'Hurricane Home', link: '/' },
+  {
+    title: 'Prepare',
+    link: '/prepare',
+    submenu: [
+      { title: 'Shelters', link: '/shelters' },
+      { title: 'Sandbag Locations', link: '/sandbags' },
+      { title: 'FAQs', link: '/faqs' },
+    ],
+  },
+  {
+    title: 'Updates',
+    link: '/updates',
+    submenu: [
+      { title: 'Advisories', link: '/advisories' },
+      { title: 'Road Closures', link: '/roadclosures' },
+    ],
+  },
+  { title: 'Important Links', link: '/importantlinks' },
+  { title: 'Emergency Orders', link: '/emergencyorders' },
+];
 
 export default function Appbar({ children }) {
   const { pageTitle, pageHeading } = useContext(titleContext);
@@ -26,7 +51,9 @@ export default function Appbar({ children }) {
         >
           <Toolbar disableGutters>
             <Grid container sx={{ display: 'flex' }}>
-              <Grid item xs={2} md={4} lg={1}></Grid>
+              <Grid item xs={2} md={4} lg={1} sx={{ display: 'flex', alignItems: 'center' }}>
+                <DrawerNavigation navItems={navItems}></DrawerNavigation>
+              </Grid>
               <Grid
                 item
                 xs={8}
@@ -65,8 +92,8 @@ export default function Appbar({ children }) {
               <Header />
               {pageTitle !== 'Alachua County Ready | Home' ? (
                 location &&
-                (location.pathname === '/incidents' ||
-                  location.pathname === '/incidents/') ? (
+                  (location.pathname === '/incidents' ||
+                    location.pathname === '/incidents/') ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation />

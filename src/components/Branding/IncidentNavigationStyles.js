@@ -3,12 +3,15 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
-    zIndex: '1400',
+    //zIndex: '1400',
     flexGrow: '0',
     flexShrink: '1',
     flexBasis: 'auto',
     textAlign: 'left',
     background: theme.palette.middleblue.main,
+    [theme.breakpoints.down('sm')]: {
+      height: '6px',
+    },
   },
   toolbar: theme.mixins.toolbar,
   gridList: {

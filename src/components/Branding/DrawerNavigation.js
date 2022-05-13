@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     drawerPaper: {
         position: 'fixed',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('mobile')]: {
             background: '#1968B2',
             position: 'relative',
         },
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 16px !important',
         borderWidth: '1px',
         borderColor: '#A9A9A9',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('mobile')]: {
             borderColor: '#BFD8F2',
         },
     },
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#12274B',
         textTransform: 'Uppercase',
         fontWeight: 'bold',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('mobile')]: {
             color: '#FFFFFF',
         },
 
@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
     drawerSubItem: {
         textTransform: 'Capitalize',
         fontWeight: 'normal',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('mobile')]: {
             color: '#FFFFFF',
         },
 
@@ -91,6 +91,7 @@ export default function DrawerNavigation({ navItems, top }) {
                     paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
                 }}
                 open={open}
+                onClose={handleDrawerToggle}
                 className={classes.drawer}
             >
 

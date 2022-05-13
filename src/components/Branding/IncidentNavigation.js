@@ -33,8 +33,6 @@ export default function IncidentNavigation() {
   return (
     <AppBar position='absolute' className={classes.appBar}>
       <Toolbar variant='dense'>
-        <DrawerNavigation navItems={navItems}></DrawerNavigation>
-
         <List className={classes.gridList}>
           {navItems.map((item, index) => {
             return item.submenu ? (
