@@ -10,7 +10,7 @@ const navItems = [
     title: 'Prepare',
     link: '/prepare',
     submenu: [
-      { title: 'Shelters', link: '/shelters' },
+      { title: 'Shelters', link: '/incidents/elsa/shelters' },
       { title: 'Sandbag Locations', link: '/sandbags' },
       { title: 'FAQs', link: '/faqs' },
     ],
@@ -23,8 +23,8 @@ const navItems = [
       { title: 'Road Closures', link: '/roadclosures' },
     ],
   },
-  { title: 'Important Links', link: '/importantlinks' },
-  { title: 'Emergency Orders', link: '/emergencyorders' },
+  { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
+  { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
 ];
 
 export default function IncidentNavigation() {
@@ -33,8 +33,6 @@ export default function IncidentNavigation() {
   return (
     <AppBar position='absolute' className={classes.appBar}>
       <Toolbar variant='dense'>
-        <DrawerNavigation navItems={navItems}></DrawerNavigation>
-
         <List className={classes.gridList}>
           {navItems.map((item, index) => {
             return item.submenu ? (

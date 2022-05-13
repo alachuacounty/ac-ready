@@ -1,13 +1,13 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 
-import IncidentsLayout from '../components/Branding/IncidentsLayout';
+import IncidentLayout from '../components/Branding/IncidentLayout';
 import AdvisoriesList from '../components/Advisories/AdvisoriesList';
 
 export default function Advisories() {
-    return (
-        <IncidentsLayout title='Latest Updates'>
-            <AdvisoriesList />
-        </IncidentsLayout>
-    );
+  return (
+    <IncidentLayout title='Latest Updates'>
+      <AdvisoriesList />
+    </IncidentLayout>
+  );
 }
