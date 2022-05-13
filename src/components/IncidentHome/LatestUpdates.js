@@ -37,7 +37,7 @@ export default function LatestUpdates() {
 
   return (
     <Grid container xs={12} spacing={3} justifyContent='center'>
-      <Grid item xs={12}>
+      <Grid item xs={12} p={5}>
         <Typography variant='h5' textAlign='left' className={classes.title}>
           Latest Updates
         </Typography>
