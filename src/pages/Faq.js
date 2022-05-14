@@ -1,9 +1,22 @@
-import { AppBar, Box, Grid, Paper, Tab, Tabs, Typography } from '@mui/material';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  AppBar,
+  Box,
+  Grid,
+  Paper,
+  Tab,
+  Tabs,
+  Typography,
+} from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import parse from 'html-react-parser';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
+import { ExpandMore } from '@mui/icons-material';
 
 export default function Faq() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
@@ -58,22 +71,28 @@ export default function Faq() {
                 backgroundColor: (theme) => theme.palette.darkblue.lightest,
               }}
             >
-              <Tabs
-                key={0}
-                value={tab}
-                onChange={handleTabChange}
-                textColor='white'
-              >
-                <Tab label='test1' id={0} />
-                <Tab label='test2' id={1} />
+              <Tabs value={tab} onChange={handleTabChange} textColor='white'>
+                {Object.keys(faqs).map((category, index) => (
+                  <Tab sx={{ mr: 2 }} label={category} id={index} key={index} />
+                ))}
               </Tabs>
             </AppBar>
-            <TabPanel key={0} value={tab} index={0}>
-              TEst1
-            </TabPanel>
-            <TabPanel key={1} value={tab} index={1}>
-              TEst2
-            </TabPanel>
+            {Object.keys(faqs).map((category, index) =>
+              faqs[category].map((faq, ind) => (
+                <TabPanel key={ind} value={tab} index={index}>
+                  <Accordion>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
+                      <Typography sx={{ my: 2, fontWeight: 'bold' }}>
+                        {faq.FaqQuestion}
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{parse(faq.FaqAnswer)}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                </TabPanel>
+              ))
+            )}
           </Grid>
         </Grid>
       </Paper>

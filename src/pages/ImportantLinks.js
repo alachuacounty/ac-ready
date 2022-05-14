@@ -65,11 +65,7 @@ export default function ImportantLinksPage() {
             <Grid item xs={12}>
               {importantLinks[category].map((link, ind) => (
                 <Accordion key={ind}>
-                  <AccordionSummary
-                    expandIcon={<ExpandMore />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
-                  >
+                  <AccordionSummary expandIcon={<ExpandMore />}>
                     <Typography sx={{ my: 2 }}>
                       <Link
                         href={link.LinkAddress}
