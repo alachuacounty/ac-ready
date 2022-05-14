@@ -1,5 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
-import BreadCrumbs from '../components/Branding/BreadCrumbs';
+import React, { createContext, useState } from 'react';
 
 export const breadCrumbsContext = createContext([]);
 

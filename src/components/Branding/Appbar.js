@@ -13,7 +13,6 @@ import BreadCrumbs from './BreadCrumbs';
 import IncidentNavigation from './IncidentNavigation';
 import DrawerNavigation from './DrawerNavigation';
 
-
 var navItems = [
   { title: 'Hurricane Home', link: '/' },
   {
@@ -38,33 +37,36 @@ var navItems = [
 ];
 
 export default function Appbar({ children }) {
-  const { pageTitle, pageHeading } = useContext(titleContext);
+  const { pageTitle } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
   const location = useLocation();
 
-  if (pageTitle !== 'Alachua County Ready | Home'
-    && location
-    && (location.pathname === '/incidents' || location.pathname === '/incidents/')) {
-    navItems = incidents.map((incident) => ({ title: incident.name, link: incident.urlName }))
+  if (
+    pageTitle !== 'Alachua County Ready | Home' &&
+    location &&
+    (location.pathname === '/incidents' || location.pathname === '/incidents/')
+  ) {
+    navItems = incidents.map((incident) => ({
+      title: incident.name,
+      link: incident.urlName,
+    }));
   }
 
   if (pageTitle === 'Alachua County Ready | Home') {
-
     navItems = [
       { title: 'Get Notified', link: '/' },
-      { title: 'Prepare', link: '/', },
-      { title: 'ACR Stickers', link: '/', },
+      { title: 'Prepare', link: '/' },
+      { title: 'ACR Stickers', link: '/' },
       {
-        title: 'Incidents', link: '/incidents',
-        submenu: [
-          { title: 'Hurricane Elsa', link: '/incidents/elsa' },
-        ],
+        title: 'Incidents',
+        link: '/incidents',
+        submenu: [{ title: 'Hurricane Elsa', link: '/incidents/elsa' }],
       },
     ];
-
   }
 
-  const drawerTopAnchor = (pageTitle === 'Alachua County Ready | Home') ? true : false;
+  const drawerTopAnchor =
+    pageTitle === 'Alachua County Ready | Home' ? true : false;
 
   return (
     <>
@@ -75,8 +77,17 @@ export default function Appbar({ children }) {
         >
           <Toolbar disableGutters>
             <Grid container sx={{ display: 'flex' }}>
-              <Grid item xs={2} md={4} lg={1} sx={{ display: 'flex', alignItems: 'center' }}>
-                <DrawerNavigation navItems={navItems} top={drawerTopAnchor} ></DrawerNavigation>
+              <Grid
+                item
+                xs={2}
+                md={4}
+                lg={1}
+                sx={{ display: 'flex', alignItems: 'center' }}
+              >
+                <DrawerNavigation
+                  navItems={navItems}
+                  top={drawerTopAnchor}
+                ></DrawerNavigation>
               </Grid>
               <Grid
                 item
@@ -116,8 +127,8 @@ export default function Appbar({ children }) {
               <Header />
               {pageTitle !== 'Alachua County Ready | Home' ? (
                 location &&
-                  (location.pathname === '/incidents' ||
-                    location.pathname === '/incidents/') ? (
+                (location.pathname === '/incidents' ||
+                  location.pathname === '/incidents/') ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation />

@@ -9,7 +9,6 @@ import Appbar from './components/Branding/Appbar';
 import Home from './pages/Home';
 import FAQ from './pages/Faq';
 import ImportantLinksPage from './pages/ImportantLinks';
-import Prepare from './pages/Prepare';
 import SandbagPage from './pages/Sandbag';
 import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
@@ -36,7 +35,6 @@ export default function App() {
             path='/incidents/elsa/importantlinks'
             element={<ImportantLinksPage />}
           />
-          <Route path='prepare' element={<Prepare />} />
           <Route path='/incidents/elsa/sandbags' element={<SandbagPage />} />
           <Route path='/incidents/elsa/shelters' element={<Shelter />} />
           <Route path='/incidents/elsa' element={<IncidentHome />} />

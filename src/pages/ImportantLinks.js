@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import {
   Accordion,
@@ -15,7 +16,7 @@ import { titleContext } from '../contexts/TitleContext';
 import { ExpandMore } from '@mui/icons-material';
 
 export default function ImportantLinksPage() {
-  const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const [importantLinks, setImportantLinks] = useState([]);
 

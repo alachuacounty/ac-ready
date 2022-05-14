@@ -2,7 +2,6 @@ import { AppBar, Link, List, ListItem, Toolbar } from '@mui/material';
 
 import useStyles from './IncidentNavigationStyles';
 import SubMenu from './SubMenu';
-import DrawerNavigation from './DrawerNavigation';
 
 const navItems = [
   { title: 'Hurricane Home', link: '/' },

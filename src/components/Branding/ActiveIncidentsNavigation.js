@@ -1,4 +1,4 @@
-import { AppBar, Grid, Link, List, ListItem, Toolbar } from '@mui/material';
+import { AppBar, Link, List, ListItem, Toolbar } from '@mui/material';
 import React, { useContext } from 'react';
 
 import useStyles from './IncidentNavigationStyles';

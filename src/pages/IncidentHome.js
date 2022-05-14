@@ -1,24 +1,22 @@
 import React, { useContext, useEffect } from 'react';
-import { Grid, Typography, Divider } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { Grid, Divider } from '@mui/material';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import HowToPrepare from '../components/IncidentHome/HowToPrepare';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import LatestUpdates from '../components/IncidentHome/LatestUpdates';
-import ACRButton from '../components/ACRButton';
 import EmergencyBanner from '../components/EmergencyBanner';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
 
 export default function IncidentHome() {
-  const { pageTitle, updatePageTitle, updatePageHeading } =
-    useContext(titleContext);
-  const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   useEffect(() => {
     updatePageTitle('Hurricane Elsa | Home');
     updatePageHeading('Hurricane Elsa');
     pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

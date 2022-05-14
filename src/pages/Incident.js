@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from 'react';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import { titleContext } from '../contexts/TitleContext';

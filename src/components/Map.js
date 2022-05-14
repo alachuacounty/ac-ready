@@ -23,6 +23,7 @@ function Map({ center, data, selectedMarker }) {
 
   useEffect(() => {
     if (selectedMarker) setMarkerActive(selectedMarker);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedMarker]);
 
   return (

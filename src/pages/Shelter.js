@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Grid, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';

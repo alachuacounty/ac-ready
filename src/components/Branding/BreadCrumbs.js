@@ -9,29 +9,36 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import { breadCrumbsContext } from '../../contexts/BreadCrumbsContext';
 
-
-
 export default function BreadCrumbs() {
-
-  const { breadCrumbs, pushBreadCrumbs } = useContext(breadCrumbsContext);
-
+  const { breadCrumbs } = useContext(breadCrumbsContext);
 
   const breadCrumbsTrail = breadCrumbs; //[{ crumb: 'ALACHUA COUNTY READY HOME', link: '/' }, { crumb: 'INCIDENTS', link: '/incidents' }, { crumb: 'PAGE', link: '' }];
   const lastIndex = breadCrumbsTrail.length - 1;
 
   const breadcrumbs = breadCrumbsTrail.map((breadcrumb, index) => (
-    <Link underline="hover" key={index} color={theme.middleblue} href={breadcrumb.link} sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}>
+    <Link
+      underline='hover'
+      key={index}
+      color={theme.middleblue}
+      href={breadcrumb.link}
+      sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}
+    >
       {breadcrumb.crumb}
-    </Link >
-  ))
+    </Link>
+  ));
 
   breadcrumbs.pop();
-  breadcrumbs.push((<Typography key="3" color={theme.grey} sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}>
-    {breadCrumbsTrail[lastIndex].crumb}
-  </Typography>))
+  breadcrumbs.push(
+    <Typography
+      key='3'
+      color={theme.grey}
+      sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}
+    >
+      {breadCrumbsTrail[lastIndex].crumb}
+    </Typography>
+  );
 
   return (
-
     <Grid
       container
       sx={{
@@ -46,11 +53,19 @@ export default function BreadCrumbs() {
         lg={10}
         sx={{ textAlign: { xs: 'center', sm: 'start' }, p: 2 }}
       >
-
         <Stack spacing={2}>
           <Breadcrumbs
-            separator={<NavigateNextIcon fontSize="small" sx={{ fontWeight: 'bold', paddingLeft: '20px', paddingRight: '20px' }} />}
-            aria-label="breadcrumb"
+            separator={
+              <NavigateNextIcon
+                fontSize='small'
+                sx={{
+                  fontWeight: 'bold',
+                  paddingLeft: '20px',
+                  paddingRight: '20px',
+                }}
+              />
+            }
+            aria-label='breadcrumb'
           >
             {breadcrumbs}
           </Breadcrumbs>
