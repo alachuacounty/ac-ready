@@ -18,3 +18,8 @@ body,
 p {
   font-family: 'PT Sans';
 }
+
+.MuiTabs-indicator {
+  background-color: blueviolet !important;
+  height: 3px !important;
+}

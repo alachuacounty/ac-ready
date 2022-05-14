@@ -29,9 +29,9 @@ export default function ImportantLinksPage() {
         const categorizedLinks = {};
 
         result.data.forEach((link) => {
-          if (!categorizedLinks[link.LinkCategory]) {
+          if (!categorizedLinks[link.LinkCategory])
             categorizedLinks[link.LinkCategory] = [link];
-          } else {
+          else {
             const tempArrayforExistingLinks =
               categorizedLinks[link.LinkCategory];
             tempArrayforExistingLinks.push(link);

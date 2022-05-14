@@ -7,7 +7,7 @@ import { incidentsContext } from './contexts/IncidentsContext';
 
 import Appbar from './components/Branding/Appbar';
 import Home from './pages/Home';
-// import FAQPage from './pages/Faq';
+import FAQ from './pages/Faq';
 import ImportantLinksPage from './pages/ImportantLinks';
 import Prepare from './pages/Prepare';
 import SandbagPage from './pages/Sandbag';
@@ -31,7 +31,7 @@ export default function App() {
             path='/incidents/elsa/emergencyorders'
             element={<EmergencyOrder />}
           />
-          {/* <Route path='faq' element={<FAQPage />} /> */}
+          <Route path='/incidents/elsa/faqs' element={<FAQ />} />
           <Route
             path='/incidents/elsa/importantlinks'
             element={<ImportantLinksPage />}
