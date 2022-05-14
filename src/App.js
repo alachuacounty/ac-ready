@@ -17,6 +17,7 @@ import Incident from './pages/Incident';
 import IncidentHome from './pages/IncidentHome';
 import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
+import RoadClosures from './pages/RoadClosures';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -37,6 +38,10 @@ export default function App() {
           />
           <Route path='/incidents/elsa/sandbags' element={<SandbagPage />} />
           <Route path='/incidents/elsa/shelters' element={<Shelter />} />
+          <Route
+            path='/incidents/elsa/roadclosures'
+            element={<RoadClosures />}
+          />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />
           {incidents.length > 0 && (

@@ -25,7 +25,6 @@ export default function ImportantLinksPage() {
       const result = await axios(
         `https://api.alachuacounty.us/hurricane-next-api/apidev/getImportantLinks`
       );
-      console.log(result.data);
       if (result.data && result.data.length) {
         const categorizedLinks = {};
 
