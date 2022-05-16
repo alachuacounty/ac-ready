@@ -18,6 +18,7 @@ import IncidentHome from './pages/IncidentHome';
 import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
+import AdvisoryContent from './pages/AdvisoryContent';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -44,6 +45,7 @@ export default function App() {
           />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />
+          <Route path='advisories/:UpdateNumber' element={<AdvisoryContent title="Flood Waters Pose Health Risk" />} />
           {incidents.length > 0 && (
             <>
               <Route path='incidents' element={<Incidents />} />

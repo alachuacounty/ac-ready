@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: 'bold',
   },
+  title2: {
+    fontWeight: 'bold',
+  },
   hidden: {
     [theme.breakpoints.down('md')]: {
       display: 'none',
@@ -16,10 +19,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function IncidentLayout({ children, title = 'Page Title' }) {
+export default function IncidentLayout({ children, title = 'Page Title', title2 }) {
   const classes = useStyles();
   return (
-    <Grid container xs={12} spacing={3} justifyContent='center'>
+    <Grid container xs={12} spacing={3} justifyContent='center' ml={0}>
       <Grid item xs={12}>
         <Typography
           variant='h4'
@@ -29,17 +32,30 @@ export default function IncidentLayout({ children, title = 'Page Title' }) {
         >
           {title}
         </Typography>
+        {title2 && (
+          <Typography
+            variant='h4'
+            textAlign='center'
+            sx={{ my: 4 }}
+            className={classes.title2}
+          >
+            {title2}
+          </Typography>
+        )}
       </Grid>
       <Grid container item xs={10} md={10} justifyContent='center'>
-        <Grid item xs={12} md={9}>
+        <Grid
+          item
+          xs={12}
+          md={8}>
           {children}
         </Grid>
 
         <Grid
-          container
           item
+          container
           xs={0}
-          md={3}
+          md={4}
           justifyContent='flex-end'
           className={classes.hidden}
         >
