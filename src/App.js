@@ -24,19 +24,6 @@ import Modal from './components/Modal';
 export default function App() {
   const incidents = useContext(incidentsContext);
 
-  const [open, setOpen] = useState(false);
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  useEffect(() => {
-    /*  handleOpen(); */
-  }, []);
-
   return (
     <ThemeProvider theme={theme}>
       <Appbar>
@@ -59,7 +46,10 @@ export default function App() {
           />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />
-          <Route path='advisories/:UpdateNumber' element={<AdvisoryContent title="Flood Waters Pose Health Risk" />} />
+          <Route
+            path='advisories/:UpdateNumber'
+            element={<AdvisoryContent title='Flood Waters Pose Health Risk' />}
+          />
           {incidents.length > 0 && (
             <>
               <Route path='incidents' element={<Incidents />} />
@@ -76,7 +66,6 @@ export default function App() {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Appbar>
-      <Modal handleClose={handleClose} open={open} />
     </ThemeProvider>
   );
 }
