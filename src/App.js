@@ -1,6 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 
 import theme from './components/siteTheme';
 import { incidentsContext } from './contexts/IncidentsContext';
@@ -19,9 +19,23 @@ import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
 import AdvisoryContent from './pages/AdvisoryContent';
+import Modal from './components/Modal';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
+
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  useEffect(() => {
+    /*  handleOpen(); */
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -62,6 +76,7 @@ export default function App() {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Appbar>
+      <Modal handleClose={handleClose} open={open} />
     </ThemeProvider>
   );
 }
