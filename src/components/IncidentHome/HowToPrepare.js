@@ -16,16 +16,39 @@ export default function HowToPrepare() {
   const classes = useStyles();
   return (
     <div>
-      <Grid container xs={12} justifyContent='center'>
-        <Grid container item xs={6} justifyContent='flex-start'>
-          <Typography variant='h5' textAlign='left' className={classes.title}>
+      <Grid container xs={12} spacing={3} justifyContent='center'>
+        <Grid item xs={12} p={5}>
+          <Typography variant='h5' className={classes.title} textAlign='left'>
             How to Prepare
           </Typography>
         </Grid>
-        <Grid item xs={3} bgColor='cyan'>
-          <ACRButton text='TESTING' size='jumbo' invert='true' />
-          <ACRButton text='TESTING' size='jumbo' invert='true' />
-          <ACRButton text='TESTING' size='jumbo' invert='true' />
+
+        <Grid
+          container
+          xs={12}
+          justifyContent='center'
+          spacing={4}
+          p={4}
+          textAlign='center'
+        >
+          <Grid item xs={12} md={6}>
+            <Typography>testing here</Typography>
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            width='30px'
+            sx={{
+              display: 'flex',
+              alignContent: 'space-between',
+              flexDirection: 'column',
+            }}
+          >
+            <ACRButton text='Nishant' size='mediumButton'></ACRButton>
+            <ACRButton text='Nishant' size='jumbo'></ACRButton>
+            <ACRButton text='Nishant' size='jumbo'></ACRButton>
+          </Grid>
         </Grid>
       </Grid>
     </div>

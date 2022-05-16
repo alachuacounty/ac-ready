@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
     padding: '15px 30px',
     width: '100%',
   },
+  mediumButton: {
+    padding: '10px 25px',
+    width: '100%',
+  },
   darkBG: {
     backgroundColor: theme.palette.darkblue.light,
     borderColor: theme.palette.middleblue.main,
