@@ -20,13 +20,22 @@ export default function EmergencyBanner() {
         justifyContent='center'
         alignContent='center'
         backgroundColor={theme.palette.yellow.main}
-        height='70px'
+        height='100%'
+        p={2}
       >
-        <InfoOutlinedIcon textAlign='center' />
-        <Typography variant='h6' textAlign='left' className={classes.title}>
-          Currently Monitoring Hurricane Elsa - View Important information about
-          this storm
-        </Typography>
+        <Grid item sx={{ display: 'flex', alignContent: 'center' }}>
+          <InfoOutlinedIcon verticalAlign='middle' />
+        </Grid>
+        <Grid item alignSelf='center'>
+          <Typography
+            variant={{ xs: 'h5', sm: 'h4' }}
+            textAlign='left'
+            className={classes.title}
+          >
+            Currently Monitoring Hurricane Elsa - View Important information
+            about this storm
+          </Typography>
+        </Grid>
       </Grid>
     </div>
   );
