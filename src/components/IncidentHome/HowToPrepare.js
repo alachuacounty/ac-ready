@@ -28,26 +28,36 @@ export default function HowToPrepare() {
           xs={12}
           justifyContent='center'
           spacing={4}
-          p={4}
           textAlign='center'
         >
-          <Grid item xs={12} md={6}>
-            <Typography>testing here</Typography>
-          </Grid>
           <Grid
             item
             xs={12}
             md={6}
-            width='30px'
-            sx={{
-              display: 'flex',
-              alignContent: 'space-between',
-              flexDirection: 'column',
-            }}
+            display='flex'
+            justifyContent='left'
+            alignContent='start'
           >
-            <ACRButton text='Nishant' size='mediumButton'></ACRButton>
-            <ACRButton text='Nishant' size='jumbo'></ACRButton>
-            <ACRButton text='Nishant' size='jumbo'></ACRButton>
+            <Typography pl={4}>Residents are encouraged to:</Typography>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Grid
+              container
+              // spacing={3}
+              direction='column'
+              justifyContent='center'
+              alignItems='center'
+            >
+              <Grid item xs={8}>
+                <ACRButton text='Ashvini Patel' size='jumbo' invert={true} />
+              </Grid>
+              <Grid item xs={7}>
+                <ACRButton text='Tyler Sullivan' size='jumbo' invert={true} />
+              </Grid>
+              <Grid item xs={2}>
+                <ACRButton text='Nishant Maurya' size='jumbo' invert={true} />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

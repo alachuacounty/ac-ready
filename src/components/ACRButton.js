@@ -27,11 +27,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.darkblue.light,
     borderColor: theme.palette.middleblue.main,
     color: theme.palette.white.main,
+    '&:hover': { backgroundColor: theme.palette.darkblue.lightest },
   },
   lightBG: {
     color: theme.palette.darkblue.main,
     backgroundColor: theme.palette.lightblue.light,
     borderColor: theme.palette.middleblue.light,
+    '&:hover': { backgroundColor: theme.palette.yellow.main },
   },
 }));
 
@@ -44,24 +46,22 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
     size === 'jumbo' ? classes.jumbo : ''
   );
   return (
-    <div>
-      <Button
-        className={appliedClasses}
-        variant='contained'
-        size={size}
-        onClick={onClick}
-      >
-        <Link href={link} color='inherit' title={text}>
-          <Typography
-            className={clsx(
-              classes.text,
-              size === 'small' ? classes.textSmall : ''
-            )}
-          >
-            {text}
-          </Typography>
-        </Link>
-      </Button>
-    </div>
+    <Button
+      className={appliedClasses}
+      variant='contained'
+      size={size}
+      onClick={onClick}
+    >
+      <Link href={link} color='inherit' title={text}>
+        <Typography
+          className={clsx(
+            classes.text,
+            size === 'small' ? classes.textSmall : ''
+          )}
+        >
+          {text}
+        </Typography>
+      </Link>
+    </Button>
   );
 }
