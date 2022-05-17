@@ -23,10 +23,8 @@ export default function EmergencyBanner() {
         height='100%'
         p={2}
       >
-        <Grid item sx={{ display: 'flex', alignContent: 'center' }}>
+        <Grid item alignSelf='center' display='flex' alignContent='center'>
           <InfoOutlinedIcon verticalAlign='middle' />
-        </Grid>
-        <Grid item alignSelf='center'>
           <Typography
             variant={{ xs: 'h5', sm: 'h4' }}
             textAlign='left'
