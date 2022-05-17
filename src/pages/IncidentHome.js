@@ -21,18 +21,18 @@ export default function IncidentHome() {
 
   return (
     <>
-      <Grid container xs={12} justifyContent='center'>
-        <Grid item xs={10} pt={3} pb={3}>
+      <Grid container spacing={0} xs={12} justifyContent='center'>
+        <Grid item xs={12} md={10} pt={3} pb={3}>
           <LatestUpdates />
           <Divider variant='middle' />
         </Grid>
-        <Grid item xs={10} pt={3} pb={3}>
+        <Grid item xs={12} md={10} pt={3} pb={3}>
           <HowToPrepare />
         </Grid>
-        <Grid item xs={12} sm={12} pt={3} pb={3}>
+        <Grid item xs={12} pt={3} pb={3}>
           <ReportDamage />
         </Grid>
-        <Grid item xs={10} pt={3} pb={9}>
+        <Grid item xs={12} md={10} pt={3} pb={9}>
           <NHCMaps />
         </Grid>
         <Grid item xs={12}>
