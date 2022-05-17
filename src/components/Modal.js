@@ -26,7 +26,8 @@ export default function Modal({ handleClose, open }) {
         >
           <CloseIcon
             cursor='pointer'
-            sx={{ ':hover': { background: 'magenta' } }}
+            sizeLarge
+            sx={{ ':hover': { background: '#DBDBDB' } }}
             onClick={handleClose}
           />
         </Grid>
@@ -36,24 +37,27 @@ export default function Modal({ handleClose, open }) {
           sx={{
             display: 'flex',
             justifyContent: 'center',
+
             textAlign: 'center',
 
             textTransform: 'uppercase',
           }}
         >
-          <Typography variant='h4' fontWeight='bold'>
-            Emergency Incident
-          </Typography>
+          <Grid item mb={-3}>
+            <Typography variant='h4' fontWeight='bold'>
+              Emergency Incident
+            </Typography>
+          </Grid>
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', alignContent: 'flex-start' }}>
-          <Typography variant='body1' px={5}>
+          <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
             Learn more about how Hurricane Elsa is Impacting Alachua County and
-            how you can prepare
+            how you can prepare.
           </Typography>
         </Grid>
         <Grid item xs={12} px={10}>
           <ACRButton
-            text='nishant'
+            text='Hurricane Elsa'
             size='jumbo'
             onClick={() => {
               handleClose();
