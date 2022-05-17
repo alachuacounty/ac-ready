@@ -49,7 +49,7 @@ export default function PressItem({ data, expanded }) {
                 <DateCircle day={data.day} date={data.date} year={data.year} />
             </Grid>
 
-            <Grid item container spacing={0} xs={10}>
+            <Grid item container spacing={0} xs={10} marginBottom={3}>
                 <Grid item container xs={12}>
                     <Typography component="span" className={clsx(classes.text, classes.timeByline)}> {data.time} </Typography>
                 </Grid>
