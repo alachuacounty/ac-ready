@@ -73,13 +73,13 @@ export default function Header() {
           </Typography>
         ) : (
           <>
-            <Link href='#notified' underline='none' sx={linkStyles}>
+            <Link href='#notified' sx={linkStyles}>
               Get Notified
             </Link>
-            <Link href='#prepared' underline='none' sx={linkStyles}>
+            <Link href='#prepared' sx={linkStyles}>
               prepare
             </Link>
-            <Link href='#sticker' underline='none' sx={linkStyles}>
+            <Link href='#sticker' sx={linkStyles}>
               acr stickers
             </Link>
 

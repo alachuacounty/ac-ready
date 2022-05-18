@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { Grid, Divider } from '@mui/material';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import EmergencyBlurb from '../components/EmergencyBlurb';
 import HowToPrepare from '../components/IncidentHome/HowToPrepare';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import LatestUpdates from '../components/IncidentHome/LatestUpdates';
@@ -25,6 +26,9 @@ export default function IncidentHome() {
         <Grid item xs={12} md={10} pt={3} pb={3}>
           <LatestUpdates />
           <Divider variant='middle' />
+        </Grid>
+        <Grid item xs={12} pt={3} pb={3}>
+          <EmergencyBlurb fullWidth={true} />
         </Grid>
         <Grid item xs={12} md={10} pt={3} pb={3}>
           <HowToPrepare />

@@ -12,6 +12,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const buttonStyles = { width: { xs: '100%', sm: '80%', md: '60%', lg: '50%' } };
+
 export default function HowToPrepare() {
   const classes = useStyles();
   return (
@@ -43,19 +45,27 @@ export default function HowToPrepare() {
           <Grid item xs={12} md={6}>
             <Grid
               container
-              // spacing={3}
+              spacing={2}
               direction='column'
               justifyContent='center'
-              alignItems='center'
+              alignItems='flex-start'
             >
-              <Grid item xs={8}>
-                <ACRButton text='Ashvini Patel' size='jumbo' invert={true} />
+              <Grid item sx={buttonStyles}>
+                <ACRButton text='Find A Shelter' size='jumbo' invert={true} />
               </Grid>
-              <Grid item xs={7}>
-                <ACRButton text='Tyler Sullivan' size='jumbo' invert={true} />
+              <Grid item sx={buttonStyles}>
+                <ACRButton
+                  text='Find sandbag locations'
+                  size='jumbo'
+                  invert={true}
+                />
               </Grid>
-              <Grid item xs={2}>
-                <ACRButton text='Nishant Maurya' size='jumbo' invert={true} />
+              <Grid item sx={buttonStyles}>
+                <ACRButton
+                  text='Frequently Asked Questions '
+                  size='jumbo'
+                  invert={true}
+                />
               </Grid>
             </Grid>
           </Grid>

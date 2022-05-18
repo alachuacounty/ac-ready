@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
   textSmall: {
     fontSize: '0.8125rem',
@@ -33,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.darkblue.main,
     backgroundColor: theme.palette.lightblue.light,
     borderColor: theme.palette.middleblue.light,
+    borderStyle: 'solid',
+    borderWidth: '1px',
     '&:hover': { backgroundColor: theme.palette.yellow.main },
   },
 }));
