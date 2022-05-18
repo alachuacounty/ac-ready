@@ -51,7 +51,7 @@ export default function BreadCrumbs() {
         item
         xs={12}
         lg={10}
-        sx={{ textAlign: { xs: 'center', sm: 'start' }, p: 2 }}
+        sx={{ textAlign: { xs: 'center', sm: 'start' }, p: 2, display: { xs: 'none', lg: 'block' } }}
       >
         <Stack spacing={2}>
           <Breadcrumbs
