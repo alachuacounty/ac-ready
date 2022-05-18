@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Typography, Grid } from '@mui/material';
+import { Typography, Grid, List, ListItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import ACRButton from '../ACRButton';
@@ -41,14 +41,22 @@ export default function HowToPrepare() {
             alignContent='start'
           >
             <Typography pl={4}>Residents are encouraged to:</Typography>
+            <List>
+              <ListItem>1</ListItem>
+              <ListItem>2</ListItem>
+
+              <ListItem>3</ListItem>
+
+              <ListItem>4</ListItem>
+            </List>
           </Grid>
           <Grid item xs={12} md={6}>
             <Grid
               container
-              spacing={2}
+              spacing={3}
               direction='column'
               justifyContent='center'
-              alignItems='flex-start'
+              alignItems='center'
             >
               <Grid item sx={buttonStyles}>
                 <ACRButton text='Find A Shelter' size='jumbo' invert={true} />

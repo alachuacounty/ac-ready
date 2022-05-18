@@ -55,10 +55,10 @@ export default function EmergencyBlurb({ fullWidth }) {
             : classes.paperStyles
         }
       >
-        <Typography textAlign='center' p={1} variant='h5'>
+        <Typography textAlign='center' p={1} variant='h5' fontWeight='bold'>
           Sign Up for Emergency Alerts
         </Typography>
-        <Typography textAlign='center' p={1}>
+        <Typography textAlign='center' p={1} fontWeight='bold'>
           Text "Alachua" to XXXXXX to receive real-time County updates during a
           large-scale incident or emergency
         </Typography>

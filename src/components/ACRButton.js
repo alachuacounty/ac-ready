@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
     borderColor: theme.palette.middleblue.light,
     borderStyle: 'solid',
     borderWidth: '1px',
+    borderRadius: '6px',
     '&:hover': { backgroundColor: theme.palette.yellow.main },
   },
 }));
