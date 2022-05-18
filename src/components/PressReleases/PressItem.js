@@ -66,12 +66,12 @@ export default function PressItem({ data, expanded }) {
                 </Grid>
                 {expanded && (
                     <>
-                        <Grid item container xs={12} >
+                        <Grid item xs={12} >
                             <Typography paragraph className={clsx(classes.text, classes.clipped)}>
                                 {data.desc}
                             </Typography>
                         </Grid>
-                        <Grid item container xs={12}>
+                        <Grid item paddingBottom={2} xs={12}>
                             <ACRButton text="Read More" link={data.link} size="small" />
                         </Grid>
                     </>

@@ -22,7 +22,7 @@ const pressReleaseList = [
 
 export default function AdvisoriesList() {
   return (
-    <Grid container xs={12} spacing={3} justifyContent='flex-start'>
+    <Grid container xs={12} paddingBottom={6} justifyContent='flex-start'>
       {pressReleaseList.map((data, index) => (
         <PressItem data={data} expanded={true} />
       ))}

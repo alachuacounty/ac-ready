@@ -6,11 +6,15 @@ const useStyles = makeStyles((theme) => ({
   boxStyles: {
     display: 'flex',
     flexWrap: 'wrap',
+    [theme.breakpoints.down('md')]: {
+      width: '100%',
+      height: 'auto',
+    },
     '& > :not(style)': {
       m: 1,
       width: 200,
       height: 220,
-      [theme.breakpoints.down('lg')]: {
+      [theme.breakpoints.down('md')]: {
         width: '100%',
         height: 'auto',
       },
@@ -19,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   paperStyles: {
     backgroundColor: '#D0EDFC!important',
     color: '#12274B!important',
-    [theme.breakpoints.down('lg')]: {
+    [theme.breakpoints.down('md')]: {
       boxShadow: 'none',
       padding: '2%',
     },

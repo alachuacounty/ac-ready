@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hidden: {
     [theme.breakpoints.down('md')]: {
-      display: 'none',
+      //display: 'none',
     },
   },
 }));
@@ -43,19 +43,20 @@ export default function IncidentLayout({ children, title = 'Page Title', title2 
           </Typography>
         )}
       </Grid>
-      <Grid container item xs={10} md={10} justifyContent='center'>
+      <Grid container xs={12} md={12} lg={10} justifyContent='center'>
         <Grid
           item
-          xs={12}
-          md={8}>
+          xs={10}
+          md={8}
+        >
           {children}
         </Grid>
 
         <Grid
           item
           container
-          xs={0}
-          md={4}
+          xs={12}
+          md={3}
           justifyContent='flex-end'
           className={classes.hidden}
         >
