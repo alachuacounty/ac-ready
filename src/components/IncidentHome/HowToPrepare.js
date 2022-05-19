@@ -12,7 +12,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const buttonStyles = { width: { xs: '100%', sm: '80%', md: '60%', lg: '50%' } };
+const buttonStyles = {
+  width: { xs: '90%', sm: '80%', md: '60%', lg: '100%' },
+  pl: { xs: '0!important', sm: 2 },
+};
 
 export default function HowToPrepare() {
   const classes = useStyles();
@@ -50,9 +53,11 @@ export default function HowToPrepare() {
               <ListItem>4</ListItem>
             </List>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={{ pl: { xs: '0!important', sm: 2 } }}>
             <Grid
               container
+              xs={12}
+              md={6}
               spacing={3}
               direction='column'
               justifyContent='center'
