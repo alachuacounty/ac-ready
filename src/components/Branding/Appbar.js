@@ -13,6 +13,7 @@ import BreadCrumbs from './BreadCrumbs';
 import IncidentNavigation from './IncidentNavigation';
 import LeftDrawer from './LeftDrawer';
 import TopDrawer from './TopDrawer';
+import EmergencyBanner from '../EmergencyBanner';
 
 var navItems = [
   { title: 'Hurricane Home', link: '/' },
@@ -42,10 +43,13 @@ export default function Appbar({ children }) {
   const incidents = useContext(incidentsContext);
   const location = useLocation();
 
+  const isHomePage = (pageTitle === 'Alachua County Ready | Home');
+  const isLocationIncidents = (location.pathname === '/incidents' || location.pathname === '/incidents/');
+
   if (
-    pageTitle !== 'Alachua County Ready | Home' &&
+    !isHomePage &&
     location &&
-    (location.pathname === '/incidents' || location.pathname === '/incidents/')
+    isLocationIncidents
   ) {
     navItems = incidents.map((incident) => ({
       title: incident.name,
@@ -53,7 +57,7 @@ export default function Appbar({ children }) {
     }));
   }
 
-  if (pageTitle === 'Alachua County Ready | Home') {
+  if (isHomePage) {
     navItems = [
       { title: 'Get Notified', link: '/' },
       { title: 'Prepare', link: '/' },
@@ -66,8 +70,7 @@ export default function Appbar({ children }) {
     ];
   }
 
-  const drawerAnchor =
-    pageTitle === 'Alachua County Ready | Home' ? <TopDrawer navItems={navItems} /> : <LeftDrawer navItems={navItems} />;
+  const drawerAnchor = isHomePage ? <TopDrawer navItems={navItems} /> : <LeftDrawer navItems={navItems} />;
 
   return (
     <>
@@ -121,14 +124,16 @@ export default function Appbar({ children }) {
         <Grid item xs={12}>
           {pageTitle === 'Page Not Found' ? null : (
             <>
-              {pageTitle !== 'Alachua County Ready | Home' ? (
-                <BreadCrumbs />
-              ) : null}
+              {!isHomePage ? <BreadCrumbs /> : null}
               <Header />
-              {pageTitle !== 'Alachua County Ready | Home' ? (
+              {isHomePage && incidents.length > 0 &&
+                <Grid item xs={12}>
+                  <EmergencyBanner />
+                </Grid>
+              }
+              {!isHomePage ? (
                 location &&
-                  (location.pathname === '/incidents' ||
-                    location.pathname === '/incidents/') ? (
+                  isLocationIncidents ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation />

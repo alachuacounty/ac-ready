@@ -6,7 +6,6 @@ import EmergencyBlurb from '../components/EmergencyBlurb';
 import HowToPrepare from '../components/IncidentHome/HowToPrepare';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import LatestUpdates from '../components/IncidentHome/LatestUpdates';
-import EmergencyBanner from '../components/EmergencyBanner';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
 
 export default function IncidentHome() {
@@ -38,9 +37,6 @@ export default function IncidentHome() {
         </Grid>
         <Grid item xs={12} md={10} pt={3} pb={9}>
           <NHCMaps />
-        </Grid>
-        <Grid item xs={12}>
-          <EmergencyBanner />
         </Grid>
       </Grid>
     </>
