@@ -19,33 +19,23 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <Grid container p={2} className={classes.wrapper}>
-      <Grid item xs={0} lg={4}></Grid>
+    <Grid container p={2} className={classes.wrapper} direction='column' alignItems='center'>
       <Grid
         item
         xs={12}
-        sm={12}
-        lg={4}
-        display='flex'
-        justifyContent='center'
-        alignContent='center'
-        textAlign='center'
       >
-        <Grid item>
-          <Typography fontSize='14px' variant='p'>
-            &copy; Alachua County
-          </Typography>
-        </Grid>
-        <Grid item>
-          <Link
-            className={classes.link}
-            href='https://alachuacounty.us/Depts/EO/Pages/Website-Accessibility.aspx'
-          >
-            View Alachua County's Website Accessibility Policy and Procedures
-          </Link>
-        </Grid>
+        <Typography fontSize='14px' variant='p' paddingBottom={2}>
+          &copy; Alachua County
+        </Typography>
       </Grid>
-      <Grid item xs={0} lg={4}></Grid>
+      <Grid item xs={12}>
+        <Link
+          className={classes.link}
+          href='https://alachuacounty.us/Depts/EO/Pages/Website-Accessibility.aspx'
+        >
+          View Alachua County's Website Accessibility Policy and Procedures
+        </Link>
+      </Grid>
     </Grid>
   );
 }
