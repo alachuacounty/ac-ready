@@ -1,6 +1,6 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Dialog, Grid, IconButton, Typography } from '@mui/material';
-import React, { useState } from 'react';
+import { Dialog, Grid, Typography } from '@mui/material';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ACRButton from './ACRButton';
 

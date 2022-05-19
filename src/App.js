@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import theme from './components/siteTheme';
 import { incidentsContext } from './contexts/IncidentsContext';
@@ -19,7 +19,6 @@ import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
 import AdvisoryContent from './pages/AdvisoryContent';
-import Modal from './components/Modal';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
