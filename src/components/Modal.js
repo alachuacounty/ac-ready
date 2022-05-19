@@ -1,11 +1,9 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Dialog, Grid, IconButton, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Dialog, Grid, Typography } from '@mui/material';
+import React from 'react';
 import ACRButton from './ACRButton';
 
 export default function Modal({ handleClose, open }) {
-  const navigate = useNavigate();
   return (
     <Dialog onClose={handleClose} open={open}>
       <Grid
@@ -59,10 +57,7 @@ export default function Modal({ handleClose, open }) {
           <ACRButton
             text='Hurricane Elsa'
             size='jumbo'
-            onClick={() => {
-              handleClose();
-              navigate('/incidents/elsa');
-            }}
+            link={'/incidents/elsa'}
           />
         </Grid>
       </Grid>

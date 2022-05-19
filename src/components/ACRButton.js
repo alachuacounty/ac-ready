@@ -50,13 +50,13 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
     size === 'jumbo' ? classes.jumbo : ''
   );
   return (
-    <Button
-      className={appliedClasses}
-      variant='contained'
-      size={size}
-      onClick={onClick}
-    >
-      <Link href={link} color='inherit' title={text}>
+    <Link href={link} color='inherit' title={text}>
+      <Button
+        className={appliedClasses}
+        variant='contained'
+        size={size}
+        onClick={onClick}
+      >
         <Typography
           className={clsx(
             classes.text,
@@ -65,7 +65,7 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
         >
           {text}
         </Typography>
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   );
 }

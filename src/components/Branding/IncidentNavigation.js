@@ -18,7 +18,7 @@ const navItems = [
     title: 'Updates',
     link: '/updates',
     submenu: [
-      { title: 'Advisories', link: '/advisories' },
+      { title: 'Advisories', link: '/incidents/elsa/advisories' },
       { title: 'Road Closures', link: '/incidents/elsa/roadclosures' },
     ],
   },

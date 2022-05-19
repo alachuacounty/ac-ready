@@ -22,7 +22,11 @@ export default function ReportDamage() {
           <Typography variant='h4' pb={4}>
             See Damage? Report it!{' '}
           </Typography>
-          <ACRButton text='Report Damage' link='/' size='jumbo' />
+          <ACRButton
+            text='Report Damage'
+            link='elsa/reportdamages'
+            size='jumbo'
+          />
         </Grid>
       </Grid>
     </div>
