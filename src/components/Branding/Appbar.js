@@ -11,7 +11,8 @@ import ActiveIncidentsNavigation from './ActiveIncidentsNavigation';
 import Header from './Header';
 import BreadCrumbs from './BreadCrumbs';
 import IncidentNavigation from './IncidentNavigation';
-import DrawerNavigation from './DrawerNavigation';
+import LeftDrawer from './LeftDrawer';
+import TopDrawer from './TopDrawer';
 
 var navItems = [
   { title: 'Hurricane Home', link: '/' },
@@ -65,8 +66,8 @@ export default function Appbar({ children }) {
     ];
   }
 
-  const drawerTopAnchor =
-    pageTitle === 'Alachua County Ready | Home' ? true : false;
+  const drawerAnchor =
+    pageTitle === 'Alachua County Ready | Home' ? <TopDrawer navItems={navItems} /> : <LeftDrawer navItems={navItems} />;
 
   return (
     <>
@@ -82,12 +83,11 @@ export default function Appbar({ children }) {
                 xs={2}
                 md={4}
                 lg={1}
-                sx={{ display: 'flex', alignItems: 'center' }}
+                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               >
-                <DrawerNavigation
-                  navItems={navItems}
-                  top={drawerTopAnchor}
-                ></DrawerNavigation>
+
+                {drawerAnchor}
+
               </Grid>
               <Grid
                 item
@@ -127,8 +127,8 @@ export default function Appbar({ children }) {
               <Header />
               {pageTitle !== 'Alachua County Ready | Home' ? (
                 location &&
-                (location.pathname === '/incidents' ||
-                  location.pathname === '/incidents/') ? (
+                  (location.pathname === '/incidents' ||
+                    location.pathname === '/incidents/') ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation />

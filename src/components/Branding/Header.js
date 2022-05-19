@@ -62,6 +62,7 @@ export default function Header() {
             justifyContent: 'space-evenly',
             direction: 'row',
           },
+          display: { xs: 'none', md: 'flex' }
         }}
       >
         {location && location.pathname.includes('incident') ? (
@@ -86,17 +87,17 @@ export default function Header() {
             {incidents.length === 0
               ? null
               : incidents.map((incident) => (
-                  <Button
-                    size='large'
-                    variant='contained'
-                    sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
-                    onClick={() => {
-                      navigateToIncident(incident);
-                    }}
-                  >
-                    {incident.name}
-                  </Button>
-                ))}
+                <Button
+                  size='large'
+                  variant='contained'
+                  sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
+                  onClick={() => {
+                    navigateToIncident(incident);
+                  }}
+                >
+                  {incident.name}
+                </Button>
+              ))}
           </>
         )}
       </Grid>

@@ -5,11 +5,13 @@ import {
   List,
   ListItem,
   Divider,
+  Grid,
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Menu } from '@mui/icons-material';
+import { Menu, ChevronLeft } from '@mui/icons-material';
+
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -21,8 +23,18 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     position: 'fixed',
     [theme.breakpoints.down('mobile')]: {
-      background: '#1968B2',
+      background: theme.palette.middleblue.main,
       position: 'relative',
+    },
+  },
+  drawerPaperTop: {
+    position: 'fixed',
+    [theme.breakpoints.down('mobile')]: {
+      background: theme.palette.middleblue.main,
+      position: 'relative',
+      //top: '64px',
+      transform: 'translateY(64px) !important',
+      //transition: 'none !important',
     },
   },
   divider: {
@@ -30,22 +42,22 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: '1px',
     borderColor: '#A9A9A9',
     [theme.breakpoints.down('mobile')]: {
-      borderColor: '#BFD8F2',
+      borderColor: theme.palette.lightblue.main,
     },
   },
   drawerItem: {
-    color: '#12274B',
+    color: theme.palette.darkblue.main,
     textTransform: 'Uppercase',
     fontWeight: 'bold',
     [theme.breakpoints.down('mobile')]: {
-      color: '#FFFFFF',
+      color: theme.palette.white.main,
     },
   },
   drawerSubItem: {
     textTransform: 'Capitalize',
     fontWeight: 'normal',
     [theme.breakpoints.down('mobile')]: {
-      color: '#FFFFFF',
+      color: theme.palette.white.main,
     },
   },
   subList: {
@@ -56,9 +68,16 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  chevronButton: {
+    display: 'none',
+    color: theme.palette.white.main,
+    [theme.breakpoints.down('mobile')]: {
+      display: 'block',
+    },
+  },
 }));
 
-export default function DrawerNavigation({ navItems, top }) {
+export default function LeftDrawer({ navItems }) {
   const classes = useStyles();
 
   const [open, setOpen] = useState(false);
@@ -79,14 +98,30 @@ export default function DrawerNavigation({ navItems, top }) {
       </IconButton>
       <Drawer
         variant='temporary'
-        anchor={top ? 'top' : 'left'}
+        anchor='left'
         classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+          paper: clsx(classes.drawerPaper),
         }}
         open={open}
         onClose={handleDrawerToggle}
         className={classes.drawer}
       >
+
+        <Grid container justifyContent="flex-end">
+          <Grid item>
+            <IconButton
+              edge='start'
+              className={classes.chevronButton}
+              color='inherit'
+              aria-label='collapse-menu'
+              onClick={handleDrawerToggle}
+            >
+              <ChevronLeft fontSize='large' />
+            </IconButton>
+          </Grid>
+        </Grid>
+
+
         <List className={classes.mobileList}>
           {navItems.map((item, index) => {
             return item.submenu ? (
