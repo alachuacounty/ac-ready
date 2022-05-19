@@ -48,7 +48,7 @@ export default function HowToPrepare() {
               Residents are encouraged to:
             </Typography>
             <List>
-              <ListItem>-Ashvini Patel</ListItem>
+              <ListItem primary='disc '>Ashvini Patel</ListItem>
               <ListItem>-Tyler Sullivan</ListItem>
 
               <ListItem>-Lindsay Hall</ListItem>
