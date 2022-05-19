@@ -19,6 +19,7 @@ import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
 import AdvisoryContent from './pages/AdvisoryContent';
+import ReportDamage from './pages/ReportDamage';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -42,6 +43,10 @@ export default function App() {
           <Route
             path='/incidents/elsa/roadclosures'
             element={<RoadClosures />}
+          />
+          <Route
+            path='/incidents/elsa/reportdamages'
+            element={<ReportDamage />}
           />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='advisories' element={<Advisories />} />
