@@ -49,9 +49,9 @@ export default function App() {
             element={<ReportDamage />}
           />
           <Route path='/incidents/elsa' element={<IncidentHome />} />
-          <Route path='advisories' element={<Advisories />} />
+          <Route path='/incidents/elsa/advisories' element={<Advisories />} />
           <Route
-            path='advisories/:UpdateNumber'
+            path='/incidents/elsa/advisories/:UpdateNumber'
             element={<AdvisoryContent title='Flood Waters Pose Health Risk' />}
           />
           {incidents.length > 0 && (
