@@ -4,7 +4,7 @@ import useStyles from './IncidentNavigationStyles';
 import SubMenu from './SubMenu';
 
 const navItems = [
-  { title: 'Hurricane Home', link: '/' },
+  { title: 'Hurricane Home', link: '/incidents/elsa' },
   {
     title: 'Prepare',
     link: '/prepare',
@@ -18,7 +18,7 @@ const navItems = [
     title: 'Updates',
     link: '/updates',
     submenu: [
-      { title: 'Advisories', link: '/advisories' },
+      { title: 'Advisories', link: '/incidents/elsa/advisories' },
       { title: 'Road Closures', link: '/incidents/elsa/roadclosures' },
     ],
   },

@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import theme from './components/siteTheme';
 import { incidentsContext } from './contexts/IncidentsContext';
@@ -19,7 +19,7 @@ import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
 import AdvisoryContent from './pages/AdvisoryContent';
-import Modal from './components/Modal';
+import ReportDamage from './pages/ReportDamage';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -44,10 +44,14 @@ export default function App() {
             path='/incidents/elsa/roadclosures'
             element={<RoadClosures />}
           />
-          <Route path='/incidents/elsa' element={<IncidentHome />} />
-          <Route path='advisories' element={<Advisories />} />
           <Route
-            path='advisories/:UpdateNumber'
+            path='/incidents/elsa/reportdamages'
+            element={<ReportDamage />}
+          />
+          <Route path='/incidents/elsa' element={<IncidentHome />} />
+          <Route path='/incidents/elsa/advisories' element={<Advisories />} />
+          <Route
+            path='/incidents/elsa/advisories/:UpdateNumber'
             element={<AdvisoryContent title='Flood Waters Pose Health Risk' />}
           />
           {incidents.length > 0 && (

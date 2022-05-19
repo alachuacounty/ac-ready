@@ -64,10 +64,16 @@ export default function HowToPrepare() {
               alignItems='center'
             >
               <Grid item sx={buttonStyles}>
-                <ACRButton text='Find A Shelter' size='jumbo' invert={true} />
+                <ACRButton
+                  link={'elsa/shelters'}
+                  text='Find A Shelter'
+                  size='jumbo'
+                  invert={true}
+                />
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
+                  link={'elsa/sandbags'}
                   text='Find sandbag locations'
                   size='jumbo'
                   invert={true}
@@ -75,6 +81,7 @@ export default function HowToPrepare() {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
+                  link={'elsa/faqs'}
                   text='Frequently Asked Questions '
                   size='jumbo'
                   invert={true}
