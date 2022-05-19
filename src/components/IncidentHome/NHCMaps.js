@@ -35,12 +35,13 @@ export default function NHCMaps() {
             display='flex'
             justifyContent='center'
           >
-            <Card sx={{ maxWidth: 450, height: '600' }} elevation={5}>
+            <Card sx={{ maxWidth: 450, height: 'auto' }} elevation={5}>
               <CardActionArea>
                 <CardMedia
                   component='img'
-                  height='140'
-                  image='/static/images/cards/contemplative-reptile.jpg'
+                  height='auto'
+                  width='100%'
+                  image='https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png?191716'
                   alt='green iguana'
                 />
                 <CardContent>
@@ -82,8 +83,9 @@ export default function NHCMaps() {
               <CardActionArea>
                 <CardMedia
                   component='img'
-                  height='140'
-                  image='/static/images/cards/contemplative-reptile.jpg'
+                  height='auto'
+                  width='100%'
+                  image='https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png'
                   alt='green iguana'
                 />
                 <CardContent>

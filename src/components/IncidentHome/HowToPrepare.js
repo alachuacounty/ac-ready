@@ -40,20 +40,30 @@ export default function HowToPrepare() {
             xs={12}
             md={6}
             display='flex'
+            flexDirection='column'
+            alignItems='start'
             justifyContent='left'
-            alignContent='start'
           >
-            <Typography pl={4}>Residents are encouraged to:</Typography>
+            <Typography fontWeight='bold'>
+              Residents are encouraged to:
+            </Typography>
             <List>
-              <ListItem>1</ListItem>
-              <ListItem>2</ListItem>
+              <ListItem>-Ashvini Patel</ListItem>
+              <ListItem>-Tyler Sullivan</ListItem>
 
-              <ListItem>3</ListItem>
+              <ListItem>-Lindsay Hall</ListItem>
 
-              <ListItem>4</ListItem>
+              <ListItem>-Nishant Maurya</ListItem>
             </List>
           </Grid>
-          <Grid item xs={12} md={6} sx={{ pl: { xs: '0!important', sm: 2 } }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            display='flex'
+            justifyContent='center'
+            sx={{ pl: { xs: '0!important', sm: 2 } }}
+          >
             <Grid
               container
               xs={12}

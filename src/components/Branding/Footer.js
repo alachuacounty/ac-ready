@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.darkblue.main,
     height: 'auto',
     color: 'white',
+    textAlign: 'center',
   },
   link: {
     color: 'white!important',
@@ -19,11 +20,14 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <Grid container p={2} className={classes.wrapper} direction='column' alignItems='center'>
-      <Grid
-        item
-        xs={12}
-      >
+    <Grid
+      container
+      p={2}
+      className={classes.wrapper}
+      direction='column'
+      alignItems='center'
+    >
+      <Grid item xs={12}>
         <Typography fontSize='14px' variant='p' paddingBottom={2}>
           &copy; Alachua County
         </Typography>
