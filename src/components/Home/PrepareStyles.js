@@ -54,11 +54,12 @@ const useStyles = makeStyles((theme) => ({
   },
   /*STYLES FOR HR HERE*/
   hr: {
-    margin: 0,
+    margin: '0 !important',
     height: '5px !important',
     padding: 0,
   },
   firsthr: {
+    margin: '0 !important',
     borderStyle: 'solid',
     borderColor: '#12264c !important',
     backgroundColor: '#12264c !important',
@@ -68,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   secondhr: {
+    margin: '0 !important',
     borderStyle: 'solid',
     borderColor: '#1968b1',
     backgroundColor: '#1968b1 !important',
@@ -77,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     padding: 0,
   },
   thirdhr: {
+    margin: '0 !important',
     borderStyle: 'solid',
     borderColor: '#4a97d3 !important',
     backgroundColor: '#4a97d3 !important',
