@@ -17,7 +17,13 @@ export default function Roads({ data }) {
         <TableHead sx={{ background: '#EFEFEF' }}>
           <TableRow>
             <TableCell align='center'>
-              <Typography variant='body1' sx={{ fontWeight: 'bold' }}>
+              <Typography
+                variant='body1'
+                sx={{
+                  fontWeight: 'bold',
+                  color: (theme) => theme.palette.middleblue.main,
+                }}
+              >
                 Road Name
               </Typography>
             </TableCell>

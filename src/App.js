@@ -18,7 +18,7 @@ import IncidentHome from './pages/IncidentHome';
 import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
 import RoadClosures from './pages/RoadClosures';
-import AdvisoryContent from './pages/AdvisoryContent';
+import Advisory from './pages/Advisory';
 import ReportDamage from './pages/ReportDamage';
 
 export default function App() {
@@ -51,8 +51,8 @@ export default function App() {
           <Route path='/incidents/elsa' element={<IncidentHome />} />
           <Route path='/incidents/elsa/advisories' element={<Advisories />} />
           <Route
-            path='/incidents/elsa/advisories/:UpdateNumber'
-            element={<AdvisoryContent title='Flood Waters Pose Health Risk' />}
+            path='/incidents/elsa/advisories/:UpdateID'
+            element={<Advisory />}
           />
           {incidents.length > 0 && (
             <>
