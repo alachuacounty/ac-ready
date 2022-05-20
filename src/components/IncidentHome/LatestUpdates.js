@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Grid, Typography } from '@mui/material';
 
 import { makeStyles } from '@mui/styles';
 import PressItem from '../PressReleases/PressItem';
+import { incidentsContext } from '../../contexts/IncidentsContext';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -11,20 +12,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const mockpressdata = {
-  day: 'Fri',
-  date: 'Jul 21',
-  year: '2022',
-  time: '9:00 AM',
-  title: 'Lastest Road Closures and Openings ',
-  desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  link: '/',
-};
-
 export default function LatestUpdates() {
   const classes = useStyles();
+  const incidents = useContext(incidentsContext);
 
   const [isMobile, setMobile] = useState(window.innerWidth < 601);
+  const [advisories, setAdvisories] = useState([]);
 
   const updateMedia = () => {
     setMobile(window.innerWidth < 601);
@@ -35,6 +28,11 @@ export default function LatestUpdates() {
     return () => window.removeEventListener('resize', updateMedia);
   });
 
+  useEffect(() => {
+    if (incidents && incidents.length && incidents[0].advisories)
+      setAdvisories(incidents[0].advisories);
+  }, [incidents]);
+
   return (
     <Grid container xs={12} spacing={3} justifyContent='center'>
       <Grid item xs={12} p={5}>
@@ -42,17 +40,22 @@ export default function LatestUpdates() {
           Latest Updates
         </Typography>
       </Grid>
-
-      <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
-        <Grid container xs={12} md={6} justifyContent='flex-end'>
-          <PressItem data={mockpressdata} expanded={!isMobile} />
+      {advisories && advisories.length > 0 ? (
+        <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
+          <Grid container xs={12} md={6} justifyContent='flex-end'>
+            <PressItem data={advisories[0]} expanded={!isMobile} />
+          </Grid>
+          <Grid container xs={12} md={6} justifyContent='flex-end'>
+            {advisories[1] && <PressItem data={advisories[1]} />}
+            {advisories[2] && <PressItem data={advisories[2]} />}
+            {advisories[3] && <PressItem data={advisories[3]} />}
+          </Grid>
         </Grid>
-        <Grid container xs={12} md={6} justifyContent='flex-end'>
-          <PressItem data={mockpressdata} />
-          <PressItem data={mockpressdata} />
-          <PressItem data={mockpressdata} />
+      ) : (
+        <Grid item xs={12}>
+          <Typography variant='h6'>No Latest Updates</Typography>
         </Grid>
-      </Grid>
+      )}
     </Grid>
   );
 }

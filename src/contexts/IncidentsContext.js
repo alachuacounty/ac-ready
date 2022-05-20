@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
+import moment from 'moment';
 import React, { createContext, useEffect, useState } from 'react';
 
 export const incidentsContext = createContext([]);
@@ -16,7 +17,25 @@ export default function IncidentsContext({ children }) {
       const result = await axios.get(
         `https://ads86.alachuacounty.us/incidents-api/advisory/active`
       );
-      return result.data[0];
+      if (result && result.data && result.data[0].length) {
+        const tempAdvisories = [];
+        result.data[0].forEach((advisory) => {
+          const tempAdvisory = {};
+          tempAdvisory.day = moment(advisory.AdvisoryDateTime).format('ddd');
+          tempAdvisory.date = moment(advisory.AdvisoryDateTime).format(
+            'MMM Do'
+          );
+          tempAdvisory.year = moment(advisory.AdvisoryDateTime).format('YYYY');
+          tempAdvisory.time = moment(advisory.AdvisoryDateTime).format(
+            'H:mm A'
+          );
+          tempAdvisory.title = advisory.AdvisoryName;
+          tempAdvisory.desc = advisory.Blurb;
+          tempAdvisory.link = `advisories/${advisory.MondayID}`;
+          tempAdvisories.push(tempAdvisory);
+        });
+        return tempAdvisories;
+      } else return [];
     } catch (error) {
       console.log({ error });
     }

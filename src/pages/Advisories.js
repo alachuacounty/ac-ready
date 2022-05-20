@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Grid, Typography } from '@mui/material';
-import moment from 'moment';
 import React, { useContext, useEffect, useState } from 'react';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
@@ -15,26 +14,9 @@ export default function Advisories() {
   const [advisories, setAdvisories] = useState([]);
 
   useEffect(() => {
-    if (
-      incidents &&
-      incidents.length &&
-      incidents[0].advisories &&
-      incidents[0].advisories.length > 0
-    ) {
-      const tempAdvisories = [];
-      incidents[0].advisories.forEach((advisory) => {
-        const tempAdvisory = {};
-        tempAdvisory.day = moment(advisory.AdvisoryDateTime).format('ddd');
-        tempAdvisory.date = moment(advisory.AdvisoryDateTime).format('MMM Do');
-        tempAdvisory.year = moment(advisory.AdvisoryDateTime).format('YYYY');
-        tempAdvisory.time = moment(advisory.AdvisoryDateTime).format('H:mm A');
-        tempAdvisory.title = advisory.AdvisoryName;
-        tempAdvisory.desc = advisory.Blurb;
-        tempAdvisory.link = `advisories/${advisory.MondayID}`;
-        tempAdvisories.push(tempAdvisory);
-      });
-      setAdvisories(tempAdvisories);
-    }
+    if (incidents && incidents.length && incidents[0].advisories)
+      setAdvisories(incidents[0].advisories);
+
     updatePageTitle('Elsa | Advisories');
     updatePageHeading('Hurricane Elsa');
   }, [incidents]);
