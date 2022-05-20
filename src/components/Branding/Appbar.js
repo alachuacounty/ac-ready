@@ -16,26 +16,26 @@ import TopDrawer from './TopDrawer';
 import EmergencyBanner from '../EmergencyBanner';
 
 var navItems = [
-  { title: 'Hurricane Home', link: '/' },
+  { title: 'Hurricane Home', link: '/incidents/elsa/' },
   {
     title: 'Prepare',
-    link: '/prepare',
+    link: '/incidents/elsa//prepare',
     submenu: [
-      { title: 'Shelters', link: '/shelters' },
-      { title: 'Sandbag Locations', link: '/sandbags' },
-      { title: 'FAQs', link: '/faqs' },
+      { title: 'Shelters', link: '/incidents/elsa//shelters' },
+      { title: 'Sandbag Locations', link: '/incidents/elsa//sandbags' },
+      { title: 'FAQs', link: '/incidents/elsa//faqs' },
     ],
   },
   {
     title: 'Updates',
     link: '/updates',
     submenu: [
-      { title: 'Advisories', link: '/advisories' },
-      { title: 'Road Closures', link: '/roadclosures' },
+      { title: 'Advisories', link: '/incidents/elsa//advisories' },
+      { title: 'Road Closures', link: '/incidents/elsa//roadclosures' },
     ],
   },
-  { title: 'Important Links', link: '/importantlinks' },
-  { title: 'Emergency Orders', link: '/emergencyorders' },
+  { title: 'Important Links', link: '/incidents/elsa//importantlinks' },
+  { title: 'Emergency Orders', link: '/incidents/elsa//emergencyorders' },
 ];
 
 export default function Appbar({ children }) {
@@ -59,9 +59,9 @@ export default function Appbar({ children }) {
 
   if (isHomePage) {
     navItems = [
-      { title: 'Get Notified', link: '/' },
-      { title: 'Prepare', link: '/' },
-      { title: 'ACR Stickers', link: '/' },
+      { title: 'Get Notified', link: '#notified' },
+      { title: 'Prepare', link: '#prepared' },
+      { title: 'ACR Stickers', link: '#sticker' },
       {
         title: 'Incidents',
         link: '/incidents',
