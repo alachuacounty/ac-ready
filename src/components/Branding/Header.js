@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { incidentsContext } from '../../contexts/IncidentsContext';
 import { titleContext } from '../../contexts/TitleContext';
+import IncidentDropDown from './IncidentsDropDown';
 import acrlogo from '../../images/ACR_logo.png';
 
 const linkStyles = {
@@ -23,6 +24,25 @@ export default function Header() {
   const navigateToIncident = (incident) => {
     navigate(`incidents/${incident.urlName}`);
   };
+
+  {/*
+
+              SubMenu prop structure ::
+                    
+            {
+              title: 'Incidents',
+              link: '/incidents',
+              submenu: [{ title: 'Hurricane Elsa', link: '/incidents/elsa' }],
+            }
+                    
+           */}
+
+  const multipleIncidentsData = {
+    title: 'Incidents',
+    link: '/incidents',
+    submenu: incidents.map((incident) => ({ title: incident.name, link: '/incidents/' + incident.urlName })),
+  }
+
 
   return (
     <Grid
@@ -84,20 +104,24 @@ export default function Header() {
               acr stickers
             </Link>
 
-            {incidents.length === 0
-              ? null
-              : incidents.map((incident) => (
+            {incidents.length === 1
+              && (
                 <Button
                   size='large'
                   variant='contained'
                   sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
                   onClick={() => {
-                    navigateToIncident(incident);
+                    navigateToIncident(incidents[0]);
                   }}
                 >
-                  {incident.name}
+                  {incidents[0].name}
                 </Button>
-              ))}
+              )}
+
+
+            {incidents.length > 1 && (
+              <IncidentDropDown item={multipleIncidentsData} />
+            )}
           </>
         )}
       </Grid>

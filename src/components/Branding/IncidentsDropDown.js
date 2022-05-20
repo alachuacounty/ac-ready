@@ -10,16 +10,10 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
     menuItem: {
-        background: theme.palette.lightblue.light,
-        border: '1px solid ' + theme.palette.grey.main,
-        color: theme.palette.darkblue.light,
+        background: '#D0EDFC',
+        border: '1px solid #707070',
+        color: '#1B5B98',
         fontWeight: 'bold',
-    },
-    menuButton: {
-        color: theme.palette.white.main,
-        textTransform: 'capitalize',
-        fontWeight: 'bold',
-        padding: '0',
     },
     menuLink: {
         width: '100%',
@@ -28,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function SubMenu(props) {
+export default function IncidentDropDown(props) {
 
     const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -53,7 +47,9 @@ export default function SubMenu(props) {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                className={classes.menuButton}
+                size='large'
+                variant='contained'
+                sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
             >
                 {props.item.title}
             </Button>
