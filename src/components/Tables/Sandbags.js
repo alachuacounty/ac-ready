@@ -41,7 +41,7 @@ export default function Sandbags({ headCells, rows, updateMapCenter }) {
   };
 
   return (
-    <Box sx={{ widht: '100%', my: 3 }}>
+    <Box sx={{ width: '100%', my: 3 }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
           <Table sx={{ minWidth: 750 }}>
