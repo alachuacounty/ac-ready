@@ -21,6 +21,10 @@ export default function IncidentsContext({ children }) {
         const tempAdvisories = [];
         result.data[0].forEach((advisory) => {
           const tempAdvisory = {};
+          tempAdvisory.id = advisory.MondayID;
+          tempAdvisory.updateContent = advisory.UpdateBody;
+          tempAdvisory.publishDate = advisory.AdvisoryDateTime;
+          tempAdvisory.updateDate = advisory.UpdateChangeDate;
           tempAdvisory.day = moment(advisory.AdvisoryDateTime).format('ddd');
           tempAdvisory.date = moment(advisory.AdvisoryDateTime).format(
             'MMM Do'
@@ -31,7 +35,7 @@ export default function IncidentsContext({ children }) {
           );
           tempAdvisory.title = advisory.AdvisoryName;
           tempAdvisory.desc = advisory.Blurb;
-          tempAdvisory.link = `advisories/${advisory.MondayID}`;
+          tempAdvisory.link = `/incidents/elsa/advisories/${advisory.MondayID}`;
           tempAdvisories.push(tempAdvisory);
         });
         return tempAdvisories;
