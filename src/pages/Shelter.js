@@ -2,12 +2,17 @@
 import { Grid, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
+import Geocode from 'react-geocode';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import SheltersTable from '../components/Tables/Shelters';
 import Map from '../components/Map';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import Shelters from '../components/Tables/SheltersMonday';
+
+Geocode.setApiKey(`AIzaSyBRbdKmyFU_X9r-UVmsapYMcKDJQJmQpAg`);
+Geocode.setLocationType('ROOFTOP');
 
 const headCells = [
   {
@@ -36,12 +41,36 @@ const headCells = [
   },
 ];
 
+const mondayheadCells = [
+  {
+    id: 'dataid',
+    label: '',
+  },
+  {
+    id: 'ShelterName',
+    label: 'Shelter Name',
+  },
+  {
+    id: 'CurrentPopulation',
+    label: 'Current Population',
+  },
+  {
+    id: 'PetFriendly',
+    label: 'Pet Friendly',
+  },
+  {
+    id: 'ShelterType',
+    label: 'Shelter Type',
+  },
+];
+
 export default function Shelter() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const [center, setCenter] = useState({ lat: 29.651634, lng: -82.324829 });
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [shelterData, setShelterData] = useState([]);
+  const [mondayShelterData, setMondayShelterData] = useState([]);
 
   const getShelterData = async () => {
     try {
@@ -51,6 +80,27 @@ export default function Shelter() {
       setShelterData(
         result.data.filter((shelter) => shelter.status === 'OPEN')
       );
+
+      const test = await axios.get(
+        `https://ads86.alachuacounty.us/incidents-api/shelters/active`
+      );
+
+      for (let index in test.data[0]) {
+        const response = await Geocode.fromAddress(
+          test.data[0][index].Location
+        );
+        if (response.results[0]) {
+          const { lat, lng } = response.results[0].geometry.location;
+          test.data[0][index].latitude = lat;
+          test.data[0][index].longitude = lng;
+          test.data[0][index].dataid = test.data[0][index].MondayID;
+          test.data[0][index].label = test.data[0][index].ShelterName;
+          test.data[0][index].address = test.data[0][index].Location;
+        }
+      }
+
+      setMondayShelterData(test.data[0]);
+      console.log(test.data[0]);
     } catch (error) {
       console.log(error);
     }
@@ -79,9 +129,16 @@ export default function Shelter() {
           <>
             <Grid item xs={12}>
               <Map
-                data={shelterData}
+                data={mondayShelterData}
                 center={center}
                 selectedMarker={selectedMarker}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Shelters
+                headCells={mondayheadCells}
+                rows={mondayShelterData}
+                updateMapCenter={updateMapCenter}
               />
             </Grid>
             <Grid item xs={12}>

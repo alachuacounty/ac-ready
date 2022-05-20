@@ -32,7 +32,7 @@ export default function IncidentLayout({
       spacing={3}
       justifyContent='center'
       ml={0}
-      mb={'5% !important'}
+      //mb={'5% !important'}
     >
       <Grid item xs={12}>
         <Typography
