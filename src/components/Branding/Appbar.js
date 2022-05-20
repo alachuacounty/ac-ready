@@ -106,7 +106,7 @@ export default function Appbar({ children }) {
                   sx={{ justifyContent: { xs: 'center', lg: 'start' } }}
                 >
                   <Grid item sx={{ textAlign: 'end' }}>
-                    <img width='60px' src={aclogo} alt='Alachua County Logo' />
+                    <img width='75px' src={aclogo} alt='Alachua County Logo' />
                   </Grid>
                   <Grid item sx={{ alignSelf: 'center' }}>
                     <Typography p={1} variant='h5'>

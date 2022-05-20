@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         //  [theme.breakpoints.down('mobile')]: {
         background: theme.palette.middleblue.main,
         position: 'relative',
-        transform: 'translateY(64px) !important',
+        transform: 'translateY(78px) !important',
         //  },
     },
     divider: {

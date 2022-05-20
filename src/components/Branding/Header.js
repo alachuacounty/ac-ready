@@ -59,12 +59,12 @@ export default function Header() {
         item
         xs={12}
         lg={incidents.length === 0 ? 3 : 1}
-        sx={{ textAlign: { xs: 'center', lg: 'start' }, p: 2 }}
+        sx={{ textAlign: { xs: 'center', lg: 'start' }, p: 2, display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' }, alignItems: 'center', pl: 0 }}
       >
         <img
           width='100%'
           src={acrlogo}
-          style={{ maxHeight: '100px', maxWidth: '100px' }}
+          style={{ maxHeight: '75px', maxWidth: '75px' }}
           alt='Alachua County ready logo'
         />
       </Grid>
