@@ -26,9 +26,7 @@ export default function IncidentsContext({ children }) {
           tempAdvisory.publishDate = advisory.AdvisoryDateTime;
           tempAdvisory.updateDate = advisory.UpdateChangeDate;
           tempAdvisory.day = moment(advisory.AdvisoryDateTime).format('ddd');
-          tempAdvisory.date = moment(advisory.AdvisoryDateTime).format(
-            'MMM Do'
-          );
+          tempAdvisory.date = moment(advisory.AdvisoryDateTime).format('MMM D');
           tempAdvisory.year = moment(advisory.AdvisoryDateTime).format('YYYY');
           tempAdvisory.time = moment(advisory.AdvisoryDateTime).format(
             'H:mm A'
