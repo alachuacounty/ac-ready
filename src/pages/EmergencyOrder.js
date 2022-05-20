@@ -6,6 +6,9 @@ import axios from 'axios';
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
 import EmergencyOrdersTable from '../components/Tables/EmergencyOrders';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+
+
 
 const headCells = [
   {
@@ -25,6 +28,7 @@ const headCells = [
 export default function EmergencyOrder() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const [emergencyOrders, setEmergencyOrders] = useState([]);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   const getEmergencyOrders = async () => {
     try {
@@ -42,7 +46,9 @@ export default function EmergencyOrder() {
     getEmergencyOrders();
     updatePageTitle('Elsa | Emergency Orders');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
   }, []);
+
   return (
     <IncidentLayout title='Emergency Orders'>
       <Grid container>

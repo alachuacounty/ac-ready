@@ -6,11 +6,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import RoadsTable from '../components/Tables/Roads';
 import { titleContext } from '../contexts/TitleContext';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 
 const TypographyStyles = { fontWeight: 'bold' };
 
 export default function RoadClosures() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   const [roadClosures, setRoadClosures] = useState([]);
   const [roadOpened, setRoadOpened] = useState([]);
@@ -49,6 +51,7 @@ export default function RoadClosures() {
     getRoadClosures();
     updatePageTitle('Elsa | Road Closures');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
   }, []);
 
   return (

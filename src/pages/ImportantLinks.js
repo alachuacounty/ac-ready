@@ -47,14 +47,14 @@ export default function ImportantLinksPage() {
 
   useEffect(() => {
     getImportantLinks();
-    pushBreadCrumbs({ crumb: 'Important Links', link: '/importantlinks' });
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
     updatePageTitle('Elsa | Important Links');
     updatePageHeading('Hurricane Elsa');
   }, []);
 
   return (
     <IncidentLayout title='Important Links'>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} paddingBottom={6}>
         {Object.keys(importantLinks).map((category, index) => (
           <>
             <Grid item xs={12} key={index}>

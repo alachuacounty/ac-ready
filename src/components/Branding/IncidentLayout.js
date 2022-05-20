@@ -19,10 +19,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function IncidentLayout({ children, title = 'Page Title', title2 }) {
+export default function IncidentLayout({
+  children,
+  title = 'Page Title',
+  title2,
+}) {
   const classes = useStyles();
   return (
-    <Grid container xs={12} spacing={3} justifyContent='center' ml={0}>
+    <Grid
+      container
+      xs={12}
+      spacing={3}
+      justifyContent='center'
+      ml={0}
+      mb={'5% !important'}
+    >
       <Grid item xs={12}>
         <Typography
           variant='h4'
@@ -44,11 +55,7 @@ export default function IncidentLayout({ children, title = 'Page Title', title2 
         )}
       </Grid>
       <Grid container xs={12} md={12} lg={10} justifyContent='center'>
-        <Grid
-          item
-          xs={10}
-          md={8}
-        >
+        <Grid item xs={10} md={8}>
           {children}
         </Grid>
 

@@ -24,8 +24,9 @@ export default function Footer() {
       container
       p={2}
       className={classes.wrapper}
-      direction='column'
+      //direction='column'
       alignItems='center'
+      justifyContent='center'
     >
       <Grid item xs={12}>
         <Typography fontSize='14px' variant='p' paddingBottom={2}>

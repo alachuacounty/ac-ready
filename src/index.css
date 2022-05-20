@@ -36,3 +36,8 @@ p {
 .MuiGrid-root {
    padding-left: 0px;
 }
+#root.acr-root{
+    min-height: 100vh !important;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

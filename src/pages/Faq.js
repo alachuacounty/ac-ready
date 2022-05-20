@@ -17,10 +17,12 @@ import parse from 'html-react-parser';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import { ExpandMore } from '@mui/icons-material';
 
 export default function Faq() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const [tab, setTab] = useState(0);
 
   const [faqs, setFaqs] = useState([]);
@@ -59,6 +61,7 @@ export default function Faq() {
     getFaqs();
     updatePageTitle('Elsa | FAQs');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
   }, []);
 
   return (
