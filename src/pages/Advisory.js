@@ -71,7 +71,7 @@ export default function AdvisoryContent() {
       </Grid>
     </IncidentLayout>
   ) : (
-    <Typography variant='h5' sx={{ my: 5 }}>
+    <Typography variant='h5' sx={{ my: 10, textAlign: 'center' }}>
       No Advisory found with ID: {params.UpdateID}
     </Typography>
   );
