@@ -53,7 +53,10 @@ export default function PressItem({ data, expanded, index }) {
             {expanded ? (
               data.title
             ) : (
-              <Link href={data.link} title={data.title}>
+              <Link
+                href={process.env.PUBLIC_URL + data.link}
+                title={data.title}
+              >
                 {' '}
                 {data.title}{' '}
               </Link>

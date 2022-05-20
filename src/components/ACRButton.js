@@ -50,7 +50,7 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
     size === 'jumbo' ? classes.jumbo : ''
   );
   return (
-    <Link href={link} color='inherit' title={text}>
+    <Link href={process.env.PUBLIC_URL + link} color='inherit' title={text}>
       <Button
         className={appliedClasses}
         variant='contained'

@@ -40,7 +40,11 @@ export default function IncidentNavigation() {
               </ListItem>
             ) : (
               <ListItem className={classes.navItem} key={`nav2-${index}`}>
-                <Link href={item.link} color='inherit' title={item.title}>
+                <Link
+                  href={process.env.PUBLIC_URL + item.link}
+                  color='inherit'
+                  title={item.title}
+                >
                   {item.title}
                 </Link>
               </ListItem>

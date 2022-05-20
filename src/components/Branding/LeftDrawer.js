@@ -12,7 +12,6 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import { Menu, ChevronLeft } from '@mui/icons-material';
 
-
 const useStyles = makeStyles((theme) => ({
   drawer: {
     //left: '56px !important',
@@ -106,8 +105,7 @@ export default function LeftDrawer({ navItems }) {
         onClose={handleDrawerToggle}
         className={classes.drawer}
       >
-
-        <Grid container justifyContent="flex-end">
+        <Grid container justifyContent='flex-end'>
           <Grid item>
             <IconButton
               edge='start'
@@ -120,7 +118,6 @@ export default function LeftDrawer({ navItems }) {
             </IconButton>
           </Grid>
         </Grid>
-
 
         <List className={classes.mobileList}>
           {navItems.map((item, index) => {
@@ -136,7 +133,7 @@ export default function LeftDrawer({ navItems }) {
                       key={`nav1-${index}`}
                     >
                       <Link
-                        href={subitem.link}
+                        href={process.env.PUBLIC_URL + subitem.link}
                         color='inherit'
                         title={subitem.title}
                       >
@@ -151,7 +148,11 @@ export default function LeftDrawer({ navItems }) {
             ) : (
               <>
                 <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
-                  <Link href={item.link} color='inherit' title={item.title}>
+                  <Link
+                    href={process.env.PUBLIC_URL + item.link}
+                    color='inherit'
+                    title={item.title}
+                  >
                     {item.title}
                   </Link>
                 </ListItem>

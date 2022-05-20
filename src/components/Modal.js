@@ -50,8 +50,10 @@ export default function Modal({ handleClose, open }) {
         <Grid item xs={12} sx={{ display: 'flex', alignContent: 'flex-start' }}>
           <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
             Learn more about how{' '}
-            <Link href='/incidents/elsa'>Hurricane Elsa </Link>is Impacting
-            Alachua County and how you can prepare.
+            <Link href={`${process.env.PUBLIC_URL}/incidents/elsa`}>
+              Hurricane Elsa{' '}
+            </Link>
+            is Impacting Alachua County and how you can prepare.
           </Typography>
         </Grid>
         <Grid item xs={12} px={10}>

@@ -14,7 +14,7 @@ export default function ActiveIncidentsNavigation() {
         <List className={classes.gridList}>
           <ListItem className={classes.navItem} key={0}>
             <Link
-              href={'/'}
+              href={`${process.env.PUBLIC_URL}/`}
               color='inherit'
               title={'Alachua County Ready | Home'}
             >
@@ -26,7 +26,7 @@ export default function ActiveIncidentsNavigation() {
             incidents.map((incident) => (
               <ListItem className={classes.navItem} key={0}>
                 <Link
-                  href={incident.urlName}
+                  href={process.env.PUBLIC_URL + incident.urlName}
                   color='inherit'
                   title={incident.name}
                 >

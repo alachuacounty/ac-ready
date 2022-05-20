@@ -20,7 +20,7 @@ export default function BreadCrumbs() {
       underline='hover'
       key={index}
       color={theme.middleblue}
-      href={breadcrumb.link}
+      href={process.env.PUBLIC_URL + breadcrumb.link}
       sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}
     >
       {breadcrumb.crumb}
@@ -51,7 +51,11 @@ export default function BreadCrumbs() {
         item
         xs={12}
         lg={10}
-        sx={{ textAlign: { xs: 'center', sm: 'start' }, p: 2, display: { xs: 'none', lg: 'block' } }}
+        sx={{
+          textAlign: { xs: 'center', sm: 'start' },
+          p: 2,
+          display: { xs: 'none', lg: 'block' },
+        }}
       >
         <Stack spacing={2}>
           <Breadcrumbs
