@@ -6,9 +6,11 @@ import IncidentLayout from '../components/Branding/IncidentLayout';
 import PressItem from '../components/PressReleases/PressItem';
 import { incidentsContext } from '../contexts/IncidentsContext';
 import { titleContext } from '../contexts/TitleContext';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 
 export default function Advisories() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const incidents = useContext(incidentsContext);
 
   const [advisories, setAdvisories] = useState([]);
@@ -16,10 +18,13 @@ export default function Advisories() {
   useEffect(() => {
     if (incidents && incidents.length && incidents[0].advisories)
       setAdvisories(incidents[0].advisories);
-
     updatePageTitle('Elsa | Advisories');
     updatePageHeading('Hurricane Elsa');
   }, [incidents]);
+
+  useEffect(() => {
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+  }, []);
 
   return (
     <IncidentLayout title='Latest Updates'>
