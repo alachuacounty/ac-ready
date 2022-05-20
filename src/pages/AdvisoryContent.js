@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import ACRButton from '../components/ACRButton';
+
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import { titleContext } from '../contexts/TitleContext';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
   publish: {
@@ -35,6 +41,15 @@ const data = {
 export default function AdvisoryContent({ title }) {
   const params = useParams();
   const classes = useStyles();
+
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+
+  useEffect(() => {
+    updatePageTitle('Hurricane Elsa | Latest Updates');
+    updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+  }, []);
 
   return (
     <IncidentLayout

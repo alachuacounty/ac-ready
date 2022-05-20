@@ -5,6 +5,7 @@ import Geocode from 'react-geocode';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import { Grid, Typography } from '@mui/material';
 import Map from '../components/Map';
 import SandbagsTable from '../components/Tables/Sandbags';
@@ -42,6 +43,7 @@ const headCells = [
 
 export default function Shelter() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const [center, setCenter] = useState({ lat: 29.651634, lng: -82.324829 });
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [sandbagsLocations, setSandbagsLocations] = useState([]);
@@ -87,6 +89,7 @@ export default function Shelter() {
     getSandbagsLocations();
     updatePageTitle('Elsa | Sandbags');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
   }, []);
 
   return (

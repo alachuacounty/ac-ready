@@ -3,13 +3,16 @@ import { Grid } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
+import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 
 export default function ReportDamage() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   useEffect(() => {
     updatePageTitle('Elsa | Report Damage');
     updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
   }, []);
 
   return (
