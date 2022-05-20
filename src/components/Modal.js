@@ -1,5 +1,5 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Dialog, Grid, Typography } from '@mui/material';
+import { Dialog, Grid, Typography, Link } from '@mui/material';
 import React from 'react';
 import ACRButton from './ACRButton';
 
@@ -49,8 +49,9 @@ export default function Modal({ handleClose, open }) {
         </Grid>
         <Grid item xs={12} sx={{ display: 'flex', alignContent: 'flex-start' }}>
           <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
-            Learn more about how Hurricane Elsa is Impacting Alachua County and
-            how you can prepare.
+            Learn more about how{' '}
+            <Link href='/incidents/elsa'>Hurricane Elsa </Link>is Impacting
+            Alachua County and how you can prepare.
           </Typography>
         </Grid>
         <Grid item xs={12} px={10}>

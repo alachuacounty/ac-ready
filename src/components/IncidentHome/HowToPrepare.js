@@ -47,9 +47,9 @@ export default function HowToPrepare() {
             <Typography fontWeight='bold'>
               Residents are encouraged to:
             </Typography>
-            <List>
-              <ListItem primary='disc '>Ashvini Patel</ListItem>
-              <ListItem>-Tyler Sullivan</ListItem>
+            <List listStyleType='circle'>
+              <ListItem primary='circle '>Ashvini Patel</ListItem>
+              <ListItem>Tyler Sullivan</ListItem>
 
               <ListItem>-Lindsay Hall</ListItem>
 
