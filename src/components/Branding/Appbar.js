@@ -19,23 +19,23 @@ var navItems = [
   { title: 'Hurricane Home', link: '/incidents/elsa/' },
   {
     title: 'Prepare',
-    link: '/incidents/elsa//prepare',
+    link: '/incidents/elsa/prepare',
     submenu: [
-      { title: 'Shelters', link: '/incidents/elsa//shelters' },
-      { title: 'Sandbag Locations', link: '/incidents/elsa//sandbags' },
-      { title: 'FAQs', link: '/incidents/elsa//faqs' },
+      { title: 'Shelters', link: '/incidents/elsa/shelters' },
+      { title: 'Sandbag Locations', link: '/incidents/elsa/sandbags' },
+      { title: 'FAQs', link: '/incidents/elsa/faqs' },
     ],
   },
   {
     title: 'Updates',
     link: '/updates',
     submenu: [
-      { title: 'Advisories', link: '/incidents/elsa//advisories' },
-      { title: 'Road Closures', link: '/incidents/elsa//roadclosures' },
+      { title: 'Advisories', link: '/incidents/elsa/advisories' },
+      { title: 'Road Closures', link: '/incidents/elsa/roadclosures' },
     ],
   },
-  { title: 'Important Links', link: '/incidents/elsa//importantlinks' },
-  { title: 'Emergency Orders', link: '/incidents/elsa//emergencyorders' },
+  { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
+  { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
 ];
 
 export default function Appbar({ children }) {
