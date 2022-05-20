@@ -60,7 +60,13 @@ export default function EmergencyOrders({ headCells, rows }) {
                       direction={orderBy === headCell.id ? order : 'asc'}
                       onClick={() => handleRequestSort(headCell.id)}
                     >
-                      <Typography variant='body1' sx={{ fontWeight: 'bold' }}>
+                      <Typography
+                        variant='body1'
+                        sx={{
+                          fontWeight: 'bold',
+                          color: (theme) => theme.palette.middleblue.main,
+                        }}
+                      >
                         {headCell.label}
                       </Typography>
                       {orderBy === headCell.id ? (

@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const bannerBoxShadow = {
+  boxShadow: '0 -5px 5px rgb(18 38 76 / 15%), 0 -5px 5px rgb(18 38 76 / 15%',
+};
+
 export default function EmergencyBanner() {
   const classes = useStyles();
   return (
@@ -22,6 +26,7 @@ export default function EmergencyBanner() {
         backgroundColor={theme.palette.yellow.main}
         height='100%'
         p={2}
+        boxShadow='0 -5px 5px rgb(18 38 76 / 15%), 0 -5px 5px rgb(18 38 76 / 15%'
       >
         <Grid item alignSelf='center' display='flex' alignContent='center'>
           <InfoOutlinedIcon verticalAlign='middle' />

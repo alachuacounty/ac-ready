@@ -83,7 +83,13 @@ export default function Faq() {
                 <TabPanel key={ind} value={tab} index={index}>
                   <Accordion>
                     <AccordionSummary expandIcon={<ExpandMore />}>
-                      <Typography sx={{ my: 2, fontWeight: 'bold' }}>
+                      <Typography
+                        sx={{
+                          my: 2,
+                          fontWeight: 'bold',
+                          color: (theme) => theme.palette.middleblue.main,
+                        }}
+                      >
                         {faq.FaqQuestion}
                       </Typography>
                     </AccordionSummary>
