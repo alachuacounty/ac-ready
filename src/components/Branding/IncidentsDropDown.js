@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Button, Menu, MenuItem, Link } from '@mui/material';
 
 import { makeStyles } from '@mui/styles';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuLink: {
     width: '100%',
-    fontSize: '14px',
+    //fontSize: '14px',
   },
 }));
 
@@ -26,33 +27,37 @@ export default function IncidentDropDown(props) {
     setAnchorEl(event.currentTarget);
     setOpen(!open);
   };
-  const handleClose = () => {
+  const handleClose = (event) => {
     setAnchorEl(null);
     setOpen(false);
   };
 
+
   return (
-    <div>
+    <div >
       <Button
         id={'menu-button-' + props.item.title}
         aria-controls={open ? 'sub-menu' + props.item.title : undefined}
         aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
+        onMouseOver={handleClick}
         size='large'
         variant='contained'
         sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
       >
-        {props.item.title}
+        {props.item.title} <ExpandMore sx={{ paddingLeft: '10px' }} />
       </Button>
       <Menu
         id={'sub-menu' + props.item.title}
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+
         MenuListProps={{
           'aria-labelledby': 'menu-button-' + props.item.title,
           disablePadding: true,
+          onMouseLeave: handleClose,
           //sx: { paddingTop: '0px' },
         }}
       >
