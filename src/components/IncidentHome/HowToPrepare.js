@@ -47,13 +47,13 @@ export default function HowToPrepare() {
             <Typography fontWeight='bold'>
               Residents are encouraged to:
             </Typography>
-            <List listStyleType='circle'>
-              <ListItem primary='circle '>Ashvini Patel</ListItem>
-              <ListItem>Tyler Sullivan</ListItem>
+            <List disablePadding={true} sx={{ listStyleType: 'disc' }} pl={1}>
+              <ListItem sx={{ display: 'list-item' }}>Ashvini Patel</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>Tyler Sullivan</ListItem>
 
-              <ListItem>-Lindsay Hall</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>Lindsay Hall</ListItem>
 
-              <ListItem>-Nishant Maurya</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>Nishant Maurya</ListItem>
             </List>
           </Grid>
           <Grid
