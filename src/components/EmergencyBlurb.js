@@ -59,7 +59,7 @@ export default function EmergencyBlurb({ fullWidth }) {
           Sign Up for Emergency Alerts
         </Typography>
         <Typography textAlign='center' p={1} fontWeight='bold'>
-          Text "Alachua" to XXXXXX to receive real-time County updates during a
+          Text "Alachua" to 888777 to receive real-time County updates during a
           large-scale incident or emergency
         </Typography>
       </Paper>
