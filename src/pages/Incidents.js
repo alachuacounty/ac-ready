@@ -54,7 +54,7 @@ export default function Incidents() {
           <Grid
             item
             xs={12}
-            sm={4}
+            sm={12}
             md={6}
             lg={3}
             sx={cardStyles}
@@ -69,7 +69,7 @@ export default function Incidents() {
       <Grid
         item
         xs={12}
-        sm={4}
+        sm={12}
         md={6}
         lg={3}
         sx={cardStyles}
