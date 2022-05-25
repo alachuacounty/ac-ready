@@ -3,7 +3,7 @@ import { AppBar, Link, List, ListItem, Toolbar } from '@mui/material';
 import useStyles from './IncidentNavigationStyles';
 import SubMenu from './SubMenu';
 
-const navItems = [
+/*const navItems = [
   { title: 'Hurricane Home', link: '/incidents/elsa' },
   {
     title: 'Prepare',
@@ -24,9 +24,9 @@ const navItems = [
   },
   { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
   { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
-];
+];*/
 
-export default function IncidentNavigation() {
+export default function IncidentNavigation({ navItems }) {
   const classes = useStyles();
 
   return (

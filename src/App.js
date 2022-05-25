@@ -24,20 +24,20 @@ import ReportDamage from './pages/ReportDamage';
 export default function App() {
 
   const incidents = useContext(incidentsContext);
-  //const [IncidentsFetched, setIncidentsFecthed] = useState(false);
+  const [IncidentsFetched, setIncidentsFetched] = useState(false);
   //const incidents = incidentsContext();
 
   console.log("check context");
   console.log(incidents);
 
-  /*useEffect(() => {
-    console.log("ran useffect on app");
-    console.log(incidents.length)
-    if (incidents.length > 0) {
-      setIncidentsFecthed(true);
-      console.log("fetched");
-    }
-  }, [incidents]);*/
+  /* useEffect(() => {
+     console.log("ran useffect on app");
+     console.log(incidents.length)
+     if (incidents.length > 0) {
+       setIncidentsFetched(true);
+       console.log("fetched");
+     }
+   }, []);*/
 
   return (
     <ThemeProvider theme={theme}>

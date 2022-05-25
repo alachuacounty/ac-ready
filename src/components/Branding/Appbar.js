@@ -15,28 +15,6 @@ import LeftDrawer from './LeftDrawer';
 import TopDrawer from './TopDrawer';
 import EmergencyBanner from '../EmergencyBanner';
 
-var navItems = [
-  { title: 'Hurricane Home', link: '/incidents/elsa/' },
-  {
-    title: 'Prepare',
-    link: '/incidents/elsa/prepare',
-    submenu: [
-      { title: 'Shelters', link: '/incidents/elsa/shelters' },
-      { title: 'Sandbag Locations', link: '/incidents/elsa/sandbags' },
-      { title: 'FAQs', link: '/incidents/elsa/faqs' },
-    ],
-  },
-  {
-    title: 'Updates',
-    link: '/updates',
-    submenu: [
-      { title: 'Advisories', link: '/incidents/elsa/advisories' },
-      { title: 'Road Closures', link: '/incidents/elsa/roadclosures' },
-    ],
-  },
-  { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
-  { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
-];
 
 export default function Appbar({ children }) {
   const { pageTitle } = useContext(titleContext);
@@ -45,6 +23,18 @@ export default function Appbar({ children }) {
 
   const isHomePage = (pageTitle === 'Alachua County Ready | Home');
   const isLocationIncidents = (location.pathname === '/incidents' || location.pathname === '/incidents/');
+
+  var navItems = [];
+
+  if (!isHomePage && !isLocationIncidents && incidents.length > 0) {
+
+    for (const incident of incidents) {
+      if (location.pathname.toLowerCase().includes(incident.urlName.toLowerCase())) {
+        navItems = incident.pages;
+      }
+    }
+
+  }
 
   if (
     !isHomePage &&
@@ -136,7 +126,7 @@ export default function Appbar({ children }) {
                   isLocationIncidents ? (
                   <ActiveIncidentsNavigation />
                 ) : (
-                  <IncidentNavigation />
+                  <IncidentNavigation navItems={navItems} />
                 )
               ) : null}
               {/*   {pageHeading !== 'Home' && incidents && incidents.length > 0 && (

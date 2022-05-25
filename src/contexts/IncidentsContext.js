@@ -52,7 +52,7 @@ export default function IncidentsContext({ children }) {
       );
       if (result && result.data && result.data[0].length) {
         const IncidentPages = [];
-        IncidentPages.push({ title: "Home", link: "/incident/" + incidentURL });
+        IncidentPages.push({ title: "Home", link: "/incidents/" + incidentURL });
         const prepareSubmenu = [];
         const updatesSubmenu = [];
 
@@ -128,8 +128,10 @@ export default function IncidentsContext({ children }) {
 
     const activeIncidents = await getActiveIncidents();
     //console.log(activeIncidents);
+
     updateIncidents(activeIncidents);
   };
+
 
   useLayoutEffect(() => {
     initialLoad();
