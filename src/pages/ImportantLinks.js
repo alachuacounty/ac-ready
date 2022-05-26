@@ -14,28 +14,30 @@ import IncidentLayout from '../components/Branding/IncidentLayout';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import { titleContext } from '../contexts/TitleContext';
 import { ExpandMore } from '@mui/icons-material';
+import { incidentsContext } from '../contexts/IncidentsContext';
 
 export default function ImportantLinksPage() {
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const incidents = useContext(incidentsContext);
   const [importantLinks, setImportantLinks] = useState([]);
 
   const getImportantLinks = async () => {
     try {
       const result = await axios(
-        `https://api.alachuacounty.us/hurricane-next-api/apidev/getImportantLinks`
+        `https://ads86.alachuacounty.us/incidents-api/importantlinks/active/2641106877`
       );
-      if (result.data && result.data.length) {
+
+      if (result.data && result.data[0].length) {
         const categorizedLinks = {};
 
-        result.data.forEach((link) => {
-          if (!categorizedLinks[link.LinkCategory])
-            categorizedLinks[link.LinkCategory] = [link];
+        result.data[0].forEach((link) => {
+          if (!categorizedLinks[link.Category])
+            categorizedLinks[link.Category] = [link];
           else {
-            const tempArrayforExistingLinks =
-              categorizedLinks[link.LinkCategory];
+            const tempArrayforExistingLinks = categorizedLinks[link.Category];
             tempArrayforExistingLinks.push(link);
-            categorizedLinks[link.LinkCategory] = tempArrayforExistingLinks;
+            categorizedLinks[link.Category] = tempArrayforExistingLinks;
           }
         });
         setImportantLinks(categorizedLinks);
@@ -78,7 +80,7 @@ export default function ImportantLinksPage() {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>{link.LinkDescription}</Typography>
+                    <Typography>{link.Description}</Typography>
                   </AccordionDetails>
                 </Accordion>
               ))}
