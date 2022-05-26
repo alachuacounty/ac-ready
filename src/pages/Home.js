@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 
+import { incidentsContext } from '../contexts/IncidentsContext';
 import { titleContext } from '../contexts/TitleContext';
 import Hero from '../components/Home/Hero';
 import Notify from '../components/Home/Notify';
@@ -9,6 +10,7 @@ import Sticker from '../components/Home/Sticker';
 import Modal from '../components/Modal';
 
 export default function Home() {
+  const incidents = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
 
   useEffect(() => {
@@ -26,8 +28,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    handleOpen();
-  }, []);
+    console.log('Home.js Console log');
+    if (incidents.length > 0) handleOpen();
+  }, [incidents]);
 
   return (
     <>
