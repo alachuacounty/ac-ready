@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Grid, Typography } from '@mui/material';
@@ -8,6 +9,7 @@ import parse from 'html-react-parser';
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import ACRButton from '../components/ACRButton';
 import { incidentsContext } from '../contexts/IncidentsContext';
+import { titleContext } from '../contexts/TitleContext';
 
 const useStyles = makeStyles((theme) => ({
   publish: {
@@ -27,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 export default function AdvisoryContent() {
   const params = useParams();
   const classes = useStyles();
+  const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
 
   const [advisory, setAdvisory] = useState(null);
@@ -39,6 +42,8 @@ export default function AdvisoryContent() {
         (data) => data.id === params.UpdateID
       );
       setAdvisory(advisoryData);
+      updatePageTitle(`Elsa | Advisory`);
+      updatePageHeading('Hurricane Elsa');
     }
   }, [incidents, params.UpdateID]);
 
