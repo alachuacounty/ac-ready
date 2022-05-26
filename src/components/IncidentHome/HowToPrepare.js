@@ -48,12 +48,20 @@ export default function HowToPrepare() {
               Residents are encouraged to:
             </Typography>
             <List disablePadding={true} sx={{ listStyleType: 'disc' }} pl={1}>
-              <ListItem sx={{ display: 'list-item' }}>Ashvini Patel</ListItem>
-              <ListItem sx={{ display: 'list-item' }}>Tyler Sullivan</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Text that goes here
+              </ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Text that goes here
+              </ListItem>
 
-              <ListItem sx={{ display: 'list-item' }}>Lindsay Hall</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Text that goes here
+              </ListItem>
 
-              <ListItem sx={{ display: 'list-item' }}>Nishant Maurya</ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Text that goes here
+              </ListItem>
             </List>
           </Grid>
           <Grid
