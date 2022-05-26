@@ -125,7 +125,7 @@ export default function Shelter() {
   return (
     <IncidentLayout title='Find a Shelter'>
       <Grid container>
-        {shelterData && shelterData.length > 0 ? (
+        {mondayShelterData && mondayShelterData.length > 0 ? (
           <>
             <Grid item xs={12}>
               <Map

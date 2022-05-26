@@ -34,22 +34,21 @@ export default function Faq() {
   const getFaqs = async () => {
     try {
       const result = await axios(
-        `https://api.alachuacounty.us/hurricane-next-api/apidev/getFAQs`
+        `https://ads86.alachuacounty.us/incidents-api/faq/active/2641106877`
       );
 
-      if (result.data && result.data.length) {
+      if (result.data && result.data[0].length) {
         const categorizedFaqs = {};
 
-        result.data.forEach((faq) => {
-          if (!categorizedFaqs[faq.FaqCategory])
-            categorizedFaqs[faq.FaqCategory] = [faq];
+        result.data[0].forEach((faq) => {
+          if (!categorizedFaqs[faq.GroupName])
+            categorizedFaqs[faq.GroupName] = [faq];
           else {
-            const tempArrayforExistingFaqs = categorizedFaqs[faq.FaqCategory];
+            const tempArrayforExistingFaqs = categorizedFaqs[faq.GroupName];
             tempArrayforExistingFaqs.push(faq);
-            categorizedFaqs[faq.FaqCategory] = tempArrayforExistingFaqs;
+            categorizedFaqs[faq.GroupName] = tempArrayforExistingFaqs;
           }
         });
-        console.log(categorizedFaqs);
         setFaqs(categorizedFaqs);
       }
     } catch (error) {
@@ -77,7 +76,12 @@ export default function Faq() {
             >
               <Tabs value={tab} onChange={handleTabChange} textColor='white'>
                 {Object.keys(faqs).map((category, index) => (
-                  <Tab sx={{ mr: 2 }} label={category} id={index} key={index} />
+                  <Tab
+                    sx={{ mr: 2, fontWeight: 'bold' }}
+                    label={category}
+                    id={index}
+                    key={index}
+                  />
                 ))}
               </Tabs>
             </AppBar>
@@ -93,11 +97,11 @@ export default function Faq() {
                           color: (theme) => theme.palette.middleblue.main,
                         }}
                       >
-                        {faq.FaqQuestion}
+                        {faq.FAQName}
                       </Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography>{parse(faq.FaqAnswer)}</Typography>
+                      <Typography>{parse(faq.UpdateBody)}</Typography>
                     </AccordionDetails>
                   </Accordion>
                 </TabPanel>
