@@ -25,7 +25,7 @@ export default function Header() {
     navigate(`incidents/${incident.urlName}`);
   };
 
-  {/*
+  /*
 
               SubMenu prop structure ::
                     
@@ -35,14 +35,16 @@ export default function Header() {
               submenu: [{ title: 'Hurricane Elsa', link: '/incidents/elsa' }],
             }
                     
-           */}
+           */
 
   const multipleIncidentsData = {
     title: 'Incidents',
     link: '/incidents',
-    submenu: incidents.map((incident) => ({ title: incident.name, link: '/incidents/' + incident.urlName })),
-  }
-
+    submenu: incidents.map((incident) => ({
+      title: incident.name,
+      link: '/incidents/' + incident.urlName,
+    })),
+  };
 
   return (
     <Grid
@@ -59,7 +61,14 @@ export default function Header() {
         item
         xs={12}
         lg={incidents.length === 0 ? 3 : 1}
-        sx={{ textAlign: { xs: 'center', lg: 'start' }, p: 2, display: 'flex', justifyContent: { xs: 'center', lg: 'flex-start' }, alignItems: 'center', pl: 0 }}
+        sx={{
+          textAlign: { xs: 'center', lg: 'start' },
+          p: 2,
+          display: 'flex',
+          justifyContent: { xs: 'center', lg: 'flex-start' },
+          alignItems: 'center',
+          pl: 0,
+        }}
       >
         <img
           width='100%'
@@ -82,7 +91,7 @@ export default function Header() {
             justifyContent: 'space-evenly',
             direction: 'row',
           },
-          display: { xs: 'none', md: 'flex' }
+          display: { xs: 'none', md: 'flex' },
         }}
       >
         {location && location.pathname.includes('incident') ? (
@@ -104,20 +113,18 @@ export default function Header() {
               acr stickers
             </Link>
 
-            {incidents.length === 1
-              && (
-                <Button
-                  size='large'
-                  variant='contained'
-                  sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
-                  onClick={() => {
-                    navigateToIncident(incidents[0]);
-                  }}
-                >
-                  {incidents[0].name}
-                </Button>
-              )}
-
+            {incidents.length === 1 && (
+              <Button
+                size='large'
+                variant='contained'
+                sx={{ borderRadius: 3, py: 1.5, fontWeight: 'bold' }}
+                onClick={() => {
+                  navigateToIncident(incidents[0]);
+                }}
+              >
+                {incidents[0].name}
+              </Button>
+            )}
 
             {incidents.length > 1 && (
               <IncidentDropDown item={multipleIncidentsData} />

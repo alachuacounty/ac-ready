@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
 import moment from 'moment';
-import React, { createContext, useEffect, useState, useLayoutEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const incidentsContext = createContext([]);
 
@@ -15,7 +15,9 @@ export default function IncidentsContext({ children }) {
   const getAdvisoryData = async (incidentID, incidentURL) => {
     try {
       const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/advisory/active` + `/` + incidentID
+        `https://ads86.alachuacounty.us/incidents-api/advisory/active` +
+          `/` +
+          incidentID
       );
       if (result && result.data && result.data[0].length) {
         const tempAdvisories = [];
@@ -33,7 +35,8 @@ export default function IncidentsContext({ children }) {
           );
           tempAdvisory.title = advisory.AdvisoryName;
           tempAdvisory.desc = advisory.Blurb;
-          tempAdvisory.link = `/incidents/` + incidentURL + `/advisories/${advisory.MondayID}`;
+          tempAdvisory.link =
+            `/incidents/` + incidentURL + `/advisories/${advisory.MondayID}`;
           tempAdvisories.push(tempAdvisory);
         });
         return tempAdvisories;
@@ -43,48 +46,46 @@ export default function IncidentsContext({ children }) {
     }
   };
 
-
   const getIncidentPages = async (incidentID, incidentURL) => {
-
     try {
       const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` + incidentID
+        `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` +
+          incidentID
       );
       if (result && result.data && result.data[0].length) {
         const IncidentPages = [];
-        IncidentPages.push({ title: "Home", link: "/incidents/" + incidentURL });
+        IncidentPages.push({
+          title: 'Home',
+          link: '/incidents/' + incidentURL,
+        });
         const prepareSubmenu = [];
         const updatesSubmenu = [];
 
         result.data[0].forEach((page) => {
-
           const incidentPage = {};
           incidentPage.boardID = page.BoardID;
           incidentPage.name = page.PageName;
           incidentPage.title = page.PageName;
-          incidentPage.link = "/incidents/" + incidentURL + "/" + page.PageName;
+          incidentPage.link = '/incidents/' + incidentURL + '/' + page.PageName;
 
-          if (page.Category.toLowerCase() === "do not group") {
+          if (page.Category.toLowerCase() === 'do not group') {
             IncidentPages.push(incidentPage);
-          } else if (page.Category.toLowerCase() === "prepare") {
+          } else if (page.Category.toLowerCase() === 'prepare') {
             prepareSubmenu.push(incidentPage);
-          }
-          else if (page.Category.toLowerCase() === "updates") {
+          } else if (page.Category.toLowerCase() === 'updates') {
             updatesSubmenu.push(incidentPage);
           }
-
         });
 
         if (prepareSubmenu.length !== 0) {
-          IncidentPages.push({ title: "Prepare", submenu: prepareSubmenu });
+          IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
         }
         if (updatesSubmenu.length !== 0) {
-          IncidentPages.push({ title: "Updates", submenu: updatesSubmenu });
+          IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
         }
 
         return IncidentPages;
-      }
-      else {
+      } else {
         return [];
       }
     } catch (error) {
@@ -92,28 +93,34 @@ export default function IncidentsContext({ children }) {
     }
   };
 
-
   const getActiveIncidents = async () => {
     try {
       const result = await axios.get(
         `https://ads86.alachuacounty.us/incidents-api/incidents/active`
       );
       if (result && result.data && result.data[0].length) {
-
         const activeIncidents = [];
 
         for (const incident of result.data[0]) {
           const incidentData = {};
           incidentData.incidentID = incident.MondayID;
           incidentData.name = incident.IncidentName;
-          incidentData.urlName = incident.IncidentName.replace(" ", '').toLowerCase();
+          incidentData.urlName = incident.IncidentName.replace(
+            ' ',
+            ''
+          ).toLowerCase();
           incidentData.damageReportURL = incident.DamageReportURL;
           incidentData.imageLink1 = incident.Link1;
           incidentData.imageLink2 = incident.Link2;
-          incidentData.pages = await getIncidentPages(incidentData.incidentID, incidentData.urlName);
-          incidentData.advisories = await getAdvisoryData(incidentData.incidentID, incidentData.urlName);
+          incidentData.pages = await getIncidentPages(
+            incidentData.incidentID,
+            incidentData.urlName
+          );
+          incidentData.advisories = await getAdvisoryData(
+            incidentData.incidentID,
+            incidentData.urlName
+          );
           activeIncidents.push(incidentData);
-
         }
         return activeIncidents;
       } else {
@@ -122,18 +129,16 @@ export default function IncidentsContext({ children }) {
     } catch (error) {
       console.log({ error });
     }
-  }
+  };
 
   const initialLoad = async () => {
-
     const activeIncidents = await getActiveIncidents();
     //console.log(activeIncidents);
 
     updateIncidents(activeIncidents);
   };
 
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     initialLoad();
   }, []);
 

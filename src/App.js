@@ -1,9 +1,9 @@
-import { useState, useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { Route, Routes } from 'react-router-dom';
 
 import theme from './components/siteTheme';
-import { incidentsContext } from './contexts/IncidentsContext'
+import { incidentsContext } from './contexts/IncidentsContext';
 
 import Appbar from './components/Branding/Appbar';
 import Home from './pages/Home';
@@ -13,7 +13,6 @@ import SandbagPage from './pages/Sandbag';
 import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
-import Incident from './pages/Incident';
 import IncidentHome from './pages/IncidentHome';
 import Advisories from './pages/Advisories';
 import EmergencyOrder from './pages/EmergencyOrder';
@@ -22,30 +21,13 @@ import Advisory from './pages/Advisory';
 import ReportDamage from './pages/ReportDamage';
 
 export default function App() {
-
   const incidents = useContext(incidentsContext);
-  const [IncidentsFetched, setIncidentsFetched] = useState(false);
-  //const incidents = incidentsContext();
-
-  console.log("check context");
-  console.log(incidents);
-
-  /* useEffect(() => {
-     console.log("ran useffect on app");
-     console.log(incidents.length)
-     if (incidents.length > 0) {
-       setIncidentsFetched(true);
-       console.log("fetched");
-     }
-   }, []);*/
 
   return (
     <ThemeProvider theme={theme}>
       <Appbar>
-
         <Routes>
           <Route path='/' element={<Home />} />
-
 
           {incidents.length > 0 && (
             <>
@@ -101,7 +83,9 @@ export default function App() {
                     element={<Advisories />}
                   />
                   <Route
-                    path={'/incidents/' + incident.urlName + '/advisories/:UpdateID'}
+                    path={
+                      '/incidents/' + incident.urlName + '/advisories/:UpdateID'
+                    }
                     element={<Advisory />}
                   />
                 </>
