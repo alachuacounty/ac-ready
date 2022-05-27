@@ -3,13 +3,27 @@ import axios from 'axios';
 import moment from 'moment';
 import React, { createContext, useEffect, useState } from 'react';
 
+import IncidentHome from '../pages/IncidentHome';
+import ReportDamage from '../pages/ReportDamage';
+import RoadClosures from '../pages/RoadClosures';
+import Shelter from '../pages/Shelter';
+import SandbagPage from '../pages/Sandbag';
+import EmergencyOrder from '../pages/EmergencyOrder';
+import Advisories from '../pages/Advisories';
+import Advisory from '../pages/Advisory';
+import Faq from '../pages/Faq';
+import ImportantLinksPage from '../pages/ImportantLinks';
+
 export const incidentsContext = createContext([]);
 
 export default function IncidentsContext({ children }) {
   const [incidents, setIncidents] = useState([]);
 
+  let incidentsRoutes = [];
+
   const updateIncidents = (incidentsArray) => {
     setIncidents(incidentsArray);
+    console.log(incidentsArray);
   };
 
   const getAdvisoryData = async (incidentID, incidentURL) => {
@@ -58,18 +72,106 @@ export default function IncidentsContext({ children }) {
           title: 'Home',
           link: '/incidents/' + incidentURL,
         });
-        const prepareSubmenu = [];
-        const updatesSubmenu = [];
+
+        incidentsRoutes.push(
+          {
+            element: <IncidentHome />,
+            path: `/incidents/${incidentURL}`,
+          },
+          {
+            element: <Shelter />,
+            path: `/incidents/${incidentURL}/shelters`,
+          },
+          {
+            element: <SandbagPage />,
+            path: `/incidents/${incidentURL}/sandbags`,
+          },
+          {
+            element: <RoadClosures />,
+            path: `/incidents/${incidentURL}/roadclosures`,
+          },
+          {
+            element: <ReportDamage />,
+            path: `/incidents/${incidentURL}/reportdamages`,
+          },
+          {
+            element: <EmergencyOrder />,
+            path: `/incidents/${incidentURL}/emergencyorders`,
+          }
+        );
+
+        let standalonePages = null;
+        const prepareSubmenu = [
+          {
+            boardID: 1,
+            name: 'Find Shelters',
+            title: 'Shelters',
+            link: `/incidents/${incidentURL}/shelters`,
+          },
+          {
+            boardID: 2,
+            name: 'Sandbag Locations',
+            title: 'Sandbags',
+            link: `/incidents/${incidentURL}/sandbags`,
+          },
+        ];
+        const updatesSubmenu = [
+          {
+            boardID: 2,
+            name: 'Road Closures',
+            title: 'Road Closures',
+            link: `/incidents/${incidentURL}/roadclosures`,
+          },
+        ];
 
         result.data[0].forEach((page) => {
           const incidentPage = {};
           incidentPage.boardID = page.BoardID;
           incidentPage.name = page.PageName;
           incidentPage.title = page.PageName;
-          incidentPage.link = '/incidents/' + incidentURL + '/' + page.PageName;
+          incidentPage.link =
+            '/incidents/' +
+            incidentURL +
+            '/' +
+            page.PageName.replace(/\s/g, '').toLowerCase();
+
+          if (page.PageName === 'Advisories') {
+            incidentsRoutes.push({
+              element: <Advisories />,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(
+                /\s/g,
+                ''
+              ).toLowerCase()}`,
+            });
+            incidentsRoutes.push({
+              element: <Advisory />,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(
+                /\s/g,
+                ''
+              ).toLowerCase()}/:UpdateID`,
+            });
+          }
+
+          if (page.PageName === 'Important Links')
+            incidentsRoutes.push({
+              element: <ImportantLinksPage />,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(
+                /\s/g,
+                ''
+              ).toLowerCase()}`,
+            });
+
+          if (page.PageName === 'FAQ')
+            incidentsRoutes.push({
+              element: <Faq />,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(
+                /\s/g,
+                ''
+              ).toLowerCase()}`,
+            });
 
           if (page.Category.toLowerCase() === 'do not group') {
-            IncidentPages.push(incidentPage);
+            standalonePages = incidentPage;
           } else if (page.Category.toLowerCase() === 'prepare') {
             prepareSubmenu.push(incidentPage);
           } else if (page.Category.toLowerCase() === 'updates') {
@@ -77,12 +179,20 @@ export default function IncidentsContext({ children }) {
           }
         });
 
-        if (prepareSubmenu.length !== 0) {
+        if (prepareSubmenu.length !== 0)
           IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
-        }
-        if (updatesSubmenu.length !== 0) {
+
+        if (updatesSubmenu.length !== 0)
           IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
-        }
+
+        IncidentPages.push({
+          boardID: 100,
+          name: 'Emergency Orders',
+          title: 'Emergency Orders',
+          link: `/incidents/${incidentURL}/emergencyorders`,
+        });
+
+        if (standalonePages) IncidentPages.push(standalonePages);
 
         return IncidentPages;
       } else {
@@ -106,9 +216,10 @@ export default function IncidentsContext({ children }) {
           incidentData.incidentID = incident.MondayID;
           incidentData.name = incident.IncidentName;
           incidentData.urlName = incident.IncidentName.replace(
-            ' ',
+            /\s/g,
             ''
           ).toLowerCase();
+
           incidentData.damageReportURL = incident.DamageReportURL;
           incidentData.imageLink1 = incident.Link1;
           incidentData.imageLink2 = incident.Link2;
@@ -120,6 +231,7 @@ export default function IncidentsContext({ children }) {
             incidentData.incidentID,
             incidentData.urlName
           );
+          incidentData.routes = incidentsRoutes;
           activeIncidents.push(incidentData);
         }
         return activeIncidents;
@@ -133,8 +245,6 @@ export default function IncidentsContext({ children }) {
 
   const initialLoad = async () => {
     const activeIncidents = await getActiveIncidents();
-    //console.log(activeIncidents);
-
     updateIncidents(activeIncidents);
   };
 

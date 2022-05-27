@@ -7,18 +7,8 @@ import { incidentsContext } from './contexts/IncidentsContext';
 
 import Appbar from './components/Branding/Appbar';
 import Home from './pages/Home';
-import FAQ from './pages/Faq';
-import ImportantLinksPage from './pages/ImportantLinks';
-import SandbagPage from './pages/Sandbag';
-import Shelter from './pages/Shelter';
 import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
-import IncidentHome from './pages/IncidentHome';
-import Advisories from './pages/Advisories';
-import EmergencyOrder from './pages/EmergencyOrder';
-import RoadClosures from './pages/RoadClosures';
-import Advisory from './pages/Advisory';
-import ReportDamage from './pages/ReportDamage';
 
 export default function App() {
   const incidents = useContext(incidentsContext);
@@ -32,64 +22,11 @@ export default function App() {
           {incidents.length > 0 && (
             <>
               <Route path='incidents' element={<Incidents />} />
-              {incidents.map((incident) => (
-                <>
-                  {/* 
-                    <Route
-                    path={`incidents/${incident.urlName}`}
-                    element={
-                      <Incident name={incident.name} pages={incident.pages} />
-                    }
-                  />
-                  */}
-
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/emergencyorders'}
-                    element={<EmergencyOrder />}
-                  />
-
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/faqs'}
-                    element={<FAQ />}
-                  />
-
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/importantlinks'}
-                    element={<ImportantLinksPage />}
-                  />
-
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/sandbags'}
-                    element={<SandbagPage />}
-                  />
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/shelters'}
-                    element={<Shelter />}
-                  />
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/roadclosures'}
-                    element={<RoadClosures />}
-                  />
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/reportdamages'}
-                    element={<ReportDamage />}
-                  />
-                  <Route
-                    path={'/incidents/' + incident.urlName}
-                    element={<IncidentHome />}
-                  />
-                  <Route
-                    path={'/incidents/' + incident.urlName + '/advisories'}
-                    element={<Advisories />}
-                  />
-                  <Route
-                    path={
-                      '/incidents/' + incident.urlName + '/advisories/:UpdateID'
-                    }
-                    element={<Advisory />}
-                  />
-                </>
-              ))}
+              {incidents.map((incident) =>
+                incident.routes.map((route) => {
+                  return <Route path={route.path} element={route.element} />;
+                })
+              )}
             </>
           )}
           <Route path='*' element={<NotFound />} />
