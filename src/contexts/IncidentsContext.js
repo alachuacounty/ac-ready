@@ -66,64 +66,65 @@ export default function IncidentsContext({ children }) {
         `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` +
           incidentID
       );
+
+      const IncidentPages = [];
+      IncidentPages.push({
+        title: 'Home',
+        link: '/incidents/' + incidentURL,
+      });
+
+      incidentsRoutes.push(
+        {
+          element: <IncidentHome incidentIndex={index} />,
+          path: `/incidents/${incidentURL}`,
+        },
+        {
+          element: <Shelter incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/shelters`,
+        },
+        {
+          element: <SandbagPage incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/sandbags`,
+        },
+        {
+          element: <RoadClosures incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/roadclosures`,
+        },
+        {
+          element: <ReportDamage incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/reportdamages`,
+        },
+        {
+          element: <EmergencyOrder incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/emergencyorders`,
+        }
+      );
+
+      let standalonePages = null;
+      const prepareSubmenu = [
+        {
+          boardID: 1,
+          name: 'Find Shelters',
+          title: 'Shelters',
+          link: `/incidents/${incidentURL}/shelters`,
+        },
+        {
+          boardID: 2,
+          name: 'Sandbag Locations',
+          title: 'Sandbags',
+          link: `/incidents/${incidentURL}/sandbags`,
+        },
+      ];
+      const updatesSubmenu = [
+        {
+          boardID: 2,
+          name: 'Road Closures',
+          title: 'Road Closures',
+          link: `/incidents/${incidentURL}/roadclosures`,
+        },
+      ];
+
       if (result && result.data && result.data[0].length) {
-        const IncidentPages = [];
-        IncidentPages.push({
-          title: 'Home',
-          link: '/incidents/' + incidentURL,
-        });
-
-        incidentsRoutes.push(
-          {
-            element: <IncidentHome incidentIndex={index} />,
-            path: `/incidents/${incidentURL}`,
-          },
-          {
-            element: <Shelter incidentIndex={index} />,
-            path: `/incidents/${incidentURL}/shelters`,
-          },
-          {
-            element: <SandbagPage incidentIndex={index} />,
-            path: `/incidents/${incidentURL}/sandbags`,
-          },
-          {
-            element: <RoadClosures incidentIndex={index} />,
-            path: `/incidents/${incidentURL}/roadclosures`,
-          },
-          {
-            element: <ReportDamage incidentIndex={index} />,
-            path: `/incidents/${incidentURL}/reportdamages`,
-          },
-          {
-            element: <EmergencyOrder incidentIndex={index} />,
-            path: `/incidents/${incidentURL}/emergencyorders`,
-          }
-        );
-
-        let standalonePages = null;
-        const prepareSubmenu = [
-          {
-            boardID: 1,
-            name: 'Find Shelters',
-            title: 'Shelters',
-            link: `/incidents/${incidentURL}/shelters`,
-          },
-          {
-            boardID: 2,
-            name: 'Sandbag Locations',
-            title: 'Sandbags',
-            link: `/incidents/${incidentURL}/sandbags`,
-          },
-        ];
-        const updatesSubmenu = [
-          {
-            boardID: 2,
-            name: 'Road Closures',
-            title: 'Road Closures',
-            link: `/incidents/${incidentURL}/roadclosures`,
-          },
-        ];
-
         result.data[0].forEach((page) => {
           const incidentPage = {};
           incidentPage.boardID = page.BoardID;
@@ -178,26 +179,24 @@ export default function IncidentsContext({ children }) {
             updatesSubmenu.push(incidentPage);
           }
         });
-
-        if (prepareSubmenu.length !== 0)
-          IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
-
-        if (updatesSubmenu.length !== 0)
-          IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
-
-        IncidentPages.push({
-          boardID: 100,
-          name: 'Emergency Orders',
-          title: 'Emergency Orders',
-          link: `/incidents/${incidentURL}/emergencyorders`,
-        });
-
-        if (standalonePages) IncidentPages.push(standalonePages);
-
-        return IncidentPages;
-      } else {
-        return [];
       }
+
+      if (prepareSubmenu.length !== 0)
+        IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
+
+      if (updatesSubmenu.length !== 0)
+        IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
+
+      IncidentPages.push({
+        boardID: 100,
+        name: 'Emergency Orders',
+        title: 'Emergency Orders',
+        link: `/incidents/${incidentURL}/emergencyorders`,
+      });
+
+      if (standalonePages) IncidentPages.push(standalonePages);
+
+      return IncidentPages;
     } catch (error) {
       console.log({ error });
     }
