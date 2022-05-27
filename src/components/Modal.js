@@ -4,13 +4,15 @@ import React from 'react';
 import ACRButton from './ACRButton';
 
 export default function Modal({ handleClose, open, incidents }) {
-
   const addConjuction = (index) => {
-
     var conjuction =
-      (index === incidents.length - 2) ? ' and ' : (index !== incidents.length - 1) ? ' , ' : ' ';
+      index === incidents.length - 2
+        ? ' and '
+        : index !== incidents.length - 1
+        ? ' , '
+        : ' ';
     return conjuction;
-  }
+  };
 
   return (
     <Dialog onClose={handleClose} open={open}>
@@ -59,7 +61,7 @@ export default function Modal({ handleClose, open, incidents }) {
           <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
             Learn more about how{' '}
             {incidents.length > 0 &&
-              incidents.map((incident, index, incidents) => (
+              incidents.map((incident, index) => (
                 <>
                   <Link
                     href={`${process.env.PUBLIC_URL}/incidents/${incident.urlName}`}
@@ -74,7 +76,7 @@ export default function Modal({ handleClose, open, incidents }) {
         </Grid>
         {incidents.length > 0 &&
           incidents.map((incident) => (
-            <Grid item xs={12} px={10}>
+            <Grid item xs={12} px={{ xs: 1, sm: 10 }}>
               <ACRButton
                 text={incident.name}
                 size='jumbo'

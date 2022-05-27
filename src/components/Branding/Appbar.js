@@ -15,32 +15,28 @@ import LeftDrawer from './LeftDrawer';
 import TopDrawer from './TopDrawer';
 import EmergencyBanner from '../EmergencyBanner';
 
-
 export default function Appbar({ children }) {
   const { pageTitle } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
   const location = useLocation();
 
-  const isHomePage = (pageTitle === 'Alachua County Ready | Home');
-  const isLocationIncidents = (location.pathname === '/incidents' || location.pathname === '/incidents/');
+  const isHomePage = pageTitle === 'Alachua County Ready | Home';
+  const isLocationIncidents =
+    location.pathname === '/incidents' || location.pathname === '/incidents/';
 
   var navItems = [];
 
   if (!isHomePage && !isLocationIncidents && incidents.length > 0) {
-
     for (const incident of incidents) {
-      if (location.pathname.toLowerCase().includes(incident.urlName.toLowerCase())) {
+      if (
+        location.pathname.toLowerCase().includes(incident.urlName.toLowerCase())
+      ) {
         navItems = incident.pages;
       }
     }
-
   }
 
-  if (
-    !isHomePage &&
-    location &&
-    isLocationIncidents
-  ) {
+  if (!isHomePage && location && isLocationIncidents) {
     navItems = incidents.map((incident) => ({
       title: incident.name,
       link: incident.urlName,
@@ -55,12 +51,19 @@ export default function Appbar({ children }) {
       {
         title: 'Incidents',
         link: '/incidents',
-        submenu: [{ title: 'Hurricane Elsa', link: '/incidents/elsa' }],
+        submenu: incidents.map((incident) => ({
+          title: incident.name,
+          link: `/incidents/${incident.urlName}`,
+        })),
       },
     ];
   }
 
-  const drawerAnchor = isHomePage ? <TopDrawer navItems={navItems} /> : <LeftDrawer navItems={navItems} />;
+  const drawerAnchor = isHomePage ? (
+    <TopDrawer navItems={navItems} />
+  ) : (
+    <LeftDrawer navItems={navItems} />
+  );
 
   return (
     <>
@@ -76,11 +79,13 @@ export default function Appbar({ children }) {
                 xs={2}
                 md={4}
                 lg={1}
-                sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
               >
-
                 {drawerAnchor}
-
               </Grid>
               <Grid
                 item
@@ -116,14 +121,13 @@ export default function Appbar({ children }) {
             <>
               {!isHomePage ? <BreadCrumbs /> : null}
               <Header />
-              {isHomePage && incidents.length > 0 &&
+              {isHomePage && incidents.length > 0 && (
                 <Grid item xs={12}>
                   <EmergencyBanner />
                 </Grid>
-              }
+              )}
               {!isHomePage ? (
-                location &&
-                  isLocationIncidents ? (
+                location && isLocationIncidents ? (
                   <ActiveIncidentsNavigation />
                 ) : (
                   <IncidentNavigation navItems={navItems} />
