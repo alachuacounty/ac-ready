@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ACRButton from '../ACRButton';
-export default function ReportDamage() {
+import { incidentsContext } from '../../contexts/IncidentsContext';
+
+export default function ReportDamage({ incidentIndex }) {
+  const incidents = useContext(incidentsContext);
+
   return (
     <div>
       <Grid
@@ -24,7 +28,7 @@ export default function ReportDamage() {
           </Typography>
           <ACRButton
             text='Report Damage'
-            link='elsa/reportdamages'
+            link={`${incidents[incidentIndex].urlName}/reportdamages`}
             size='jumbo'
           />
         </Grid>

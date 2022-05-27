@@ -9,15 +9,18 @@ import LatestUpdates from '../components/IncidentHome/LatestUpdates';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
 import { incidentsContext } from '../contexts/IncidentsContext';
 
-export default function IncidentHome() {
+export default function IncidentHome({ incidentIndex }) {
   const incidents = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   useEffect(() => {
-    updatePageTitle('Hurricane Elsa | Home');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa' });
+    updatePageTitle(`${incidents[incidentIndex].name} | Home`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}`,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -25,20 +28,20 @@ export default function IncidentHome() {
     <>
       <Grid container spacing={0} xs={12} justifyContent='center'>
         <Grid item xs={12} md={10} pt={3} pb={3}>
-          <LatestUpdates />
+          <LatestUpdates incidentIndex={incidentIndex} />
           <Divider variant='middle' />
         </Grid>
         <Grid item xs={12} pt={3} pb={3}>
           <EmergencyBlurb fullWidth={true} />
         </Grid>
         <Grid item xs={12} md={10} pt={3} pb={3}>
-          <HowToPrepare />
+          <HowToPrepare incidentIndex={incidentIndex} />
         </Grid>
         <Grid item xs={12} pt={3} pb={3}>
-          <ReportDamage />
+          <ReportDamage incidentIndex={incidentIndex} />
         </Grid>
         <Grid item xs={12} md={10} pt={3} pb={9}>
-          <NHCMaps />
+          <NHCMaps incidentIndex={incidentIndex} />
         </Grid>
       </Grid>
     </>

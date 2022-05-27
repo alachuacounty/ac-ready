@@ -7,12 +7,14 @@ import IncidentLayout from '../components/Branding/IncidentLayout';
 import RoadsTable from '../components/Tables/Roads';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import { incidentsContext } from '../contexts/IncidentsContext';
 
 const TypographyStyles = { fontWeight: 'bold' };
 
-export default function RoadClosures() {
+export default function RoadClosures({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const incidents = useContext(incidentsContext);
 
   const [roadClosures, setRoadClosures] = useState([]);
   const [roadOpened, setRoadOpened] = useState([]);
@@ -27,8 +29,8 @@ export default function RoadClosures() {
           a.RoadDateTime < b.RoadDateTime
             ? 1
             : b.RoadDateTime < a.RoadDateTime
-              ? -1
-              : 0
+            ? -1
+            : 0
         );
 
         const open = [];
@@ -49,9 +51,12 @@ export default function RoadClosures() {
 
   useEffect(() => {
     getRoadClosures();
-    updatePageTitle('Elsa | Road Closures');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    updatePageTitle(`${incidents[incidentIndex].name} | Road Closures`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
   }, []);
 
   return (

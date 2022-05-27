@@ -1,9 +1,10 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 
 import { Typography, Grid, List, ListItem } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
 import ACRButton from '../ACRButton';
+import { incidentsContext } from '../../contexts/IncidentsContext';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -17,7 +18,8 @@ const buttonStyles = {
   pl: { xs: '0!important', sm: 2 },
 };
 
-export default function HowToPrepare() {
+export default function HowToPrepare({ incidentIndex }) {
+  const incidents = useContext(incidentsContext);
   const classes = useStyles();
   return (
     <div>
@@ -83,7 +85,7 @@ export default function HowToPrepare() {
             >
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={'elsa/shelters'}
+                  link={`${incidents[incidentIndex].urlName}/shelters`}
                   text='Find A Shelter'
                   size='jumbo'
                   invert={true}
@@ -91,7 +93,7 @@ export default function HowToPrepare() {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={'elsa/sandbags'}
+                  link={`${incidents[incidentIndex].urlName}/sandbags`}
                   text='Find sandbag locations'
                   size='jumbo'
                   invert={true}
@@ -99,7 +101,7 @@ export default function HowToPrepare() {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={'elsa/faqs'}
+                  link={`${incidents[incidentIndex].urlName}/faqs`}
                   text='Frequently Asked Questions '
                   size='jumbo'
                   invert={true}

@@ -4,17 +4,23 @@ import React, { useContext, useEffect } from 'react';
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
+import { incidentsContext } from '../contexts/IncidentsContext';
 
-export default function ReportDamage() {
+export default function ReportDamage({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const incidents = useContext(incidentsContext);
 
   useEffect(() => {
-    updatePageTitle('Elsa | Report Damage');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    updatePageTitle(`${incidents[incidentIndex].name} | Report Damages`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].name}/`,
+    });
   }, []);
 
+  // Needs to be updated
   return (
     <IncidentLayout title='Report Damage'>
       <Grid container>

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function LatestUpdates() {
+export default function LatestUpdates({ incidentIndex }) {
   const classes = useStyles();
   const incidents = useContext(incidentsContext);
 
@@ -29,9 +29,15 @@ export default function LatestUpdates() {
   });
 
   useEffect(() => {
-    if (incidents && incidents.length && incidents[0].advisories)
-      setAdvisories(incidents[0].advisories);
-  }, [incidents]);
+    if (
+      incidents &&
+      incidents.length &&
+      incidents[incidentIndex] &&
+      incidents[incidentIndex].advisories &&
+      incidents[incidentIndex].advisories.length
+    )
+      setAdvisories(incidents[incidentIndex].advisories);
+  }, [incidents, incidentIndex]);
 
   return (
     <Grid container xs={12} spacing={3} justifyContent='center'>
@@ -43,12 +49,12 @@ export default function LatestUpdates() {
       {advisories && advisories.length > 0 ? (
         <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
-            <PressItem data={advisories[0]} expanded={!isMobile} />
+            <PressItem data={advisories[0]} expanded={!isMobile} index={1} />
           </Grid>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
-            {advisories[1] && <PressItem data={advisories[1]} />}
-            {advisories[2] && <PressItem data={advisories[2]} />}
-            {advisories[3] && <PressItem data={advisories[3]} />}
+            {advisories[1] && <PressItem data={advisories[1]} index={2} />}
+            {advisories[2] && <PressItem data={advisories[2]} index={3} />}
+            {advisories[3] && <PressItem data={advisories[3]} index={4} />}
           </Grid>
         </Grid>
       ) : (

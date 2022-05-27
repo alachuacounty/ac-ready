@@ -16,7 +16,7 @@ import { titleContext } from '../contexts/TitleContext';
 import { ExpandMore } from '@mui/icons-material';
 import { incidentsContext } from '../contexts/IncidentsContext';
 
-export default function ImportantLinksPage() {
+export default function ImportantLinksPage({ incidentIndex }) {
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const incidents = useContext(incidentsContext);
@@ -25,7 +25,7 @@ export default function ImportantLinksPage() {
   const getImportantLinks = async () => {
     try {
       const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/importantlinks/active/2641106877`
+        `https://ads86.alachuacounty.us/incidents-api/importantlinks/active/${incidents[incidentIndex].incidentID}`
       );
 
       if (result.data && result.data[0].length) {
@@ -49,9 +49,12 @@ export default function ImportantLinksPage() {
 
   useEffect(() => {
     getImportantLinks();
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
-    updatePageTitle('Elsa | Important Links');
-    updatePageHeading('Hurricane Elsa');
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
+    updatePageTitle(`${incidents[incidentIndex].name} | Important Links`);
+    updatePageHeading(incidents[incidentIndex].name);
   }, []);
 
   return (

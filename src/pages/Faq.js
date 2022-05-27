@@ -17,11 +17,13 @@ import parse from 'html-react-parser';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
+import { incidentsContext } from '../contexts/IncidentsContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import { ExpandMore } from '@mui/icons-material';
 
-export default function Faq() {
+export default function Faq({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const incidents = useContext(incidentsContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const [tab, setTab] = useState(0);
 
@@ -34,7 +36,7 @@ export default function Faq() {
   const getFaqs = async () => {
     try {
       const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/faq/active/2641106877`
+        `https://ads86.alachuacounty.us/incidents-api/faq/active/${incidents[incidentIndex].incidentID}`
       );
 
       if (result.data && result.data[0].length) {
@@ -58,9 +60,12 @@ export default function Faq() {
 
   useEffect(() => {
     getFaqs();
-    updatePageTitle('Elsa | FAQs');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    updatePageTitle(`${incidents[incidentIndex].name} | FAQs`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
   }, []);
 
   return (

@@ -8,7 +8,7 @@ import { incidentsContext } from '../contexts/IncidentsContext';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 
-export default function Advisories() {
+export default function Advisories({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const incidents = useContext(incidentsContext);
@@ -17,13 +17,16 @@ export default function Advisories() {
 
   useEffect(() => {
     if (incidents && incidents.length && incidents[0].advisories)
-      setAdvisories(incidents[0].advisories);
-    updatePageTitle('Elsa | Advisories');
-    updatePageHeading('Hurricane Elsa');
+      setAdvisories(incidents[incidentIndex].advisories);
+    updatePageTitle(`${incidents[incidentIndex].name} | Advisories`);
+    updatePageHeading(incidents[incidentIndex].name);
   }, [incidents]);
 
   useEffect(() => {
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
   }, []);
 
   return (

@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { incidentsContext } from '../../contexts/IncidentsContext';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -15,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NHCMaps() {
+export default function NHCMaps({ incidentIndex }) {
+  const incidents = React.useContext(incidentsContext);
   const classes = useStyles();
   return (
     <div>
@@ -41,7 +43,7 @@ export default function NHCMaps() {
                   component='img'
                   height='auto'
                   width='100%'
-                  image='https://www.nhc.noaa.gov/xgtwo/two_atl_0d0.png?191716'
+                  image={incidents[incidentIndex].imageLink1}
                   alt='green iguana'
                 />
                 <CardContent>
@@ -85,7 +87,7 @@ export default function NHCMaps() {
                   component='img'
                   height='auto'
                   width='100%'
-                  image='https://www.nhc.noaa.gov/xgtwo/two_atl_5d0.png'
+                  image={incidents[incidentIndex].imageLink2}
                   alt='green iguana'
                 />
                 <CardContent>

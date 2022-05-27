@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function AdvisoryContent() {
+export default function AdvisoryContent({ incidentIndex }) {
   const params = useParams();
   const classes = useStyles();
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
@@ -42,8 +42,8 @@ export default function AdvisoryContent() {
         (data) => data.id === params.UpdateID
       );
       setAdvisory(advisoryData);
-      updatePageTitle(`Elsa | Advisory`);
-      updatePageHeading('Hurricane Elsa');
+      updatePageTitle(`${incidents[incidentIndex].name} | Advisory`);
+      updatePageHeading(incidents[incidentIndex].name);
     }
   }, [incidents, params.UpdateID]);
 
@@ -69,7 +69,7 @@ export default function AdvisoryContent() {
         <Grid item xs={12}>
           <ACRButton
             text='View all updates'
-            link='/incidents/elsa/advisories'
+            link={`/incidents/${incidents[incidentIndex].urlName}/advisories`}
             size='small'
           />
         </Grid>

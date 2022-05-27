@@ -9,6 +9,7 @@ import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 import { Grid, Typography } from '@mui/material';
 import Map from '../components/Map';
 import SandbagsTable from '../components/Tables/Sandbags';
+import { incidentsContext } from '../contexts/IncidentsContext';
 
 Geocode.setApiKey(`AIzaSyBRbdKmyFU_X9r-UVmsapYMcKDJQJmQpAg`);
 Geocode.setLocationType('ROOFTOP');
@@ -41,9 +42,10 @@ const headCells = [
   },
 ];
 
-export default function Shelter() {
+export default function Shelter({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
+  const incidents = useContext(incidentsContext);
   const [center, setCenter] = useState({ lat: 29.651634, lng: -82.324829 });
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [sandbagsLocations, setSandbagsLocations] = useState([]);
@@ -87,9 +89,12 @@ export default function Shelter() {
 
   useEffect(() => {
     getSandbagsLocations();
-    updatePageTitle('Elsa | Sandbags');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    updatePageTitle(`${incidents[incidentIndex].name} | Sandbags`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
   }, []);
 
   return (

@@ -7,8 +7,7 @@ import IncidentLayout from '../components/Branding/IncidentLayout';
 import { titleContext } from '../contexts/TitleContext';
 import EmergencyOrdersTable from '../components/Tables/EmergencyOrders';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
-
-
+import { incidentsContext } from '../contexts/IncidentsContext';
 
 const headCells = [
   {
@@ -25,8 +24,9 @@ const headCells = [
   },
 ];
 
-export default function EmergencyOrder() {
+export default function EmergencyOrder({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const incidents = useContext(incidentsContext);
   const [emergencyOrders, setEmergencyOrders] = useState([]);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
@@ -44,9 +44,12 @@ export default function EmergencyOrder() {
 
   useEffect(() => {
     getEmergencyOrders();
-    updatePageTitle('Elsa | Emergency Orders');
-    updatePageHeading('Hurricane Elsa');
-    pushBreadCrumbs({ crumb: 'Hurricane Elsa', link: '/incidents/elsa/' });
+    updatePageTitle(`${incidents[incidentIndex].name} | Emergency Orders`);
+    updatePageHeading(incidents[incidentIndex].name);
+    pushBreadCrumbs({
+      crumb: incidents[incidentIndex].name,
+      link: `/incidents/${incidents[incidentIndex].urlName}/`,
+    });
   }, []);
 
   return (

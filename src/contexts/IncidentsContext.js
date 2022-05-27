@@ -60,7 +60,7 @@ export default function IncidentsContext({ children }) {
     }
   };
 
-  const getIncidentPages = async (incidentID, incidentURL) => {
+  const getIncidentPages = async (incidentID, incidentURL, index) => {
     try {
       const result = await axios.get(
         `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` +
@@ -75,27 +75,27 @@ export default function IncidentsContext({ children }) {
 
         incidentsRoutes.push(
           {
-            element: <IncidentHome />,
+            element: <IncidentHome incidentIndex={index} />,
             path: `/incidents/${incidentURL}`,
           },
           {
-            element: <Shelter />,
+            element: <Shelter incidentIndex={index} />,
             path: `/incidents/${incidentURL}/shelters`,
           },
           {
-            element: <SandbagPage />,
+            element: <SandbagPage incidentIndex={index} />,
             path: `/incidents/${incidentURL}/sandbags`,
           },
           {
-            element: <RoadClosures />,
+            element: <RoadClosures incidentIndex={index} />,
             path: `/incidents/${incidentURL}/roadclosures`,
           },
           {
-            element: <ReportDamage />,
+            element: <ReportDamage incidentIndex={index} />,
             path: `/incidents/${incidentURL}/reportdamages`,
           },
           {
-            element: <EmergencyOrder />,
+            element: <EmergencyOrder incidentIndex={index} />,
             path: `/incidents/${incidentURL}/emergencyorders`,
           }
         );
@@ -137,14 +137,14 @@ export default function IncidentsContext({ children }) {
 
           if (page.PageName === 'Advisories') {
             incidentsRoutes.push({
-              element: <Advisories />,
+              element: <Advisories incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
               ).toLowerCase()}`,
             });
             incidentsRoutes.push({
-              element: <Advisory />,
+              element: <Advisory incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
@@ -154,7 +154,7 @@ export default function IncidentsContext({ children }) {
 
           if (page.PageName === 'Important Links')
             incidentsRoutes.push({
-              element: <ImportantLinksPage />,
+              element: <ImportantLinksPage incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
@@ -163,7 +163,7 @@ export default function IncidentsContext({ children }) {
 
           if (page.PageName === 'FAQ')
             incidentsRoutes.push({
-              element: <Faq />,
+              element: <Faq incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
@@ -211,7 +211,7 @@ export default function IncidentsContext({ children }) {
       if (result && result.data && result.data[0].length) {
         const activeIncidents = [];
 
-        for (const incident of result.data[0]) {
+        for (const [index, incident] of result.data[0].entries()) {
           const incidentData = {};
           incidentData.incidentID = incident.MondayID;
           incidentData.name = incident.IncidentName;
@@ -225,7 +225,8 @@ export default function IncidentsContext({ children }) {
           incidentData.imageLink2 = incident.Link2;
           incidentData.pages = await getIncidentPages(
             incidentData.incidentID,
-            incidentData.urlName
+            incidentData.urlName,
+            index
           );
           incidentData.advisories = await getAdvisoryData(
             incidentData.incidentID,
