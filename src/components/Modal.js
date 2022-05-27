@@ -3,7 +3,7 @@ import { Dialog, Grid, Typography, Link } from '@mui/material';
 import React from 'react';
 import ACRButton from './ACRButton';
 
-export default function Modal({ handleClose, open }) {
+export default function Modal({ handleClose, open, incidents }) {
   return (
     <Dialog onClose={handleClose} open={open}>
       <Grid
@@ -50,19 +50,27 @@ export default function Modal({ handleClose, open }) {
         <Grid item xs={12} sx={{ display: 'flex', alignContent: 'flex-start' }}>
           <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
             Learn more about how{' '}
-            <Link href={`${process.env.PUBLIC_URL}/incidents/elsa`}>
-              Hurricane Elsa{' '}
-            </Link>
+            {incidents.length > 0 &&
+              incidents.map((incident) => (
+                <Link
+                  href={`${process.env.PUBLIC_URL}/incidents/${incident.urlName}`}
+                >
+                  {incident.name} {', '}
+                </Link>
+              ))}
             is Impacting Alachua County and how you can prepare.
           </Typography>
         </Grid>
-        <Grid item xs={12} px={10}>
-          <ACRButton
-            text='Hurricane Elsa'
-            size='jumbo'
-            link={'/incidents/elsa'}
-          />
-        </Grid>
+        {incidents.length > 0 &&
+          incidents.map((incident) => (
+            <Grid item xs={12} px={10}>
+              <ACRButton
+                text={incident.name}
+                size='jumbo'
+                link={`/incidents/${incident.urlName}`}
+              />
+            </Grid>
+          ))}
       </Grid>
     </Dialog>
   );

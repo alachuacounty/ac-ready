@@ -12,6 +12,7 @@ import Modal from '../components/Modal';
 export default function Home() {
   const incidents = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
+  const [currentIncidents, setCurrentIncidents] = useState([]);
 
   useEffect(() => {
     updatePageTitle('Alachua County Ready | Home');
@@ -29,7 +30,10 @@ export default function Home() {
 
   useEffect(() => {
     console.log('Home.js Console log');
-    if (incidents.length > 0) handleOpen();
+    if (incidents.length > 0) {
+      setCurrentIncidents(incidents);
+      handleOpen();
+    }
   }, [incidents]);
 
   return (
@@ -38,7 +42,11 @@ export default function Home() {
       <Notify />
       <Prepare />
       <Sticker />
-      <Modal handleClose={handleClose} open={open} />
+      <Modal
+        handleClose={handleClose}
+        open={open}
+        incidents={currentIncidents}
+      />
     </>
   );
 }
