@@ -60,7 +60,14 @@ export default function IncidentsContext({ children }) {
     }
   };
 
-  const getIncidentPages = async (incidentID, incidentURL, index) => {
+  const getIncidentPages = async (
+    incidentID,
+    incidentURL,
+    index,
+    showShelters,
+    showSandbags,
+    showRoadClosures
+  ) => {
     try {
       const result = await axios.get(
         `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` +
@@ -68,6 +75,10 @@ export default function IncidentsContext({ children }) {
       );
 
       const IncidentPages = [];
+
+      const prepareSubmenu = [];
+      const updatesSubmenu = [];
+
       IncidentPages.push({
         title: 'Home',
         link: '/incidents/' + incidentURL,
@@ -79,18 +90,6 @@ export default function IncidentsContext({ children }) {
           path: `/incidents/${incidentURL}`,
         },
         {
-          element: <Shelter incidentIndex={index} />,
-          path: `/incidents/${incidentURL}/shelters`,
-        },
-        {
-          element: <SandbagPage incidentIndex={index} />,
-          path: `/incidents/${incidentURL}/sandbags`,
-        },
-        {
-          element: <RoadClosures incidentIndex={index} />,
-          path: `/incidents/${incidentURL}/roadclosures`,
-        },
-        {
           element: <ReportDamage incidentIndex={index} />,
           path: `/incidents/${incidentURL}/reportdamages`,
         },
@@ -100,29 +99,43 @@ export default function IncidentsContext({ children }) {
         }
       );
 
-      let standalonePages = null;
-      const prepareSubmenu = [
-        {
-          boardID: 1,
+      if (showShelters && showShelters === 'Yes') {
+        incidentsRoutes.push({
+          element: <Shelter incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/shelters`,
+        });
+        prepareSubmenu.push({
           name: 'Find Shelters',
           title: 'Shelters',
           link: `/incidents/${incidentURL}/shelters`,
-        },
-        {
-          boardID: 2,
+        });
+      }
+
+      if (showSandbags && showSandbags === 'Yes') {
+        incidentsRoutes.push({
+          element: <SandbagPage incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/sandbags`,
+        });
+        prepareSubmenu.push({
           name: 'Sandbag Locations',
           title: 'Sandbags',
           link: `/incidents/${incidentURL}/sandbags`,
-        },
-      ];
-      const updatesSubmenu = [
-        {
-          boardID: 2,
+        });
+      }
+
+      if (showRoadClosures && showRoadClosures === 'Yes') {
+        incidentsRoutes.push({
+          element: <RoadClosures incidentIndex={index} />,
+          path: `/incidents/${incidentURL}/roadclosures`,
+        });
+        updatesSubmenu.push({
           name: 'Road Closures',
           title: 'Road Closures',
           link: `/incidents/${incidentURL}/roadclosures`,
-        },
-      ];
+        });
+      }
+
+      let standalonePages = null;
 
       if (result && result.data && result.data[0].length) {
         result.data[0].forEach((page) => {
@@ -225,13 +238,19 @@ export default function IncidentsContext({ children }) {
           incidentData.pages = await getIncidentPages(
             incidentData.incidentID,
             incidentData.urlName,
-            index
+            index,
+            incident.ShowSheltersPage,
+            incident.ShowSandbagsPage,
+            incident.ShowRoadClosuresPage
           );
           incidentData.advisories = await getAdvisoryData(
             incidentData.incidentID,
             incidentData.urlName
           );
           incidentData.routes = incidentsRoutes;
+          incidentData.showShelters = incident.ShowSheltersPage;
+          incidentData.showSandbags = incident.ShowSandbagsPage;
+          incidentData.showRoadClosures = incident.ShowRoadClosuresPage;
           activeIncidents.push(incidentData);
         }
         return activeIncidents;

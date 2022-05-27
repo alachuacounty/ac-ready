@@ -83,30 +83,39 @@ export default function HowToPrepare({ incidentIndex }) {
               justifyContent='center'
               alignItems='center'
             >
-              <Grid item sx={buttonStyles}>
-                <ACRButton
-                  link={`/incidents/${incidents[incidentIndex].urlName}/shelters`}
-                  text='Find A Shelter'
-                  size='jumbo'
-                  invert={true}
-                />
-              </Grid>
-              <Grid item sx={buttonStyles}>
-                <ACRButton
-                  link={`/incidents/${incidents[incidentIndex].urlName}/sandbags`}
-                  text='Find sandbag locations'
-                  size='jumbo'
-                  invert={true}
-                />
-              </Grid>
-              <Grid item sx={buttonStyles}>
-                <ACRButton
-                  link={`/incidents/${incidents[incidentIndex].urlName}/faq`}
-                  text='Frequently Asked Questions '
-                  size='jumbo'
-                  invert={true}
-                />
-              </Grid>
+              {incidents[incidentIndex].showShelters &&
+                incidents[incidentIndex].showShelters === 'Yes' && (
+                  <Grid item sx={buttonStyles}>
+                    <ACRButton
+                      link={`/incidents/${incidents[incidentIndex].urlName}/shelters`}
+                      text='Find A Shelter'
+                      size='jumbo'
+                      invert={true}
+                    />
+                  </Grid>
+                )}
+              {incidents[incidentIndex].showSandbags &&
+                incidents[incidentIndex].showSandbags === 'Yes' && (
+                  <Grid item sx={buttonStyles}>
+                    <ACRButton
+                      link={`/incidents/${incidents[incidentIndex].urlName}/sandbags`}
+                      text='Find sandbag locations'
+                      size='jumbo'
+                      invert={true}
+                    />
+                  </Grid>
+                )}
+              {incidents[incidentIndex].showRoadClosures &&
+                incidents[incidentIndex].showRoadClosures === 'Yes' && (
+                  <Grid item sx={buttonStyles}>
+                    <ACRButton
+                      link={`/incidents/${incidents[incidentIndex].urlName}/faq`}
+                      text='Frequently Asked Questions '
+                      size='jumbo'
+                      invert={true}
+                    />
+                  </Grid>
+                )}
             </Grid>
           </Grid>
         </Grid>
