@@ -20,14 +20,21 @@ export default function ReportDamage({ incidentIndex }) {
     });
   }, []);
 
-  // Needs to be updated
+  const getIframeSRC = () => {
+
+    var urlElements = incidents[incidentIndex].damageReportURL.split('/');
+    urlElements.splice(urlElements.length - 1, 0, "embed");
+    return urlElements.join("/");
+
+  }
+
   return (
     <IncidentLayout title='Report Damage'>
       <Grid container>
         <Grid item xs={12}>
           <iframe
             title='reportDamageForm'
-            src='https://forms.monday.com/forms/embed/a1e0d86458aaef03fe1b6fb970e30d41?r=use1' // ${incidents[incidentIndex].damageReportURL
+            src={getIframeSRC()}
             width='100%'
             height='900'
             style={{
