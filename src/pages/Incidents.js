@@ -66,22 +66,6 @@ export default function Incidents() {
             </Typography>
           </Grid>
         ))}
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={6}
-        lg={3}
-        sx={cardStyles}
-        key={99}
-        onClick={() =>
-          alert('Really!? Have you ever heard of Tropical Storm X?')
-        }
-      >
-        <Typography variant='h4' sx={typographyStyles}>
-          Tropical Storm X
-        </Typography>
-      </Grid>
     </Grid>
   );
 }
