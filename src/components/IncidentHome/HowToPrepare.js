@@ -85,7 +85,7 @@ export default function HowToPrepare({ incidentIndex }) {
             >
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={`/${incidents[incidentIndex].urlName}/incidents/shelters`}
+                  link={`/incidents/${incidents[incidentIndex].urlName}/shelters`}
                   text='Find A Shelter'
                   size='jumbo'
                   invert={true}
@@ -93,7 +93,7 @@ export default function HowToPrepare({ incidentIndex }) {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={`/${incidents[incidentIndex].urlName}/incidents/sandbags`}
+                  link={`/incidents/${incidents[incidentIndex].urlName}/sandbags`}
                   text='Find sandbag locations'
                   size='jumbo'
                   invert={true}
@@ -101,7 +101,7 @@ export default function HowToPrepare({ incidentIndex }) {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={`/${incidents[incidentIndex].urlName}/incidents/faqs`}
+                  link={`/incidents/${incidents[incidentIndex].urlName}/faqs`}
                   text='Frequently Asked Questions '
                   size='jumbo'
                   invert={true}
