@@ -4,6 +4,14 @@ import React from 'react';
 import ACRButton from './ACRButton';
 
 export default function Modal({ handleClose, open, incidents }) {
+
+  const addConjuction = (index) => {
+
+    var conjuction =
+      (index === incidents.length - 2) ? ' and ' : (index !== incidents.length - 1) ? ' , ' : ' ';
+    return conjuction;
+  }
+
   return (
     <Dialog onClose={handleClose} open={open}>
       <Grid
@@ -51,12 +59,15 @@ export default function Modal({ handleClose, open, incidents }) {
           <Typography variant='h6' px={6} textAlign='center' fontWeight='bold'>
             Learn more about how{' '}
             {incidents.length > 0 &&
-              incidents.map((incident) => (
-                <Link
-                  href={`${process.env.PUBLIC_URL}/incidents/${incident.urlName}`}
-                >
-                  {incident.name} {', '}
-                </Link>
+              incidents.map((incident, index, incidents) => (
+                <>
+                  <Link
+                    href={`${process.env.PUBLIC_URL}/incidents/${incident.urlName}`}
+                  >
+                    {incident.name}
+                  </Link>
+                  {addConjuction(index)}
+                </>
               ))}
             is Impacting Alachua County and how you can prepare.
           </Typography>
