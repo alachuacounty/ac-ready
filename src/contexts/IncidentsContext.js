@@ -245,6 +245,7 @@ export default function IncidentsContext({ children }) {
 
   const initialLoad = async () => {
     const activeIncidents = await getActiveIncidents();
+
     updateIncidents(activeIncidents);
   };
 

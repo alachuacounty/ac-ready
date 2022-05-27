@@ -22,11 +22,9 @@ export default function App() {
           {incidents.length > 0 && (
             <>
               <Route path='incidents' element={<Incidents />} />
-              {incidents.map((incident) =>
-                incident.routes.map((route) => {
-                  return <Route path={route.path} element={route.element} />;
-                })
-              )}
+              {incidents[0].routes.map((route) => {
+                return <Route path={route.path} element={route.element} />;
+              })}
             </>
           )}
           <Route path='*' element={<NotFound />} />

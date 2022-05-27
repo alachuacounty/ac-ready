@@ -7,8 +7,10 @@ import HowToPrepare from '../components/IncidentHome/HowToPrepare';
 import NHCMaps from '../components/IncidentHome/NHCMaps';
 import LatestUpdates from '../components/IncidentHome/LatestUpdates';
 import ReportDamage from '../components/IncidentHome/ReportDamage';
+import { incidentsContext } from '../contexts/IncidentsContext';
 
 export default function IncidentHome() {
+  const incidents = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
