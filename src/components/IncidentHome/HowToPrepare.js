@@ -101,7 +101,7 @@ export default function HowToPrepare({ incidentIndex }) {
               </Grid>
               <Grid item sx={buttonStyles}>
                 <ACRButton
-                  link={`/incidents/${incidents[incidentIndex].urlName}/faqs`}
+                  link={`/incidents/${incidents[incidentIndex].urlName}/faq`}
                   text='Frequently Asked Questions '
                   size='jumbo'
                   invert={true}

@@ -27,7 +27,7 @@ export default function ReportDamage({ incidentIndex }) {
         <Grid item xs={12}>
           <iframe
             title='reportDamageForm'
-            src='https://forms.monday.com/forms/embed/a1e0d86458aaef03fe1b6fb970e30d41?r=use1'
+            src='https://forms.monday.com/forms/embed/a1e0d86458aaef03fe1b6fb970e30d41?r=use1' // ${incidents[incidentIndex].damageReportURL
             width='100%'
             height='900'
             style={{
