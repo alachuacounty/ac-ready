@@ -28,7 +28,7 @@ export default function ReportDamage({ incidentIndex }) {
           </Typography>
           <ACRButton
             text='Report Damage'
-            link={`${incidents[incidentIndex].urlName}/reportdamages`}
+            link={`/${incidents[incidentIndex].urlName}/incidents/reportdamages`}
             size='jumbo'
           />
         </Grid>
