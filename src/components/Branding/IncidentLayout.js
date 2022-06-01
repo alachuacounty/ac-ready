@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+const blurbTitle = 'Sign Up for Emergency Alerts';
+const blurbText = 'Text "Alachua" to 888777 to receive real-time County updates during a large-scale incident or emergency';
+const blurbTitle2 = "Don't see the information you're looking for?";
+const blurbText2 = 'Call 311';
+
 export default function IncidentLayout({
   children,
   title = 'Page Title',
@@ -60,7 +66,13 @@ export default function IncidentLayout({
           justifyContent='flex-end'
           className={classes.hidden}
         >
-          <EmergencyBlurb />
+
+          <Grid item xs={12}>
+            <EmergencyBlurb title={blurbTitle} text={blurbText} removePadding={true} />
+
+            <EmergencyBlurb title={blurbTitle2} text={blurbText2} />
+          </Grid>
+
         </Grid>
       </Grid>
     </Grid>

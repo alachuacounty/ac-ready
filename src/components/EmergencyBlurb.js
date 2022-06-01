@@ -5,18 +5,20 @@ import clsx from 'clsx';
 const useStyles = makeStyles((theme) => ({
   boxStyles: {
     display: 'flex',
+    justifyContent: 'flex-end',
     flexWrap: 'wrap',
     [theme.breakpoints.down('md')]: {
       width: '100%',
       height: 'auto',
     },
     '& > :not(style)': {
-      m: 1,
+      margin: '1rem',
       width: 200,
       height: 220,
       [theme.breakpoints.down('md')]: {
         width: '100%',
         height: 'auto',
+        margin: '0',
       },
     },
   },
@@ -29,15 +31,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   fullWidthBox: {
-    '& > :not(style)': { width: '100%', height: 'auto' },
+    '& > :not(style)': { width: '100%', height: 'auto', margin: '0', },
   },
   fullWidthPaper: {
     padding: '2%',
     boxShadow: 'none',
   },
+  removePadding: {
+    paddingBottom: '0px !important',
+  }
 }));
 
-export default function EmergencyBlurb({ fullWidth }) {
+export default function EmergencyBlurb({ title, text, fullWidth, removePadding }) {
   const classes = useStyles();
   return (
     <Box
@@ -51,16 +56,15 @@ export default function EmergencyBlurb({ fullWidth }) {
         elevation={8}
         className={
           fullWidth
-            ? clsx(classes.paperStyles, classes.fullWidthPaper)
-            : classes.paperStyles
+            ? clsx(classes.paperStyles, classes.fullWidthPaper, removePadding ? classes.removePadding : null)
+            : clsx(classes.paperStyles, removePadding ? classes.removePadding : null)
         }
       >
         <Typography textAlign='center' p={1} variant='h5' fontWeight='bold'>
-          Sign Up for Emergency Alerts
+          {title}
         </Typography>
         <Typography textAlign='center' p={1} fontWeight='bold'>
-          Text "Alachua" to 888777 to receive real-time County updates during a
-          large-scale incident or emergency
+          {text}
         </Typography>
       </Paper>
     </Box>
