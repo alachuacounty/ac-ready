@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Divider } from '@mui/material';
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 
@@ -29,8 +29,8 @@ export default function RoadClosures({ incidentIndex }) {
           a.RoadDateTime < b.RoadDateTime
             ? 1
             : b.RoadDateTime < a.RoadDateTime
-              ? -1
-              : 0
+            ? -1
+            : 0
         );
 
         const open = [];
@@ -78,6 +78,15 @@ export default function RoadClosures({ incidentIndex }) {
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <RoadsTable data={roadOpened} />
         </Grid>
+
+        <Grid item xs={12} mt={6} sx={{ paddingLeft: '0 !important' }}>
+          <Divider height='30px'></Divider>
+          <Typography variant='h6' sx={TypographyStyles}>
+            This is some typography that you can click on the map and it will
+            allow you to do something!
+          </Typography>
+        </Grid>
+
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <iframe
             src='https://acgm.maps.arcgis.com/apps/dashboards/a8dc1365c2a74de8b38c53e009476357'
