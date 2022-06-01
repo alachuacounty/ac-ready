@@ -28,9 +28,15 @@ const useStyles = makeStyles((theme) => ({
     height: '100px',
     lineClamp: '4',
   },
+  padded: {
+    height: '150px',
+    [theme.breakpoints.down('md')]: {
+      height: 'auto',
+    }
+  }
 }));
 
-export default function PressItem({ data, expanded, index }) {
+export default function PressItem({ data, expanded, index, latestUpdates }) {
   const classes = useStyles();
   return (
     <Grid container spacing={2} xs={12} key={index}>
@@ -63,22 +69,36 @@ export default function PressItem({ data, expanded, index }) {
             )}
           </Typography>
         </Grid>
-        {expanded && (
-          <>
-            <Grid item xs={12}>
-              <Typography
-                paragraph
-                className={clsx(classes.text, classes.clipped)}
-              >
-                {data.desc}
-              </Typography>
+        {
+          expanded && (
+            <>
+              {
+                data.desc &&
+                <Grid item xs={12}>
+                  <Typography
+                    paragraph
+                    className={clsx(classes.text, classes.clipped)}
+                  >
+                    {data.desc}
+                  </Typography>
+                </Grid>
+              }
+              {
+                data.updateContent &&
+                <Grid item paddingBottom={2} paddingTop={data.desc ? 0 : 2} xs={12}>
+                  <ACRButton text='Read More' link={data.link} size='small' />
+                </Grid>
+              }
+            </>
+          )
+        }
+        {
+          expanded && !data.desc && latestUpdates && (
+            < Grid item xs={12} className={classes.padded}>
             </Grid>
-            <Grid item paddingBottom={2} xs={12}>
-              <ACRButton text='Read More' link={data.link} size='small' />
-            </Grid>
-          </>
-        )}
+          )
+        }
       </Grid>
-    </Grid>
+    </Grid >
   );
 }
