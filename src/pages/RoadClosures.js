@@ -29,8 +29,8 @@ export default function RoadClosures({ incidentIndex }) {
           a.RoadDateTime < b.RoadDateTime
             ? 1
             : b.RoadDateTime < a.RoadDateTime
-            ? -1
-            : 0
+              ? -1
+              : 0
         );
 
         const open = [];
@@ -62,23 +62,23 @@ export default function RoadClosures({ incidentIndex }) {
   return (
     <IncidentLayout title='Road Closures'>
       <Grid container spacing={3} paddingBottom={6}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <Typography variant='h6' sx={TypographyStyles}>
             Road Closures
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <RoadsTable data={roadClosures} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <Typography variant='h6' sx={TypographyStyles}>
             Road Openings
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <RoadsTable data={roadOpened} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <iframe
             src='https://acgm.maps.arcgis.com/apps/dashboards/a8dc1365c2a74de8b38c53e009476357'
             title='Interactive Road Closure Map'
