@@ -63,14 +63,6 @@ export default function RoadClosures({ incidentIndex }) {
     <IncidentLayout title='Road Closures'>
       <Grid container spacing={3} paddingBottom={6}>
         <Grid item xs={12}>
-          <iframe
-            src='https://acgm.maps.arcgis.com/apps/dashboards/a8dc1365c2a74de8b38c53e009476357'
-            title='Interactive Road Closure Map'
-            width='100%'
-            height='600'
-          />
-        </Grid>
-        <Grid item xs={12}>
           <Typography variant='h6' sx={TypographyStyles}>
             Road Closures
           </Typography>
@@ -85,6 +77,14 @@ export default function RoadClosures({ incidentIndex }) {
         </Grid>
         <Grid item xs={12}>
           <RoadsTable data={roadOpened} />
+        </Grid>
+        <Grid item xs={12}>
+          <iframe
+            src='https://acgm.maps.arcgis.com/apps/dashboards/a8dc1365c2a74de8b38c53e009476357'
+            title='Interactive Road Closure Map'
+            width='100%'
+            height='600'
+          />
         </Grid>
       </Grid>
     </IncidentLayout>
