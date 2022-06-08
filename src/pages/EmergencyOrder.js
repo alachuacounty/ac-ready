@@ -33,7 +33,7 @@ export default function EmergencyOrder({ incidentIndex }) {
   const getEmergencyOrders = async () => {
     try {
       const result = await axios(
-        `https://api.alachuacounty.us/hurricane-next-api/api/getEmergecnyOrdersRecentAdvisories`
+        `https://ads86.alachuacounty.us/incidents-api/emergencyorders/active`
       );
       setEmergencyOrders(result.data[0]);
       console.log(result.data[0]);
