@@ -30,6 +30,7 @@ export default function ReportDamage({ incidentIndex }) {
             text='Report Damage'
             link={incidents[incidentIndex].damageReportURL} //{`/incidents/${incidents[incidentIndex].urlName}/reportdamages`}
             size='jumbo'
+            externalLink={true}
           />
         </Grid>
       </Grid>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
+import { Button, Typography, Link as HrefLink } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
@@ -42,7 +42,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ACRButton({ text, link, invert, size, onClick }) {
+export default function ACRButton({
+  text,
+  link,
+  invert,
+  size,
+  onClick,
+  externalLink = false,
+}) {
   const classes = useStyles();
 
   const appliedClasses = clsx(
@@ -50,7 +57,7 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
     invert ? classes.lightBG : classes.darkBG,
     size === 'jumbo' ? classes.jumbo : ''
   );
-  return (
+  return !externalLink ? (
     <Link to={link} color='inherit' title={text}>
       <Button
         className={appliedClasses}
@@ -68,5 +75,23 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
         </Typography>
       </Button>
     </Link>
+  ) : (
+    <HrefLink href={link} color='inherit' title={text}>
+      <Button
+        className={appliedClasses}
+        variant='contained'
+        size={size}
+        onClick={onClick}
+      >
+        <Typography
+          className={clsx(
+            classes.text,
+            size === 'small' ? classes.textSmall : ''
+          )}
+        >
+          {text}
+        </Typography>
+      </Button>
+    </HrefLink>
   );
 }
