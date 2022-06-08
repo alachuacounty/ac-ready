@@ -10,7 +10,7 @@ import Sticker from '../components/Home/Sticker';
 import Modal from '../components/Modal';
 
 export default function Home() {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const [currentIncidents, setCurrentIncidents] = useState([]);
 

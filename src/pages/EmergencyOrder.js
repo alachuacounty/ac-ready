@@ -26,7 +26,7 @@ const headCells = [
 
 export default function EmergencyOrder({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const [emergencyOrders, setEmergencyOrders] = useState([]);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 

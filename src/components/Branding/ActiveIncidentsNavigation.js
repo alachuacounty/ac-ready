@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function ActiveIncidentsNavigation() {
   const classes = useStyles();
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   return (
     <AppBar position='absolute' className={classes.appBar}>

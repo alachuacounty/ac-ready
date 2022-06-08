@@ -19,7 +19,7 @@ const buttonStyles = {
 };
 
 export default function HowToPrepare({ incidentIndex }) {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const classes = useStyles();
   return (
     <div>

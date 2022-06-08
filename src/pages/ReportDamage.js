@@ -9,7 +9,7 @@ import { incidentsContext } from '../contexts/IncidentsContext';
 export default function ReportDamage({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   useEffect(() => {
     updatePageTitle(`${incidents[incidentIndex].name} | Report Damages`);
@@ -21,12 +21,10 @@ export default function ReportDamage({ incidentIndex }) {
   }, []);
 
   const getIframeSRC = () => {
-
     var urlElements = incidents[incidentIndex].damageReportURL.split('/');
-    urlElements.splice(urlElements.length - 1, 0, "embed");
-    return urlElements.join("/");
-
-  }
+    urlElements.splice(urlElements.length - 1, 0, 'embed');
+    return urlElements.join('/');
+  };
 
   return (
     <IncidentLayout title='Report Damage'>

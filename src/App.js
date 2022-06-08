@@ -11,7 +11,7 @@ import Incidents from './pages/Incidents';
 import NotFound from './pages/NotFound';
 
 export default function App() {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   return (
     <ThemeProvider theme={theme}>

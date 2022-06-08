@@ -68,7 +68,7 @@ const mondayheadCells = [
 export default function Shelter({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const [center, setCenter] = useState({ lat: 29.651634, lng: -82.324829 });
   const [selectedMarker, setSelectedMarker] = useState(null);
   const [shelterData, setShelterData] = useState([]);

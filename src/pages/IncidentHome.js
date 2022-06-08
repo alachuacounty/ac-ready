@@ -10,12 +10,13 @@ import ReportDamage from '../components/IncidentHome/ReportDamage';
 import { incidentsContext } from '../contexts/IncidentsContext';
 
 export default function IncidentHome({ incidentIndex }) {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
 
   const blurbTitle = 'Sign Up for Emergency Alerts';
-  const blurbText = 'Text "Alachua" to 888777 to receive real-time County updates during a large-scale incident or emergency';
+  const blurbText =
+    'Text "Alachua" to 888777 to receive real-time County updates during a large-scale incident or emergency';
   const blurbTitle2 = "Don't see the information you're looking for?";
   const blurbText2 = 'Call 311';
 
@@ -37,8 +38,17 @@ export default function IncidentHome({ incidentIndex }) {
           <Divider variant='middle' />
         </Grid>
         <Grid item xs={12} pt={3} pb={3}>
-          <EmergencyBlurb fullWidth={true} title={blurbTitle} text={blurbText} removePadding={true} />
-          <EmergencyBlurb fullWidth={true} title={blurbTitle2} text={blurbText2} />
+          <EmergencyBlurb
+            fullWidth={true}
+            title={blurbTitle}
+            text={blurbText}
+            removePadding={true}
+          />
+          <EmergencyBlurb
+            fullWidth={true}
+            title={blurbTitle2}
+            text={blurbText2}
+          />
         </Grid>
         <Grid item xs={12} md={10} pt={3} pb={3}>
           <HowToPrepare incidentIndex={incidentIndex} />

@@ -30,7 +30,7 @@ export default function AdvisoryContent({ incidentIndex }) {
   const params = useParams();
   const classes = useStyles();
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   const [advisory, setAdvisory] = useState(null);
   const [incidentName, setIncidentName] = useState('');

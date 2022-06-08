@@ -11,7 +11,7 @@ import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 export default function Advisories({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   const [advisories, setAdvisories] = useState([]);
 

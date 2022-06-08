@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function NHCMaps({ incidentIndex }) {
-  const incidents = React.useContext(incidentsContext);
+  const { incidents } = React.useContext(incidentsContext);
   const classes = useStyles();
   return (
     <div>

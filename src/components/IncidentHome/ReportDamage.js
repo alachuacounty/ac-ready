@@ -5,7 +5,7 @@ import ACRButton from '../ACRButton';
 import { incidentsContext } from '../../contexts/IncidentsContext';
 
 export default function ReportDamage({ incidentIndex }) {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default function ReportDamage({ incidentIndex }) {
           </Typography>
           <ACRButton
             text='Report Damage'
-            link={incidents[incidentIndex].damageReportURL}//{`/incidents/${incidents[incidentIndex].urlName}/reportdamages`}
+            link={incidents[incidentIndex].damageReportURL} //{`/incidents/${incidents[incidentIndex].urlName}/reportdamages`}
             size='jumbo'
           />
         </Grid>

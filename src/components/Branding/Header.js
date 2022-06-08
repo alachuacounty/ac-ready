@@ -16,7 +16,7 @@ const linkStyles = {
 };
 
 export default function Header() {
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const { pageHeading } = useContext(titleContext);
   const location = useLocation();
   const navigate = useNavigate();

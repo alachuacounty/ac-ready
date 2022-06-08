@@ -18,11 +18,13 @@ export const incidentsContext = createContext([]);
 
 export default function IncidentsContext({ children }) {
   const [incidents, setIncidents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   let incidentsRoutes = [];
 
   const updateIncidents = (incidentsArray) => {
     setIncidents(incidentsArray);
+    setLoading(false);
     console.log(incidentsArray);
   };
 
@@ -57,6 +59,7 @@ export default function IncidentsContext({ children }) {
       } else return [];
     } catch (error) {
       console.log({ error });
+      setLoading(false);
     }
   };
 
@@ -211,6 +214,7 @@ export default function IncidentsContext({ children }) {
 
       return IncidentPages;
     } catch (error) {
+      setLoading(false);
       console.log({ error });
     }
   };
@@ -259,6 +263,7 @@ export default function IncidentsContext({ children }) {
       }
     } catch (error) {
       console.log({ error });
+      setLoading(false);
     }
   };
 
@@ -273,7 +278,7 @@ export default function IncidentsContext({ children }) {
   }, []);
 
   return (
-    <incidentsContext.Provider value={incidents}>
+    <incidentsContext.Provider value={{ incidents, loading }}>
       {children}
     </incidentsContext.Provider>
   );

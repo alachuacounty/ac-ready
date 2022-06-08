@@ -23,7 +23,7 @@ import { ExpandMore } from '@mui/icons-material';
 
 export default function Faq({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const [tab, setTab] = useState(0);
 

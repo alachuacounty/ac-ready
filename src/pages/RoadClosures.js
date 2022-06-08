@@ -14,7 +14,7 @@ const TypographyStyles = { fontWeight: 'bold' };
 export default function RoadClosures({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   const [roadClosures, setRoadClosures] = useState([]);
   const [roadOpened, setRoadOpened] = useState([]);
@@ -61,7 +61,12 @@ export default function RoadClosures({ incidentIndex }) {
 
   return (
     <IncidentLayout title='Road Closures'>
-      <Grid container spacing={3} sx={{ width: '100% !important' }} paddingBottom={6}>
+      <Grid
+        container
+        spacing={3}
+        sx={{ width: '100% !important' }}
+        paddingBottom={6}
+      >
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <Typography variant='h6' sx={TypographyStyles}>
             Road Closures

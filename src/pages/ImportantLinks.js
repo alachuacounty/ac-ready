@@ -19,7 +19,7 @@ import { incidentsContext } from '../contexts/IncidentsContext';
 export default function ImportantLinksPage({ incidentIndex }) {
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const [importantLinks, setImportantLinks] = useState([]);
 
   const getImportantLinks = async () => {
@@ -59,7 +59,12 @@ export default function ImportantLinksPage({ incidentIndex }) {
 
   return (
     <IncidentLayout title='Important Links'>
-      <Grid container spacing={3} sx={{ width: '100% !important' }} paddingBottom={6}>
+      <Grid
+        container
+        spacing={3}
+        sx={{ width: '100% !important' }}
+        paddingBottom={6}
+      >
         {Object.keys(importantLinks).map((category, index) => (
           <>
             <Grid item xs={12} key={index}>

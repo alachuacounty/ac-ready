@@ -29,7 +29,7 @@ const typographyStyles = {
 
 export default function Incidents() {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const navigate = useNavigate();
 
   useEffect(() => {

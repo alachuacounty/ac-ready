@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function LatestUpdates({ incidentIndex }) {
   const classes = useStyles();
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
 
   const [isMobile, setMobile] = useState(window.innerWidth < 601);
   const [advisories, setAdvisories] = useState([]);
@@ -49,7 +49,12 @@ export default function LatestUpdates({ incidentIndex }) {
       {advisories && advisories.length > 0 ? (
         <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
-            <PressItem data={advisories[0]} expanded={!isMobile} index={1} latestUpdates={true} />
+            <PressItem
+              data={advisories[0]}
+              expanded={!isMobile}
+              index={1}
+              latestUpdates={true}
+            />
           </Grid>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
             {advisories[1] && <PressItem data={advisories[1]} index={2} />}

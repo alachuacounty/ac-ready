@@ -17,7 +17,7 @@ import EmergencyBanner from '../EmergencyBanner';
 
 export default function Appbar({ children }) {
   const { pageTitle } = useContext(titleContext);
-  const incidents = useContext(incidentsContext);
+  const { incidents } = useContext(incidentsContext);
   const location = useLocation();
 
   const isHomePage = pageTitle === 'Alachua County Ready | Home';
