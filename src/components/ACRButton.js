@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, Link, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -50,7 +51,7 @@ export default function ACRButton({ text, link, invert, size, onClick }) {
     size === 'jumbo' ? classes.jumbo : ''
   );
   return (
-    <Link href={process.env.PUBLIC_URL + link} color='inherit' title={text}>
+    <Link to={link} color='inherit' title={text}>
       <Button
         className={appliedClasses}
         variant='contained'

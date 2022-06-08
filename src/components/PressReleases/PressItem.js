@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Grid, Typography, Link } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import clsx from 'clsx';
 import DateCircle from './DateCircle';
 import ACRButton from '../ACRButton';
 
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -32,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
     height: '150px',
     [theme.breakpoints.down('md')]: {
       height: 'auto',
-    }
-  }
+    },
+  },
 }));
 
 export default function PressItem({ data, expanded, index, latestUpdates }) {
@@ -59,46 +60,41 @@ export default function PressItem({ data, expanded, index, latestUpdates }) {
             {expanded ? (
               data.title
             ) : (
-              <Link
-                href={process.env.PUBLIC_URL + data.link}
-                title={data.title}
-              >
+              <Link to={data.link} title={data.title}>
                 {' '}
                 {data.title}{' '}
               </Link>
             )}
           </Typography>
         </Grid>
-        {
-          expanded && (
-            <>
-              {
-                data.desc &&
-                <Grid item xs={12}>
-                  <Typography
-                    paragraph
-                    className={clsx(classes.text, classes.clipped)}
-                  >
-                    {data.desc}
-                  </Typography>
-                </Grid>
-              }
-              {
-                data.updateContent &&
-                <Grid item paddingBottom={2} paddingTop={data.desc ? 0 : 2} xs={12}>
-                  <ACRButton text='Read More' link={data.link} size='small' />
-                </Grid>
-              }
-            </>
-          )
-        }
-        {
-          expanded && !data.desc && latestUpdates && (
-            < Grid item xs={12} className={classes.padded}>
-            </Grid>
-          )
-        }
+        {expanded && (
+          <>
+            {data.desc && (
+              <Grid item xs={12}>
+                <Typography
+                  paragraph
+                  className={clsx(classes.text, classes.clipped)}
+                >
+                  {data.desc}
+                </Typography>
+              </Grid>
+            )}
+            {data.updateContent && (
+              <Grid
+                item
+                paddingBottom={2}
+                paddingTop={data.desc ? 0 : 2}
+                xs={12}
+              >
+                <ACRButton text='Read More' link={data.link} size='small' />
+              </Grid>
+            )}
+          </>
+        )}
+        {expanded && !data.desc && latestUpdates && (
+          <Grid item xs={12} className={classes.padded}></Grid>
+        )}
       </Grid>
-    </Grid >
+    </Grid>
   );
 }

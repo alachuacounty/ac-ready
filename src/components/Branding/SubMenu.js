@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { Button, Menu, MenuItem, Link } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 
 import { makeStyles } from '@mui/styles';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
@@ -63,7 +64,7 @@ export default function SubMenu(props) {
         {submenu.map((subitem, index) => (
           <MenuItem className={classes.menuItem}>
             <Link
-              href={process.env.PUBLIC_URL + subitem.link}
+              to={subitem.link}
               className={classes.menuLink}
               color='inherit'
               title={subitem.title}

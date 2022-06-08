@@ -1,6 +1,7 @@
 import { Close as CloseIcon } from '@mui/icons-material';
-import { Dialog, Grid, Typography, Link } from '@mui/material';
+import { Dialog, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ACRButton from './ACRButton';
 
 export default function Modal({ handleClose, open, incidents }) {
@@ -63,9 +64,7 @@ export default function Modal({ handleClose, open, incidents }) {
             {incidents.length > 0 &&
               incidents.map((incident, index) => (
                 <>
-                  <Link
-                    href={`${process.env.PUBLIC_URL}/incidents/${incident.urlName}`}
-                  >
+                  <Link to={`/incidents/${incident.urlName}`}>
                     {incident.name}
                   </Link>
                   {addConjuction(index)}

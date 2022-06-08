@@ -1,14 +1,8 @@
-import {
-  Drawer,
-  IconButton,
-  Link,
-  List,
-  ListItem,
-  Divider,
-} from '@mui/material';
+import { Drawer, IconButton, List, ListItem, Divider } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import React, { useState } from 'react';
 import { Menu } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -100,7 +94,7 @@ export default function TopDrawer({ navItems }) {
                       key={`nav1-${index}`}
                     >
                       <Link
-                        href={process.env.PUBLIC_URL + subitem.link}
+                        to={subitem.link}
                         color='inherit'
                         title={subitem.title}
                       >
@@ -115,11 +109,7 @@ export default function TopDrawer({ navItems }) {
             ) : (
               <>
                 <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
-                  <Link
-                    href={process.env.PUBLIC_URL + item.link}
-                    color='inherit'
-                    title={item.title}
-                  >
+                  <Link to={item.link} color='inherit' title={item.title}>
                     {item.title}
                   </Link>
                 </ListItem>

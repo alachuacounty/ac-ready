@@ -1,4 +1,5 @@
-import { AppBar, Link, List, ListItem, Toolbar } from '@mui/material';
+import { AppBar, List, ListItem, Toolbar } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import useStyles from './IncidentNavigationStyles';
 import SubMenu from './SubMenu';
@@ -40,11 +41,7 @@ export default function IncidentNavigation({ navItems }) {
               </ListItem>
             ) : (
               <ListItem className={classes.navItem} key={`nav2-${index}`}>
-                <Link
-                  href={process.env.PUBLIC_URL + item.link}
-                  color='inherit'
-                  title={item.title}
-                >
+                <Link to={item.link} color='inherit' title={item.title}>
                   {item.title}
                 </Link>
               </ListItem>

@@ -1,8 +1,9 @@
-import { AppBar, Link, List, ListItem, Toolbar } from '@mui/material';
+import { AppBar, List, ListItem, Toolbar } from '@mui/material';
 import React, { useContext } from 'react';
 
 import useStyles from './IncidentNavigationStyles';
 import { incidentsContext } from '../../contexts/IncidentsContext';
+import { Link } from 'react-router-dom';
 
 export default function ActiveIncidentsNavigation() {
   const classes = useStyles();
@@ -14,7 +15,7 @@ export default function ActiveIncidentsNavigation() {
         <List className={classes.gridList}>
           <ListItem className={classes.navItem} key={0}>
             <Link
-              href={`${process.env.PUBLIC_URL}/`}
+              to={`/`}
               color='inherit'
               title={'Alachua County Ready | Home'}
             >
@@ -26,7 +27,7 @@ export default function ActiveIncidentsNavigation() {
             incidents.map((incident) => (
               <ListItem className={classes.navItem} key={0}>
                 <Link
-                  href={process.env.PUBLIC_URL + incident.urlName}
+                  to={incident.urlName}
                   color='inherit'
                   title={incident.name}
                 >

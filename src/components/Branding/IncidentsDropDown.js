@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Button, Menu, MenuItem, Link } from '@mui/material';
+import { Button, Menu, MenuItem } from '@mui/material';
 
 import { makeStyles } from '@mui/styles';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
@@ -32,9 +33,8 @@ export default function IncidentDropDown(props) {
     setOpen(false);
   };
 
-
   return (
-    <div >
+    <div>
       <Button
         id={'menu-button-' + props.item.title}
         aria-controls={open ? 'sub-menu' + props.item.title : undefined}
@@ -53,7 +53,6 @@ export default function IncidentDropDown(props) {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-
         MenuListProps={{
           'aria-labelledby': 'menu-button-' + props.item.title,
           disablePadding: true,

@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import theme from '../siteTheme';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import { breadCrumbsContext } from '../../contexts/BreadCrumbsContext';
+import { Link } from 'react-router-dom';
 
 export default function BreadCrumbs() {
   const { breadCrumbs } = useContext(breadCrumbsContext);
@@ -20,7 +20,7 @@ export default function BreadCrumbs() {
       underline='hover'
       key={index}
       color={theme.middleblue}
-      href={process.env.PUBLIC_URL + breadcrumb.link}
+      to={breadcrumb.link}
       sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}
     >
       {breadcrumb.crumb}
