@@ -65,36 +65,44 @@ export default function ImportantLinksPage({ incidentIndex }) {
         sx={{ width: '100% !important' }}
         paddingBottom={6}
       >
-        {Object.keys(importantLinks).map((category, index) => (
-          <>
-            <Grid item xs={12} key={index}>
-              <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-                {category}
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              {importantLinks[category].map((link, ind) => (
-                <Accordion key={ind}>
-                  <AccordionSummary expandIcon={<ExpandMore />}>
-                    <Typography sx={{ my: 2 }}>
-                      <Link
-                        href={link.LinkAddress}
-                        target='_blank'
-                        rel='noopener'
-                        underline='none'
-                      >
-                        {link.LinkText}
-                      </Link>
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{link.Description}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-              ))}
-            </Grid>
-          </>
-        ))}
+        {Object.keys(importantLinks).length === 0 ? (
+          <Grid item xs={12}>
+            <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+              No Important Links Available
+            </Typography>
+          </Grid>
+        ) : (
+          Object.keys(importantLinks).map((category, index) => (
+            <>
+              <Grid item xs={12} key={index}>
+                <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+                  {category}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                {importantLinks[category].map((link, ind) => (
+                  <Accordion key={ind}>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
+                      <Typography sx={{ my: 2 }}>
+                        <Link
+                          href={link.LinkAddress}
+                          target='_blank'
+                          rel='noopener'
+                          underline='none'
+                        >
+                          {link.LinkText}
+                        </Link>
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Typography>{link.Description}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                ))}
+              </Grid>
+            </>
+          ))
+        )}
       </Grid>
     </IncidentLayout>
   );
