@@ -32,7 +32,7 @@ function getComparator(order, orderBy) {
 
 export default function Shelters({ headCells, rows, updateMapCenter }) {
   const [order, setOrder] = useState('asc');
-  const [orderBy, setOrderBy] = useState('label');
+  const [orderBy, setOrderBy] = useState('ShelterName');
 
   const handleRequestSort = (property) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -101,12 +101,14 @@ export default function Shelters({ headCells, rows, updateMapCenter }) {
                           Show on Map
                         </Button>
                       </TableCell>
-                      <TableCell align='center'>{row.label}</TableCell>
-                      <TableCell align='center'>{row.capacity}</TableCell>
-                      <TableCell align='center'>{row.availability}</TableCell>
-                      <TableCell align='center'>{row.pet_friendly}</TableCell>
+                      <TableCell align='center'>{row.ShelterName}</TableCell>
+                      <TableCell align='center'>{row.Location}</TableCell>
+                      <TableCell align='center'>{row.Status}</TableCell>
                       <TableCell align='center'>
-                        {row.functional_needs}
+                        {row.ShelterType === 'Pet Friendly' ? 'Yes' : 'No'}
+                      </TableCell>
+                      <TableCell align='center'>
+                        {row.ShelterType === 'SpNS' ? 'Yes' : 'No'}
                       </TableCell>
                     </TableRow>
                   ))}
