@@ -16,7 +16,7 @@ export default function Roads({ data }) {
       <Table sx={{ minWidth: 650 }} aria-label='simple table'>
         <TableHead sx={{ background: '#EFEFEF' }}>
           <TableRow>
-            <TableCell align='center'>
+            <TableCell sx={{ textAlign: { xs: 'left', lg: 'center' } }}>
               <Typography
                 variant='body1'
                 sx={{
@@ -35,7 +35,11 @@ export default function Roads({ data }) {
               key={road.RoadName}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell align='center' component='th' scope='row'>
+              <TableCell
+                sx={{ textAlign: { xs: 'left', lg: 'center' } }}
+                component='th'
+                scope='row'
+              >
                 {road.RoadName}
               </TableCell>
             </TableRow>
