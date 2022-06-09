@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.white.main,
     display: 'block',
     fontWeight: 'bold',
+    textTransform: 'Uppercase',
   },
 }));
 
