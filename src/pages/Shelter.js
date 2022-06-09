@@ -98,13 +98,14 @@ export default function Shelter({ incidentIndex }) {
   return (
     <IncidentLayout title='Find a Shelter'>
       <Grid container>
-        <Grid item xs={12}>
-          <Typography variant='h6' py={4} sx={{ fontWeight: 'bold' }}>
-            *In case of an emergency, please go to the nearest shelter, even if it is full.
-          </Typography>
-        </Grid>
         {shelterData && shelterData.length > 0 ? (
           <>
+            <Grid item xs={12}>
+              <Typography variant='h6' py={4} sx={{ fontWeight: 'bold' }}>
+                *In case of an emergency, please go to the nearest shelter, even
+                if it is full.
+              </Typography>
+            </Grid>
             <Grid item xs={12}>
               <Map
                 data={shelterData}
@@ -122,7 +123,7 @@ export default function Shelter({ incidentIndex }) {
           </>
         ) : (
           <Grid item xs={12}>
-            <Typography variant='h6'>
+            <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
               There are currently no open emergency shelters.
             </Typography>
           </Grid>
