@@ -97,6 +97,7 @@ export default function TopDrawer({ navItems }) {
                         to={subitem.link}
                         color='inherit'
                         title={subitem.title}
+                        className={classes.drawerSubItem}
                       >
                         {subitem.title}
                       </Link>
@@ -109,7 +110,7 @@ export default function TopDrawer({ navItems }) {
             ) : (
               <>
                 <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
-                  <Link to={item.link} color='inherit' title={item.title}>
+                  <Link to={item.link} color='inherit' title={item.title} className={classes.drawerItem} >
                     {item.title}
                   </Link>
                 </ListItem>

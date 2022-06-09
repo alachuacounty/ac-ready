@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawerSubItem: {
+    color: theme.palette.middleblue.main,
     textTransform: 'Capitalize',
     fontWeight: 'normal',
     [theme.breakpoints.down('mobile')]: {
@@ -123,7 +124,7 @@ export default function LeftDrawer({ navItems }) {
           {navItems.map((item, index) => {
             return item.submenu ? (
               <>
-                <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
+                <ListItem className={classes.drawerItem} key={`nav1-${index}`} >
                   {item.title}
                 </ListItem>
                 <List className={classes.subList}>
@@ -136,6 +137,8 @@ export default function LeftDrawer({ navItems }) {
                         to={subitem.link}
                         color='inherit'
                         title={subitem.title}
+                        className={classes.drawerSubItem}
+                        onClick={handleDrawerToggle}
                       >
                         {subitem.title}
                       </Link>
@@ -148,7 +151,7 @@ export default function LeftDrawer({ navItems }) {
             ) : (
               <>
                 <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
-                  <Link to={item.link} color='inherit' title={item.title}>
+                  <Link to={item.link} color='inherit' title={item.title} className={classes.drawerItem} onClick={handleDrawerToggle}>
                     {item.title}
                   </Link>
                 </ListItem>
