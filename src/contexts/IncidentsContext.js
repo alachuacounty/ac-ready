@@ -60,6 +60,7 @@ export default function IncidentsContext({ children }) {
     } catch (error) {
       console.log({ error });
       setLoading(false);
+      return [];
     }
   };
 
@@ -216,6 +217,7 @@ export default function IncidentsContext({ children }) {
     } catch (error) {
       setLoading(false);
       console.log({ error });
+      return [];
     }
   };
 
@@ -264,6 +266,7 @@ export default function IncidentsContext({ children }) {
     } catch (error) {
       console.log({ error });
       setLoading(false);
+      return [];
     }
   };
 
