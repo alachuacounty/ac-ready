@@ -12,7 +12,7 @@ export default function BreadCrumbsContext({ children }) {
 
   const pushBreadCrumbs = (nextCrumb) => {
     if (nextCrumb.crumb && nextCrumb.link)
-      setBreadCrumbs([...breadCrumbs, nextCrumb]);
+      setBreadCrumbs([...breadCrumbsDef, nextCrumb]);
     else setBreadCrumbs(breadCrumbsDef);
   };
 

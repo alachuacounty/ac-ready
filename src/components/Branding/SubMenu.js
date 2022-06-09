@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   menuLink: {
     width: '100%',
     fontSize: '14px',
+    '&:visited': {
+      color: theme.palette.darkblue.light,
+    },
   },
 }));
 
