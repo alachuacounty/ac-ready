@@ -9,7 +9,6 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { breadCrumbsContext } from '../../contexts/BreadCrumbsContext';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@mui/styles';
-import { ClassNames } from '@emotion/react';
 
 const useStyles = makeStyles((theme) => ({
   crumbLink: {
