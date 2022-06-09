@@ -18,6 +18,7 @@ export default function ActiveIncidentsNavigation() {
               to={`/`}
               color='inherit'
               title={'Alachua County Ready | Home'}
+              className={classes.navLink}
             >
               Alachua County Ready | Home
             </Link>

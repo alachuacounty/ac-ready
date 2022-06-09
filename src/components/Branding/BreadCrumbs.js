@@ -8,8 +8,22 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import { breadCrumbsContext } from '../../contexts/BreadCrumbsContext';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@mui/styles';
+import { ClassNames } from '@emotion/react';
+
+const useStyles = makeStyles((theme) => ({
+  crumbLink: {
+    color: theme.palette.middleblue.main,
+    fontWeight: 'bold',
+    textTransform: 'Uppercase !important',
+    '&:visited': {
+      color: theme.palette.middleblue.main,
+    },
+  },
+}));
 
 export default function BreadCrumbs() {
+  const classes = useStyles();
   const { breadCrumbs } = useContext(breadCrumbsContext);
 
   const breadCrumbsTrail = breadCrumbs; //[{ crumb: 'ALACHUA COUNTY READY HOME', link: '/' }, { crumb: 'INCIDENTS', link: '/incidents' }, { crumb: 'PAGE', link: '' }];
@@ -21,7 +35,7 @@ export default function BreadCrumbs() {
       key={index}
       color={theme.middleblue}
       to={breadcrumb.link}
-      sx={{ fontWeight: 'bold', textTransform: 'Uppercase !important' }}
+      className={classes.crumbLink}
     >
       {breadcrumb.crumb}
     </Link>
