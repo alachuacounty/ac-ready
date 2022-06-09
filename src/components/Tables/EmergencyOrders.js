@@ -82,7 +82,7 @@ export default function EmergencyOrders({ headCells, rows }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {rows.length &&
+              {rows.length > 0 &&
                 rows
                   .slice()
                   .sort(getComparator(order, orderBy))

@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
@@ -56,7 +56,14 @@ export default function EmergencyOrder({ incidentIndex }) {
     <IncidentLayout title='Emergency Orders'>
       <Grid container>
         <Grid item xs={12}>
-          <EmergencyOrdersTable headCells={headCells} rows={emergencyOrders} />
+          {emergencyOrders && emergencyOrders.length > 0 ? (
+            <EmergencyOrdersTable
+              headCells={headCells}
+              rows={emergencyOrders}
+            />
+          ) : (
+            <Typography variant='h6'>No Emergency Order available</Typography>
+          )}
         </Grid>
       </Grid>
     </IncidentLayout>
