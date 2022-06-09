@@ -30,7 +30,13 @@ const theme = createTheme({
     yellow: {
       main: '#EFD06A',
       dark: '#D3933D',
-    }
+    },
+    red: {
+      main: '#A80B0B',
+    },
+    green: {
+      main: '#075F07',
+    },
   },
   sectionpadding: {
     padding: '4% 0',

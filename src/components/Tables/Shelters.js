@@ -13,6 +13,22 @@ import {
 } from '@mui/material';
 import React, { useState } from 'react';
 import { visuallyHidden } from '@mui/utils';
+import { makeStyles } from '@mui/styles';
+import clsx from 'clsx';
+
+const useStyles = makeStyles((theme) => ({
+  statusGreen: {
+    background: theme.palette.green.main,
+  },
+  statusRed: {
+    background: theme.palette.red.main,
+  },
+  spanStyles: {
+    color: theme.palette.white.main,
+    display: 'block',
+    fontWeight: 'bold',
+  },
+}));
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -31,6 +47,7 @@ function getComparator(order, orderBy) {
 }
 
 export default function Shelters({ headCells, rows, updateMapCenter }) {
+  const classes = useStyles();
   const [order, setOrder] = useState('asc');
   const [orderBy, setOrderBy] = useState('ShelterName');
 
@@ -103,7 +120,11 @@ export default function Shelters({ headCells, rows, updateMapCenter }) {
                       </TableCell>
                       <TableCell align='center'>{row.ShelterName}</TableCell>
                       <TableCell align='center'>{row.Location}</TableCell>
-                      <TableCell align='center'>{row.Status}</TableCell>
+                      <TableCell align='center'>
+                        <span className={clsx(classes.spanStyles, row.Status === 'Full' ? classes.statusRed : classes.statusGreen)}>
+                          {row.Status}
+                        </span>
+                      </TableCell>
                       <TableCell align='center'>
                         {row.ShelterType === 'Pet Friendly' ? 'Yes' : 'No'}
                       </TableCell>
