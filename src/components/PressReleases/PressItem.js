@@ -11,17 +11,17 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     height: '70px',
     width: '70px',
-    background: '#D0EDFC',
+    background: theme.palette.lightblue.light,
   },
   text: {
-    color: '#12274B',
+    color: theme.palette.darkblue.main,
   },
   timeByline: {
     fontWeight: 'bold',
     fontSize: '16px !important',
   },
   title: {
-    color: '#1968B2',
+    color: theme.palette.middleblue.main,
   },
   clipped: {
     overflow: 'hidden',
@@ -60,7 +60,7 @@ export default function PressItem({ data, expanded, index, latestUpdates }) {
             {expanded ? (
               data.title
             ) : (
-              <Link to={data.link} title={data.title}>
+              <Link to={data.link} title={data.title} className={classes.title}>
                 {' '}
                 {data.title}{' '}
               </Link>
