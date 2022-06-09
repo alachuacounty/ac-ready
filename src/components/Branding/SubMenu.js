@@ -58,6 +58,8 @@ export default function SubMenu(props) {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        //onClick={handleClose}
+        onBlur={handleClose}
         MenuListProps={{
           'aria-labelledby': 'menu-button-' + props.item.title,
           disablePadding: true,
