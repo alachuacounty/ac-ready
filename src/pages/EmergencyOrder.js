@@ -18,10 +18,6 @@ const headCells = [
     id: 'OrderDateTime',
     label: 'Date',
   },
-  {
-    id: 'InEffect',
-    label: 'In Effect',
-  },
 ];
 
 export default function EmergencyOrder({ incidentIndex }) {
@@ -62,7 +58,9 @@ export default function EmergencyOrder({ incidentIndex }) {
               rows={emergencyOrders}
             />
           ) : (
-            <Typography variant='h6'>No Emergency Order available</Typography>
+            <Typography variant='h6'>
+              No Emergency Orders are currently in Effect
+            </Typography>
           )}
         </Grid>
       </Grid>
