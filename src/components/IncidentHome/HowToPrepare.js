@@ -51,18 +51,22 @@ export default function HowToPrepare({ incidentIndex }) {
             </Typography>
             <List disablePadding={true} sx={{ listStyleType: 'disc' }} pl={1}>
               <ListItem sx={{ display: 'list-item' }}>
-                Text that goes here
-              </ListItem>
-              <ListItem sx={{ display: 'list-item' }}>
-                Text that goes here
+                Open AMAZING Alachua County ACR Web APP
               </ListItem>
 
               <ListItem sx={{ display: 'list-item' }}>
-                Text that goes here
+                Create a Hurricane Safety Plan
               </ListItem>
 
               <ListItem sx={{ display: 'list-item' }}>
-                Text that goes here
+                Plan an Evacuation Route
+              </ListItem>
+              <ListItem sx={{ display: 'list-item' }}>
+                Stay Home and Don't Go Outside
+              </ListItem>
+
+              <ListItem sx={{ display: 'list-item' }}>
+                Make sure to drink plenty of water
               </ListItem>
             </List>
           </Grid>
