@@ -86,9 +86,9 @@ export default function RoadClosures({ incidentIndex }) {
 
         <Grid item xs={12} mt={6} sx={{ paddingLeft: '0 !important' }}>
           <Divider height='30px'></Divider>
-          <Typography variant='h6' sx={TypographyStyles}>
-            This is some typography that you can click on the map and it will
-            allow you to do something!
+          <Typography py={2} variant='h6' sx={TypographyStyles}>
+            Note: Click on a road from the Road List (Located Below Map) to see
+            the road location on the map:
           </Typography>
         </Grid>
 
