@@ -4,29 +4,6 @@ import { Link } from 'react-router-dom';
 import useStyles from './IncidentNavigationStyles';
 import SubMenu from './SubMenu';
 
-/*const navItems = [
-  { title: 'Hurricane Home', link: '/incidents/elsa' },
-  {
-    title: 'Prepare',
-    link: '/prepare',
-    submenu: [
-      { title: 'Shelters', link: '/incidents/elsa/shelters' },
-      { title: 'Sandbag Locations', link: '/incidents/elsa/sandbags' },
-      { title: 'FAQs', link: '/incidents/elsa/faqs' },
-    ],
-  },
-  {
-    title: 'Updates',
-    link: '/updates',
-    submenu: [
-      { title: 'Advisories', link: '/incidents/elsa/advisories' },
-      { title: 'Road Closures', link: '/incidents/elsa/roadclosures' },
-    ],
-  },
-  { title: 'Important Links', link: '/incidents/elsa/importantlinks' },
-  { title: 'Emergency Orders', link: '/incidents/elsa/emergencyorders' },
-];*/
-
 export default function IncidentNavigation({ navItems }) {
   const classes = useStyles();
 

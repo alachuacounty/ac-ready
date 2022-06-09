@@ -17,7 +17,7 @@ export default function LatestUpdates({ incidentIndex }) {
   const { incidents } = useContext(incidentsContext);
 
   const [isMobile, setMobile] = useState(window.innerWidth < 601);
-  const [advisories, setAdvisories] = useState([]);
+  const [latestUpdates, setLatestUpdates] = useState([]);
 
   const updateMedia = () => {
     setMobile(window.innerWidth < 601);
@@ -33,10 +33,10 @@ export default function LatestUpdates({ incidentIndex }) {
       incidents &&
       incidents.length &&
       incidents[incidentIndex] &&
-      incidents[incidentIndex].advisories &&
-      incidents[incidentIndex].advisories.length
+      incidents[incidentIndex].updates &&
+      incidents[incidentIndex].updates.length
     )
-      setAdvisories(incidents[incidentIndex].advisories);
+      setLatestUpdates(incidents[incidentIndex].updates);
   }, [incidents, incidentIndex]);
 
   return (
@@ -46,20 +46,26 @@ export default function LatestUpdates({ incidentIndex }) {
           Latest Updates
         </Typography>
       </Grid>
-      {advisories && advisories.length > 0 ? (
+      {latestUpdates && latestUpdates.length > 0 ? (
         <Grid container xs={12} spacing={4} p={4} justifyContent='center'>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
             <PressItem
-              data={advisories[0]}
+              data={latestUpdates[0]}
               expanded={!isMobile}
               index={1}
               latestUpdates={true}
             />
           </Grid>
           <Grid container xs={12} md={6} justifyContent='flex-end'>
-            {advisories[1] && <PressItem data={advisories[1]} index={2} />}
-            {advisories[2] && <PressItem data={advisories[2]} index={3} />}
-            {advisories[3] && <PressItem data={advisories[3]} index={4} />}
+            {latestUpdates[1] && (
+              <PressItem data={latestUpdates[1]} index={2} />
+            )}
+            {latestUpdates[2] && (
+              <PressItem data={latestUpdates[2]} index={3} />
+            )}
+            {latestUpdates[3] && (
+              <PressItem data={latestUpdates[3]} index={4} />
+            )}
           </Grid>
         </Grid>
       ) : (

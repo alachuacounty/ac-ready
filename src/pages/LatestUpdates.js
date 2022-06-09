@@ -8,17 +8,17 @@ import { incidentsContext } from '../contexts/IncidentsContext';
 import { titleContext } from '../contexts/TitleContext';
 import { breadCrumbsContext } from '../contexts/BreadCrumbsContext';
 
-export default function Advisories({ incidentIndex }) {
+export default function LatestUpdates({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { incidents } = useContext(incidentsContext);
 
-  const [advisories, setAdvisories] = useState([]);
+  const [latestUpdates, setLatestUpdates] = useState([]);
 
   useEffect(() => {
-    if (incidents && incidents.length && incidents[0].advisories)
-      setAdvisories(incidents[incidentIndex].advisories);
-    updatePageTitle(`${incidents[incidentIndex].name} | Advisories`);
+    if (incidents && incidents.length && incidents[0].updates)
+      setLatestUpdates(incidents[incidentIndex].updates);
+    updatePageTitle(`${incidents[incidentIndex].name} | Latest Updates`);
     updatePageHeading(incidents[incidentIndex].name);
   }, [incidents]);
 
@@ -32,8 +32,8 @@ export default function Advisories({ incidentIndex }) {
   return (
     <IncidentLayout title='Latest Updates'>
       <Grid container xs={12} paddingBottom={6} justifyContent='flex-start'>
-        {advisories && advisories.length > 0 ? (
-          advisories.map((data, index) => (
+        {latestUpdates && latestUpdates.length > 0 ? (
+          latestUpdates.map((data, index) => (
             <PressItem data={data} expanded={true} index={index} />
           ))
         ) : (

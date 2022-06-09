@@ -9,8 +9,8 @@ import RoadClosures from '../pages/RoadClosures';
 import Shelter from '../pages/Shelter';
 import SandbagPage from '../pages/Sandbag';
 import EmergencyOrder from '../pages/EmergencyOrder';
-import Advisories from '../pages/Advisories';
-import Advisory from '../pages/Advisory';
+import LatestUpdates from '../pages/LatestUpdates';
+import Update from '../pages/Update';
 import Faq from '../pages/Faq';
 import ImportantLinksPage from '../pages/ImportantLinks';
 
@@ -28,34 +28,32 @@ export default function IncidentsContext({ children }) {
     console.log(incidentsArray);
   };
 
-  const getAdvisoryData = async (incidentID, incidentURL) => {
+  const getUpdateData = async (incidentID, incidentURL) => {
     try {
       const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/advisory/active` +
+        `https://ads86.alachuacounty.us/incidents-api/latestupdates/active` +
           `/` +
           incidentID
       );
       if (result && result.data && result.data[0].length) {
-        const tempAdvisories = [];
-        result.data[0].forEach((advisory) => {
-          const tempAdvisory = {};
-          tempAdvisory.id = advisory.MondayID;
-          tempAdvisory.updateContent = advisory.UpdateBody;
-          tempAdvisory.publishDate = advisory.AdvisoryDateTime;
-          tempAdvisory.updateDate = advisory.UpdateChangeDate;
-          tempAdvisory.day = moment(advisory.AdvisoryDateTime).format('ddd');
-          tempAdvisory.date = moment(advisory.AdvisoryDateTime).format('MMM D');
-          tempAdvisory.year = moment(advisory.AdvisoryDateTime).format('YYYY');
-          tempAdvisory.time = moment(advisory.AdvisoryDateTime).format(
-            'H:mm A'
-          );
-          tempAdvisory.title = advisory.AdvisoryName;
-          tempAdvisory.desc = advisory.Blurb;
-          tempAdvisory.link =
-            `/incidents/` + incidentURL + `/advisories/${advisory.MondayID}`;
-          tempAdvisories.push(tempAdvisory);
+        const tempUpdates = [];
+        result.data[0].forEach((update) => {
+          const tempUpdate = {};
+          tempUpdate.id = update.MondayID;
+          tempUpdate.updateContent = update.UpdateBody;
+          tempUpdate.publishDate = update.UpdateDateTime;
+          tempUpdate.updateDate = update.UpdateChangeDate;
+          tempUpdate.day = moment(update.UpdateDateTime).format('ddd');
+          tempUpdate.date = moment(update.UpdateDateTime).format('MMM D');
+          tempUpdate.year = moment(update.UpdateDateTime).format('YYYY');
+          tempUpdate.time = moment(update.UpdateDateTime).format('H:mm A');
+          tempUpdate.title = update.UpdateName;
+          tempUpdate.desc = update.Blurb;
+          tempUpdate.link =
+            `/incidents/` + incidentURL + `/latestupdates/${update.MondayID}`;
+          tempUpdates.push(tempUpdate);
         });
-        return tempAdvisories;
+        return tempUpdates;
       } else return [];
     } catch (error) {
       console.log({ error });
@@ -153,16 +151,16 @@ export default function IncidentsContext({ children }) {
             '/' +
             page.PageName.replace(/\s/g, '').toLowerCase();
 
-          if (page.PageName === 'Advisories') {
+          if (page.PageName === 'Latest Updates') {
             incidentsRoutes.push({
-              element: <Advisories incidentIndex={index} />,
+              element: <LatestUpdates incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
               ).toLowerCase()}`,
             });
             incidentsRoutes.push({
-              element: <Advisory incidentIndex={index} />,
+              element: <Update incidentIndex={index} />,
               path: `/incidents/${incidentURL}/${page.PageName.replace(
                 /\s/g,
                 ''
@@ -249,7 +247,7 @@ export default function IncidentsContext({ children }) {
             incident.ShowSandbagsPage,
             incident.ShowRoadClosuresPage
           );
-          incidentData.advisories = await getAdvisoryData(
+          incidentData.updates = await getUpdateData(
             incidentData.incidentID,
             incidentData.urlName
           );
