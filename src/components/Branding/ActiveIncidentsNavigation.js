@@ -28,7 +28,7 @@ export default function ActiveIncidentsNavigation() {
             incidents.map((incident) => (
               <ListItem className={classes.navItem} key={0}>
                 <Link
-                  to={incident.urlName}
+                  to={`incidents/${incident.urlName}`}
                   title={incident.name}
                   className={classes.navLink}
                 >
