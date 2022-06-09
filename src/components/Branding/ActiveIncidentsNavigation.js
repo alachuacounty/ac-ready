@@ -28,8 +28,8 @@ export default function ActiveIncidentsNavigation() {
               <ListItem className={classes.navItem} key={0}>
                 <Link
                   to={incident.urlName}
-                  color='inherit'
                   title={incident.name}
+                  className={classes.navLink}
                 >
                   {incident.name}
                 </Link>

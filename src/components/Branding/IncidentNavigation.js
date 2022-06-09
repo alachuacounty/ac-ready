@@ -41,7 +41,7 @@ export default function IncidentNavigation({ navItems }) {
               </ListItem>
             ) : (
               <ListItem className={classes.navItem} key={`nav2-${index}`}>
-                <Link to={item.link} color='inherit' title={item.title}>
+                <Link to={item.link} title={item.title} className={classes.navLink}>
                   {item.title}
                 </Link>
               </ListItem>

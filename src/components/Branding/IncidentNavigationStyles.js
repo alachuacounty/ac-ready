@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto',
     fontSize: '14px',
   },
+  navLink: {
+    '&:visited': {
+      color: theme.palette.white.main,
+    },
+  }
 }));
 
 export default useStyles;
