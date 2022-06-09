@@ -4,14 +4,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ACRButton from './ACRButton';
 
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  link: {
+    color: theme.palette.middleblue.main,
+  },
+}));
+
 export default function Modal({ handleClose, open, incidents }) {
+  const classes = useStyles();
   const addConjuction = (index) => {
     var conjuction =
       index === incidents.length - 2
         ? ' and '
         : index !== incidents.length - 1
-        ? ' , '
-        : ' ';
+          ? ' , '
+          : ' ';
     return conjuction;
   };
 
@@ -64,7 +73,7 @@ export default function Modal({ handleClose, open, incidents }) {
             {incidents.length > 0 &&
               incidents.map((incident, index) => (
                 <>
-                  <Link to={`/incidents/${incident.urlName}`}>
+                  <Link to={`/incidents/${incident.urlName}`} className={classes.link}>
                     {incident.name}
                   </Link>
                   {addConjuction(index)}
