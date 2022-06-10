@@ -107,7 +107,6 @@ export default function EmergencyOrders({ headCells, rows }) {
                           <TableCell align='center'>
                             {moment(row.OrderDateTime).format('MM/DD/YYYY')}
                           </TableCell>
-                          <TableCell align='center'>{row.InEffect}</TableCell>
                         </TableRow>
                       )
                   )}
