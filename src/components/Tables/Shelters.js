@@ -122,7 +122,14 @@ export default function Shelters({ headCells, rows, updateMapCenter }) {
                       <TableCell align='center'>{row.ShelterName}</TableCell>
                       <TableCell align='center'>{row.Location}</TableCell>
                       <TableCell align='center'>
-                        <span className={clsx(classes.spanStyles, row.Status === 'Full' ? classes.statusRed : classes.statusGreen)}>
+                        <span
+                          className={clsx(
+                            classes.spanStyles,
+                            row.Status === 'Full'
+                              ? classes.statusRed
+                              : classes.statusGreen
+                          )}
+                        >
                           {row.Status}
                         </span>
                       </TableCell>

@@ -11,38 +11,25 @@ import { incidentsContext } from '../contexts/IncidentsContext';
 
 const TypographyStyles = { fontWeight: 'bold' };
 
+const headCells = [
+  { id: 'RoadName', label: 'Road Name' },
+  { id: 'Status', label: 'Status' },
+];
+
 export default function RoadClosures({ incidentIndex }) {
   const { updatePageTitle, updatePageHeading } = useContext(titleContext);
   const { pushBreadCrumbs } = useContext(breadCrumbsContext);
   const { incidents } = useContext(incidentsContext);
 
-  const [roadClosures, setRoadClosures] = useState([]);
-  const [roadOpened, setRoadOpened] = useState([]);
+  const [roads, setRoads] = useState([]);
 
   const getRoadClosures = async () => {
     try {
       const result = await axios(
-        `https://api.alachuacounty.us/hurricane-next-api/apidev/getRoadClosures`
+        `https://ads86.alachuacounty.us/incidents-api/roadclosures/active`
       );
       if (result.data && result.data.length) {
-        const sortedData = result.data[0].sort((a, b) =>
-          a.RoadDateTime < b.RoadDateTime
-            ? 1
-            : b.RoadDateTime < a.RoadDateTime
-            ? -1
-            : 0
-        );
-
-        const open = [];
-        const closed = [];
-        sortedData.forEach((road) => {
-          if (road.Published === 'Yes') {
-            if (road.Category === 'Closures') closed.push(road);
-            if (road.Category === 'Openings') open.push(road);
-          }
-        });
-        setRoadClosures([...closed]);
-        setRoadOpened([...open]);
+        setRoads(result.data[0]);
       }
     } catch (error) {
       console.log(error);
@@ -69,19 +56,11 @@ export default function RoadClosures({ incidentIndex }) {
       >
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <Typography variant='h6' sx={TypographyStyles}>
-            Road Closures
+            Road Closures/Opening
           </Typography>
         </Grid>
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
-          <RoadsTable data={roadClosures} />
-        </Grid>
-        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
-          <Typography variant='h6' sx={TypographyStyles}>
-            Road Openings
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
-          <RoadsTable data={roadOpened} />
+          <RoadsTable headCells={headCells} data={roads} />
         </Grid>
 
         <Grid item xs={12} mt={6} sx={{ paddingLeft: '0 !important' }}>
