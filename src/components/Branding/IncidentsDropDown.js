@@ -63,7 +63,7 @@ export default function IncidentDropDown(props) {
         {submenu.map((subitem, index) => (
           <MenuItem className={classes.menuItem}>
             <Link
-              href={process.env.PUBLIC_URL + subitem.link}
+              to={subitem.link}
               className={classes.menuLink}
               color='inherit'
               title={subitem.title}
