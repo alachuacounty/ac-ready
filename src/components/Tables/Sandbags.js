@@ -101,16 +101,13 @@ export default function Sandbags({ headCells, rows, updateMapCenter }) {
                           Show on Map
                         </Button>
                       </TableCell>
-                      <TableCell align='center'>{row.SandbagStatus}</TableCell>
                       <TableCell align='center'>{row.label}</TableCell>
                       <TableCell align='center'>{row.address}</TableCell>
                       <TableCell align='center'>
-                        {row.SandbagLimitations
-                          ? row.SandbagLimitations
-                          : '-none-'}
+                        {row.Limitations ? row.Limitations : '-none-'}
                       </TableCell>
                       <TableCell align='center'>
-                        {row.SandbagDetails ? row.SandbagDetails : '---'}
+                        {row.Details ? row.Details : '---'}
                       </TableCell>
                     </TableRow>
                   ))}

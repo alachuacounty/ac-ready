@@ -20,24 +20,19 @@ const headCells = [
     label: '',
   },
   {
-    id: 'SandbagStatus',
-    label: 'Status',
-  },
-  {
     id: 'label',
     label: 'Location Name',
   },
-
   {
     id: 'address',
     label: 'Address',
   },
   {
-    id: 'SandbagLimitations',
+    id: 'Limitations',
     label: 'Limitations',
   },
   {
-    id: 'SandbagDetails',
+    id: 'Details',
     label: 'Details',
   },
 ];
@@ -53,26 +48,24 @@ export default function Shelter({ incidentIndex }) {
   const getSandbagsLocations = async () => {
     try {
       const result = await axios.get(
-        `https://api.alachuacounty.us/hurricaneportal/api/getSandBagsData`
+        `https://ads86.alachuacounty.us/incidents-api/distributionlocations/activesandbagslocations`
       );
 
       for (let index in result.data[0]) {
         const response = await Geocode.fromAddress(
-          result.data[0][index].SandbagLocation
+          result.data[0][index].Location
         );
         if (response.results[0]) {
           const { lat, lng } = response.results[0].geometry.location;
           result.data[0][index].latitude = lat;
           result.data[0][index].longitude = lng;
-          result.data[0][index].dataid = index;
-          result.data[0][index].label = result.data[0][index].SandbagName;
-          result.data[0][index].address = result.data[0][index].SandbagLocation;
+          result.data[0][index].dataid = result.data[0][index].MondayID;
+          result.data[0][index].label = result.data[0][index].LocationName;
+          result.data[0][index].address = result.data[0][index].Location;
         }
       }
       // CHANGE SandbagStatus check to Open for production
-      setSandbagsLocations(
-        result.data[0].filter((location) => location.SandbagStatus === 'Closed')
-      );
+      setSandbagsLocations(result.data[0]);
     } catch (error) {
       console.log(error);
     }
