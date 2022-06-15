@@ -1,16 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  AppBar,
-  Box,
-  Grid,
-  Paper,
-  Tab,
-  Tabs,
-  Typography,
-} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, AppBar, Box, Grid, Paper, Tab, Tabs, Typography } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import parse from 'html-react-parser';
@@ -35,16 +24,13 @@ export default function Faq({ incidentIndex }) {
 
   const getFaqs = async () => {
     try {
-      const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/faq/active/${incidents[incidentIndex].incidentID}`
-      );
+      const result = await axios(`https://api.alachuacounty.us/incidents-api/faq/active/${incidents[incidentIndex].incidentID}`);
 
       if (result.data && result.data[0].length) {
         const categorizedFaqs = {};
 
         result.data[0].forEach((faq) => {
-          if (!categorizedFaqs[faq.GroupName])
-            categorizedFaqs[faq.GroupName] = [faq];
+          if (!categorizedFaqs[faq.GroupName]) categorizedFaqs[faq.GroupName] = [faq];
           else {
             const tempArrayforExistingFaqs = categorizedFaqs[faq.GroupName];
             tempArrayforExistingFaqs.push(faq);
@@ -81,12 +67,7 @@ export default function Faq({ incidentIndex }) {
             >
               <Tabs value={tab} onChange={handleTabChange} textColor='white'>
                 {Object.keys(faqs).map((category, index) => (
-                  <Tab
-                    sx={{ mr: 2, fontWeight: 'bold' }}
-                    label={category}
-                    id={index}
-                    key={index}
-                  />
+                  <Tab sx={{ mr: 2, fontWeight: 'bold' }} label={category} id={index} key={index} />
                 ))}
               </Tabs>
             </AppBar>

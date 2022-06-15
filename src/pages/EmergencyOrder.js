@@ -28,9 +28,7 @@ export default function EmergencyOrder({ incidentIndex }) {
 
   const getEmergencyOrders = async () => {
     try {
-      const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/emergencyorders/active`
-      );
+      const result = await axios(`https://api.alachuacounty.us/incidents-api/emergencyorders/active`);
       setEmergencyOrders(result.data[0]);
       console.log(result.data[0]);
     } catch (error) {
@@ -53,14 +51,9 @@ export default function EmergencyOrder({ incidentIndex }) {
       <Grid container>
         <Grid item xs={12}>
           {emergencyOrders && emergencyOrders.length > 0 ? (
-            <EmergencyOrdersTable
-              headCells={headCells}
-              rows={emergencyOrders}
-            />
+            <EmergencyOrdersTable headCells={headCells} rows={emergencyOrders} />
           ) : (
-            <Typography variant='h6'>
-              No Emergency Orders are currently in Effect
-            </Typography>
+            <Typography variant='h6'>No Emergency Orders are currently in Effect</Typography>
           )}
         </Grid>
       </Grid>

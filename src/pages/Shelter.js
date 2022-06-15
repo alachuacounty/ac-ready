@@ -51,14 +51,10 @@ export default function Shelter({ incidentIndex }) {
 
   const getShelterData = async () => {
     try {
-      const test = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/shelters/active`
-      );
+      const test = await axios.get(`https://api.alachuacounty.us/incidents-api/shelters/active`);
 
       for (let index in test.data[0]) {
-        const response = await Geocode.fromAddress(
-          test.data[0][index].Location
-        );
+        const response = await Geocode.fromAddress(test.data[0][index].Location);
         if (response.results[0]) {
           const { lat, lng } = response.results[0].geometry.location;
           test.data[0][index].latitude = lat;
@@ -102,23 +98,14 @@ export default function Shelter({ incidentIndex }) {
           <>
             <Grid item xs={12}>
               <Typography variant='h6' py={4} sx={{ fontWeight: 'bold' }}>
-                *In case of an emergency, please go to the nearest shelter, even
-                if it is full.
+                *In case of an emergency, please go to the nearest shelter, even if it is full.
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Map
-                data={shelterData}
-                center={center}
-                selectedMarker={selectedMarker}
-              />
+              <Map data={shelterData} center={center} selectedMarker={selectedMarker} />
             </Grid>
             <Grid item xs={12}>
-              <Shelters
-                headCells={headCells}
-                rows={shelterData}
-                updateMapCenter={updateMapCenter}
-              />
+              <Shelters headCells={headCells} rows={shelterData} updateMapCenter={updateMapCenter} />
             </Grid>
           </>
         ) : (

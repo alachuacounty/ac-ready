@@ -25,9 +25,7 @@ export default function RoadClosures({ incidentIndex }) {
 
   const getRoadClosures = async () => {
     try {
-      const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/roadclosures/active`
-      );
+      const result = await axios(`https://api.alachuacounty.us/incidents-api/roadclosures/active`);
       if (result.data && result.data.length) {
         setRoads(result.data[0]);
       }
@@ -48,12 +46,7 @@ export default function RoadClosures({ incidentIndex }) {
 
   return (
     <IncidentLayout title='Road Closures'>
-      <Grid
-        container
-        spacing={3}
-        sx={{ width: '100% !important' }}
-        paddingBottom={6}
-      >
+      <Grid container spacing={3} sx={{ width: '100% !important' }} paddingBottom={6}>
         <Grid item xs={12} sx={{ paddingLeft: '0 !important' }}>
           <Typography variant='h6' sx={TypographyStyles}>
             Road Closures/Opening
@@ -66,8 +59,7 @@ export default function RoadClosures({ incidentIndex }) {
         <Grid item xs={12} mt={6} sx={{ paddingLeft: '0 !important' }}>
           <Divider height='30px'></Divider>
           <Typography py={2} variant='h6' sx={TypographyStyles}>
-            Note: Click on a road from the Road List (Located Below Map) to see
-            the road location on the map:
+            Note: Click on a road from the Road List (Located Below Map) to see the road location on the map:
           </Typography>
         </Grid>
 

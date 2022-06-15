@@ -47,14 +47,10 @@ export default function Shelter({ incidentIndex }) {
 
   const getSandbagsLocations = async () => {
     try {
-      const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/distributionlocations/activesandbagslocations`
-      );
+      const result = await axios.get(`https://api.alachuacounty.us/incidents-api/distributionlocations/activesandbagslocations`);
 
       for (let index in result.data[0]) {
-        const response = await Geocode.fromAddress(
-          result.data[0][index].Location
-        );
+        const response = await Geocode.fromAddress(result.data[0][index].Location);
         if (response.results[0]) {
           const { lat, lng } = response.results[0].geometry.location;
           result.data[0][index].latitude = lat;
@@ -96,25 +92,15 @@ export default function Shelter({ incidentIndex }) {
         {sandbagsLocations && sandbagsLocations.length > 0 ? (
           <>
             <Grid item xs={12}>
-              <Map
-                data={sandbagsLocations}
-                center={center}
-                selectedMarker={selectedMarker}
-              />
+              <Map data={sandbagsLocations} center={center} selectedMarker={selectedMarker} />
             </Grid>
             <Grid item xs={12}>
-              <SandbagsTable
-                headCells={headCells}
-                rows={sandbagsLocations}
-                updateMapCenter={updateMapCenter}
-              />
+              <SandbagsTable headCells={headCells} rows={sandbagsLocations} updateMapCenter={updateMapCenter} />
             </Grid>
           </>
         ) : (
           <Grid item xs={12}>
-            <Typography variant='h6'>
-              There are currently no open sandbag locations.
-            </Typography>
+            <Typography variant='h6'>There are currently no open sandbag locations.</Typography>
           </Grid>
         )}
       </Grid>

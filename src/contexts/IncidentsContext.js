@@ -30,11 +30,7 @@ export default function IncidentsContext({ children }) {
 
   const getUpdateData = async (incidentID, incidentURL) => {
     try {
-      const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/latestupdates/active` +
-          `/` +
-          incidentID
-      );
+      const result = await axios.get(`https://api.alachuacounty.us/incidents-api/latestupdates/active` + `/` + incidentID);
       if (result && result.data && result.data[0].length) {
         const tempUpdates = [];
         result.data[0].forEach((update) => {
@@ -49,8 +45,7 @@ export default function IncidentsContext({ children }) {
           tempUpdate.time = moment(update.UpdateDateTime).format('H:mm A');
           tempUpdate.title = update.UpdateName;
           tempUpdate.desc = update.Blurb;
-          tempUpdate.link =
-            `/incidents/` + incidentURL + `/latestupdates/${update.MondayID}`;
+          tempUpdate.link = `/incidents/` + incidentURL + `/latestupdates/${update.MondayID}`;
           tempUpdates.push(tempUpdate);
         });
         return tempUpdates;
@@ -62,19 +57,9 @@ export default function IncidentsContext({ children }) {
     }
   };
 
-  const getIncidentPages = async (
-    incidentID,
-    incidentURL,
-    index,
-    showShelters,
-    showSandbags,
-    showRoadClosures
-  ) => {
+  const getIncidentPages = async (incidentID, incidentURL, index, showShelters, showSandbags, showRoadClosures) => {
     try {
-      const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/incidents/activepages/` +
-          incidentID
-      );
+      const result = await axios.get(`https://api.alachuacounty.us/incidents-api/incidents/activepages/` + incidentID);
 
       const IncidentPages = [];
 
@@ -145,45 +130,29 @@ export default function IncidentsContext({ children }) {
           incidentPage.boardID = page.BoardID;
           incidentPage.name = page.PageName;
           incidentPage.title = page.PageName;
-          incidentPage.link =
-            '/incidents/' +
-            incidentURL +
-            '/' +
-            page.PageName.replace(/\s/g, '').toLowerCase();
+          incidentPage.link = '/incidents/' + incidentURL + '/' + page.PageName.replace(/\s/g, '').toLowerCase();
 
           if (page.PageName === 'Latest Updates') {
             incidentsRoutes.push({
               element: <LatestUpdates incidentIndex={index} />,
-              path: `/incidents/${incidentURL}/${page.PageName.replace(
-                /\s/g,
-                ''
-              ).toLowerCase()}`,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(/\s/g, '').toLowerCase()}`,
             });
             incidentsRoutes.push({
               element: <Update incidentIndex={index} />,
-              path: `/incidents/${incidentURL}/${page.PageName.replace(
-                /\s/g,
-                ''
-              ).toLowerCase()}/:UpdateID`,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(/\s/g, '').toLowerCase()}/:UpdateID`,
             });
           }
 
           if (page.PageName === 'Important Links')
             incidentsRoutes.push({
               element: <ImportantLinksPage incidentIndex={index} />,
-              path: `/incidents/${incidentURL}/${page.PageName.replace(
-                /\s/g,
-                ''
-              ).toLowerCase()}`,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(/\s/g, '').toLowerCase()}`,
             });
 
           if (page.PageName === 'FAQ')
             incidentsRoutes.push({
               element: <Faq incidentIndex={index} />,
-              path: `/incidents/${incidentURL}/${page.PageName.replace(
-                /\s/g,
-                ''
-              ).toLowerCase()}`,
+              path: `/incidents/${incidentURL}/${page.PageName.replace(/\s/g, '').toLowerCase()}`,
             });
 
           if (page.Category.toLowerCase() === 'do not group') {
@@ -196,11 +165,9 @@ export default function IncidentsContext({ children }) {
         });
       }
 
-      if (prepareSubmenu.length !== 0)
-        IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
+      if (prepareSubmenu.length !== 0) IncidentPages.push({ title: 'Prepare', submenu: prepareSubmenu });
 
-      if (updatesSubmenu.length !== 0)
-        IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
+      if (updatesSubmenu.length !== 0) IncidentPages.push({ title: 'Updates', submenu: updatesSubmenu });
 
       IncidentPages.push({
         boardID: 100,
@@ -221,9 +188,7 @@ export default function IncidentsContext({ children }) {
 
   const getActiveIncidents = async () => {
     try {
-      const result = await axios.get(
-        `https://ads86.alachuacounty.us/incidents-api/incidents/active`
-      );
+      const result = await axios.get(`https://api.alachuacounty.us/incidents-api/incidents/active`);
       if (result && result.data && result.data[0].length) {
         const activeIncidents = [];
 
@@ -231,10 +196,7 @@ export default function IncidentsContext({ children }) {
           const incidentData = {};
           incidentData.incidentID = incident.MondayID;
           incidentData.name = incident.IncidentName;
-          incidentData.urlName = incident.IncidentName.replace(
-            /\s/g,
-            ''
-          ).toLowerCase();
+          incidentData.urlName = incident.IncidentName.replace(/\s/g, '').toLowerCase();
 
           incidentData.damageReportURL = incident.DamageReportURL;
           incidentData.imageLink1 = incident.Link1;
@@ -247,10 +209,7 @@ export default function IncidentsContext({ children }) {
             incident.ShowSandbagsPage,
             incident.ShowRoadClosuresPage
           );
-          incidentData.updates = await getUpdateData(
-            incidentData.incidentID,
-            incidentData.urlName
-          );
+          incidentData.updates = await getUpdateData(incidentData.incidentID, incidentData.urlName);
           incidentData.routes = incidentsRoutes;
           incidentData.showShelters = incident.ShowSheltersPage;
           incidentData.showSandbags = incident.ShowSandbagsPage;
@@ -278,9 +237,5 @@ export default function IncidentsContext({ children }) {
     initialLoad();
   }, []);
 
-  return (
-    <incidentsContext.Provider value={{ incidents, loading }}>
-      {children}
-    </incidentsContext.Provider>
-  );
+  return <incidentsContext.Provider value={{ incidents, loading }}>{children}</incidentsContext.Provider>;
 }

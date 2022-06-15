@@ -1,13 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from 'react';
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Grid,
-  Link,
-  Typography,
-} from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Grid, Link, Typography } from '@mui/material';
 import axios from 'axios';
 
 import IncidentLayout from '../components/Branding/IncidentLayout';
@@ -24,16 +17,13 @@ export default function ImportantLinksPage({ incidentIndex }) {
 
   const getImportantLinks = async () => {
     try {
-      const result = await axios(
-        `https://ads86.alachuacounty.us/incidents-api/importantlinks/active/${incidents[incidentIndex].incidentID}`
-      );
+      const result = await axios(`https://api.alachuacounty.us/incidents-api/importantlinks/active/${incidents[incidentIndex].incidentID}`);
 
       if (result.data && result.data[0].length) {
         const categorizedLinks = {};
 
         result.data[0].forEach((link) => {
-          if (!categorizedLinks[link.Category])
-            categorizedLinks[link.Category] = [link];
+          if (!categorizedLinks[link.Category]) categorizedLinks[link.Category] = [link];
           else {
             const tempArrayforExistingLinks = categorizedLinks[link.Category];
             tempArrayforExistingLinks.push(link);
@@ -59,12 +49,7 @@ export default function ImportantLinksPage({ incidentIndex }) {
 
   return (
     <IncidentLayout title='Important Links'>
-      <Grid
-        container
-        spacing={3}
-        sx={{ width: '100% !important' }}
-        paddingBottom={6}
-      >
+      <Grid container spacing={3} sx={{ width: '100% !important' }} paddingBottom={6}>
         {Object.keys(importantLinks).length === 0 ? (
           <Grid item xs={12}>
             <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
@@ -84,12 +69,7 @@ export default function ImportantLinksPage({ incidentIndex }) {
                   <Accordion key={ind}>
                     <AccordionSummary expandIcon={<ExpandMore />}>
                       <Typography sx={{ my: 2 }}>
-                        <Link
-                          href={link.LinkAddress}
-                          target='_blank'
-                          rel='noopener'
-                          underline='none'
-                        >
+                        <Link href={link.LinkAddress} target='_blank' rel='noopener' underline='none'>
                           {link.LinkText}
                         </Link>
                       </Typography>
