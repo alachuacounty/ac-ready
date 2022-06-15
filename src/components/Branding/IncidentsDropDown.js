@@ -7,14 +7,18 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   menuItem: {
-    background: '#D0EDFC',
+    background: theme.palette.lightblue.light,
     border: '1px solid #707070',
-    color: '#1B5B98',
+    color: theme.palette.darkblue.light + ' !important',
     fontWeight: 'bold',
   },
   menuLink: {
     width: '100%',
     //fontSize: '14px',
+    color: theme.palette.darkblue.light + ' !important',
+    '&:visited': {
+      color: theme.palette.darkblue.light + ' !important',
+    },
   },
 }));
 

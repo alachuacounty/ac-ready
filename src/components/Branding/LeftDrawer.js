@@ -45,19 +45,31 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawerItem: {
-    color: theme.palette.darkblue.main,
+    color: theme.palette.darkblue.main + ' !important',
+    '&:visited': {
+      color: theme.palette.darkblue.main + ' !important',
+    },
     textTransform: 'Uppercase',
     fontWeight: 'bold',
     [theme.breakpoints.down('mobile')]: {
-      color: theme.palette.white.main,
+      color: theme.palette.white.main + ' !important',
+      '&:visited': {
+        color: theme.palette.white.main + ' !important',
+      },
     },
   },
   drawerSubItem: {
-    color: theme.palette.middleblue.main,
+    color: theme.palette.middleblue.main + ' !important',
+    '&:visited': {
+      color: theme.palette.middleblue.main + ' !important',
+    },
     textTransform: 'Capitalize',
     fontWeight: 'normal',
     [theme.breakpoints.down('mobile')]: {
-      color: theme.palette.white.main,
+      color: theme.palette.white.main + ' !important',
+      '&:visited': {
+        color: theme.palette.white.main + ' !important',
+      },
     },
   },
   subList: {

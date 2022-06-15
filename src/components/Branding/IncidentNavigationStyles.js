@@ -37,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '14px',
   },
   navLink: {
+    color: theme.palette.white.main + ' !important',
     '&:visited': {
-      color: theme.palette.white.main,
+      color: theme.palette.white.main + ' !important',
     },
   }
 }));

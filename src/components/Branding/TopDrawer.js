@@ -31,14 +31,20 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'Uppercase',
     fontWeight: 'bold',
     // [theme.breakpoints.down('mobile')]: {
-    color: theme.palette.white.main,
+    color: theme.palette.white.main + ' !important',
     //},
+    '&:visited': {
+      color: theme.palette.white.main + ' !important',
+    },
   },
   drawerSubItem: {
     textTransform: 'Capitalize',
     fontWeight: 'normal',
     // [theme.breakpoints.down('mobile')]: {
-    color: theme.palette.white.main,
+    color: theme.palette.white.main + ' !important',
+    '&:visited': {
+      color: theme.palette.white.main + ' !important',
+    },
     // },
   },
   subList: {
@@ -82,7 +88,7 @@ export default function TopDrawer({ navItems }) {
       >
         <List className={classes.mobileList}>
           {navItems.map((item, index) => {
-            return item.submenu ? (
+            return item.submenu && item.submenu.length > 0 ? (
               <>
                 <ListItem className={classes.drawerItem} key={`nav1-${index}`}>
                   {item.title}
