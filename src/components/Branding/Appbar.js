@@ -48,15 +48,20 @@ export default function Appbar({ children }) {
       { title: 'Get Notified', link: '#notified' },
       { title: 'Prepare', link: '#prepared' },
       { title: 'ACR Stickers', link: '#sticker' },
+    ];
+
+    if (incidents.length > 0) {
+      var incidents_home =
       {
         title: 'Incidents',
         link: '/incidents',
         submenu: incidents.map((incident) => ({
           title: incident.name,
           link: `/incidents/${incident.urlName}`,
-        })),
-      },
-    ];
+        }))
+      }
+      navItems.push(incidents_home);
+    }
   }
 
   const drawerAnchor = isHomePage ? (
